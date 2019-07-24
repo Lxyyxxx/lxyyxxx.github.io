@@ -1,5 +1,14 @@
 let app;
 
+// 在table前套一个div，实现表格滚动
+[].slice.call(document.querySelectorAll('table')).forEach(function(el){
+    var wrapper = document.createElement('div');
+    wrapper.className = 'table-area';
+    el.parentNode.insertBefore(wrapper, el);
+    el.parentNode.removeChild(el);
+    wrapper.appendChild(el);
+})
+
 app = new Vue({
     el: '#app',
     data: {

@@ -44,11 +44,29 @@ button {
   cursor: hand;
   cursor: pointer; }
 
+table {
+  border-collapse: separate;
+}
+
+table th,
+table td {
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+.table-area {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 16px;
+}
+
 code {
   color: #7a422c;
   background: rgba(159, 86, 58, 0.07) !important;
   padding: 2px 5px;
   border-radius: 3px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace; }
 
 pre {
