@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2019-07-24T03:52:47.475Z</updated>
+  <updated>2019-07-24T15:53:30.483Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>显示测试</title>
-    <link href="https://lxyyxxx.github.io/2019/07/test-code-highlight/"/>
-    <id>https://lxyyxxx.github.io/2019/07/test-code-highlight/</id>
-    <published>2019-07-22T09:30:55.000Z</published>
-    <updated>2019-07-24T03:52:47.475Z</updated>
+    <title>Hexo 使用 KaTeX 渲染数学公式</title>
+    <link href="https://lxyyxxx.github.io/2019/07/HexoKatex/"/>
+    <id>https://lxyyxxx.github.io/2019/07/HexoKatex/</id>
+    <published>2019-07-24T09:56:51.000Z</published>
+    <updated>2019-07-24T15:53:30.483Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,18 @@
       
         
         
-          &lt;h1&gt;&lt;span id=&quot;c&quot;&gt;C++&lt;/span&gt;&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span
+          &lt;h1&gt;&lt;span id=&quot;shuo-dian-hua&quot;&gt;_说点话&lt;/span&gt;&lt;a href=&quot;#shuo-dian-hua&quot; class=&quot;header-anchor&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;保留了Hexo默认的Markdown渲染器&lt;a
         
       
     
     </summary>
     
-      <category term="test" scheme="https://lxyyxxx.github.io/categories/test/"/>
+      <category term="建站相关" scheme="https://lxyyxxx.github.io/categories/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="test" scheme="https://lxyyxxx.github.io/tags/test/"/>
+      <category term="KaTeX" scheme="https://lxyyxxx.github.io/tags/KaTeX/"/>
+    
+      <category term="Hexo" scheme="https://lxyyxxx.github.io/tags/Hexo/"/>
     
   </entry>
   
