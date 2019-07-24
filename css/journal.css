@@ -77,14 +77,10 @@ pre {
     background: none !important;
     font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace !important; }
   pre code {
-    padding: 0; }
-
-code[class*="language-"],
-pre[class*="language-"] {
-  overflow-x: auto !important;
-  overflow-y: visible !important;
-  -webkit-overflow-scrolling: touch;
-}
+    padding: 0; 
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: unset !important;}
 
 blockquote {
   padding: 10px 20px;
