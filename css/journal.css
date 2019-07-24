@@ -72,15 +72,19 @@ pre {
   color: #7a422c;
   padding: 12px 15px;
   border-radius: 5px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace; }
   pre * {
     background: none !important;
     font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace !important; }
   pre code {
-    padding: 0;
-    white-space: nowrap; }
+    padding: 0; }
+
+code[class*="language-"],
+pre[class*="language-"] {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  -webkit-overflow-scrolling: touch;
+}
 
 blockquote {
   padding: 10px 20px;
