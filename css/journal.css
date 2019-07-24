@@ -14,7 +14,7 @@ body {
 * {
   color: black;
   line-height: 1.5em;
-  word-wrap: break-word; }
+/*  word-wrap: break-word;*/  }
 
 h1 {
   font-size: 30px; }
@@ -77,12 +77,12 @@ pre {
     background: none !important;
     font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace !important; }
   pre code {
-    padding: 0; 
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: pre !important;
-    word-wrap: normal !important;
-    word-break: keep-all !important;}
+    padding: 0; }
+
+code[class*="language-"],
+pre[class*="language-"] {
+  -webkit-overflow-scrolling: touch;
+}
 
 blockquote {
   padding: 10px 20px;
@@ -626,8 +626,8 @@ a {
       .stream-container .post .post-body-wrapper .post-body {
         font-size: 16px;
         line-height: 1.5em; }
-        .stream-container .post .post-body-wrapper .post-body * {
-          word-wrap: break-word; }
+/*        .stream-container .post .post-body-wrapper .post-body * {
+          word-wrap: break-word; }*/
         .stream-container .post .post-body-wrapper .post-body img {
           max-width: 100%;
           border-radius: 5px;
