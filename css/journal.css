@@ -82,7 +82,7 @@ pre {
     -webkit-overflow-scrolling: touch;
     white-space: pre !important;
     word-wrap: normal !important;
-    word-break: normal !important;}
+    word-break: keep-all !important;}
 
 blockquote {
   padding: 10px 20px;
