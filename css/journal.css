@@ -80,7 +80,7 @@ pre {
     padding: 0; 
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
-    white-space: unset !important;}
+    white-space: pre !important;}
 
 blockquote {
   padding: 10px 20px;
