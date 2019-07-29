@@ -4,11 +4,11 @@
 <html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>標籤: KaTeX - Lxyyxxx&#39;s Notebook</title>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「2019牛客暑期多校 - 第一场」J - Fraction Comparision - Lxyyxxx&#39;s Notebook</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Lxyyxxx">
-<meta name="description" content="A Blog Powered By Hexo">
+<meta name="description" content=" ">
 <meta name="keywords" content>
 
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?34431719">
+<link rel="stylesheet" href="/css/journal.css?23481892">
 
 <script src="/js/loadCSS.js"></script>
 <script>
@@ -159,46 +159,79 @@
         </a>
 
         
-        
-
-        
-
-        
-        
     </div>
 </div>
 
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <div class="post-item-wrapper post-item-wrapper-no-hover">
-            <div class="post-item post-item-no-gaps">
-                <div class="post-item-info-wrapper">
-                    <div class="post-item-title  post-item-title-small">
-                        <a href="/tags/">標籤</a> / KaTeX
+        <div class="post">
+            <div class="post-head-wrapper-text-only" style="background-image: url('')">
+                <div class="post-title">
+                    「2019牛客暑期多校 - 第一场」J - Fraction Comparision
+                    <div class="post-meta">
+                        <time datetime="2019-07-29T09:00:26.000Z" itemprop="datePublished">
+                            2019-07-29 17:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style>folder</i>
+                        
+                        <a href="/categories/2019牛客暑期多校训练营-第一场/">2019牛客暑期多校训练营 - 第一场</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style>label</i>
+                        
+                        <a href="/tags/数学/">数学</a>
+                        
+                        
                     </div>
                 </div>
             </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="https://ac.nowcoder.com/acm/contest/881/J" target="_blank" rel="noopener">题目传送门</a></p>
+<h1><span id="say">_Say</span><a href="#say" class="header-anchor"></a></h1><p>签到题。<br>分数比大小，直接相乘用unsigned long long会超范围，可以选择用__int128或者Java大数。</p>
+<h1><span id="code">_Code</span><a href="#code" class="header-anchor"></a></h1><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> x<span class="token punctuation">,</span>a<span class="token punctuation">,</span>y<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>x<span class="token operator">>></span>a<span class="token operator">>></span>y<span class="token operator">>></span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>x<span class="token operator">*</span>b<span class="token operator">==</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>a<span class="token operator">*</span>y<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"="</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>x<span class="token operator">*</span>b<span class="token operator">&lt;</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>a<span class="token operator">*</span>y<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"&lt;"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">">"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<br>
+<div align="right">
+  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_cc.png">
+  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_by.png">
+  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_sa.png">
+</div>
+
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2019/07/2019NowcoderSummer/">
+        下一篇<br>2019牛客暑期多校训练营汇总
+    </a>
+    
+</nav>
+
+    
+            
+
+
         </div>
-        
-        <a href="/2019/07/HexoKatex/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            Hexo 使用 KaTeX 渲染数学公式
-                        </div>
-                        <div class="post-item-meta">
-                            2019-07-24
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-
-        
     </div>
-
     <div class="single-column-footer">
     Proudly published with Hexo<br>
     
@@ -214,7 +247,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?24969764"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?11198072"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
 
 </body>
 </html>
