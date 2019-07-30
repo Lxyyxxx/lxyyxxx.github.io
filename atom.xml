@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2019-07-29T09:47:53.355Z</updated>
+  <updated>2019-07-30T15:28:00.135Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -17,11 +17,129 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>「2019牛客暑期多校 - 第四场」A - meeting</title>
+    <link href="https://lxyyxxx.github.io/2019/07/2019NowcoderSummer04A/"/>
+    <id>https://lxyyxxx.github.io/2019/07/2019NowcoderSummer04A/</id>
+    <published>2019-07-30T14:59:14.000Z</published>
+    <updated>2019-07-30T15:28:00.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/884/A&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目传送门&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;span id=&quot;say&quot;&gt;_Say&lt;/span&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="2019牛客暑期多校训练营 - 第四场" scheme="https://lxyyxxx.github.io/categories/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%9C%BA/"/>
+    
+    
+      <category term="图论" scheme="https://lxyyxxx.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="树的直径" scheme="https://lxyyxxx.github.io/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「2019牛客暑期多校 - 第四场」J - free</title>
+    <link href="https://lxyyxxx.github.io/2019/07/2019NowcoderSummer04J/"/>
+    <id>https://lxyyxxx.github.io/2019/07/2019NowcoderSummer04J/</id>
+    <published>2019-07-30T09:07:46.000Z</published>
+    <updated>2019-07-30T15:28:07.945Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/884/J&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目传送门&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;span id=&quot;say&quot;&gt;_Say&lt;/span&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="2019牛客暑期多校训练营 - 第四场" scheme="https://lxyyxxx.github.io/categories/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%9C%BA/"/>
+    
+    
+      <category term="图论" scheme="https://lxyyxxx.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="最短路" scheme="https://lxyyxxx.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「2019牛客暑期多校 - 第三场」H - Magic Line</title>
+    <link href="https://lxyyxxx.github.io/2019/07/2019NowcoderSummer03H/"/>
+    <id>https://lxyyxxx.github.io/2019/07/2019NowcoderSummer03H/</id>
+    <published>2019-07-30T05:20:37.000Z</published>
+    <updated>2019-07-30T15:28:35.764Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/883/H&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目传送门&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;span id=&quot;say&quot;&gt;_Say&lt;/span&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="2019牛客暑期多校训练营 - 第三场" scheme="https://lxyyxxx.github.io/categories/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%9C%BA/"/>
+    
+    
+      <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="几何" scheme="https://lxyyxxx.github.io/tags/%E5%87%A0%E4%BD%95/"/>
+    
+      <category term="平面直角坐标系" scheme="https://lxyyxxx.github.io/tags/%E5%B9%B3%E9%9D%A2%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「算法学习笔记」搜索 Search</title>
+    <link href="https://lxyyxxx.github.io/2019/07/CoderStudySearch/"/>
+    <id>https://lxyyxxx.github.io/2019/07/CoderStudySearch/</id>
+    <published>2019-07-29T14:54:19.000Z</published>
+    <updated>2019-07-30T14:29:10.577Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;按难度系数更新，&lt;del&gt;没更新到的就是还没学qaq。&lt;/del&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;span id=&quot;i&quot;&gt;_Ι&lt;/span&gt;&lt;a href=&quot;#i&quot; class=&quot;header-anchor&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="一起学算法吧" scheme="https://lxyyxxx.github.io/categories/%E4%B8%80%E8%B5%B7%E5%AD%A6%E7%AE%97%E6%B3%95%E5%90%A7/"/>
+    
+    
+      <category term="算法学习笔记" scheme="https://lxyyxxx.github.io/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>「2019牛客暑期多校 - 第一场」J - Fraction Comparision</title>
     <link href="https://lxyyxxx.github.io/2019/07/2019NowcoderSummer01J/"/>
     <id>https://lxyyxxx.github.io/2019/07/2019NowcoderSummer01J/</id>
     <published>2019-07-29T09:00:26.000Z</published>
-    <updated>2019-07-29T09:47:53.355Z</updated>
+    <updated>2019-07-30T15:28:27.195Z</updated>
     
     <summary type="html">
     
@@ -41,6 +159,8 @@
     
       <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
+      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
+    
   </entry>
   
   <entry>
@@ -48,7 +168,7 @@
     <link href="https://lxyyxxx.github.io/2019/07/2019NowcoderSummer/"/>
     <id>https://lxyyxxx.github.io/2019/07/2019NowcoderSummer/</id>
     <published>2019-07-29T07:22:39.000Z</published>
-    <updated>2019-07-29T09:52:51.646Z</updated>
+    <updated>2019-07-30T15:09:39.117Z</updated>
     
     <summary type="html">
     

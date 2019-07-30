@@ -4,7 +4,7 @@
 <html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「2019牛客暑期多校 - 第一场」J - Fraction Comparision - Lxyyxxx&#39;s Notebook</title>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「2019牛客暑期多校 - 第三场」H - Magic Line - Lxyyxxx&#39;s Notebook</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Lxyyxxx">
@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?43035469">
+<link rel="stylesheet" href="/css/journal.css?3593540">
 
 <script src="/js/loadCSS.js"></script>
 <script>
@@ -167,16 +167,16 @@
         <div class="post">
             <div class="post-head-wrapper-text-only" style="background-image: url('')">
                 <div class="post-title">
-                    「2019牛客暑期多校 - 第一场」J - Fraction Comparision
+                    「2019牛客暑期多校 - 第三场」H - Magic Line
                     <div class="post-meta">
-                        <time datetime="2019-07-29T09:00:26.000Z" itemprop="datePublished">
-                            2019-07-29 17:00
+                        <time datetime="2019-07-30T05:20:37.000Z" itemprop="datePublished">
+                            2019-07-30 13:20
                         </time>&nbsp;
                         
                         
                         <i class="material-icons" style>folder</i>
                         
-                        <a href="/categories/2019牛客暑期多校训练营-第一场/">2019牛客暑期多校训练营 - 第一场</a>
+                        <a href="/categories/2019牛客暑期多校训练营-第三场/">2019牛客暑期多校训练营 - 第三场</a>
                         
                         
     
@@ -186,7 +186,9 @@
                         
                         <a href="/tags/数学/">数学</a>, 
                         
-                        <a href="/tags/大数/">大数</a>
+                        <a href="/tags/几何/">几何</a>, 
+                        
+                        <a href="/tags/平面直角坐标系/">平面直角坐标系</a>
                         
                         
                     </div>
@@ -195,21 +197,27 @@
     
             <div class="post-body-wrapper">
                 <div class="post-body">
-                    <p><a href="https://ac.nowcoder.com/acm/contest/881/J" target="_blank" rel="noopener">题目传送门</a></p>
-<h1><span id="say">_Say</span><a href="#say" class="header-anchor"></a></h1><p>签到题。<br>分数比大小，直接相乘用 <strong>unsigned long long</strong> 会超范围，可以选择用 <strong>__int128</strong> 或 <strong>Java大数</strong>。</p>
-<h1><span id="code">_Code</span><a href="#code" class="header-anchor"></a></h1><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+                    <p><a href="https://ac.nowcoder.com/acm/contest/883/H" target="_blank" rel="noopener">题目传送门</a></p>
+<h1><span id="say">_Say</span><a href="#say" class="header-anchor"></a></h1><p>求一条线把给定的N个点平均分成左右两各部分，输出这条直线上任意两点的坐标。<br>最简单的做法就是把这些点按横坐标从小到大的顺序排序，如果横坐标相等，就按纵坐标从小到大排序。然后选定中间偏左的点，在这个点右边一点点的地方接近竖直地画一条线，即为所求。</p>
+<h1><span id="code">_Code</span><a href="#code" class="header-anchor"></a></h1><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">long</span> <span class="token keyword">long</span> x<span class="token punctuation">,</span>a<span class="token punctuation">,</span>y<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> point<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>p<span class="token punctuation">[</span><span class="token number">1001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> t<span class="token punctuation">,</span>n<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     ios<span class="token operator">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>x<span class="token operator">>></span>a<span class="token operator">>></span>y<span class="token operator">>></span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        __int128 c<span class="token operator">=</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>x<span class="token operator">*</span>b<span class="token punctuation">,</span>d<span class="token operator">=</span><span class="token punctuation">(</span>__int128<span class="token punctuation">)</span>a<span class="token operator">*</span>y<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span>d<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"="</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">&lt;</span>d<span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"&lt;"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">">"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>cin<span class="token operator">>></span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token operator">>></span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+            <span class="token function">sort</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span>p<span class="token operator">+</span>n<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span>point <span class="token operator">&amp;</span>a<span class="token punctuation">,</span>point <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> a<span class="token punctuation">.</span>x<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>x<span class="token operator">||</span>a<span class="token punctuation">.</span>x<span class="token operator">==</span>b<span class="token punctuation">.</span>x<span class="token operator">&amp;&amp;</span>a<span class="token punctuation">.</span>y<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>y<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> m<span class="token operator">=</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            cout<span class="token operator">&lt;&lt;</span>p<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token number">-1</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span><span class="token string">"999000000"</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>p<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span>p<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">999000000</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <table>
 <thead>
@@ -221,33 +229,32 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">193</td>
-<td align="center">5832</td>
-<td align="center">314</td>
+<td align="center">58</td>
+<td align="center">856</td>
+<td align="center">492</td>
 <td align="center">C++14</td>
 </tr>
 </tbody></table>
 </blockquote>
 <br>
 <div align="right">
-  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_cc.png">
-  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_by.png">
-  <img width="25" src="/2019/07/2019NowcoderSummer01J/chooser_sa.png">
+  <img width="25" src="/2019/07/2019NowcoderSummer03H/chooser_cc.png">
+  <img width="25" src="/2019/07/2019NowcoderSummer03H/chooser_by.png">
+  <img width="25" src="/2019/07/2019NowcoderSummer03H/chooser_sa.png">
 </div>
-
                 </div>
             </div>
     
             <nav class="post-pagination">
     
-    <a class="newer-posts" href="/2019/07/CoderStudySearch/">
-        上一篇<br>「算法学习笔记」搜索 Search
+    <a class="newer-posts" href="/2019/07/2019NowcoderSummer04J/">
+        上一篇<br>「2019牛客暑期多校 - 第四场」J - free
     </a>
     
     <span class="page-number"></span>
     
-    <a class="older-posts" href="/2019/07/2019NowcoderSummer/">
-        下一篇<br>2019牛客暑期多校训练营汇总
+    <a class="older-posts" href="/2019/07/CoderStudySearch/">
+        下一篇<br>「算法学习笔记」搜索 Search
     </a>
     
 </nav>
@@ -273,7 +280,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?62305623"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?15518279"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
