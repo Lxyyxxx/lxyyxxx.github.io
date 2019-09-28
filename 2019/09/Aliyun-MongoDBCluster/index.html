@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>使用阿里云ESC配置MongoDB集群 - Lxyyxxx&#39;s Notebook</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Lxyyxxx">
+<meta name="description" content="Aliyun × MongoDB">
+<meta name="keywords" content>
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?41429683">
+
+<script src="/js/loadCSS.js"></script>
+<script>
+    loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+    (function (d) {
+        var config = {
+                kitId: 'dwg1tuc',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h = d.documentElement, t = setTimeout(function () {
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+            }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+            s = d.getElementsByTagName("script")[0], a;
+        h.className += " wf-loading";
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+            a = this.readyState;
+            if (f || a && a != "complete" && a != "loaded") return;
+            f = true;
+            clearTimeout(t);
+            try {
+                Typekit.load(config)
+            } catch (e) {
+            }
+        };
+        s.parentNode.insertBefore(tk, s)
+    })(document);
+</script>
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+</noscript>
+
+    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
+                首頁
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                歸檔
+            </a>
+
+            
+            
+            <a class="a-block drawer-menu-item false" href="/about/index.html">
+                關於我
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
+                構建日記
+            </a>
+            
+
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Lxyyxxx&#39;s Notebook
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Lxyyxxx's<br>Notebook
+        </div>
+        <div class="nav-subtitle">
+            
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            歸檔
+        </a>
+
+        
+        
+        <a class="a-block nav-link-item false" href="/about/index.html">
+            關於我
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/recorder/index.html">
+            構建日記
+        </a>
+        
+
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2019 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+    </div>
+</div>
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only" style="background-image: url('')">
+                <div class="post-title">
+                    使用阿里云ESC配置MongoDB集群
+                    <div class="post-meta">
+                        <time datetime="2019-09-28T06:57:49.000Z" itemprop="datePublished">
+                            2019-09-28 14:57
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style>folder</i>
+                        
+                        <a href="/categories/没有官方文档重要的教程/">没有官方文档重要的教程</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style>label</i>
+                        
+                        <a href="/tags/阿里云ECS/">阿里云ECS</a>, 
+                        
+                        <a href="/tags/MongoDB/">MongoDB</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <h1><span id="xu-yao-zhun-bei-de-dong-xi">需要准备的东西</span><a href="#xu-yao-zhun-bei-de-dong-xi" class="header-anchor"></a></h1><p>三台同一地域的阿里云学生机（Ubuntu 18.04.3），记住<strong>公网ip</strong>和<strong>私网ip</strong>以及服务器的<strong>主机名</strong>。</p>
+<h1><span id="step-1-nei-wang-hu-tong">Step 1: 内网互通</span><a href="#step-1-nei-wang-hu-tong" class="header-anchor"></a></h1><p>使用云企业网使内网互通，<strong>只需要一个云企业网</strong>，也就是只需要一台服务器建立云企业网，其他两台加入就好了。</p>
+<blockquote>
+<p>传送门：<a href="https://help.aliyun.com/document_detail/65901.html" target="_blank" rel="noopener">跨账号同地域网络实例互通</a></p>
+</blockquote>
+<p>三台机器都加入云企业网后，进入云企业网看<strong>路由信息</strong>，查看是否有冲突。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic2.png"><br>若有冲突，则需要修改导致冲突其中一方的私网ip并<strong>更换交换机</strong>。</p>
+<blockquote>
+<p>传送门：<a href="https://help.aliyun.com/document_detail/27733.html" target="_blank" rel="noopener">修改私网IP地址</a></p>
+</blockquote>
+<p>互相都能ping通的话，就说明配置好了。</p>
+<h1><span id="step-2-an-zhuang-mongodb-4-2-0">Step 2: 安装MongoDB 4.2.0</span><a href="#step-2-an-zhuang-mongodb-4-2-0" class="header-anchor"></a></h1><p>这里直接按官方文档操作就好了，apt或压缩包安装均可。</p>
+<blockquote>
+<p>传送门：<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">Install MongoDB Community Edition on Ubuntu</a></p>
+</blockquote>
+<h1><span id="step-3-tian-jia-xu-ni-nei-cun">Step 3: 添加虚拟内存</span><a href="#step-3-tian-jia-xu-ni-nei-cun" class="header-anchor"></a></h1><p>因为阿里云学生机只有2GiB RAM，但MongoDB Ops Manager需要15GB RAM，所以需要加虚拟内存。 </p>
+<p>查看RAM使用状态</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">free</span> -h<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看硬盘使用状态</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">df</span> -h<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看是否存在swapfile</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> swapon -s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建swapfile，我是直接开了16G。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> fallocate -l 16G /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>初始化为swap</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> mkswap /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>挂载swapfile</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> swapon /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>使swapfile自动挂载</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'/swapfile none swap sw 0 0'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="step-4-an-zhuang-mongodb-ops-manager-4-2-1">Step 4: 安装MongoDB Ops Manager 4.2.1</span><a href="#step-4-an-zhuang-mongodb-ops-manager-4-2-1" class="header-anchor"></a></h1><p><strong>只需要一台机器安装！</strong>这里使用DEB包安装的方式。</p>
+<blockquote>
+<p>传送门：<a href="https://docs.opsmanager.mongodb.com/current/tutorial/install-on-prem-with-deb-packages/" target="_blank" rel="noopener">Install Ops Manager with a deb Package</a></p>
+</blockquote>
+<blockquote>
+<p>其中第三步，<code>mongo.mongoUri</code>只需填一台机器（当前机器）的<strong>私网</strong>和用于存储日志等的数据库<strong>端口</strong>。不采用https的话，<code>mongo.ssl</code>填<code>False</code>。</p>
+</blockquote>
+<p>启动mongodb-mms.sercive是一个漫长的过程，可以<code>sudo systemctl status mongodb-mms.service</code>查看启动状态，或是启动时使用命令<code>sudo /etc/init.d/mongodb-mms.service start</code>。<br>能访问<code>http://&lt;外网ip&gt;:8080</code>就ok了，然后就注册和配置就好了。</p>
+<blockquote>
+<p><code>URL To Access Ops Manager</code>填<code>http://&lt;私网ip&gt;:8080</code>，这样速度会快。</p>
+</blockquote>
+<blockquote>
+<p><code>Installer Download Source</code>选<code>Ops Manager Application Server</code>，下面一个下拉框选<code>Ops Manager Application Server Hard Driver</code>。<br>意思就是从本机下载MongoDB，而不是从MongoDB源。然后把mongodb4.2.0的tgz压缩包放到当前机器的<code>/opt/mongodb/mms/mongodb-releases/</code>文件夹（就是<code>Versions Directory</code>填的文件夹）下。</p>
+</blockquote>
+<h1><span id="step-5-xiu-gai-zhu-ji-ming">Step 5: 修改主机名</span><a href="#step-5-xiu-gai-zhu-ji-ming" class="header-anchor"></a></h1><p><strong>每台机器都要修改！</strong><br>打开<code>/etc/hosts</code>修改主机名，如果文件提示Readonly，那么执行<code>chmod 644 /etc/hosts</code>赋予权限。<br>在开头添加以下形式的内容：</p>
+<pre><code>私网ip1 主机名1
+私网ip2 主机名2
+私网ip3 主机名3</code></pre><img src="/2019/09/Aliyun-MongoDBCluster/pic3.png">
+
+<blockquote>
+<p>一个主机名只能对应一个私网ip！</p>
+</blockquote>
+<h1><span id="step-6-an-zhuang-mongodb-agent">Step 6: 安装MongoDB Agent</span><a href="#step-6-an-zhuang-mongodb-agent" class="header-anchor"></a></h1><p><strong>每台机器都要安装！</strong><br>Agents -&gt; Downloads &amp; Settings -&gt; 下拉框选择系统 -&gt; 选择<code>Debian 8/9, Ubuntu 16.x/18.x - DEB</code>，然后按步骤安装即可。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic1.png"></p>
+<blockquote>
+<p>注意要保存好<code>Agent API Key</code>，因为在教程页面只出现一次！</p>
+</blockquote>
+<p><code>sudo systemctl status mongodb-mms-automation-agent.service</code>查看启动状态，没有failed通常来说就是ok了。</p>
+<h1><span id="step-7-xin-jian-ji-qun">Step 7：新建集群</span><a href="#step-7-xin-jian-ji-qun" class="header-anchor"></a></h1><p>Add New -&gt; New Sharded Cluster，自行配置就好了，但是注意<strong>端口</strong>还有<strong>地址</strong>不要冲突，且<strong>在阿里云内需要开端口</strong>。如果之前配置都对的话，是很快就会建好的。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic6.png"></p>
+<blockquote>
+<p>如果提示<strong>权限</strong>错误的话，就检查一下<code>/data</code>文件夹的权限。</p>
+</blockquote>
+<blockquote>
+<p>如果提示<strong>网络通信</strong>间的错误的话，就检查一下<code>/etc/hosts</code>文件的ip和主机名的对应关系，还有端口是否都开了。如果相互之间<code>mongo &lt;主机名&gt;:&lt;端口&gt;</code>能连上，基本就没问题了。</p>
+</blockquote>
+<h1><span id="step-8-cha-ru-shu-ju">Step 8：插入数据</span><a href="#step-8-cha-ru-shu-ju" class="header-anchor"></a></h1><ul>
+<li>用Ops Manager可以插入单条数据</li>
+<li>用NoSQLBooster连接集群，用Import可以通过文件插入多条数据<blockquote>
+<p>连接NoSQLBooster时，需要在本机修改hosts文件。<br>Windows的文件位置在<code>C:\Windows\System32\drivers\etc\hosts</code>，像Step 5一样添加内容（<strong>私网ip要改成公网ip</strong>）就好了。配置好了是可以通过<code>&lt;主机名&gt;:&lt;端口&gt;</code>连上的。</p>
+<img src="/2019/09/Aliyun-MongoDBCluster/pic5.png">
+</blockquote>
+</li>
+</ul>
+<br>
+<div align="right">
+  <img width="25" src="/2019/09/Aliyun-MongoDBCluster/chooser_cc.png">
+  <img width="25" src="/2019/09/Aliyun-MongoDBCluster/chooser_by.png">
+  <img width="25" src="/2019/09/Aliyun-MongoDBCluster/chooser_sa.png">
+</div>
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2019/08/HelpfulLinks/">
+        下一篇<br>有幫助的鏈接合集
+    </a>
+    
+</nav>
+
+    
+            
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2019 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?62184392"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>

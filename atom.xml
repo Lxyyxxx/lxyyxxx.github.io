@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2019-08-19T16:33:59.018Z</updated>
+  <updated>2019-09-28T09:38:18.896Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用阿里云ESC配置MongoDB集群</title>
+    <link href="https://lxyyxxx.github.io/2019/09/Aliyun-MongoDBCluster/"/>
+    <id>https://lxyyxxx.github.io/2019/09/Aliyun-MongoDBCluster/</id>
+    <published>2019-09-28T06:57:49.000Z</published>
+    <updated>2019-09-28T09:38:18.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;&lt;span id=&quot;xu-yao-zhun-bei-de-dong-xi&quot;&gt;需要准备的东西&lt;/span&gt;&lt;a href=&quot;#xu-yao-zhun-bei-de-dong-xi&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="没有官方文档重要的教程" scheme="https://lxyyxxx.github.io/categories/%E6%B2%A1%E6%9C%89%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%87%8D%E8%A6%81%E7%9A%84%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="阿里云ECS" scheme="https://lxyyxxx.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ECS/"/>
+    
+      <category term="MongoDB" scheme="https://lxyyxxx.github.io/tags/MongoDB/"/>
+    
+  </entry>
   
   <entry>
     <title>有幫助的鏈接合集</title>
