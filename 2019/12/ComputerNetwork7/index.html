@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「学习笔记」计算机网络 - Lxyyxxx&#39;s Notebook</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Lxyyxxx">
+<meta name="description" content="Computer Network">
+<meta name="keywords" content>
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?38316146">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+
+    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'dark'});
+      }
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
+                首頁
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                歸檔
+            </a>
+
+            
+            
+            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
+                構建日記
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/about/index.html">
+                關於我
+            </a>
+            
+
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Lxyyxxx&#39;s Notebook
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Lxyyxxx's<br>Notebook
+        </div>
+        <div class="nav-subtitle">
+            
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            歸檔
+        </a>
+
+        
+        
+        <a class="a-block nav-link-item false" href="/recorder/index.html">
+            構建日記
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/about/index.html">
+            關於我
+        </a>
+        
+
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2019 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+    </div>
+</div>
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only" style="background-image: url('')">
+                <div class="post-title">
+                    「学习笔记」计算机网络
+                    <div class="post-meta">
+                        <time datetime="2019-12-15T12:07:33.000Z" itemprop="datePublished">
+                            2019-12-15 20:07
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style>folder</i>
+                        
+                        <a href="/categories/一起学习吧/">一起学习吧</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style>label</i>
+                        
+                        <a href="/tags/计算机网络/">计算机网络</a>, 
+                        
+                        <a href="/tags/学习笔记/">学习笔记</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#gai-shu">_概述</a><ul>
+<li><a href="#hu-lian-wang-liang-ge-chong-yao-ji-ben-te-dian">互联网两个重要基本特点</a></li>
+<li><a href="#ji-suan-ji-wang-luo-de-zu-cheng">计算机网络的组成</a></li>
+<li><a href="#hu-lian-wang-ji-chu-jie-gou-fa-zhan-de-san-ge-jie-duan">互联网基础结构发展的三个阶段</a></li>
+<li><a href="#zhi-ding-hu-lian-wang-de-zheng-shi-biao-zhun-yao-jing-guo-san-ge-jie-duan">制定互联网的正式标准要经过三个阶段</a></li>
+<li><a href="#hu-lian-wang-de-zu-cheng-tuo-bu-jie-gou">互联网的组成（拓扑结构）</a></li>
+<li><a href="#san-chong-jiao-huan-fang-shi-zai-shu-ju-chuan-song-jie-duan-de-zhu-yao-te-dian">三种交换方式在数据传送阶段的主要特点</a></li>
+<li><a href="#ji-suan-ji-wang-luo-de-fen-lei">计算机网络的分类</a></li>
+<li><a href="#ji-suan-ji-wang-luo-de-xing-neng-zhi-biao">计算机网络的性能指标</a></li>
+</ul>
+</li>
+<li><a href="#wu-li-ceng">_物理层</a></li>
+<li><a href="#shu-ju-lian-lu-ceng">_数据链路层</a></li>
+<li><a href="#wang-luo-ceng">_网络层</a></li>
+<li><a href="#yun-shu-ceng">_运输层</a></li>
+<li><a href="#ying-yong-ceng">_应用层</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h1><span id="gai-shu">_概述</span><a href="#gai-shu" class="header-anchor"></a></h1><h2><span id="hu-lian-wang-liang-ge-chong-yao-ji-ben-te-dian">互联网两个重要基本特点</span><a href="#hu-lian-wang-liang-ge-chong-yao-ji-ben-te-dian" class="header-anchor"></a></h2><ul>
+<li>连通性</li>
+<li>共享（资源共享）</li>
+</ul>
+<h2><span id="ji-suan-ji-wang-luo-de-zu-cheng">计算机网络的组成</span><a href="#ji-suan-ji-wang-luo-de-zu-cheng" class="header-anchor"></a></h2><ul>
+<li>若干<strong>结点</strong></li>
+<li>连接这些结点的<strong>链路</strong></li>
+</ul>
+<h2><span id="hu-lian-wang-ji-chu-jie-gou-fa-zhan-de-san-ge-jie-duan">互联网基础结构发展的三个阶段</span><a href="#hu-lian-wang-ji-chu-jie-gou-fa-zhan-de-san-ge-jie-duan" class="header-anchor"></a></h2><ol>
+<li>从单个网络ARPANET向互联网发展的过程</li>
+<li>建成了三级结构的互联网<br> 三级结构：主干网、地区网、校园网/企业网</li>
+<li>逐渐形成了多层次ISP结构的互联网<br> <strong>ISP（Internet Service Provider）互联网服务提供者</strong>，如中国电信、中国移动、中国联通<br> 不同层次的ISP：主干ISP、地区ISP、本地ISP<br> <strong>IXP（Internet eXchange Point）互联网交换点</strong></li>
+</ol>
+<h2><span id="zhi-ding-hu-lian-wang-de-zheng-shi-biao-zhun-yao-jing-guo-san-ge-jie-duan">制定互联网的正式标准要经过三个阶段</span><a href="#zhi-ding-hu-lian-wang-de-zheng-shi-biao-zhun-yao-jing-guo-san-ge-jie-duan" class="header-anchor"></a></h2><p><strong>RFC（Request For Comments）请求评论</strong><br>所有互联网标准都是以RFC的形式在互联网上发表的。<br>RFC文档：建议标准、互联网标准、历史的、实验的、提供信息的。</p>
+<ol>
+<li>互联网草案（Internet Draft）——互联网草案有效期只有六个月。在这个阶段还不能算是RFC文档</li>
+<li>建议标准（Proposed Standard）——从这个阶段开始就成为RFC文档</li>
+<li>互联网标准（Internet Standard）——每个标准关联到一个编号STDxx。一个标准可关联多个RFC文档。</li>
+</ol>
+<h2><span id="hu-lian-wang-de-zu-cheng-tuo-bu-jie-gou">互联网的组成（拓扑结构）</span><a href="#hu-lian-wang-de-zu-cheng-tuo-bu-jie-gou" class="header-anchor"></a></h2><h3><span id="bian-yuan-bu-fen">边缘部分</span><a href="#bian-yuan-bu-fen" class="header-anchor"></a></h3><p>由所有连接在互联网上的<strong>主机</strong>（端系统）组成。用户直接使用的。</p>
+<ol>
+<li>客户-服务器方式（client-server）</li>
+<li>对等连接方式（peer-to-peer，P2P）</li>
+</ol>
+<h3><span id="he-xin-bu-fen">核心部分</span><a href="#he-xin-bu-fen" class="header-anchor"></a></h3><p>由大量<strong>网络</strong>和连接这些网络的<strong>路由器</strong>组成。为边缘提供服务的。<br>路由器是实现<strong>分组交换</strong>的关键部件，其任务是<strong>转发收到的分组</strong>。</p>
+<ol>
+<li><p>电路交换</p>
+<pre class="mermaid">graph LR 
+建立连接 --> 通话
+通话 --> 释放连接</pre>
+<p>特点：在通话的全部时间内，通话的两个用户始终占用端到端的通信资源。</p>
+</li>
+<li><p>分组交换</p>
+<p> 采用存储转发技术。</p>
+</li>
+</ol>
+<ul>
+<li><p>报文（message）：要发送的整块数据</p>
+</li>
+<li><p>首部（header）：必要的控制信息</p>
+</li>
+<li><p>分组（packet）：每一个数据段前加上首部</p>
+<table>
+<thead>
+<tr>
+<th align="center">优点</th>
+<th align="left">所采用的手段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">高效</td>
+<td align="left">在分组传输的过程中<strong>动态分配</strong>传输带宽，对通信链路是逐段占用</td>
+</tr>
+<tr>
+<td align="center">灵活</td>
+<td align="left">为每一个分组<strong>独立</strong>地选择最合适的转发路由</td>
+</tr>
+<tr>
+<td align="center">迅速</td>
+<td align="left">以分组作为传送单位，可以<strong>不先建立连接</strong>就能向其他主机发送分组</td>
+</tr>
+<tr>
+<td align="center">可靠</td>
+<td align="left">保证可靠性的网络协议；分布式多路由的分组交换网，使网络有很好的生存性</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2><span id="san-chong-jiao-huan-fang-shi-zai-shu-ju-chuan-song-jie-duan-de-zhu-yao-te-dian">三种交换方式在数据传送阶段的主要特点</span><a href="#san-chong-jiao-huan-fang-shi-zai-shu-ju-chuan-song-jie-duan-de-zhu-yao-te-dian" class="header-anchor"></a></h2><ul>
+<li><strong>电路交换</strong>——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送</li>
+<li><strong>报文交换</strong>——整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点</li>
+<li><strong>分组交换</strong>——单个分组传送到相邻结点，存储下来后查找转发表，转发到下一个结点</li>
+</ul>
+<p><img src="/2019/12/ComputerNetwork7/1-13.png" alt="pic1-13"></p>
+<h2><span id="ji-suan-ji-wang-luo-de-fen-lei">计算机网络的分类</span><a href="#ji-suan-ji-wang-luo-de-fen-lei" class="header-anchor"></a></h2><h3><span id="wang-luo-de-zuo-yong-fan-wei">网络的作用范围</span><a href="#wang-luo-de-zuo-yong-fan-wei" class="header-anchor"></a></h3><ol>
+<li>广域网WAN（Wide Area Network）</li>
+<li>城域网MAN（Metropolitan Area Network）</li>
+<li>局域网LAN（Local Area Network）</li>
+<li>个人区域网PAN（Personal Area Network）</li>
+</ol>
+<blockquote>
+<p>若中央处理机之间的距离非常近，则为<strong>多处理机系统</strong>而非计算机网络。</p>
+</blockquote>
+<h3><span id="wang-luo-de-shi-yong-zhe">网络的使用者</span><a href="#wang-luo-de-shi-yong-zhe" class="header-anchor"></a></h3><ol>
+<li>公用网（public network）</li>
+<li>专用网（private network）</li>
+</ol>
+<h3><span id="ba-yong-hu-jie-ru-dao-hu-lian-wang">把用户接入到互联网</span><a href="#ba-yong-hu-jie-ru-dao-hu-lian-wang" class="header-anchor"></a></h3><ul>
+<li>接入网AN（Access Network）</li>
+</ul>
+<h2><span id="ji-suan-ji-wang-luo-de-xing-neng-zhi-biao">计算机网络的性能指标</span><a href="#ji-suan-ji-wang-luo-de-xing-neng-zhi-biao" class="header-anchor"></a></h2><h3><span id="su-lu">速率</span><a href="#su-lu" class="header-anchor"></a></h3><p>数据的传送速率，也称<strong>数据率（data rate）</strong>或<strong>比特率（bit rate）</strong><br>单位：bit/s（比特每秒）</p>
+<h3><span id="dai-kuan-bandwidth">带宽（bandwidth）</span><a href="#dai-kuan-bandwidth" class="header-anchor"></a></h3><p>在单位时间内网络中某信道所能通过的<strong>“最高数据率”</strong>  </p>
+<h3><span id="tun-tu-liang-throughput">吞吐量（throughput）</span><a href="#tun-tu-liang-throughput" class="header-anchor"></a></h3><h3><span id="shi-yan-delay-huo-latency">时延（delay 或 latency）</span><a href="#shi-yan-delay-huo-latency" class="header-anchor"></a></h3><h3><span id="shi-yan-dai-kuan-ji">时延带宽积</span><a href="#shi-yan-dai-kuan-ji" class="header-anchor"></a></h3><h3><span id="wang-fan-shi-jian-rtt-round-trip-time">往返时间RTT（Round-Trip Time）</span><a href="#wang-fan-shi-jian-rtt-round-trip-time" class="header-anchor"></a></h3><h3><span id="li-yong-lu">利用率</span><a href="#li-yong-lu" class="header-anchor"></a></h3><h1><span id="wu-li-ceng">_物理层</span><a href="#wu-li-ceng" class="header-anchor"></a></h1><h1><span id="shu-ju-lian-lu-ceng">_数据链路层</span><a href="#shu-ju-lian-lu-ceng" class="header-anchor"></a></h1><h1><span id="wang-luo-ceng">_网络层</span><a href="#wang-luo-ceng" class="header-anchor"></a></h1><h1><span id="yun-shu-ceng">_运输层</span><a href="#yun-shu-ceng" class="header-anchor"></a></h1><h1><span id="ying-yong-ceng">_应用层</span><a href="#ying-yong-ceng" class="header-anchor"></a></h1>
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2019/12/ComputerNetwork408/">
+        上一篇<br>「408真题」计算机网络
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2019/09/Aliyun-MongoDBCluster/">
+        下一篇<br>使用阿里云ECS配置MongoDB集群
+    </a>
+    
+</nav>
+
+    
+            
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2019 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?18201063"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>
