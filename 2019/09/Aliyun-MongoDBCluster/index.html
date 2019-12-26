@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?20677005">
+<link rel="stylesheet" href="/css/journal.css?52017332">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
 
@@ -165,8 +165,8 @@
     
             <div class="post-body-wrapper">
                 <div class="post-body">
-                    <h1><span id="xu-yao-zhun-bei-de-dong-xi">需要准备的东西</span><a href="#xu-yao-zhun-bei-de-dong-xi" class="header-anchor"></a></h1><p>三台同一地域的阿里云学生机（Ubuntu 18.04.3），记住<strong>公网ip</strong>和<strong>私网ip</strong>以及服务器的<strong>主机名</strong>。</p>
-<h1><span id="step-1-nei-wang-hu-tong">Step 1: 内网互通</span><a href="#step-1-nei-wang-hu-tong" class="header-anchor"></a></h1><p>使用云企业网使内网互通，<strong>只需要一个云企业网</strong>，也就是只需要一台服务器建立云企业网，其他两台加入就好了。</p>
+                    <h1><span id="需要准备的东西">需要准备的东西</span><a href="#需要准备的东西" class="header-anchor"></a></h1><p>三台同一地域的阿里云学生机（Ubuntu 18.04.3），记住<strong>公网ip</strong>和<strong>私网ip</strong>以及服务器的<strong>主机名</strong>。</p>
+<h1><span id="step-1-内网互通">Step 1: 内网互通</span><a href="#step-1-内网互通" class="header-anchor"></a></h1><p>使用云企业网使内网互通，<strong>只需要一个云企业网</strong>，也就是只需要一台服务器建立云企业网，其他两台加入就好了。</p>
 <blockquote>
 <p>传送门：<a href="https://help.aliyun.com/document_detail/65901.html" target="_blank" rel="noopener">跨账号同地域网络实例互通</a></p>
 </blockquote>
@@ -175,11 +175,11 @@
 <p>传送门：<a href="https://help.aliyun.com/document_detail/27733.html" target="_blank" rel="noopener">修改私网IP地址</a></p>
 </blockquote>
 <p>互相都能ping通的话，就说明配置好了。</p>
-<h1><span id="step-2-an-zhuang-mongodb-4-2-0">Step 2: 安装MongoDB 4.2.0</span><a href="#step-2-an-zhuang-mongodb-4-2-0" class="header-anchor"></a></h1><p>这里直接按官方文档操作就好了，apt或压缩包安装均可。</p>
+<h1><span id="step-2-安装mongodb-420">Step 2: 安装MongoDB 4.2.0</span><a href="#step-2-安装mongodb-420" class="header-anchor"></a></h1><p>这里直接按官方文档操作就好了，apt或压缩包安装均可。</p>
 <blockquote>
 <p>传送门：<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">Install MongoDB Community Edition on Ubuntu</a></p>
 </blockquote>
-<h1><span id="step-3-tian-jia-xu-ni-nei-cun">Step 3: 添加虚拟内存</span><a href="#step-3-tian-jia-xu-ni-nei-cun" class="header-anchor"></a></h1><p>因为阿里云学生机只有2GiB RAM，但MongoDB Ops Manager需要15GB RAM，所以需要加虚拟内存。 </p>
+<h1><span id="step-3-添加虚拟内存">Step 3: 添加虚拟内存</span><a href="#step-3-添加虚拟内存" class="header-anchor"></a></h1><p>因为阿里云学生机只有2GiB RAM，但MongoDB Ops Manager需要15GB RAM，所以需要加虚拟内存。 </p>
 <p>查看RAM使用状态</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">free</span> -h<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>查看硬盘使用状态</p>
@@ -194,7 +194,7 @@
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> swapon /swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使swapfile自动挂载</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'/swapfile none swap sw 0 0'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1><span id="step-4-an-zhuang-mongodb-ops-manager-4-2-1">Step 4: 安装MongoDB Ops Manager 4.2.1</span><a href="#step-4-an-zhuang-mongodb-ops-manager-4-2-1" class="header-anchor"></a></h1><p><strong>只需要一台机器安装！</strong>这里使用DEB包安装的方式。</p>
+<h1><span id="step-4-安装mongodb-ops-manager-421">Step 4: 安装MongoDB Ops Manager 4.2.1</span><a href="#step-4-安装mongodb-ops-manager-421" class="header-anchor"></a></h1><p><strong>只需要一台机器安装！</strong>这里使用DEB包安装的方式。</p>
 <blockquote>
 <p>传送门：<a href="https://docs.opsmanager.mongodb.com/current/tutorial/install-on-prem-with-deb-packages/" target="_blank" rel="noopener">Install Ops Manager with a deb Package</a></p>
 </blockquote>
@@ -208,26 +208,26 @@
 <blockquote>
 <p><code>Installer Download Source</code>选<code>Ops Manager Application Server</code>，下面一个下拉框选<code>Ops Manager Application Server Hard Driver</code>。<br>意思就是从本机下载MongoDB，而不是从MongoDB源。然后把mongodb4.2.0的tgz压缩包放到当前机器的<code>/opt/mongodb/mms/mongodb-releases/</code>文件夹（就是<code>Versions Directory</code>填的文件夹）下。</p>
 </blockquote>
-<h1><span id="step-5-xiu-gai-zhu-ji-ming">Step 5: 修改主机名</span><a href="#step-5-xiu-gai-zhu-ji-ming" class="header-anchor"></a></h1><p><strong>每台机器都要修改！</strong><br>打开<code>/etc/hosts</code>修改主机名，如果文件提示Readonly，那么执行<code>chmod 644 /etc/hosts</code>赋予权限。<br>在开头添加以下形式的内容：</p>
+<h1><span id="step-5-修改主机名">Step 5: 修改主机名</span><a href="#step-5-修改主机名" class="header-anchor"></a></h1><p><strong>每台机器都要修改！</strong><br>打开<code>/etc/hosts</code>修改主机名，如果文件提示Readonly，那么执行<code>chmod 644 /etc/hosts</code>赋予权限。<br>在开头添加以下形式的内容：</p>
 <pre><code>私网ip1 主机名1
 私网ip2 主机名2
 私网ip3 主机名3</code></pre><p><img src="/2019/09/Aliyun-MongoDBCluster/pic3.png" alt="pic3"></p>
 <blockquote>
 <p>一个主机名只能对应一个私网ip！</p>
 </blockquote>
-<h1><span id="step-6-an-zhuang-mongodb-agent">Step 6: 安装MongoDB Agent</span><a href="#step-6-an-zhuang-mongodb-agent" class="header-anchor"></a></h1><p><strong>每台机器都要安装！</strong><br>Agents -&gt; Downloads &amp; Settings -&gt; 下拉框选择系统 -&gt; 选择<code>Debian 8/9, Ubuntu 16.x/18.x - DEB</code>，然后按步骤安装即可。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic1.png" alt="pic1"></p>
+<h1><span id="step-6-安装mongodb-agent">Step 6: 安装MongoDB Agent</span><a href="#step-6-安装mongodb-agent" class="header-anchor"></a></h1><p><strong>每台机器都要安装！</strong><br>Agents -&gt; Downloads &amp; Settings -&gt; 下拉框选择系统 -&gt; 选择<code>Debian 8/9, Ubuntu 16.x/18.x - DEB</code>，然后按步骤安装即可。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic1.png" alt="pic1"></p>
 <blockquote>
 <p>注意要保存好<code>Agent API Key</code>，因为在教程页面只出现一次！</p>
 </blockquote>
 <p><code>sudo systemctl status mongodb-mms-automation-agent.service</code>查看启动状态，没有failed通常来说就是ok了。</p>
-<h1><span id="step-7-xin-jian-ji-qun">Step 7：新建集群</span><a href="#step-7-xin-jian-ji-qun" class="header-anchor"></a></h1><p>Add New -&gt; New Sharded Cluster，自行配置就好了，但是注意<strong>端口</strong>还有<strong>地址</strong>不要冲突，且<strong>在阿里云内需要开端口</strong>。如果之前配置都对的话，是很快就会建好的。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic6.png" alt="pic6"></p>
+<h1><span id="step-7新建集群">Step 7：新建集群</span><a href="#step-7新建集群" class="header-anchor"></a></h1><p>Add New -&gt; New Sharded Cluster，自行配置就好了，但是注意<strong>端口</strong>还有<strong>地址</strong>不要冲突，且<strong>在阿里云内需要开端口</strong>。如果之前配置都对的话，是很快就会建好的。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic6.png" alt="pic6"></p>
 <blockquote>
 <p>如果提示<strong>权限</strong>错误的话，就检查一下<code>/data</code>文件夹的权限。</p>
 </blockquote>
 <blockquote>
 <p>如果提示<strong>网络通信</strong>间的错误的话，就检查一下<code>/etc/hosts</code>文件的ip和主机名的对应关系，还有端口是否都开了。如果相互之间<code>mongo &lt;主机名&gt;:&lt;端口&gt;</code>能连上，基本就没问题了。</p>
 </blockquote>
-<h1><span id="step-8-cha-ru-shu-ju">Step 8：插入数据</span><a href="#step-8-cha-ru-shu-ju" class="header-anchor"></a></h1><ul>
+<h1><span id="step-8插入数据">Step 8：插入数据</span><a href="#step-8插入数据" class="header-anchor"></a></h1><ul>
 <li>用Ops Manager可以插入单条数据</li>
 <li>用NoSQLBooster连接集群，用Import可以通过文件插入多条数据<blockquote>
 <p>连接NoSQLBooster时，需要在本机修改hosts文件。<br>Windows的文件位置在<code>C:\Windows\System32\drivers\etc\hosts</code>，像Step 5一样添加内容（<strong>私网ip要改成公网ip</strong>）就好了。配置好了是可以通过<code>&lt;主机名&gt;:&lt;端口&gt;</code>连上的。<br><img src="/2019/09/Aliyun-MongoDBCluster/pic5.png" alt="pic5"></p>
@@ -278,7 +278,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?97356170"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?425641"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
