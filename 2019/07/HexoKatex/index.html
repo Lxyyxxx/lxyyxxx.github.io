@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?77824947">
+<link rel="stylesheet" href="/css/journal.css?38435977">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
 
@@ -47,12 +47,12 @@
 
             
             
-            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
-                構建日記
-            </a>
-            
             <a class="a-block drawer-menu-item false" href="/about/index.html">
                 關於我
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
+                構建日記
             </a>
             
 
@@ -99,12 +99,12 @@
 
         
         
-        <a class="a-block nav-link-item false" href="/recorder/index.html">
-            構建日記
-        </a>
-        
         <a class="a-block nav-link-item false" href="/about/index.html">
             關於我
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/recorder/index.html">
+            構建日記
         </a>
         
 
@@ -165,9 +165,9 @@
     
             <div class="post-body-wrapper">
                 <div class="post-body">
-                    <h1><span id="_说点话">_说点话</span><a href="#_说点话" class="header-anchor"></a></h1><p>保留了Hexo默认的Markdown渲染器<a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">hexo-renderer-marked</a>，采用<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>中的<a href="https://katex.org/" target="_blank" rel="noopener">KaTeX</a>引擎对数学公式进行渲染。</p>
-<h1><span id="_食用方式">_食用方式</span><a href="#_食用方式" class="header-anchor"></a></h1><h2><span id="01-安装hexo-math">01 安装hexo-math</span><a href="#01-安装hexo-math" class="header-anchor"></a></h2><pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">npm</span> install hexo-math <span class="token parameter attr-name">--save</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="02-配置hexo-math">02 配置hexo-math</span><a href="#02-配置hexo-math" class="header-anchor"></a></h2><p>打开根目录下的<code>_config.yml</code>，添加</p>
+                    <h1><span id="shuo-dian-hua">_说点话</span><a href="#shuo-dian-hua" class="header-anchor"></a></h1><p>保留了Hexo默认的Markdown渲染器<a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">hexo-renderer-marked</a>，采用<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>中的<a href="https://katex.org/" target="_blank" rel="noopener">KaTeX</a>引擎对数学公式进行渲染。</p>
+<h1><span id="shi-yong-fang-shi">_食用方式</span><a href="#shi-yong-fang-shi" class="header-anchor"></a></h1><h2><span id="01-an-zhuang-hexo-math">01 安装hexo-math</span><a href="#01-an-zhuang-hexo-math" class="header-anchor"></a></h2><pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">npm</span> install hexo-math <span class="token parameter attr-name">--save</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="02-pei-zhi-hexo-math">02 配置hexo-math</span><a href="#02-pei-zhi-hexo-math" class="header-anchor"></a></h2><p>打开根目录下的<code>_config.yml</code>，添加</p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">plugin</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> hexo<span class="token punctuation">-</span>math<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">math</span><span class="token punctuation">:</span>
@@ -177,16 +177,16 @@
     <span class="token key atrule">js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/KaTeX/0.7.1/katex.min.js
     <span class="token key atrule">config</span><span class="token punctuation">:</span>
       <span class="token comment" spellcheck="true"># KaTeX config</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="03-重启hexo">03 重启Hexo</span><a href="#03-重启hexo" class="header-anchor"></a></h2><pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">hexo</span> clean</span>
+<h2><span id="03-chong-qi-hexo">03 重启Hexo</span><a href="#03-chong-qi-hexo" class="header-anchor"></a></h2><pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">hexo</span> clean</span>
 <span class="token command"><span class="token keyword">hexo</span> generate</span>
 <span class="token command"><span class="token keyword">hexo</span> server</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1><span id="_注意事项">_注意事项</span><a href="#_注意事项" class="header-anchor"></a></h1><ul>
+<h1><span id="zhu-yi-shi-xiang">_注意事项</span><a href="#zhu-yi-shi-xiang" class="header-anchor"></a></h1><ul>
 <li>css和js的cdn必须自定义，默认不可用</li>
 <li><code>$...$</code> 和 <code>$$...$$</code> 需要被替换成 <code>math</code> 块</li>
 <li>hexo-math也可以采用MathJax引擎</li>
 <li>最好参考官方文档食用</li>
 </ul>
-<h1><span id="_附录">_附录</span><a href="#_附录" class="header-anchor"></a></h1><p><a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener">KaTeX的食用文档</a></p>
+<h1><span id="fu-lu">_附录</span><a href="#fu-lu" class="header-anchor"></a></h1><p><a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener">KaTeX的食用文档</a></p>
 <br>
 <div align="right">
   <img width="25" src="/2019/07/HexoKatex/chooser_cc.png">
@@ -227,7 +227,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?48131888"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?54728986"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
