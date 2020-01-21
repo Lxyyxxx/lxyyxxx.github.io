@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「PAT 甲级」25分题汇总 - Lxyyxxx&#39;s Notebook</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Lxyyxxx">
+<meta name="description" content=" ">
+<meta name="keywords" content>
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?12583480">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+
+    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'dark'});
+      }
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
+                首頁
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                歸檔
+            </a>
+
+            
+            
+            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
+                構建日記
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/about/index.html">
+                關於我
+            </a>
+            
+
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Lxyyxxx&#39;s Notebook
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Lxyyxxx's<br>Notebook
+        </div>
+        <div class="nav-subtitle">
+            
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            歸檔
+        </a>
+
+        
+        
+        <a class="a-block nav-link-item false" href="/recorder/index.html">
+            構建日記
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/about/index.html">
+            關於我
+        </a>
+        
+
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+    </div>
+</div>
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only" style="background-image: url('')">
+                <div class="post-title">
+                    「PAT 甲级」25分题汇总
+                    <div class="post-meta">
+                        <time datetime="2020-01-14T14:19:57.000Z" itemprop="datePublished">
+                            2020-01-14 22:19
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style>folder</i>
+                        
+                        <a href="/categories/PAT甲级/">PAT甲级</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style>label</i>
+                        
+                        <a href="/tags/PAT甲级/">PAT甲级</a>, 
+                        
+                        <a href="/tags/25分/">25分</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#1002-a-b-for-polynomials">1002 A+B for Polynomials</a></li>
+<li><a href="#1003-emergency">1003 Emergency</a></li>
+<li><a href="#1006-sign-in-and-sign-out">1006 Sign In and Sign Out</a></li>
+<li><a href="#1007-maximum-subsequence-sum">1007 Maximum Subsequence Sum</a></li>
+<li><a href="#1009-product-of-polynomials">1009 Product of Polynomials</a></li>
+<li><a href="#1010-radix">1010 Radix</a></li>
+<li><a href="#1012-the-best-rank">1012 The Best Rank</a></li>
+<li><a href="#1013-battle-over-cities">1013 Battle Over Cities</a></li>
+<li><a href="#1016-phone-bills">1016 Phone Bills</a></li>
+<li><a href="#1017-queueing-at-bank">1017 Queueing at Bank</a></li>
+<li><a href="#1020-tree-traversals">1020 Tree Traversals</a></li>
+<li><a href="#1021-deepest-root">1021 Deepest Root</a></li>
+<li><a href="#1024-palindromic-number">1024 Palindromic Number</a></li>
+<li><a href="#1025-pat-ranking">1025 PAT Ranking</a></li>
+<li><a href="#1028-list-sorting">1028 List Sorting</a></li>
+<li><a href="#1029-median">1029 Median</a></li>
+<li><a href="#1032-sharing">1032 Sharing</a></li>
+<li><a href="#1033-to-fill-or-not-to-fill">1033 To Fill or Not to Fill</a></li>
+<li><a href="#1036-boys-vs-girls">1036 Boys vs Girls</a></li>
+<li><a href="#1037-magic-coupon">1037 Magic Coupon</a></li>
+<li><a href="#1039-course-list-for-student">1039 Course List for Student</a></li>
+<li><a href="#1040-longest-symmetric-string">1040 Longest Symmetric String</a></li>
+<li><a href="#1043-is-it-a-binary-search-tree">1043 Is It a Binary Search Tree</a></li>
+<li><a href="#1044-shopping-in-mars">1044 Shopping in Mars</a></li>
+<li><a href="#1047-student-list-for-course">1047 Student List for Course</a></li>
+<li><a href="#1048-find-coins">1048 Find Coins</a></li>
+<li><a href="#1051-pop-sequence">1051 Pop Sequence</a></li>
+<li><a href="#1052-linked-list-sorting">1052 Linked List Sorting</a></li>
+<li><a href="#1055-the-world-s-richest">1055 The World’s Richest</a></li>
+<li><a href="#1056-mice-and-rice">1056 Mice and Rice</a></li>
+<li><a href="#1059-prime-factors">1059 Prime Factors</a></li>
+<li><a href="#1060-are-they-equal">1060 Are They Equal</a></li>
+<li><a href="#1062-talent-and-virtue">1062 Talent and Virtue</a></li>
+<li><a href="#1063-set-similarity">1063 Set Similarity</a></li>
+<li><a href="#1066-root-of-avl-tree">1066 Root of AVL Tree</a></li>
+<li><a href="#1067-sort-with-swap-0-i">1067 Sort with Swap(0, i)</a></li>
+<li><a href="#1070-mooncake">1070 Mooncake</a></li>
+<li><a href="#1071-speech-patterns">1071 Speech Patterns</a></li>
+<li><a href="#1074-reversing-linked-list">1074 Reversing Linked List</a></li>
+<li><a href="#1075-pat-judge">1075 PAT Judge</a></li>
+<li><a href="#1078-hashing">1078 Hashing</a></li>
+<li><a href="#1079-total-sales-of-supply-chain">1079 Total Sales of Supply Chain</a></li>
+<li><a href="#1082-read-number-in-chinese">1082 Read Number in Chinese</a></li>
+<li><a href="#1083-list-grades">1083 List Grades</a></li>
+<li><a href="#1085-perfect-sequence">1085 Perfect Sequence</a></li>
+<li><a href="#1086-tree-traversals-again">1086 Tree Traversals Again</a></li>
+<li><a href="#1089-insert-or-merge">1089 Insert or Merge</a></li>
+<li><a href="#1090-highest-price-in-supply-chain">1090 Highest Price in Supply Chain</a></li>
+<li><a href="#1093-count-pat-s">1093 Count PAT’s</a></li>
+<li><a href="#1094-the-largest-generation">1094 The Largest Generation</a></li>
+<li><a href="#1097-deduplication-on-a-linked-list">1097 Deduplication on a Linked List</a></li>
+<li><a href="#1098-insertion-or-heap-sort">1098 Insertion or Heap Sort</a></li>
+<li><a href="#1101-quick-sort">1101 Quick Sort</a></li>
+<li><a href="#1102-invert-a-binary-tree">1102 Invert a Binary Tree</a></li>
+<li><a href="#1105-spiral-matrix">1105 Spiral Matrix</a></li>
+<li><a href="#1106-lowest-price-in-supply-chain">1106 Lowest Price in Supply Chain</a></li>
+<li><a href="#1109-group-photo">1109 Group Photo</a></li>
+<li><a href="#1110-complete-binary-tree">1110 Complete Binary Tree</a></li>
+<li><a href="#1113-integer-set-partition">1113 Integer Set Partition</a></li>
+<li><a href="#1114-family-property">1114 Family Property</a></li>
+<li><a href="#1117-eddington-number">1117 Eddington Number</a></li>
+<li><a href="#1118-birds-in-forest">1118 Birds in Forest</a></li>
+<li><a href="#1121-damn-single">1121 Damn Single</a></li>
+<li><a href="#1122-hamiltonian-cycle">1122 Hamiltonian Cycle</a></li>
+<li><a href="#1125-chain-the-ropes">1125 Chain the Ropes</a></li>
+<li><a href="#1126-eulerian-path">1126 Eulerian Path</a></li>
+<li><a href="#1129-recommendation-system">1129 Recommendation System</a></li>
+<li><a href="#1130-infix-expression">1130 Infix Expression</a></li>
+<li><a href="#1133-splitting-a-linked-list">1133 Splitting A Linked List</a></li>
+<li><a href="#1134-vertex-cover">1134 Vertex Cover</a></li>
+<li><a href="#1137-final-grading">1137 Final Grading</a></li>
+<li><a href="#1138-postorder-traversal">1138 Postorder Traversal</a></li>
+<li><a href="#1141-pat-ranking-of-institutions">1141 PAT Ranking of Institutions</a></li>
+<li><a href="#1142-maximal-clique">1142 Maximal Clique</a></li>
+<li><a href="#1145-hashing-average-search-time">1145 Hashing - Average Search Time</a></li>
+<li><a href="#1146-topological-order">1146 Topological Order</a></li>
+<li><a href="#1149-dangerous-goods-packaging">1149 Dangerous Goods Packaging</a></li>
+<li><a href="#1150-travelling-salesman-problem">1150 Travelling Salesman Problem</a></li>
+<li><a href="#1153-decode-registration-card-of-pat">1153 Decode Registration Card of PAT</a></li>
+<li><a href="#1154-vertex-coloring">1154 Vertex Coloring</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h1><span id="1002-a-b-for-polynomials">1002 A+B for Polynomials</span><a href="#1002-a-b-for-polynomials" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805526272000000" target="_blank" rel="noopener">传送门</a><br>第一次提交没有保留1位小数，多项式系数相加等于0不用输出的情况没有考虑到</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">double</span> _a<span class="token punctuation">[</span><span class="token number">1001</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0.0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> k<span class="token punctuation">,</span>n<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> a<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>k<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cin<span class="token operator">>></span>n<span class="token operator">>></span>a<span class="token punctuation">;</span>
+        _a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cin<span class="token operator">>></span>k<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cin<span class="token operator">>></span>n<span class="token operator">>></span>a<span class="token punctuation">;</span>
+        _a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>_a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span><span class="token number">0.0</span><span class="token punctuation">)</span>k<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout<span class="token operator">&lt;&lt;</span>k<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>_a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d %.1f"</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span>_a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="1003-emergency">1003 Emergency</span><a href="#1003-emergency" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805523835109376" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1006-sign-in-and-sign-out">1006 Sign In and Sign Out</span><a href="#1006-sign-in-and-sign-out" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805516654460928" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1007-maximum-subsequence-sum">1007 Maximum Subsequence Sum</span><a href="#1007-maximum-subsequence-sum" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805514284679168" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1009-product-of-polynomials">1009 Product of Polynomials</span><a href="#1009-product-of-polynomials" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805509540921344" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1010-radix">1010 Radix</span><a href="#1010-radix" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805507225665536" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1012-the-best-rank">1012 The Best Rank</span><a href="#1012-the-best-rank" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805502658068480" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1013-battle-over-cities">1013 Battle Over Cities</span><a href="#1013-battle-over-cities" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805500414115840" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1016-phone-bills">1016 Phone Bills</span><a href="#1016-phone-bills" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805493648703488" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1017-queueing-at-bank">1017 Queueing at Bank</span><a href="#1017-queueing-at-bank" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805491530579968" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1020-tree-traversals">1020 Tree Traversals</span><a href="#1020-tree-traversals" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805485033603072" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1021-deepest-root">1021 Deepest Root</span><a href="#1021-deepest-root" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805482919673856" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1024-palindromic-number">1024 Palindromic Number</span><a href="#1024-palindromic-number" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805476473028608" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1025-pat-ranking">1025 PAT Ranking</span><a href="#1025-pat-ranking" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805474338127872" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1028-list-sorting">1028 List Sorting</span><a href="#1028-list-sorting" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805468327690240" target="_blank" rel="noopener">传送门</a><br><strong>一次过</strong><br>结构体排序</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> info<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>record<span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">1e5</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">bool</span> <span class="token function">cmp1</span><span class="token punctuation">(</span>info <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> info <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span>id<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">bool</span> <span class="token function">cmp2</span><span class="token punctuation">(</span>info <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> info <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token operator">==</span>b<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token keyword">return</span> a<span class="token punctuation">.</span>id<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span>name<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">bool</span> <span class="token function">cmp3</span><span class="token punctuation">(</span>info <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> info <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>grade<span class="token operator">==</span>b<span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token keyword">return</span> a<span class="token punctuation">.</span>id<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span>grade<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>c<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>n<span class="token operator">>></span>c<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cin<span class="token operator">>></span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token operator">>></span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token operator">>></span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token function">sort</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span>record<span class="token operator">+</span>n<span class="token punctuation">,</span>cmp1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token function">sort</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span>record<span class="token operator">+</span>n<span class="token punctuation">,</span>cmp2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token function">sort</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span>record<span class="token operator">+</span>n<span class="token punctuation">,</span>cmp3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%06d %s %d\n"</span><span class="token punctuation">,</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="1029-median">1029 Median</span><a href="#1029-median" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805466364755968" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1032-sharing">1032 Sharing</span><a href="#1032-sharing" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805460652113920" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1033-to-fill-or-not-to-fill">1033 To Fill or Not to Fill</span><a href="#1033-to-fill-or-not-to-fill" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805458722734080" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1036-boys-vs-girls">1036 Boys vs Girls</span><a href="#1036-boys-vs-girls" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805453203030016" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1037-magic-coupon">1037 Magic Coupon</span><a href="#1037-magic-coupon" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805451374313472" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1039-course-list-for-student">1039 Course List for Student</span><a href="#1039-course-list-for-student" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805447855292416" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1040-longest-symmetric-string">1040 Longest Symmetric String</span><a href="#1040-longest-symmetric-string" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805446102073344" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1043-is-it-a-binary-search-tree">1043 Is It a Binary Search Tree</span><a href="#1043-is-it-a-binary-search-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805440976633856" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1044-shopping-in-mars">1044 Shopping in Mars</span><a href="#1044-shopping-in-mars" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805439202443264" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1047-student-list-for-course">1047 Student List for Course</span><a href="#1047-student-list-for-course" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805433955368960" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1048-find-coins">1048 Find Coins</span><a href="#1048-find-coins" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805432256675840" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1051-pop-sequence">1051 Pop Sequence</span><a href="#1051-pop-sequence" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805427332562944" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1052-linked-list-sorting">1052 Linked List Sorting</span><a href="#1052-linked-list-sorting" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805425780670464" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1055-the-world-s-richest">1055 The World’s Richest</span><a href="#1055-the-world-s-richest" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805421066272768" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1056-mice-and-rice">1056 Mice and Rice</span><a href="#1056-mice-and-rice" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805419468242944" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1059-prime-factors">1059 Prime Factors</span><a href="#1059-prime-factors" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805415005503488" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1060-are-they-equal">1060 Are They Equal</span><a href="#1060-are-they-equal" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805413520719872" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1062-talent-and-virtue">1062 Talent and Virtue</span><a href="#1062-talent-and-virtue" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805410555346944" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1063-set-similarity">1063 Set Similarity</span><a href="#1063-set-similarity" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805409175420928" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1066-root-of-avl-tree">1066 Root of AVL Tree</span><a href="#1066-root-of-avl-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805404939173888" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1067-sort-with-swap-0-i">1067 Sort with Swap(0, i)</span><a href="#1067-sort-with-swap-0-i" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805403651522560" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1070-mooncake">1070 Mooncake</span><a href="#1070-mooncake" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805399578853376" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1071-speech-patterns">1071 Speech Patterns</span><a href="#1071-speech-patterns" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805398257647616" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1074-reversing-linked-list">1074 Reversing Linked List</span><a href="#1074-reversing-linked-list" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805394512134144" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1075-pat-judge">1075 PAT Judge</span><a href="#1075-pat-judge" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805393241260032" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1078-hashing">1078 Hashing</span><a href="#1078-hashing" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805389634158592" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1079-total-sales-of-supply-chain">1079 Total Sales of Supply Chain</span><a href="#1079-total-sales-of-supply-chain" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805388447170560" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1082-read-number-in-chinese">1082 Read Number in Chinese</span><a href="#1082-read-number-in-chinese" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805385053978624" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1083-list-grades">1083 List Grades</span><a href="#1083-list-grades" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805383929905152" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1085-perfect-sequence">1085 Perfect Sequence</span><a href="#1085-perfect-sequence" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805381845336064" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1086-tree-traversals-again">1086 Tree Traversals Again</span><a href="#1086-tree-traversals-again" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805380754817024" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1089-insert-or-merge">1089 Insert or Merge</span><a href="#1089-insert-or-merge" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805377432928256" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1090-highest-price-in-supply-chain">1090 Highest Price in Supply Chain</span><a href="#1090-highest-price-in-supply-chain" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805376476626944" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1093-count-pat-s">1093 Count PAT’s</span><a href="#1093-count-pat-s" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805373582557184" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1094-the-largest-generation">1094 The Largest Generation</span><a href="#1094-the-largest-generation" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805372601090048" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1097-deduplication-on-a-linked-list">1097 Deduplication on a Linked List</span><a href="#1097-deduplication-on-a-linked-list" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805369774129152" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1098-insertion-or-heap-sort">1098 Insertion or Heap Sort</span><a href="#1098-insertion-or-heap-sort" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805368847187968" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1101-quick-sort">1101 Quick Sort</span><a href="#1101-quick-sort" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805366343188480" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1102-invert-a-binary-tree">1102 Invert a Binary Tree</span><a href="#1102-invert-a-binary-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805365537882112" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1105-spiral-matrix">1105 Spiral Matrix</span><a href="#1105-spiral-matrix" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805363117768704" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1106-lowest-price-in-supply-chain">1106 Lowest Price in Supply Chain</span><a href="#1106-lowest-price-in-supply-chain" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805362341822464" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1109-group-photo">1109 Group Photo</span><a href="#1109-group-photo" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805360043343872" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1110-complete-binary-tree">1110 Complete Binary Tree</span><a href="#1110-complete-binary-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805359372255232" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1113-integer-set-partition">1113 Integer Set Partition</span><a href="#1113-integer-set-partition" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805357258326016" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1114-family-property">1114 Family Property</span><a href="#1114-family-property" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805356599820288" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1117-eddington-number">1117 Eddington Number</span><a href="#1117-eddington-number" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805354762715136" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1118-birds-in-forest">1118 Birds in Forest</span><a href="#1118-birds-in-forest" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805354108403712" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1121-damn-single">1121 Damn Single</span><a href="#1121-damn-single" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805352359378944" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1122-hamiltonian-cycle">1122 Hamiltonian Cycle</span><a href="#1122-hamiltonian-cycle" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351814119424" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1125-chain-the-ropes">1125 Chain the Ropes</span><a href="#1125-chain-the-ropes" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805350316752896" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1126-eulerian-path">1126 Eulerian Path</span><a href="#1126-eulerian-path" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805349851185152" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1129-recommendation-system">1129 Recommendation System</span><a href="#1129-recommendation-system" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805348471259136" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1130-infix-expression">1130 Infix Expression</span><a href="#1130-infix-expression" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805347921805312" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1133-splitting-a-linked-list">1133 Splitting A Linked List</span><a href="#1133-splitting-a-linked-list" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346776760320" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1134-vertex-cover">1134 Vertex Cover</span><a href="#1134-vertex-cover" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346428633088" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1137-final-grading">1137 Final Grading</span><a href="#1137-final-grading" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805345401028608" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1138-postorder-traversal">1138 Postorder Traversal</span><a href="#1138-postorder-traversal" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805345078067200" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1141-pat-ranking-of-institutions">1141 PAT Ranking of Institutions</span><a href="#1141-pat-ranking-of-institutions" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344222429184" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1142-maximal-clique">1142 Maximal Clique</span><a href="#1142-maximal-clique" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343979159552" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1145-hashing-average-search-time">1145 Hashing - Average Search Time</span><a href="#1145-hashing-average-search-time" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343236767744" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1146-topological-order">1146 Topological Order</span><a href="#1146-topological-order" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343043829760" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1149-dangerous-goods-packaging">1149 Dangerous Goods Packaging</span><a href="#1149-dangerous-goods-packaging" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038429908921778176" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1150-travelling-salesman-problem">1150 Travelling Salesman Problem</span><a href="#1150-travelling-salesman-problem" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038430013544464384" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1153-decode-registration-card-of-pat">1153 Decode Registration Card of PAT</span><a href="#1153-decode-registration-card-of-pat" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1071785190929788928" target="_blank" rel="noopener">传送门</a></p>
+<h1><span id="1154-vertex-coloring">1154 Vertex Coloring</span><a href="#1154-vertex-coloring" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1071785301894295552" target="_blank" rel="noopener">传送门</a></p>
+<br>
+<div align="right">
+  <img width="25" src="/2020/01/PATAdvanced25/chooser_cc.png">
+  <img width="25" src="/2020/01/PATAdvanced25/chooser_by.png">
+  <img width="25" src="/2020/01/PATAdvanced25/chooser_sa.png">
+</div>
+
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2020/01/PATAdvanced30/">
+        上一篇<br>「PAT 甲级」30分题汇总
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2020/01/PATAdvanced20/">
+        下一篇<br>「PAT 甲级」20分题汇总
+    </a>
+    
+</nav>
+
+    
+            
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?36915665"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>

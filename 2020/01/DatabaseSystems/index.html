@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?27156277">
+<link rel="stylesheet" href="/css/journal.css?10053408">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
 
@@ -28,10 +28,10 @@
       if (window.mermaid) {
         mermaid.initialize({theme: 'dark'});
       }
-    </script>
+    </script><!-- hexo-inject:begin --><link rel='stylesheet' href='https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css'><!-- hexo-inject:end -->
 
 <link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><link rel='stylesheet' href='https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css'><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 <body>
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
 <div id="app">
@@ -280,9 +280,9 @@
 </ol>
 <h2><span id="shi-wu-de-acid-xing-zhi">事务的 ACID 性质</span><a href="#shi-wu-de-acid-xing-zhi" class="header-anchor"></a></h2><ul>
 <li>A &emsp; 原子性 &emsp; 全被执行或全不被执行</li>
-<li>C &emsp; 独立性 &emsp; 事务独立执行</li>
-<li>I &emsp; 持久性 &emsp; 事务完成对数据库影响永不丢失</li>
-<li>D &emsp; 一致性 &emsp; 事务保持数据库一致性</li>
+<li>C &emsp; 一致性 &emsp; 事务保持数据库一致性</li>
+<li>I &emsp; 独立性 &emsp; 事务独立执行</li>
+<li>D &emsp; 持久性 &emsp; 事务完成对数据库影响永不丢失</li>
 </ul>
 <hr>
 <h1><span id="guan-xi-shu-ju-ku-mo-xing">关系数据库模型</span><a href="#guan-xi-shu-ju-ku-mo-xing" class="header-anchor"></a></h1><h1><span id="guan-xi-shu-ju-mo-xing">_关系数据模型</span><a href="#guan-xi-shu-ju-mo-xing" class="header-anchor"></a></h1><p><a href="https://wenku.baidu.com/view/5de89520aaea998fcc220e33" target="_blank" rel="noopener">第2章习题答案</a></p>
@@ -640,7 +640,7 @@
 <p>默认<br>允许脏读</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">set</span> <span class="token keyword">transaction</span> <span class="token keyword">read</span> <span class="token keyword">write</span> <span class="token keyword">isolation level</span> <span class="token keyword">serializable</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="3">
-<li><strong>读提交</strong><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">set</span> <span class="token keyword">transaction</span> <span class="token keyword">isolation level</span> <span class="token keyword">read</span> <span class="token keyword">commit</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><strong>读提交</strong><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">set</span> <span class="token keyword">transaction</span> <span class="token keyword">isolation level</span> <span class="token keyword">read</span> <span class="token keyword">committed</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><strong>可重复读</strong><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">set</span> <span class="token keyword">transaction</span> <span class="token keyword">isolation level</span> <span class="token keyword">repeatable</span> <span class="token keyword">read</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -922,6 +922,10 @@ under 子类型<span aria-hidden="true" class="line-numbers-rows"><span></span><
     
             <nav class="post-pagination">
     
+    <a class="newer-posts" href="/2020/01/PATAdvanced20/">
+        上一篇<br>「PAT 甲级」20分题汇总
+    </a>
+    
     <span class="page-number"></span>
     
     <a class="older-posts" href="/2019/12/ComputerGraphics3/">
@@ -951,7 +955,7 @@ under 子类型<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?81797073"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?61572385"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

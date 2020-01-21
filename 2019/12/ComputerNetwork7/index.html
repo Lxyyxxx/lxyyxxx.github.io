@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?41945721">
+<link rel="stylesheet" href="/css/journal.css?87195889">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,400,600|Noto+Serif+SC:700,400,600|Noto+Sans+SC:400,500|Noto+Sans+TC:400,500|Fira+Mono|Montserrat|Anonymous+Pro:400|Material+Icons">
 
@@ -28,10 +28,10 @@
       if (window.mermaid) {
         mermaid.initialize({theme: 'dark'});
       }
-    </script>
+    </script><!-- hexo-inject:begin --><link rel='stylesheet' href='https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css'><!-- hexo-inject:end -->
 
 <link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><link rel='stylesheet' href='https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css'><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 <body>
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
 <div id="app">
@@ -566,6 +566,7 @@ D=\dfrac{D_0}{1-U}
 <p><img src="/2019/12/ComputerNetwork7/1-20.png" alt="pic1-20"></p>
 <h2><span id="ji-suan-ji-wang-luo-de-xie-yi-hen-fu-za">计算机网络的协议很复杂</span><a href="#ji-suan-ji-wang-luo-de-xie-yi-hen-fu-za" class="header-anchor"></a></h2><p>协议必须把所有不利的条件事先都估计到，而不能假定一切都是正常的和非常理想的<br>看一个计算机网络协议是否正确，不能光看在正常情况下是否正确，还必须非常仔细地检查这个协议能否应付各种异常情况<br><img src="/2019/12/ComputerNetwork7/1-1l.png" alt="pic1-1l"><br><img src="/2019/12/ComputerNetwork7/1-1ll.png" alt="pic1-1ll"><br><img src="/2019/12/ComputerNetwork7/1-1lll.png" alt="pic1-1lll"></p>
 <h2><span id="tcp-ip-de-si-ceng-ti-xi-jie-gou">TCP/IP 的四层体系结构</span><a href="#tcp-ip-de-si-ceng-ti-xi-jie-gou" class="header-anchor"></a></h2><p><img src="/2019/12/ComputerNetwork7/1-22.png" alt="pic1-22"><br>现在的互联网使用的 TCP/IP 体系结构有时已经发生了演变，即某些应用程序可以直接使用 IP 层，或甚至直接使用最下面的网络接口层<br><img src="/2019/12/ComputerNetwork7/1-23.png" alt="pic1-23"><br><strong>Everything over IP</strong> &emsp; TCP/IP协议可以为各式各样的应用提供服务<br><strong>IP over Everything</strong> &emsp; TCP/IP协议允许IP协议在各式各样的网络构成的互联网上运行<br><img src="/2019/12/ComputerNetwork7/1-24.png" alt="pic1-24"></p>
+<hr>
 <h1><span id="wu-li-ceng">_物理层</span><a href="#wu-li-ceng" class="header-anchor"></a></h1><h2><span id="ji-ben-gai-nian">基本概念</span><a href="#ji-ben-gai-nian" class="header-anchor"></a></h2><p>物理层考虑的是怎样才能在连接各种计算机的传输媒体上<strong>传输数据比特流</strong>，而不是指具体的传输媒体<br><strong>物理层的作用</strong><br>尽可能地屏蔽掉不同传输媒体和通信手段的差异<br><strong>物理层规程</strong><br>用于物理层的协议<br><strong>物理层的主要任务</strong><br>确定与传输媒体的接口的一些特性</p>
 <ul>
 <li><strong>机械特性</strong> &emsp; 指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置等。</li>
@@ -822,6 +823,7 @@ C=W\log_2(1+S/N)\qquad (bit/s)
 </ol>
 </li>
 </ul>
+<hr>
 <h1><span id="shu-ju-lian-lu-ceng">_数据链路层</span><a href="#shu-ju-lian-lu-ceng" class="header-anchor"></a></h1><h2><span id="shu-ju-lian-lu-ceng-shi-yong-de-xin-dao">数据链路层使用的信道</span><a href="#shu-ju-lian-lu-ceng-shi-yong-de-xin-dao" class="header-anchor"></a></h2><ol>
 <li><strong>点对点信道</strong> &emsp; 这种信道使用<strong>一对一</strong>的点对点通信方式</li>
 <li><strong>广播信道</strong> &emsp; 这种信道使用<strong>一对多</strong>的广播通信方式，必须使用<strong>专用的共享信道协议</strong>来协调这些主机的数据发送</li>
@@ -1319,6 +1321,7 @@ S_{max}=\dfrac{T_0}{T_0+\tau}=\dfrac{1}{1+\alpha}
 <li>但是<strong>不支持用户身份鉴别</strong></li>
 </ul>
 <p><strong>PPPoE</strong><br>PPP over Ethernet，在以太网上运行 PPP，把 PPP 协议与以太网协议结合起来，将 PPP 帧再封装到以太网中来传输<br>现在的<strong>光纤宽带接入 FTTx</strong> 都要使用 PPPoE 的方式进行接入，在 PPPoE 弹出的窗口中键入在网络运营商购买的用户名和密码，就可以进行宽带上网了<br>利用 <strong>ADSL</strong> 进行宽带上网时，从用户个人电脑到家中的 ADSL 调制解调器之间，也是使用 <strong>RJ-45 和 5 类线</strong>（即以太网使用的网线）进行连接的，并且也是使用 PPPoE 弹出的窗口进行拨号连接的</p>
+<hr>
 <h1><span id="wang-luo-ceng">_网络层</span><a href="#wang-luo-ceng" class="header-anchor"></a></h1><h2><span id="wang-luo-ceng-ti-gong-de-liang-chong-fu-wu">网络层提供的两种服务</span><a href="#wang-luo-ceng-ti-gong-de-liang-chong-fu-wu" class="header-anchor"></a></h2><p>电信网是<strong>面向连接</strong>的通信方式，电路交换的电话通信是先建立了一条<strong>真正的</strong>连接</p>
 <ol>
 <li><p>虚电路服务<br> 两台计算机进行通信时需要建立<strong>虚电路VC</strong>，虚电路只是一条<strong>逻辑上</strong>的连接，分组都沿着这条逻辑连接按照存储转发方式传送，而并<strong>不是</strong>真正建立了一条<strong>物理连接</strong></p>
@@ -1840,7 +1843,8 @@ S_{max}=\dfrac{T_0}{T_0+\tau}=\dfrac{1}{1+\alpha}
 </ol>
 <p><strong>专用网</strong><br>采用这样的<strong>专用 IP 地址</strong>的<strong>互连网络</strong>称为<strong>专用互联网</strong>或<strong>本地互联网</strong>，或更简单些，就叫作<strong>专用网</strong><br>因为这些专用地址仅在<strong>本机构内部使用</strong>。专用IP地址也叫作<strong>可重用地址</strong></p>
 <p><strong>用隧道技术实现虚拟专用网</strong><br><img src="/2019/12/ComputerNetwork7/4-59.png" alt="pic4-59"><br><strong>内联网 intranet 和外联网 extranet</strong><br>它们都是基于 <strong>TCP/IP 协议</strong>的<br>由部门 A 和 B 的<strong>内部网络</strong>所构成的虚拟专用网 VPN 又称为<strong>内联网</strong>，表示部门 A 和 B 都是在同一个机构的内部<br>一个机构和某些<strong>外部机构</strong>共同建立的虚拟专用网 VPN 又称为<strong>外联网</strong></p>
-<h2><span id="wang-luo-di-zhi-zhuan-huan-nat">网络地址转换 NAT</span><a href="#wang-luo-di-zhi-zhuan-huan-nat" class="header-anchor"></a></h2><h2><span id="duo-xie-yi-biao-ji-jiao-huan-mpls">多协议标记交换 MPLS</span><a href="#duo-xie-yi-biao-ji-jiao-huan-mpls" class="header-anchor"></a></h2><h1><span id="yun-shu-ceng">_运输层</span><a href="#yun-shu-ceng" class="header-anchor"></a></h1><h2><span id="yun-shu-ceng-xie-yi-gai-shu">运输层协议概述</span><a href="#yun-shu-ceng-xie-yi-gai-shu" class="header-anchor"></a></h2><p><strong>功能</strong><br><img src="/2019/12/ComputerNetwork7/fyfy.png" alt="picfyfy"></p>
+<h2><span id="wang-luo-di-zhi-zhuan-huan-nat">网络地址转换 NAT</span><a href="#wang-luo-di-zhi-zhuan-huan-nat" class="header-anchor"></a></h2><h2><span id="duo-xie-yi-biao-ji-jiao-huan-mpls">多协议标记交换 MPLS</span><a href="#duo-xie-yi-biao-ji-jiao-huan-mpls" class="header-anchor"></a></h2><hr>
+<h1><span id="yun-shu-ceng">_运输层</span><a href="#yun-shu-ceng" class="header-anchor"></a></h1><h2><span id="yun-shu-ceng-xie-yi-gai-shu">运输层协议概述</span><a href="#yun-shu-ceng-xie-yi-gai-shu" class="header-anchor"></a></h2><p><strong>功能</strong><br><img src="/2019/12/ComputerNetwork7/fyfy.png" alt="picfyfy"></p>
 <ul>
 <li>复用</li>
 <li>分用</li>
@@ -2031,6 +2035,7 @@ S_{max}=\dfrac{T_0}{T_0+\tau}=\dfrac{1}{1+\alpha}
 <li><strong>粗虚线箭头</strong>表示对<strong>服务器</strong>进程的<strong>正常</strong>变迁</li>
 <li><strong>细线箭头</strong>表示<strong>异常</strong>变迁</li>
 </ul>
+<hr>
 <h1><span id="ying-yong-ceng">_应用层</span><a href="#ying-yong-ceng" class="header-anchor"></a></h1><h2><span id="yu-ming-xi-tong-dns">域名系统 DNS</span><a href="#yu-ming-xi-tong-dns" class="header-anchor"></a></h2><p><strong>层次树状</strong>结构<br><img src="/2019/12/ComputerNetwork7/6-3.png" alt="pic6-3"></p>
 <ol>
 <li>根域名服务器<br> 最高层次的域名服务器，也是最重要的域名服务器<br> 在互联网上共有 13 个不同 IP 地址的根域名服务器，它们的名字是用一个英文字母命名，从 a 一直到 m<br> 13 套装置<br> a.rootservers.net ~ m.rootservers.net<br> 根域名服务器把下一步应当找的顶级域名服务器的 IP 地址告诉本地域名服务器</li>
@@ -2367,7 +2372,7 @@ S_{max}=\dfrac{T_0}{T_0+\tau}=\dfrac{1}{1+\alpha}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?85113544"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/journal.js?97963024"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
