@@ -5,7 +5,8 @@ body {
   background: #fcfcfc;
   padding: 0;
   margin: 0;
-  font-family: "Noto Serif TC", "Noto Serif SC", "source-han-serif-tc", serif;
+  /*font-family: "Noto Serif TC", "Noto Serif SC", "source-han-serif-tc", "source-han-serif-sc", serif;*/
+  font-family: "Noto Sans SC", "Noto Sans TC", "source-han-sans-sc", "source-han-sans-tc", sans-serif;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -16,28 +17,32 @@ body {
   line-height: 1.5em;
 /*  word-wrap: break-word;*/  }
 
+.post-title, h1, h2, h3, h4, h5, h6, .post-item-title, .older-posts, .newer-posts, thead{
+  font-family: "Noto Serif SC", "Noto Serif TC", "source-han-serif-sc", "source-han-serif-tc", serif;
+}
+
 h1 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 33px; }
 
 h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 30px; }
 
 h3 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 27px; }
 
 h4 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px; }
 
 h5 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 21px; }
 
 h6 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 18px; }
 
 textarea,
@@ -52,6 +57,7 @@ button {
 
 table {
   border-collapse: separate;
+  width: 100%;
 }
 
 table th,
@@ -72,7 +78,7 @@ code {
   background: rgba(159, 86, 58, 0.07) !important;
   padding: 2px 5px;
   border-radius: 3px;
-  font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+  font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
 
 pre {
   font-size: 16px !important;
@@ -80,10 +86,10 @@ pre {
   color: #7a422c;
   padding: 12px 15px;
   border-radius: 5px;
-  font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+  font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
   pre * {
     background: none !important;
-    font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace !important; }
+    font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace !important; }
   pre code {
     padding: 0; }
 
@@ -320,7 +326,7 @@ a {
   .side-container .nav-link-list {
     flex-grow: 1; }
     .side-container .nav-link-list .nav-link-item {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 20px;
       margin-bottom: 10px;
       border-right: 2px solid transparent;
@@ -371,7 +377,7 @@ a {
       width: 64px;
       padding: 15px 0;
       font-size: 12px;
-      font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+      font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
     .extra-container .pagination .pagination-action {
       display: flex;
       flex-direction: column;
@@ -386,7 +392,7 @@ a {
       .extra-container .pagination .pagination-action :not(.pagination-action-icon) {
         transition: all 0.2s linear;
         font-size: 13px;
-        font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+        font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
       .extra-container .pagination .pagination-action * {
         transition: all 0.3s linear; }
       .extra-container .pagination .pagination-action:hover {
@@ -615,7 +621,7 @@ a {
           padding: 30px 20px 0 20px; } }
       .stream-container .post .post-head-wrapper-text-only .post-title {
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 900;
         font-style: normal;
         line-height: 1.5em; }
         .stream-container .post .post-head-wrapper-text-only .post-title .post-meta {
@@ -663,7 +669,7 @@ a {
         }
           .stream-container .post .post-body-wrapper .post-body .toc,
           .stream-container .post .post-body-wrapper .post-body .toc * {
-            font-size: 18px; }
+            font-size: 16px; }
           .stream-container .post .post-body-wrapper .post-body .toc ul {
             list-style: none;
             padding: 0 0 0 20px;
@@ -721,7 +727,7 @@ a {
           width: 64px;
           padding: 15px 0;
           font-size: 12px;
-          font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+          font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
         .stream-container .pagination .pagination-action {
           display: flex;
           flex-direction: column;
@@ -736,7 +742,7 @@ a {
           .stream-container .pagination .pagination-action :not(.pagination-action-icon) {
             transition: all 0.2s linear;
             font-size: 13px;
-            font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans TC", "Noto Sans SC", monospace; }
+            font-family: "Fira Code", "Cousine", Monaco, Menlo, "Consolas", "Noto Sans SC", "Noto Sans TC", monospace; }
           .stream-container .pagination .pagination-action * {
             transition: all 0.3s linear; }
           .stream-container .pagination .pagination-action:hover {
