@@ -17,7 +17,7 @@ body {
   line-height: 1.5em;
 /*  word-wrap: break-word;*/  }
 
-.post-title, h1, h2, h3, h4, h5, h6, .post-item-title, .older-posts, .newer-posts, thead{
+.post-title, h1, h2, h3, h4, h5, h6, .post-item-title, .older-posts, .newer-posts, thead, .drawer-menu-item{
   font-family: "Noto Serif SC", "Noto Serif TC", "source-han-serif-sc", "source-han-serif-tc", serif;
 }
 
