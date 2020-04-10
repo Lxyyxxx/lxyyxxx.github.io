@@ -1,408 +1,425 @@
-
-
+<!-- 不变的布局 -->
 <!DOCTYPE html>
-<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html>
+<!-- head -->
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>「PAT 甲级」30分题汇总 - Lxyyxxx&#39;s Notebook</title>
-<meta charset="utf-8">
-<meta name="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="Lxyyxxx">
-<meta name="description" content=" ">
-<meta name="keywords" content>
-
-    <meta charset="utf-8">
-    <meta name="X-UA-Compatible" content="IE=edge">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta content="telephone=no" name="format-detection">
-    <meta name="renderer" content="webkit">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?40801311">
+    
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,900|Noto+Serif+SC:700,900|Noto+Sans+SC:400,700|Noto+Sans+TC:400,700|Fira+Code|Montserrat|Anonymous+Pro:400|Material+Icons">
+    <title>
+        
+        「PAT 甲级」30分题汇总 - Lxyyxxx&#39;s Notebook
+        
+    </title>
 
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
 
-    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
-    <script>
-      if (window.mermaid) {
-        mermaid.initialize({theme: 'dark'});
-      }
-    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
-<div id="app">
-<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
-                首頁
-            </a>
-            <a class="a-block drawer-menu-item false" href="/archives">
-                歸檔
-            </a>
-
-            
-            
-            <a class="a-block drawer-menu-item false" href="/about/index.html">
-                關於我
-            </a>
-            
-            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
-                構建日記
-            </a>
-            
-
-            
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
         </div>
-    </div>
-</div>
-<transition name="fade">
-    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div ref="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
-            Lxyyxxx&#39;s Notebook
-        </a>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
-<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
-        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
-        <div class="single-column-header-subtitle"></div>
-    </a>
-</div>
-<div ref="sideContainer" class="side-container">
-    <a class="a-block nav-head false" href="/">
-        <div class="nav-title">
-            Lxyyxxx's<br>Notebook
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
         </div>
-        <div class="nav-subtitle">
-            
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
         </div>
-    </a>
-
-    <div class="nav-link-list">
-        <a class="a-block no-tint nav-link-item false" href="/archives">
-            歸檔
-        </a>
-
-        
-        
-        <a class="a-block nav-link-item false" href="/about/index.html">
-            關於我
-        </a>
-        
-        <a class="a-block nav-link-item false" href="/recorder/index.html">
-            構建日記
-        </a>
-        
-
-        
-    </div>
-
-    
-    <div class="nav-footer">
-        Proudly published with Hexo<br>
-        
-        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-        
-        &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
     </div>
 </div>
-<div ref="extraContainer" class="extra-container">
-    <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
-            <i class="material-icons pagination-action-icon">
-                keyboard_arrow_up
-            </i>
-        </a>
-
-        
-    </div>
-</div>
-
-<div ref="streamContainer" class="stream-container">
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            <div class="post-head-wrapper-text-only" style="background-image: url('')">
-                <div class="post-title">
-                    「PAT 甲级」30分题汇总
-                    <div class="post-meta">
-                        <time datetime="2020-01-14T14:20:02.000Z" itemprop="datePublished">
-                            2020-01-14 22:20
-                        </time>&nbsp;
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">「PAT 甲级」30分题汇总</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2020-04-10T01:51:23.673Z" itemprop="dateModified">
+                            2020-04-10 09:51
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
                         
                         
-                        <i class="material-icons" style>folder</i>
+                        <i class="fas fa-folder"></i>
                         
-                        <a href="/categories/PAT甲级/">PAT甲级</a>
-                        
-                        
-    
+                        <a
+                            href='/categories/PAT甲级/'>PAT甲级</a>
                         
                         
-                        <i class="material-icons" style>label</i>
+                        &emsp;
+                        <!-- tags -->
                         
-                        <a href="/tags/PAT甲级/">PAT甲级</a>, 
                         
-                        <a href="/tags/30分/">30分</a>
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/PAT甲级/'>PAT甲级</a>, 
+                        
+                        <a
+                            href='/tags/30分/'>30分</a>
                         
                         
                     </div>
-                </div>
-            </div>
-    
-            <div class="post-body-wrapper">
-                <div class="post-body">
-                    <div class="toc">
+                    <article class="write-content">
+                        <!-- toc -->
+<h1 id="1004-Counting-Leaves"><a class="header-anchor" href="#1004-Counting-Leaves"># </a>1004 Counting Leaves</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805521431773184" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+遍历树，计算每一层的叶子结点个数</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt;children[100];
+int result[100]={0};
+int n,m,maxdp=0;
+void dfs(int start,int depth){
+    if(children[start].empty()){
+        result[depth]++;
+        maxdp=max(depth,maxdp);
+        return;
+    }
+    for(int j:children[start]){
+        dfs(j,depth+1);
+    }
+}
+int main() {
+    cin&gt;&gt;n&gt;&gt;m;
+    int id,k,child;
+    for(int i=0;i&lt;m;i++){
+        cin&gt;&gt;id&gt;&gt;k;
+        for(int j=0;j&lt;k;j++){
+            cin&gt;&gt;child;
+            children[id].push_back(child);
+        }
+    }
+    dfs(1,0);
+    for(int i=0;i&lt;=maxdp;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;result[i];
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="1014-Waiting-in-Line"><a class="header-anchor" href="#1014-Waiting-in-Line"># </a>1014 Waiting in Line</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805498207911936" target="_blank" rel="noopener">传送门</a><br>
+如果17点前服务了，但服务结束时间在17点后，则需要输出时间而不是Sorry，满足这个条件的测试点共11分。模拟队列即可</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int n,m,k,q,time[1010],id,que[25][15],tail[25]={0},top[25]={0},wait[1010],w=0,fast,fastq,sorry[1010]={false};
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k&gt;&gt;q;
+    for(int i=0;i&lt;k;i++)cin&gt;&gt;time[i];
+    for(int i=0;i&lt;n*m;i++){
+        w=w%n;
+        que[w][tail[w]]=i;
+        if(!tail[w])wait[i]=time[i];
+        else{
+            wait[i]=wait[que[w][tail[w]-1]]+time[i];
+            if(wait[que[w][tail[w]-1]]&gt;=540)sorry[i]=true;
+        }
+        tail[w]++;w++;
+    }
+    for(int i=n*m;i&lt;k;i++){
+        fast=wait[que[0][top[0]]];fastq=0;
+        for(int j=1;j&lt;n;j++){
+            if(wait[que[j][top[j]]]&lt;fast){
+                fast=wait[que[j][top[j]]];
+                fastq=j;
+            }
+        }
+        top[fastq]++;
+        que[fastq][tail[fastq]]=i;
+        wait[i]=wait[que[fastq][tail[fastq]-1]]+time[i];
+        if(wait[que[fastq][tail[fastq]-1]]&gt;=540)sorry[i]=true;
+        tail[fastq]++;
+    }
+    while(q--){
+        cin&gt;&gt;id;
+        if(sorry[id-1])printf(&quot;Sorry\n&quot;);
+        else printf(&quot;%02d:%02d\n&quot;,wait[id-1]/60+8,wait[id-1]%60);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="1018-Public-Bike-Management"><a class="header-anchor" href="#1018-Public-Bike-Management"># </a>1018 Public Bike Management</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1022-Digital-Library"><a class="header-anchor" href="#1022-Digital-Library"># </a>1022 Digital Library</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805480801550336" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1026-Table-Tennis"><a class="header-anchor" href="#1026-Table-Tennis"># </a>1026 Table Tennis</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805472333250560" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1030-Travel-Plan"><a class="header-anchor" href="#1030-Travel-Plan"># </a>1030 Travel Plan</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805464397627392" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1034-Head-of-a-Gang"><a class="header-anchor" href="#1034-Head-of-a-Gang"># </a>1034 Head of a Gang</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805456881434624" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1038-Recover-the-Smallest-Number"><a class="header-anchor" href="#1038-Recover-the-Smallest-Number"># </a>1038 Recover the Smallest Number</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805449625288704" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1045-Favorite-Color-Stripe"><a class="header-anchor" href="#1045-Favorite-Color-Stripe"># </a>1045 Favorite Color Stripe</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1049-Counting-Ones"><a class="header-anchor" href="#1049-Counting-Ones"># </a>1049 Counting Ones</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805430595731456" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1053-Path-of-Equal-Weight"><a class="header-anchor" href="#1053-Path-of-Equal-Weight"># </a>1053 Path of Equal Weight</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805424153280512" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1057-Stack"><a class="header-anchor" href="#1057-Stack"># </a>1057 Stack</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1064-Complete-Binary-Search-Tree"><a class="header-anchor" href="#1064-Complete-Binary-Search-Tree"># </a>1064 Complete Binary Search Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805407749357568" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1068-Find-More-Coins"><a class="header-anchor" href="#1068-Find-More-Coins"># </a>1068 Find More Coins</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805402305150976" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1072-Gas-Station"><a class="header-anchor" href="#1072-Gas-Station"># </a>1072 Gas Station</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805396953219072" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1076-Forwards-on-Weibo"><a class="header-anchor" href="#1076-Forwards-on-Weibo"># </a>1076 Forwards on Weibo</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805392092020736" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1080-Graduate-Admission"><a class="header-anchor" href="#1080-Graduate-Admission"># </a>1080 Graduate Admission</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805387268571136" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1087-All-Roads-Lead-to-Rome"><a class="header-anchor" href="#1087-All-Roads-Lead-to-Rome"># </a>1087 All Roads Lead to Rome</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805379664297984" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1091-Acute-Stroke"><a class="header-anchor" href="#1091-Acute-Stroke"># </a>1091 Acute Stroke</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805375457411072" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1095-Cars-on-Campus"><a class="header-anchor" href="#1095-Cars-on-Campus"># </a>1095 Cars on Campus</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805371602845696" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1099-Build-A-Binary-Search-Tree"><a class="header-anchor" href="#1099-Build-A-Binary-Search-Tree"># </a>1099 Build A Binary Search Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805367987355648" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1103-Integer-Factorization"><a class="header-anchor" href="#1103-Integer-Factorization"># </a>1103 Integer Factorization</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805364711604224" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1107-Social-Clusters"><a class="header-anchor" href="#1107-Social-Clusters"># </a>1107 Social Clusters</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805361586847744" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1111-Online-Map"><a class="header-anchor" href="#1111-Online-Map"># </a>1111 Online Map</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805358663417856" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1115-Counting-Nodes-in-a-BST"><a class="header-anchor" href="#1115-Counting-Nodes-in-a-BST"># </a>1115 Counting Nodes in a BST</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805355987451904" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1119-Pre-and-Post-order-Traversals"><a class="header-anchor" href="#1119-Pre-and-Post-order-Traversals"># </a>1119 Pre- and Post-order Traversals</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805353470869504" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1123-Is-It-a-Complete-AVL-Tree"><a class="header-anchor" href="#1123-Is-It-a-Complete-AVL-Tree"># </a>1123 Is It a Complete AVL Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351302414336" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1127-ZigZagging-on-a-Tree"><a class="header-anchor" href="#1127-ZigZagging-on-a-Tree"># </a>1127 ZigZagging on a Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805349394006016" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1131-Subway-Map"><a class="header-anchor" href="#1131-Subway-Map"># </a>1131 Subway Map</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805347523346432" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1135-Is-It-A-Red-Black-Tree"><a class="header-anchor" href="#1135-Is-It-A-Red-Black-Tree"># </a>1135 Is It A Red-Black Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346063728640" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1139-First-Contact"><a class="header-anchor" href="#1139-First-Contact"># </a>1139 First Contact</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344776077312" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1143-Lowest-Common-Ancestor"><a class="header-anchor" href="#1143-Lowest-Common-Ancestor"># </a>1143 Lowest Common Ancestor</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343727501312" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1147-Heaps"><a class="header-anchor" href="#1147-Heaps"># </a>1147 Heaps</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1151-LCA-in-a-Binary-Tree"><a class="header-anchor" href="#1151-LCA-in-a-Binary-Tree"># </a>1151 LCA in a Binary Tree</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038430130011897856" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="1155-Heap-Paths"><a class="header-anchor" href="#1155-Heap-Paths"># </a>1155 Heap Paths</h1>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1071785408849047552" target="_blank" rel="noopener">传送门</a><br>
+要注意dfs中堆的遍历结束条件及输出</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt;path;
+int n,heap[1010],state=-1;
+void dfs(int root){
+    if(2*root+1&gt;=n&amp;&amp;2*root+2&gt;=n){
+        if(root&lt;n){
+            for(int i=0;i&lt;path.size();i++){
+                if(i==0)cout&lt;&lt;path[i];
+                else{
+                    cout&lt;&lt;&quot; &quot;&lt;&lt;path[i];
+                    if(path[i]&gt;path[i-1]){
+                        if(state==-1)state=1;
+                        else if(state==2)state=0;
+                    }
+                    else if(path[i]&lt;path[i-1]){
+                        if(state==-1)state=2;
+                        else if(state==1)state=0;
+                    }
+                }
+            }
+            cout&lt;&lt;'\n';
+        }
+    }else{
+        path.push_back(heap[2*root+2]);
+        dfs(2*root+2);
+        path.pop_back();
+        path.push_back(heap[2*root+1]);
+        dfs(2*root+1);
+        path.pop_back();
+    }
+}
+int main(){
+    string h[3]={&quot;Not Heap&quot;,&quot;Min Heap&quot;,&quot;Max Heap&quot;};
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)cin&gt;&gt;heap[i];
+    path.push_back(heap[0]);
+    dfs(0);
+    cout&lt;&lt;h[state];
+    return 0;
+}
+</code></pre>
 
-<!-- toc -->
-
-<ul>
-<li><a href="#1004-counting-leaves">1004 Counting Leaves</a></li>
-<li><a href="#1014-waiting-in-line">1014 Waiting in Line</a></li>
-<li><a href="#1018-public-bike-management">1018 Public Bike Management</a></li>
-<li><a href="#1022-digital-library">1022 Digital Library</a></li>
-<li><a href="#1026-table-tennis">1026 Table Tennis</a></li>
-<li><a href="#1030-travel-plan">1030 Travel Plan</a></li>
-<li><a href="#1034-head-of-a-gang">1034 Head of a Gang</a></li>
-<li><a href="#1038-recover-the-smallest-number">1038 Recover the Smallest Number</a></li>
-<li><a href="#1045-favorite-color-stripe">1045 Favorite Color Stripe</a></li>
-<li><a href="#1049-counting-ones">1049 Counting Ones</a></li>
-<li><a href="#1053-path-of-equal-weight">1053 Path of Equal Weight</a></li>
-<li><a href="#1057-stack">1057 Stack</a></li>
-<li><a href="#1064-complete-binary-search-tree">1064 Complete Binary Search Tree</a></li>
-<li><a href="#1068-find-more-coins">1068 Find More Coins</a></li>
-<li><a href="#1072-gas-station">1072 Gas Station</a></li>
-<li><a href="#1076-forwards-on-weibo">1076 Forwards on Weibo</a></li>
-<li><a href="#1080-graduate-admission">1080 Graduate Admission</a></li>
-<li><a href="#1087-all-roads-lead-to-rome">1087 All Roads Lead to Rome</a></li>
-<li><a href="#1091-acute-stroke">1091 Acute Stroke</a></li>
-<li><a href="#1095-cars-on-campus">1095 Cars on Campus</a></li>
-<li><a href="#1099-build-a-binary-search-tree">1099 Build A Binary Search Tree</a></li>
-<li><a href="#1103-integer-factorization">1103 Integer Factorization</a></li>
-<li><a href="#1107-social-clusters">1107 Social Clusters</a></li>
-<li><a href="#1111-online-map">1111 Online Map</a></li>
-<li><a href="#1115-counting-nodes-in-a-bst">1115 Counting Nodes in a BST</a></li>
-<li><a href="#1119-pre-and-post-order-traversals">1119 Pre- and Post-order Traversals</a></li>
-<li><a href="#1123-is-it-a-complete-avl-tree">1123 Is It a Complete AVL Tree</a></li>
-<li><a href="#1127-zigzagging-on-a-tree">1127 ZigZagging on a Tree</a></li>
-<li><a href="#1131-subway-map">1131 Subway Map</a></li>
-<li><a href="#1135-is-it-a-red-black-tree">1135 Is It A Red-Black Tree</a></li>
-<li><a href="#1139-first-contact">1139 First Contact</a></li>
-<li><a href="#1143-lowest-common-ancestor">1143 Lowest Common Ancestor</a></li>
-<li><a href="#1147-heaps">1147 Heaps</a></li>
-<li><a href="#1151-lca-in-a-binary-tree">1151 LCA in a Binary Tree</a></li>
-<li><a href="#1155-heap-paths">1155 Heap Paths</a></li>
-</ul>
-<!-- tocstop -->
-
-</div>
-
-<h1><span id="1004-counting-leaves">1004 Counting Leaves</span><a href="#1004-counting-leaves" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805521431773184" target="_blank" rel="noopener">传送门</a><br><strong>一次过</strong><br>遍历树，计算每一层的叶子结点个数</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>children<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> result<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>maxdp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span><span class="token keyword">int</span> depth<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>children<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        result<span class="token punctuation">[</span>depth<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-        maxdp<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>depth<span class="token punctuation">,</span>maxdp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">:</span>children<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span>depth<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cin<span class="token operator">>></span>n<span class="token operator">>></span>m<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> id<span class="token punctuation">,</span>k<span class="token punctuation">,</span>child<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cin<span class="token operator">>></span>id<span class="token operator">>></span>k<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            cin<span class="token operator">>></span>child<span class="token punctuation">;</span>
-            children<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>maxdp<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
-        cout<span class="token operator">&lt;&lt;</span>result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="1014-waiting-in-line">1014 Waiting in Line</span><a href="#1014-waiting-in-line" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805498207911936" target="_blank" rel="noopener">传送门</a><br>如果17点前服务了，但服务结束时间在17点后，则需要输出时间而不是Sorry，满足这个条件的测试点共11分。模拟队列即可</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>k<span class="token punctuation">,</span>q<span class="token punctuation">,</span>time<span class="token punctuation">[</span><span class="token number">1010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>id<span class="token punctuation">,</span>que<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tail<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>top<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>wait<span class="token punctuation">[</span><span class="token number">1010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>w<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>fast<span class="token punctuation">,</span>fastq<span class="token punctuation">,</span>sorry<span class="token punctuation">[</span><span class="token number">1010</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    cin<span class="token operator">>></span>n<span class="token operator">>></span>m<span class="token operator">>></span>k<span class="token operator">>></span>q<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>cin<span class="token operator">>></span>time<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token operator">*</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        w<span class="token operator">=</span>w<span class="token operator">%</span>n<span class="token punctuation">;</span>
-        que<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>tail<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">)</span>wait<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>time<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span><span class="token punctuation">{</span>
-            wait<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+</span>time<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">540</span><span class="token punctuation">)</span>sorry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        tail<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>w<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>n<span class="token operator">*</span>m<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        fast<span class="token operator">=</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>top<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>fastq<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>top<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">&lt;</span>fast<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                fast<span class="token operator">=</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>top<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-                fastq<span class="token operator">=</span>j<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        top<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-        que<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-        wait<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+</span>time<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>wait<span class="token punctuation">[</span>que<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token punctuation">[</span>tail<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">540</span><span class="token punctuation">)</span>sorry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-        tail<span class="token punctuation">[</span>fastq<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cin<span class="token operator">>></span>id<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>sorry<span class="token punctuation">[</span>id<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Sorry\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:%02d\n"</span><span class="token punctuation">,</span>wait<span class="token punctuation">[</span>id<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">60</span><span class="token operator">+</span><span class="token number">8</span><span class="token punctuation">,</span>wait<span class="token punctuation">[</span>id<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">%</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="1018-public-bike-management">1018 Public Bike Management</span><a href="#1018-public-bike-management" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1022-digital-library">1022 Digital Library</span><a href="#1022-digital-library" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805480801550336" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1026-table-tennis">1026 Table Tennis</span><a href="#1026-table-tennis" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805472333250560" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1030-travel-plan">1030 Travel Plan</span><a href="#1030-travel-plan" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805464397627392" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1034-head-of-a-gang">1034 Head of a Gang</span><a href="#1034-head-of-a-gang" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805456881434624" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1038-recover-the-smallest-number">1038 Recover the Smallest Number</span><a href="#1038-recover-the-smallest-number" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805449625288704" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1045-favorite-color-stripe">1045 Favorite Color Stripe</span><a href="#1045-favorite-color-stripe" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1049-counting-ones">1049 Counting Ones</span><a href="#1049-counting-ones" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805430595731456" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1053-path-of-equal-weight">1053 Path of Equal Weight</span><a href="#1053-path-of-equal-weight" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805424153280512" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1057-stack">1057 Stack</span><a href="#1057-stack" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1064-complete-binary-search-tree">1064 Complete Binary Search Tree</span><a href="#1064-complete-binary-search-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805407749357568" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1068-find-more-coins">1068 Find More Coins</span><a href="#1068-find-more-coins" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805402305150976" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1072-gas-station">1072 Gas Station</span><a href="#1072-gas-station" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805396953219072" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1076-forwards-on-weibo">1076 Forwards on Weibo</span><a href="#1076-forwards-on-weibo" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805392092020736" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1080-graduate-admission">1080 Graduate Admission</span><a href="#1080-graduate-admission" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805387268571136" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1087-all-roads-lead-to-rome">1087 All Roads Lead to Rome</span><a href="#1087-all-roads-lead-to-rome" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805379664297984" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1091-acute-stroke">1091 Acute Stroke</span><a href="#1091-acute-stroke" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805375457411072" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1095-cars-on-campus">1095 Cars on Campus</span><a href="#1095-cars-on-campus" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805371602845696" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1099-build-a-binary-search-tree">1099 Build A Binary Search Tree</span><a href="#1099-build-a-binary-search-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805367987355648" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1103-integer-factorization">1103 Integer Factorization</span><a href="#1103-integer-factorization" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805364711604224" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1107-social-clusters">1107 Social Clusters</span><a href="#1107-social-clusters" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805361586847744" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1111-online-map">1111 Online Map</span><a href="#1111-online-map" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805358663417856" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1115-counting-nodes-in-a-bst">1115 Counting Nodes in a BST</span><a href="#1115-counting-nodes-in-a-bst" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805355987451904" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1119-pre-and-post-order-traversals">1119 Pre- and Post-order Traversals</span><a href="#1119-pre-and-post-order-traversals" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805353470869504" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1123-is-it-a-complete-avl-tree">1123 Is It a Complete AVL Tree</span><a href="#1123-is-it-a-complete-avl-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351302414336" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1127-zigzagging-on-a-tree">1127 ZigZagging on a Tree</span><a href="#1127-zigzagging-on-a-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805349394006016" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1131-subway-map">1131 Subway Map</span><a href="#1131-subway-map" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805347523346432" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1135-is-it-a-red-black-tree">1135 Is It A Red-Black Tree</span><a href="#1135-is-it-a-red-black-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346063728640" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1139-first-contact">1139 First Contact</span><a href="#1139-first-contact" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344776077312" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1143-lowest-common-ancestor">1143 Lowest Common Ancestor</span><a href="#1143-lowest-common-ancestor" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343727501312" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1147-heaps">1147 Heaps</span><a href="#1147-heaps" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1151-lca-in-a-binary-tree">1151 LCA in a Binary Tree</span><a href="#1151-lca-in-a-binary-tree" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038430130011897856" target="_blank" rel="noopener">传送门</a></p>
-<h1><span id="1155-heap-paths">1155 Heap Paths</span><a href="#1155-heap-paths" class="header-anchor"></a></h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1071785408849047552" target="_blank" rel="noopener">传送门</a><br>要注意dfs中堆的遍历结束条件及输出</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>path<span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token punctuation">,</span>heap<span class="token punctuation">[</span><span class="token number">1010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>state<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> root<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">1</span><span class="token operator">>=</span>n<span class="token operator">&amp;&amp;</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">2</span><span class="token operator">>=</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">&lt;</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>path<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>cout<span class="token operator">&lt;&lt;</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">else</span><span class="token punctuation">{</span>
-                    cout<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>path<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-                        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>path<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>state<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
-                        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            cout<span class="token operator">&lt;&lt;</span><span class="token string">'\n'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>heap<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>heap<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>root<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        path<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    string h<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"Not Heap"</span><span class="token punctuation">,</span><span class="token string">"Min Heap"</span><span class="token punctuation">,</span><span class="token string">"Max Heap"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>cin<span class="token operator">>></span>heap<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    path<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>heap<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span>h<span class="token punctuation">[</span>state<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<br>
-<div align="right">
-    <img width="25" src="/2020/01/PATAdvanced30/chooser_cc.png">
-    <img width="25" src="/2020/01/PATAdvanced30/chooser_by.png">
-    <img width="25" src="/2020/01/PATAdvanced30/chooser_sa.png">
-</div>
-
-                </div>
-            </div>
-    
-            <nav class="post-pagination">
-    
-    <a class="newer-posts" href="/2020/02/BeautifyWindowsTerminal/">
-        上一篇<br>一份 Windows Terminal 配置笔记
-    </a>
-    
-    <span class="page-number"></span>
-    
-    <a class="older-posts" href="/2020/01/PATAdvanced25/">
-        下一篇<br>「PAT 甲级」25分题汇总
-    </a>
-    
-</nav>
-
-    
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
             
-
-
+            <a class="write-prev-post" href="/2020/02/BeautifyWindowsTerminal/">
+                <i class="fa fa-angle-left"></i>&emsp;一份 Windows Terminal 配置笔记
+            </a>
+            
+            
+            <a class="write-next-post" href="/2020/01/PATAdvanced25/">
+                「PAT 甲级」25分题汇总&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
         </div>
+        
     </div>
-    <div class="single-column-footer">
-    Proudly published with Hexo<br>
-    
-    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-    
-    &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
 </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
 </div>
-
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?85893496"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2020 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
+<!-- tocbot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
 
+<!-- highlight js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

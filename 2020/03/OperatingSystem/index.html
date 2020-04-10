@@ -1,0 +1,764 @@
+<!-- 不变的布局 -->
+<!DOCTYPE html>
+<html>
+<!-- head -->
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+
+    <title>
+        
+        「学习笔记」操作系统 - Lxyyxxx&#39;s Notebook
+        
+    </title>
+
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
+
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
+        </div>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">「学习笔记」操作系统</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2020-04-10T03:10:01.506Z" itemprop="dateModified">
+                            2020-04-10 11:10
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
+                        
+                        
+                        <i class="fas fa-folder"></i>
+                        
+                        <a
+                            href='/categories/一起学习吧/'>一起学习吧</a>
+                        
+                        
+                        &emsp;
+                        <!-- tags -->
+                        
+                        
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/学习笔记/'>学习笔记</a>, 
+                        
+                        <a
+                            href='/tags/操作系统/'>操作系统</a>
+                        
+                        
+                    </div>
+                    <article class="write-content">
+                        <h1 id="引言"><a class="header-anchor" href="#引言"># </a>引言</h1>
+<h2 id="操作系统的目标和作用"><a class="header-anchor" href="#操作系统的目标和作用"># </a>操作系统的目标和作用</h2>
+<h3 id="操作系统的目标"><a class="header-anchor" href="#操作系统的目标"># </a>操作系统的目标</h3>
+<ol>
+<li>有效性
+<ul>
+<li>提高系统<strong>资源利用率</strong></li>
+<li>提高系统的<strong>吞吐量</strong></li>
+</ul>
+</li>
+<li>方便性</li>
+<li>可扩充性</li>
+<li>开放性</li>
+</ol>
+<h3 id="操作系统的作用"><a class="header-anchor" href="#操作系统的作用"># </a>操作系统的作用</h3>
+<h4 id="1-OS作为用户与计算机硬件系统之间的接口"><a class="header-anchor" href="#1-OS作为用户与计算机硬件系统之间的接口"># </a>1. OS作为用户与计算机硬件系统之间的接口</h4>
+<p><img src="/2020/03/OperatingSystem/1-1.png" alt="pic1-1"><br>
+用户可通过以下三种方式使用计算机</p>
+<ul>
+<li>命令方式</li>
+<li>系统调用方式</li>
+<li>图形、窗口方式</li>
+</ul>
+<h4 id="2-OS作为计算机系统资源的管理者"><a class="header-anchor" href="#2-OS作为计算机系统资源的管理者"># </a>2. OS作为计算机系统资源的管理者</h4>
+<p>对四类资源进行有效的管理</p>
+<ul>
+<li>处理机管理</li>
+<li>存储器管理</li>
+<li>I/O 设备管理</li>
+<li>文件管理</li>
+</ul>
+<h4 id="3-OS实现了对计算机资源的抽象"><a class="header-anchor" href="#3-OS实现了对计算机资源的抽象"># </a>3. OS实现了对计算机资源的抽象</h4>
+<p><img src="/2020/03/OperatingSystem/1-2.png" alt="pic1-2"></p>
+<h3 id="推动操作系统发展的主要动力"><a class="header-anchor" href="#推动操作系统发展的主要动力"># </a>推动操作系统发展的主要动力</h3>
+<ol>
+<li>不断提高计算机资源的利用率</li>
+<li>方便用户</li>
+<li>器件的不断更新换代</li>
+<li>计算机体系结构的不断发展</li>
+</ol>
+<h2 id="操作系统的发展过程"><a class="header-anchor" href="#操作系统的发展过程"># </a>操作系统的发展过程</h2>
+<h3 id="无操作系统的计算机系统"><a class="header-anchor" href="#无操作系统的计算机系统"># </a>无操作系统的计算机系统</h3>
+<h4 id="1-人工操作方式"><a class="header-anchor" href="#1-人工操作方式"># </a>1. 人工操作方式</h4>
+<p>人工安装事先穿孔纸带或卡片到输入机 → 人工启动输入机I/O输入 → 启动计算机计算 → 人工取I/O输出结果 → 下一个用户上机<br>
+缺点:</p>
+<ul>
+<li>用户独占全机   此时，计算机及其全部资源只能由上机用户独占</li>
+<li>CPU 等待人工操作   当用户进行装带(卡)、卸带(卡)等人工操作时，CPU 及内存等资源是空闲的</li>
+<li>CPU和I/O串行操作</li>
+</ul>
+<h4 id="2-脱机输入-输出方式"><a class="header-anchor" href="#2-脱机输入-输出方式"># </a>2. 脱机输入/输出方式</h4>
+<p><img src="/2020/03/OperatingSystem/1-3.png" alt="pic1-3"><br>
+主要优点：</p>
+<ul>
+<li>减少了 CPU 的空闲时间   装带(卡)、卸带(卡)以及将数据从低速I/O设备送到高速磁带(或盘)上，都是在脱机情况下进行</li>
+<li>提高了 I/O 速度   当CPU在运行中需要数据时，是直接从高速的磁带或磁盘上将数据调入内存</li>
+</ul>
+<h3 id="单道批处理系统"><a class="header-anchor" href="#单道批处理系统"># </a>单道批处理系统</h3>
+<p>内存中仅有一道作业</p>
+<h4 id="处理过程"><a class="header-anchor" href="#处理过程"># </a>处理过程</h4>
+<p><img src="/2020/03/OperatingSystem/1-4.png" alt="pic1-4"></p>
+<h4 id="特征"><a class="header-anchor" href="#特征"># </a>特征</h4>
+<ol>
+<li>自动性</li>
+<li>顺序性</li>
+<li>单道性</li>
+</ol>
+<h3 id="多道批处理系统"><a class="header-anchor" href="#多道批处理系统"># </a>多道批处理系统</h3>
+<h4 id="基本概念"><a class="header-anchor" href="#基本概念"># </a>基本概念</h4>
+<p>用户所提交的作业都先存放在<strong>外存</strong>上并排成一个队列，称为<strong>后备队列</strong>；然后，由<strong>作业调度程序</strong>按一定的算法从后备队列中选择若干个作业调入内存，使它们<strong>共享</strong>CPU和系统中的各种资源<br>
+<img src="/2020/03/OperatingSystem/1-5.png" alt="pic1-5"></p>
+<h4 id="好处"><a class="header-anchor" href="#好处"># </a>好处</h4>
+<ol>
+<li>提高 CPU 的利用率</li>
+<li>可提高内存和 I/O 设备利用率</li>
+<li>增加系统吞吐量</li>
+</ol>
+<h4 id="优缺点"><a class="header-anchor" href="#优缺点"># </a>优缺点</h4>
+<ol>
+<li>资源利用率高</li>
+<li>系统吞吐量大   CPU 和其它资源保持&quot;忙碌&quot;状态，仅当作业完成时或运行不下去时才进行切换，系统开销小</li>
+</ol>
+<blockquote>
+<p>系统吞吐量是指系统在单位时间内所完成的总工作量</p>
+</blockquote>
+<ol start="3">
+<li>平均周转时间长   作业要排队,周转时间较长</li>
+</ol>
+<blockquote>
+<p>作业的周转时间是指从作业进入系统开始，直至其完成并退出系统为止所经历的时间</p>
+</blockquote>
+<ol start="4">
+<li>无交互能力</li>
+</ol>
+<h4 id="需要解决的问题"><a class="header-anchor" href="#需要解决的问题"># </a>需要解决的问题</h4>
+<ol>
+<li>处理机管理问题</li>
+<li>内存管理问题</li>
+<li>I/O 设备管理问题</li>
+<li>文件管理问题</li>
+<li>作业管理问题</li>
+</ol>
+<h3 id="分时系统"><a class="header-anchor" href="#分时系统"># </a>分时系统</h3>
+<p>将一台计算机提供给<strong>多个用户同时使用</strong>，提高计算机的利用率</p>
+<h4 id="产生"><a class="header-anchor" href="#产生"># </a>产生</h4>
+<p>用户的需求具体表现在以下几个方面：</p>
+<ol>
+<li>人-机交互</li>
+<li>共享主机</li>
+<li>便于用户上机</li>
+</ol>
+<h4 id="关键问题"><a class="header-anchor" href="#关键问题"># </a>关键问题</h4>
+<p>系统对多个用户同时通过自己的键盘键入的命令进行</p>
+<ol>
+<li>及时接收   作业应直接进入内存</li>
+<li>及时处理   不允许一个作业长期占用处理机，规定时间片</li>
+</ol>
+<h4 id="特征-x2"><a class="header-anchor" href="#特征-x2"># </a>特征</h4>
+<ol>
+<li>多路性</li>
+<li>独立性</li>
+<li>及时性</li>
+<li>交互性</li>
+</ol>
+<h3 id="实时系统"><a class="header-anchor" href="#实时系统"># </a>实时系统</h3>
+<p>系统能及时(或即时)响应外部事件的请求，在规定的时间内完成对该事件的处理，并控制所有实时任务协调一致地运行</p>
+<h4 id="应用需求"><a class="header-anchor" href="#应用需求"># </a>应用需求</h4>
+<ol>
+<li>实时控制</li>
+<li>实时信息处理</li>
+</ol>
+<h4 id="实时任务"><a class="header-anchor" href="#实时任务"># </a>实时任务</h4>
+<h5 id="按任务执行时是否呈现周期性来划分"><a class="header-anchor" href="#按任务执行时是否呈现周期性来划分"># </a>按任务执行时是否呈现周期性来划分</h5>
+<ol>
+<li>周期性实时任务   外部设备周期性地发出激励信号给计算机，要求它按指定周期循环执行，以便周期性地控制某外部设备</li>
+<li>非周期性实时任务   外部设备所发出的激励信号并无明显的周期性，但都必须联系着一个截止时间，分为<strong>开始截止时间</strong>(某任务在某时间以前必须开始执行)和<strong>完成截止时间</strong>(某任务在某时间以前必须完成)</li>
+</ol>
+<h5 id="根据对截止时间的要求来划分"><a class="header-anchor" href="#根据对截止时间的要求来划分"># </a>根据对截止时间的要求来划分</h5>
+<ol>
+<li>硬实时任务   系统必须满足任务对截止时间的要求</li>
+<li>软实时任务   联系着一个截止时间，但并不严格</li>
+</ol>
+<h5 id="实时系统与分时系统特征的比较"><a class="header-anchor" href="#实时系统与分时系统特征的比较"># </a>实时系统与分时系统特征的比较</h5>
+<h6 id="1-多路性"><a class="header-anchor" href="#1-多路性"># </a>1. 多路性</h6>
+<p><strong>实时信息处理系统</strong>也按分时原则为多个终端用户服务<br>
+<strong>实时控制系统</strong>多路性则主要表现在<strong>系统</strong>周期性地对多路现场信息进行采集，以及对多个对象或多个执行机构进行控制，<strong>分时系统</strong>中的多路性则与<strong>用户情况有关</strong>，时多时少</p>
+<h6 id="2-独立性"><a class="header-anchor" href="#2-独立性"># </a>2. 独立性</h6>
+<p><strong>实时信息处理系统</strong>中的<strong>每个终端用户</strong>在向实时系统<strong>提出服务请求</strong>时，是彼此独立地操作，互不干扰<br>
+<strong>实时控制系统</strong>中，对<strong>信息的采集</strong>和<strong>对对象的控制</strong>也都是彼此互不干扰</p>
+<h6 id="3-及时性"><a class="header-anchor" href="#3-及时性"># </a>3. 及时性</h6>
+<p><strong>实时信息处理系统</strong>对实时性的要求与分时系统类似，都是以<strong>人所能接受的等待时间</strong>来确定的<br>
+<strong>实时控制系统</strong>的及时性，则是<strong>以控制对象所要求的开始截止时间或完成截止时间</strong>来确定的，一般为秒级到毫秒级，甚至有的要低于 100 微秒</p>
+<h6 id="4-交互性"><a class="header-anchor" href="#4-交互性"># </a>4. 交互性</h6>
+<p><strong>实时信息处理系统</strong>虽然也具有交互性，但这里人与系统的交互仅限于访问系统中<strong>某些特定的专用服务程序</strong><br>
+<strong>分时系统</strong>那样能<strong>向终端用户提供</strong>数据处理和资源共享等服务</p>
+<h6 id="5-可靠性"><a class="header-anchor" href="#5-可靠性"># </a>5. 可靠性</h6>
+<p>分时系统虽然也要求系统可靠，但相比之下，<strong>实时系统</strong>则要求系统具<strong>有高度的可靠性</strong>，因为任何差错都可能带来巨大的后果</p>
+<h3 id="微机操作系统的发展"><a class="header-anchor" href="#微机操作系统的发展"># </a>微机操作系统的发展</h3>
+<h4 id="单用户单任务操作系统"><a class="header-anchor" href="#单用户单任务操作系统"># </a>单用户单任务操作系统</h4>
+<p>只允许一个用户上机，且只允许用户程序作为一个任务运行，是最简单的微机操作系统</p>
+<ol>
+<li>CP/M</li>
+<li>MS-DOS</li>
+</ol>
+<h4 id="单用户多任务操作系统"><a class="header-anchor" href="#单用户多任务操作系统"># </a>单用户多任务操作系统</h4>
+<p>只允许一个用户上机，但允许用户把程序分为若干个任务，使它们<strong>并发执行</strong></p>
+<ol>
+<li>Windows</li>
+</ol>
+<h4 id="多用户多任务操作系统"><a class="header-anchor" href="#多用户多任务操作系统"># </a>多用户多任务操作系统</h4>
+<p>允许多个用户<strong>通过各自的终端</strong>使用同一台机器，共享主机系统中的各种资源，而每个用户程序又可进一步分为几个任务，使它们能并发执行，从而可进一步提高资源利用率和系统吞吐量，最有代表性的是 UNIX OS，最有影响的两个能运行在微机上的 UNIX 操作系统的变型是</p>
+<ol>
+<li>Solaris OS</li>
+<li>Linux OS</li>
+</ol>
+<h2 id="操作系统的基本特性"><a class="header-anchor" href="#操作系统的基本特性"># </a>操作系统的基本特性</h2>
+<h3 id="并发性"><a class="header-anchor" href="#并发性"># </a>并发性</h3>
+<h4 id="并行性"><a class="header-anchor" href="#并行性"># </a>并行性</h4>
+<p>两个或多个事件在<strong>同一时刻</strong>发生</p>
+<h4 id="并发性-x2"><a class="header-anchor" href="#并发性-x2"># </a>并发性</h4>
+<p>一段时间内<strong>宏观上</strong>有多个程序在同时运行，但在单处理机系统中，每一时刻却仅能有一道程序执行，故<strong>微观上</strong>这些程序只能是<strong>分时地交替执行</strong></p>
+<h4 id="进程"><a class="header-anchor" href="#进程"># </a>进程</h4>
+<p>通常的程序是<strong>静态实体</strong>(Passive Entity)，在多道程序系统中，它们是不能独立运行的，更不能和其它程序并发执行<br>
+为使多个程序能<strong>并发执行</strong>，系统必须分别为<strong>每个程序</strong>建立<strong>进程</strong><br>
+<strong>进程</strong>是指在系统中能独立运行并作为资源分配的<strong>基本单位</strong>，它是由一组机器指令、数据和堆栈等组成的，是一个能独立运行的活动实体。多个进程之间可以并发执行和交换信息</p>
+<blockquote>
+<p><strong>进程和并发</strong>是现代操作系统中最重要的基本概念，也是操作系统运行的基础</p>
+</blockquote>
+<h4 id="线程"><a class="header-anchor" href="#线程"># </a>线程</h4>
+<p>比进程更小的单位，一个进程中可以包含若干个线程<br>
+由于线程比进程更小，基本上不拥有系统资源，故对它的调度所付出的开销就会小得多，能更高效地提高系统内多个程序间并发执行的程度</p>
+<h3 id="共享性"><a class="header-anchor" href="#共享性"># </a>共享性</h3>
+<p>系统中的资源可供内存中多个并发执行的进程(线程)共同使用，又称为<strong>资源共享</strong>或<strong>资源复用</strong><br>
+目前主要实现资源共享的方式有两种</p>
+<h4 id="互斥共享方式"><a class="header-anchor" href="#互斥共享方式"># </a>互斥共享方式</h4>
+<p>为使结果不致造成混淆，应规定在一段时间内只允许一个进程(线程)访问该资源<br>
+当一个进程 A 要访问某资源时，必须先提出请求。如果此时该资源空闲，系统便可将之分配给请求进程 A 使用。此后若再有其它进程也要访问该资源时(只要 A 未用完)，则必须等待。仅当 A 进程访问完并释放该资源后，才允许另一进程对该资源进行访问<br>
+把在一段时间内只允许一个进程访问的资源称为<strong>临界资源</strong>或<strong>独占资源</strong></p>
+<h4 id="同时访问方式"><a class="header-anchor" href="#同时访问方式"># </a>同时访问方式</h4>
+<p>宏观上同时访问，微观上这些进程可能是交替地对该资源进行访问</p>
+<blockquote>
+<p><strong>并发和共享</strong>是操作系统的两个最基本的特征，又是互为存在的条件。有并发才会谈共享，不管理好共享会影响到并发</p>
+</blockquote>
+<h3 id="虚拟技术"><a class="header-anchor" href="#虚拟技术"># </a>虚拟技术</h3>
+<p>通过某种技术把一个物理实体变为若干个逻辑上的对应物</p>
+<h4 id="时分复用技术"><a class="header-anchor" href="#时分复用技术"># </a>时分复用技术</h4>
+<p>分时使用，最早用于电信业，将一条物理信道虚拟为多条逻辑信道，将每条信道供一对用户通话</p>
+<ol>
+<li>虚拟处理机技术<br>
+利用多道程序设计技术，把一台物理上的处理机虚拟为多台逻辑上的处理机。把用户所感觉到的处理机称为<strong>虚拟处理器</strong></li>
+<li>虚拟设备技术<br>
+通过虚拟设备技术，将一台物理 I/O 设备虚拟为多台逻辑上的 I/O 设备，并允许每个用户占用一台逻辑上的 I/O 设备</li>
+</ol>
+<h4 id="空分复用技术"><a class="header-anchor" href="#空分复用技术"># </a>空分复用技术</h4>
+<p>频分复用，最早用于电信业，将一个频率范围非常宽的信道，划分成多个频率范围较窄的信道，其中的任何一个频带都只供一对用<br>
+户通话</p>
+<ol>
+<li>虚拟磁盘技术<br>
+通过虚拟磁盘技术将一台硬盘虚拟为多台虚拟磁盘，即将硬盘划分为若干个卷</li>
+<li>虚拟存储器技术<br>
+利用存储器的空闲空间来存放其它的程序，以提高内存的利用率</li>
+</ol>
+<h3 id="异步性"><a class="header-anchor" href="#异步性"># </a>异步性</h3>
+<p>由于资源等因素的限制，使进程的执行通常都不是&quot;一气呵成&quot;，而是以&quot;停停走走&quot;的方式运行<br>
+进程是以人们不可预知的速度向前推进，此即进程的异步性(Asynchronism)</p>
+<h2 id="操作系统的主要功能"><a class="header-anchor" href="#操作系统的主要功能"># </a>操作系统的主要功能</h2>
+<h3 id="处理机管理功能"><a class="header-anchor" href="#处理机管理功能"># </a>处理机管理功能</h3>
+<p>处理机管理的主要功能是创建和撤消进程(线程)，对诸进程(线程)的运行进行协调，实现进程(线程)之间的信息交换，以及按照一定的算法把处理机分配给进程(线程)</p>
+<h4 id="1-进程控制"><a class="header-anchor" href="#1-进程控制"># </a>1. 进程控制</h4>
+<p>进程控制的主要功能是为作业创建进程，撤消已结束的进程，以及控制进程在运行过程中的状态转换<br>
+在现代 OS 中，进程控制还应具有为一个进程创建若干个线程的功能和撤消(终止)已完成任务的线程的功能</p>
+<h4 id="2-进程同步"><a class="header-anchor" href="#2-进程同步"># </a>2. 进程同步</h4>
+<p>进程同步的主要任务是为多个进程(含线程)的运行进行协调，有两种协调方式：</p>
+<ul>
+<li>进程互斥方式</li>
+<li>进程同步方式</li>
+</ul>
+<h4 id="3-进程通信"><a class="header-anchor" href="#3-进程通信"># </a>3. 进程通信</h4>
+<p>进程通信的任务就是用来实现在相互合作的进程之间的信息交换</p>
+<h4 id="4-调度"><a class="header-anchor" href="#4-调度"># </a>4. 调度</h4>
+<p>在后备队列上等待的每个作业都需经过调度才能执行。在传统的操作系统中，包括作业调度和进程调度两步</p>
+<ul>
+<li>作业调度   后备队列 → 内存 → 建立进程 → 就绪队列</li>
+<li>进程调度   就绪队列 → 分配处理机</li>
+</ul>
+<blockquote>
+<p>在多线程OS中，通常是把线程作为独立运行和分配处理机的基本单位，为此，须把<strong>就绪线程</strong>排成一个队列，每次调度时，是从就绪线程队列中选出一个线程，把处理机分配给它</p>
+</blockquote>
+<h3 id="存储器管理功能"><a class="header-anchor" href="#存储器管理功能"># </a>存储器管理功能</h3>
+<p>存储器管理的主要任务是为<strong>多道程序的运行</strong>提供良好的环境，方便用户使用存储器，提高存储器的利用率以及能从逻辑上扩充内存</p>
+<h4 id="1-内存分配"><a class="header-anchor" href="#1-内存分配"># </a>1. 内存分配</h4>
+<p>内存分配的主要任务是为每道程序分配内存空间，使它们&quot;各得其所&quot;；提高存储器的利用率，以减少不可用的内存空间；允许正在运行的程序申请附加的内存空间，以适应程序和数据动态增长的需要<br>
+每个作业的内存空间是在作业装入时确定的</p>
+<ul>
+<li>
+<p>静态分配   在作业装入后的整个运行期间，不允许该作业再申请新的内存空间，也不允许作业在内存中&quot;移动&quot;</p>
+</li>
+<li>
+<p>动态分配   允许作业在运行过程中继续申请新的附加内存空间，以适应程序和数据的动态增长，也允许作业在内存中&quot;移动&quot;</p>
+</li>
+</ul>
+<h4 id="2-内存保护"><a class="header-anchor" href="#2-内存保护"># </a>2. 内存保护</h4>
+<p>内存保护的主要任务是确保每道用户程序都只在自己的内存空间内运行，彼此互不干扰；绝不允许用户程序访问操作系统的程序和数据；也不允许用户程序转移到非共享的其它用户程序中去执行<br>
+一种比较简单的内存保护机制是<strong>设置两个界限寄存器</strong>，分别用于存放正在执行程序的上界和下界。系统须对每条指令所要访问的地址进行检查，如果发生越界，便发出越界中断请求，以停止该程序的执行</p>
+<h4 id="3-地址映射"><a class="header-anchor" href="#3-地址映射"># </a>3. 地址映射</h4>
+<p><strong>目标程序</strong>经过链接形成了<strong>可装入程序</strong>，这些程序的地址都是从&quot;0&quot;开始的，程序中的其它地址都是相对于起始地址计算的<br>
+由这些地址所形成的地址范围称为<strong>地址空间</strong>，其中的地址称为<strong>逻辑地址</strong>或<strong>相对地址</strong><br>
+由<strong>内存</strong>中的一系列单元所限定的地址范围称为<strong>内存空间</strong>，其中的地址称为<strong>物理地址</strong><br>
+在多道程序环境下，每道程序不可能都从&quot;0&quot;地址开始装入内存，为使程序能正确运行，存储器管理必须提供地址映射功能，以将<strong>地址空间中的逻辑地址</strong>转换为<strong>内存空间中</strong>与之对应<strong>的物理地址</strong>。该功能应在<strong>硬件</strong>的支持下完成</p>
+<h4 id="4-内存扩充"><a class="header-anchor" href="#4-内存扩充"># </a>4. 内存扩充</h4>
+<p>借助于虚拟存储技术，从逻辑上去扩充内存容量。为了能在逻辑上扩充内存，系统必须具有内存扩充机制，用于实现下述各功能：</p>
+<ul>
+<li>请求调入功能   要继续运行时所需的程序和数据尚未装入内存，可向 OS 发出调用请求</li>
+<li>置换功能   内存中已无足够的空间来装入需要调入的程序和数据时，系统应能将内存中的一部分暂时不用的程序和数据调至盘上，以腾出内存空间</li>
+</ul>
+<h3 id="设备管理功能"><a class="header-anchor" href="#设备管理功能"># </a>设备管理功能</h3>
+<p>设备管理的主要任务是：完成用户进程提出的 I/O 请求；为用户进程分配其所需的 I/O 设备；提高 CPU 和 I/O 设备的利用率；提高 I/O 速度；方便用户使用 I/O 设备</p>
+<h4 id="1-缓冲管理"><a class="header-anchor" href="#1-缓冲管理"># </a>1. 缓冲管理</h4>
+<p>在 I/O 设备和 CPU之间引入缓冲，则可有效地缓和 <strong>CPU 与 I/O 设备速度不匹配</strong>的矛盾<br>
+最常见的缓冲区机制有<strong>单缓冲机制</strong>、能实现双向同时传送数据的<strong>双缓冲机制</strong>，以及能供多个设备同时使用的<strong>公用缓冲池机制</strong></p>
+<h4 id="2-设备分配"><a class="header-anchor" href="#2-设备分配"># </a>2. 设备分配</h4>
+<p>设备分配的基本任务是根据用户进程的 I/O 请求、系统的现有资源情况以及按照某种设备的分配策略，为之分配其所需的设备<br>
+设置<strong>设备控制表、控制器控制表</strong>等数据结构，用于记录设备及控制器的标识符和状态</p>
+<h4 id="3-设备处理"><a class="header-anchor" href="#3-设备处理"># </a>3. 设备处理</h4>
+<p>设备处理程序又称为设备驱动程序，其基本任务是用于实现 CPU 和设备控制器之间的<br>
+通信，即由 CPU 向设备控制器发出 I/O 命令，要求它完成指定的 I/O 操作；反之，由 CPU接收从控制器发来的中断请求，并给予迅速的响应和相应的处理</p>
+<h3 id="文件管理功能"><a class="header-anchor" href="#文件管理功能"># </a>文件管理功能</h3>
+<h4 id="1-文件存储空间的管理"><a class="header-anchor" href="#1-文件存储空间的管理"># </a>1. 文件存储空间的管理</h4>
+<p>主要任务是为每个文件分配必要的外存空间，提高外存的利用率，并能有助于提高文件系统的存、取速度</p>
+<ul>
+<li>设置相应的数据结构，用于记录文件存储空间的使用情况</li>
+<li>具有对存储空间进行<strong>分配和回收</strong>的功能，对存储空间的分配，通常是采用<strong>离散分配</strong>方式，以减少外存零头，并以盘块为基本分配单位</li>
+</ul>
+<h4 id="2-目录管理"><a class="header-anchor" href="#2-目录管理"># </a>2. 目录管理</h4>
+<p>主要任务是用户只须提供文件名便可对该文件进行存取，实现<strong>文件共享</strong>，提供快速的<strong>目录查询</strong>手段</p>
+<h4 id="3-文件读写管理与保护"><a class="header-anchor" href="#3-文件读写管理与保护"># </a>3. 文件读写管理与保护</h4>
+<ul>
+<li>文件的读/写管理   根据用户的请求，从外存中读取数据，或将数据写入外存</li>
+<li>文件保护   防止未经核准的用户存取文件；防止冒名顶替存取文件；防止以不正确的方式使用文件</li>
+</ul>
+<h3 id="操作系统与用户之间的接口"><a class="header-anchor" href="#操作系统与用户之间的接口"># </a>操作系统与用户之间的接口</h3>
+<h4 id="1-用户接口"><a class="header-anchor" href="#1-用户接口"># </a>1. 用户接口</h4>
+<p>提供给用户使用的接口，用户可通过该接口取得操作系统的服务，是一个<strong>命令接口</strong></p>
+<ul>
+<li>联机用户接口</li>
+<li>脱机用户接口，也称为批处理用户接口，该接口由一组**作业控制语言(JCL)**组成</li>
+<li>图形用户接口</li>
+</ul>
+<h4 id="2-程序接口"><a class="header-anchor" href="#2-程序接口"># </a>2. 程序接口</h4>
+<p>提供给程序员在编程时使用的接口，是用户程序取得操作系统服务的惟一途径。由一组系统调用组成，每一个系统调用都是一个能完成特定功能的子程序，每当应用程序要求OS提供某种服务(功能)时，便调用具有相应功能的系统调用</p>
+<h2 id="OS结构设计"><a class="header-anchor" href="#OS结构设计"># </a>OS结构设计</h2>
+<h3 id="传统的操作系统结构（分层式操作系统）"><a class="header-anchor" href="#传统的操作系统结构（分层式操作系统）"># </a>传统的操作系统结构（分层式操作系统）</h3>
+<p>将模块按照某种逻辑关系排成若干层、层间只能单向依赖，不构成循环，系统的正确性由各层的正确性来保证</p>
+<h4 id="基本原则"><a class="header-anchor" href="#基本原则"># </a>基本原则</h4>
+<p>每一层都仅使用其底层所提供的功能和服务，这样可使系统的调试和验证都变得容易</p>
+<h4 id="设计时应考虑的因素"><a class="header-anchor" href="#设计时应考虑的因素"># </a>设计时应考虑的因素</h4>
+<ul>
+<li>程序嵌套</li>
+<li>运行频率</li>
+<li>公用模块</li>
+<li>用户接口</li>
+</ul>
+<h4 id="优点"><a class="header-anchor" href="#优点"># </a>优点</h4>
+<p>调用和依赖关系单向，结构清晰，使得分析、移植和维护比较容易</p>
+<h3 id="客户-服务器模式"><a class="header-anchor" href="#客户-服务器模式"># </a>客户/服务器模式</h3>
+<p>系统保留最小的核心，而多数功能由用户进程（客户进程）来实现<br>
+客户请求服务发送给服务器进程，操作后结果返回给客户进程，即以用户进程形式运行<br>
+不在核心态，即不直接访问硬件，适合于分布式系统<br>
+<a href="/OperatingSystem/1-10.png">pic1-10</a></p>
+<h4 id="优点-x2"><a class="header-anchor" href="#优点-x2"># </a>优点</h4>
+<ul>
+<li>提高系统的灵活性和可扩充性</li>
+<li>提高OS的可靠性</li>
+<li>可运行与分布式系统中</li>
+</ul>
+<h3 id="面向对象的程序设计"><a class="header-anchor" href="#面向对象的程序设计"># </a>面向对象的程序设计</h3>
+<p>对象是OS管理的对象，由事先定义好的操作来改变，而操作由对象发消息才可启动</p>
+<h4 id="优点-x3"><a class="header-anchor" href="#优点-x3"># </a>优点</h4>
+<ul>
+<li>可修改性和可扩充性</li>
+<li>继承性</li>
+<li>正确性和可靠性</li>
+</ul>
+<h3 id="微内核OS结构"><a class="header-anchor" href="#微内核OS结构"># </a>微内核OS结构</h3>
+<p>将与硬件紧密相关的模块、运行频率较高的模块、关键性数据结构模块及公共基本操作模块安排在靠近硬件的层次，使之常驻内层，以提高系统运行效能，这部分称为<strong>微内核</strong><br>
+是<strong>基于硬件</strong>的第一次扩充<br>
+包含下列<strong>基本功能</strong></p>
+<ul>
+<li>进程管理</li>
+<li>存储器管理</li>
+<li>进程通信管理</li>
+<li>I/O设备管理</li>
+</ul>
+<h1 id="进程管理"><a class="header-anchor" href="#进程管理"># </a>进程管理</h1>
+<h2 id="进程的基本概念"><a class="header-anchor" href="#进程的基本概念"># </a>进程的基本概念</h2>
+<h3 id="程序的顺序执行及其特征"><a class="header-anchor" href="#程序的顺序执行及其特征"># </a>程序的顺序执行及其特征</h3>
+<p>通常可以把一个应用程序分成若干个程序段，在各程序段之间，必须按照某种先后次序顺序执行，仅当前一操作(程序段)执行完后，才能执行后继操作</p>
+<h4 id="特征-x3"><a class="header-anchor" href="#特征-x3"># </a>特征</h4>
+<ul>
+<li>顺序性</li>
+<li>封闭性</li>
+<li>可再现性</li>
+</ul>
+<h3 id="前趋图"><a class="header-anchor" href="#前趋图"># </a>前趋图</h3>
+<p>前趋图(Precedence Graph)是一个<strong>有向无环图</strong>，记为<strong>DAG</strong>(Directed Acyclic Graph)，用于描述进程之间执行的前后关系</p>
+<ol>
+<li>图中的每个<strong>结点</strong>可用于描述一个<strong>程序段或进程</strong>，乃至一条<strong>语句</strong>；</li>
+<li>结点间的<strong>有向边</strong>则用于表示两个结点之间存在的<strong>偏序</strong>(Partial Order，亦称偏序关系)或<strong>前趋</strong>关系(Precedence Relation)</li>
+</ol>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>P</mi><mi>i</mi></msub><mi mathvariant="normal">，</mi><msub><mi>P</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><msub><mi>P</mi><mi>i</mi></msub><mtext>  </mtext><mi>m</mi><mi>u</mi><mi>s</mi><mi>t</mi><mtext>  </mtext><mi>c</mi><mi>o</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>e</mi><mi>t</mi><mi>e</mi><mtext>  </mtext><mi>b</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>e</mi><mtext>  </mtext><msub><mi>P</mi><mi>j</mi></msub><mtext>  </mtext><mi>m</mi><mi>a</mi><mi>y</mi><mtext>  </mtext><mi>s</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>t</mi></mrow></mrow><annotation encoding="application/x-tex">\to ={(P_i，P_j)|P_i\; must\; complete\; before\; P_j\; may\; start}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">m</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span></span>，如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>P</mi><mi>i</mi></msub><mi mathvariant="normal">，</mi><msub><mi>P</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mo>∈</mo><mo>→</mo></mrow><annotation encoding="application/x-tex">(P_i，P_j) \in \to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span>，可写成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>→</mo><msub><mi>P</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">P_i\to P_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">P_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>的直接前趋，而称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">P_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的直接后继<br>
+在前趋图中，把没有前趋的结点称为<strong>初始结点</strong>(Initial Node)，把没有后继的结点称为<strong>终止结点</strong>(Final Node)。此外，每个结点还具有一个<strong>重量</strong>(Weight)，用于表示该结点所含有的程序量或结点的执行时间<br>
+前趋图中必须<strong>不存在循环</strong></p>
+<h3 id="程序的并发执行及其特征"><a class="header-anchor" href="#程序的并发执行及其特征"># </a>程序的并发执行及其特征</h3>
+<h3 id="进程的特征与状态"><a class="header-anchor" href="#进程的特征与状态"># </a>进程的特征与状态</h3>
+<h3 id="进程控制块"><a class="header-anchor" href="#进程控制块"># </a>进程控制块</h3>
+<h2 id="进程控制"><a class="header-anchor" href="#进程控制"># </a>进程控制</h2>
+<h3 id="进程的创建"><a class="header-anchor" href="#进程的创建"># </a>进程的创建</h3>
+<h3 id="进程的终止"><a class="header-anchor" href="#进程的终止"># </a>进程的终止</h3>
+<h3 id="进程的阻塞与唤醒"><a class="header-anchor" href="#进程的阻塞与唤醒"># </a>进程的阻塞与唤醒</h3>
+<h3 id="进程的挂起与激活"><a class="header-anchor" href="#进程的挂起与激活"># </a>进程的挂起与激活</h3>
+<h2 id="进程同步"><a class="header-anchor" href="#进程同步"># </a>进程同步</h2>
+<h3 id="进程同步的基本概念"><a class="header-anchor" href="#进程同步的基本概念"># </a>进程同步的基本概念</h3>
+<h3 id="信号量机制"><a class="header-anchor" href="#信号量机制"># </a>信号量机制</h3>
+<h3 id="信号量的应用"><a class="header-anchor" href="#信号量的应用"># </a>信号量的应用</h3>
+<h3 id="管程机制"><a class="header-anchor" href="#管程机制"># </a>管程机制</h3>
+<h2 id="经典进程的同步问题"><a class="header-anchor" href="#经典进程的同步问题"># </a>经典进程的同步问题</h2>
+<h3 id="生产者—消费者问题"><a class="header-anchor" href="#生产者—消费者问题"># </a>生产者—消费者问题</h3>
+<h3 id="哲学家进餐问题"><a class="header-anchor" href="#哲学家进餐问题"># </a>哲学家进餐问题</h3>
+<h3 id="读者—写者问题"><a class="header-anchor" href="#读者—写者问题"># </a>读者—写者问题</h3>
+<h2 id="进程通信"><a class="header-anchor" href="#进程通信"># </a>进程通信</h2>
+<h3 id="进程通信的类型"><a class="header-anchor" href="#进程通信的类型"># </a>进程通信的类型</h3>
+<h3 id="消息传递通信的实现方法"><a class="header-anchor" href="#消息传递通信的实现方法"># </a>消息传递通信的实现方法</h3>
+<h3 id="消息传递系统实现中的若干问题"><a class="header-anchor" href="#消息传递系统实现中的若干问题"># </a>消息传递系统实现中的若干问题</h3>
+<h3 id="消息缓冲队列通信机制"><a class="header-anchor" href="#消息缓冲队列通信机制"># </a>消息缓冲队列通信机制</h3>
+<h2 id="线程-x2"><a class="header-anchor" href="#线程-x2"># </a>线程</h2>
+<h3 id="线程的基本概念"><a class="header-anchor" href="#线程的基本概念"># </a>线程的基本概念</h3>
+<h3 id="线程间的同步和通信"><a class="header-anchor" href="#线程间的同步和通信"># </a>线程间的同步和通信</h3>
+<h3 id="线程的实现方式"><a class="header-anchor" href="#线程的实现方式"># </a>线程的实现方式</h3>
+<h3 id="线程的实现"><a class="header-anchor" href="#线程的实现"># </a>线程的实现</h3>
+<h1 id="处理机调度与死锁"><a class="header-anchor" href="#处理机调度与死锁"># </a>处理机调度与死锁</h1>
+<h2 id="处理机调度的层次"><a class="header-anchor" href="#处理机调度的层次"># </a>处理机调度的层次</h2>
+<h3 id="高级调度"><a class="header-anchor" href="#高级调度"># </a>高级调度</h3>
+<h4 id="作业"><a class="header-anchor" href="#作业"># </a>作业</h4>
+<p>作业是一个比程序更为广泛的概念，它不仅包含了通常的<strong>程序</strong>和<strong>数据</strong>，而且还应配有一份<strong>作业说明书</strong>，系统根据该说明书来对程序的运行进行控制<br>
+在批处理系统中，是以<strong>作业</strong>为基本单位<strong>从外存调入内存</strong>的</p>
+<h4 id="作业步"><a class="header-anchor" href="#作业步"># </a>作业步</h4>
+<p>在作业运行期间，每个作业都必须经过若干个<strong>相对独立，又相互关联</strong>的顺序加工步骤才能得到结果，我们把其中的每一个<strong>加工步骤</strong>称为一个作业步，各作业步之间存在着相互联系，往往是把<strong>上一个作业步的输出作为下一个作业步的输入</strong></p>
+<blockquote>
+<p>&quot;编译&quot;作业步、&quot;连结装配&quot;作业步、&quot;运行&quot;作业步</p>
+</blockquote>
+<h4 id="作业流"><a class="header-anchor" href="#作业流"># </a>作业流</h4>
+<p>若干个作业进入系统后，被依次存放在外存上，这便形成了<strong>输入的作业流</strong>；在操作系统的控制下，逐个作业进行处理，于是便形成了<strong>处理作业流</strong></p>
+<h4 id="作业控制块JCB-Job-Control-Block"><a class="header-anchor" href="#作业控制块JCB-Job-Control-Block"># </a>作业控制块JCB(Job Control Block)</h4>
+<p>作业在系统中存在的标志，其中保存了系统对作业进行管理和调度所需的全部信息<br>
+每当作业进入系统时，<strong>系统</strong>便为每个作业建立一个JCB，根据作业类型将它插入相应的<strong>后备队列</strong>中<br>
+<strong>作业调度程序</strong>依据一定的调度算法来调度它们，<strong>被调度到</strong>的作业将会<strong>装入内存</strong><br>
+在作业运行期间，<strong>系统</strong>就按照JCB中的信息对作业进行<strong>控制</strong><br>
+当一个作业执行结束进入完成状态时，<strong>系统</strong>负责<strong>回收</strong>分配给它的资源，<strong>撤消</strong>它的作业控制块</p>
+<h4 id="作业调度"><a class="header-anchor" href="#作业调度"># </a>作业调度</h4>
+<p>根据作业控制块中的信息，审查系统能否满足用户作业的资源需求，以及按照一定的算法，从外存的后备队列中选取某些作业调入内存，并为它们创建进程、分配必要的资源。然后再将新创建的进程插入就绪队列，准备执行<br>
+也称为称为<strong>接纳调度</strong>(Admission Scheduling)<br>
+对<strong>用户</strong>而言，总希望<strong>自己作业的周转时间</strong>尽可能的少，最好周转时间就等于作业的执行时间<br>
+然而对<strong>系统</strong>来说，则希望<strong>作业的平均周转时间</strong>尽可能少，有利于提高CPU 的利用率和系统的吞吐量<br>
+每次执行作业调度时，都须做出以下<strong>两个决定</strong></p>
+<ol>
+<li>决定接纳多少个作业<br>
+作业调度每次要接纳多少个作业进入内存，取决于<strong>多道程序度</strong>(Degree of Multiprogramming)，即允许多少个作业同时在内存中运行</li>
+<li>决定接纳哪些作业<br>
+最简单的是<strong>先来先服务</strong>调度算法，这是指将<strong>最早进入外存</strong>的作业最先调入内存<br>
+较常用的一种算法是<strong>短作业优先</strong>调度算法，是将<strong>外存上最短</strong>的作业最先调入内存<br>
+另一种较常用的是<strong>基于作业优先级</strong>的调度算法，该算法是将<strong>外存上优先级最高</strong>的作业优先调入内存<br>
+比较好的一种算法是<strong>响应比高者优先</strong>的调度算法<br>
+在批处理系统中，作业进入系统后，总是先驻留在<strong>外存的后备队列</strong>上<br>
+然而在<strong>分时系统</strong>中，为了做到及时响应，用户通过键盘输入的<strong>命令或数据</strong>等都是<strong>被直接送入内存</strong>的，因而<strong>无需再配置上述的作业调度机制</strong>，但也需要有某些限制性措施来<strong>限制进入系统的用户数</strong><br>
+类似地，在<strong>实时系统</strong>中通常也<strong>不需要</strong>作业调度</li>
+</ol>
+<h3 id="低级调度"><a class="header-anchor" href="#低级调度"># </a>低级调度</h3>
+<p>也称为<strong>进程调度</strong>或<strong>短程调度</strong>(ShortTerm Scheduling)，调度的对象是<strong>进程(或内核级线程)</strong><br>
+进程调度是<strong>最基本</strong>的一种调度，在<strong>多道批处理、分时和实时</strong>三种类型的OS中，都<strong>必须配置</strong>这级调度</p>
+<h4 id="主要功能"><a class="header-anchor" href="#主要功能"># </a>主要功能</h4>
+<ol>
+<li>保存处理机的现场信息</li>
+<li>按某种算法选取进程</li>
+<li>把处理器分配给进程</li>
+</ol>
+<h4 id="三个基本机制"><a class="header-anchor" href="#三个基本机制"># </a>三个基本机制</h4>
+<ol>
+<li>排队器<br>
+将系统中所有的就绪进程按照一定的方式排成一个或多个队列，以便<strong>调度程序能最快</strong>地找到它</li>
+<li>分派器(分派程序)<br>
+分派器把由进程调度程序所选定的进程，从<strong>就绪队列</strong>中取出该进程，然后进行<strong>上下文切换</strong>，将<strong>处理机分配给它</strong></li>
+<li>上下文切换机制<br>
+当对处理机进行切换时，会发生两对上下文切换操作<br>
+但是上下文切换将花去不少的处理机时间，每一次上下文切换大约需要花费几毫秒的时间。通过硬件(采用两组或多组寄存器)的方法来减少上下文切换的时间：一组寄存器供处理机在<strong>系统态</strong>时使用，另一组寄存器供<strong>应用程序</strong>使用。在这种条件下的上下文切换只需<strong>改变指针</strong>，使其指向当前寄存器组即可</li>
+</ol>
+<h4 id="进程调度方式"><a class="header-anchor" href="#进程调度方式"># </a>进程调度方式</h4>
+<ol>
+<li>非抢占方式<br>
+一旦把处理机分配给某进程后，不管它要运行多长时间，都一直让它运行下去<br>
+可能引起进程调度的因素如下几个：</li>
+</ol>
+<ul>
+<li>正在执行的进程执行完毕，或因发生某事件而不能再继续执行</li>
+<li>执行中的进程因提出I/O请求而暂停执行</li>
+<li>在进程通信或同步过程中执行了某种原语操作，如P操作(wait操作)、Block原语、Wakeup原语等</li>
+</ul>
+<blockquote>
+<p>难以满足紧急任务的要求——立即执行。因此在要求比较严格的<strong>实时系统</strong>中，<strong>不宜采用</strong>这种调度方式</p>
+</blockquote>
+<ol start="2">
+<li>抢占方式<br>
+可以防止一个长进程长时间占用处理机，能为大多数进程提供更公平的服务，特别是能满足对响应时间有着较严格要求的<strong>实时任务</strong>的需求</li>
+</ol>
+<blockquote>
+<p>抢占方式比非抢占方式调度所需付出的开销较大</p>
+</blockquote>
+<h5 id="抢占调度方式的原则"><a class="header-anchor" href="#抢占调度方式的原则"># </a>抢占调度方式的原则</h5>
+<ol>
+<li>优先权原则   允许优先权高的新到进程抢占当前进程的处理机</li>
+<li>短作业(进程)优先原则   短作业(进程)可以抢占当前较长作业(进程)的处理机</li>
+<li>时间片原则   各进程按时间片轮流运行，当一个时间片用完后，便停止该进程的执行而重新进行调度</li>
+</ol>
+<h3 id="中级调度"><a class="header-anchor" href="#中级调度"># </a>中级调度</h3>
+<p>又称<strong>中程调度</strong>(Medium-Term Scheduling)<br>
+主要目的是为了提高内存利用率和系统吞吐量<br>
+应使那些暂时不能运行的进程不再占用宝贵的内存资源，而将它们调至外存上去等待，把此时的进程状态称为<strong>就绪驻外存状态</strong>或<strong>挂起状态</strong></p>
+<h2 id="调度队列模型和调度准则"><a class="header-anchor" href="#调度队列模型和调度准则"># </a>调度队列模型和调度准则</h2>
+<h3 id="调度队列模型"><a class="header-anchor" href="#调度队列模型"># </a>调度队列模型</h3>
+<h4 id="仅有进程调度的调度队列模型"><a class="header-anchor" href="#仅有进程调度的调度队列模型"># </a>仅有进程调度的调度队列模型</h4>
+<p>在<strong>分时系统</strong>中，通常仅设置了进程调度，用户键入的命令和数据都<strong>直接送入内存</strong><br>
+每个进程在执行时都可能出现以下三种情况</p>
+<ol>
+<li>任务在给定的时间片内已经完成，该进程便在释放处理机后进入<strong>完成状态</strong></li>
+<li>任务在本次分得的<strong>时间片内尚未完成</strong>，OS便将该任务再放入<strong>就绪队列</strong>的<strong>末尾</strong></li>
+<li>在执行期间，进程因为某事件而被阻塞后，被OS放入<strong>阻塞队列</strong></li>
+</ol>
+<h3 id="选择调度方式和调度算法的若干准则"><a class="header-anchor" href="#选择调度方式和调度算法的若干准则"># </a>选择调度方式和调度算法的若干准则</h3>
+<h2 id="调度算法"><a class="header-anchor" href="#调度算法"># </a>调度算法</h2>
+<h3 id="先来先服务和短作业-进程-优先调度算法"><a class="header-anchor" href="#先来先服务和短作业-进程-优先调度算法"># </a>先来先服务和短作业(进程)优先调度算法</h3>
+<h3 id="高优先权优先调度算法"><a class="header-anchor" href="#高优先权优先调度算法"># </a>高优先权优先调度算法</h3>
+<h3 id="基于时间片的轮转调度算法"><a class="header-anchor" href="#基于时间片的轮转调度算法"># </a>基于时间片的轮转调度算法</h3>
+<h2 id="实时调度"><a class="header-anchor" href="#实时调度"># </a>实时调度</h2>
+<h3 id="实现实时调度的基本条件"><a class="header-anchor" href="#实现实时调度的基本条件"># </a>实现实时调度的基本条件</h3>
+<h3 id="实时调度算法的分类"><a class="header-anchor" href="#实时调度算法的分类"># </a>实时调度算法的分类</h3>
+<h3 id="常用的几种实时调度算法"><a class="header-anchor" href="#常用的几种实时调度算法"># </a>常用的几种实时调度算法</h3>
+<h4 id="最早截止时间优先即EDF-Earliest-Deadline-First-算法"><a class="header-anchor" href="#最早截止时间优先即EDF-Earliest-Deadline-First-算法"># </a>最早截止时间优先即EDF(Earliest Deadline First)算法</h4>
+<p>根据任务的开始截止时间来确定任务的优先级，截止时间愈早，其优先级愈<br>
+高</p>
+<ol>
+<li>非抢占式调度方式用于非周期实时任务</li>
+<li>抢占式调度方式用于周期实时任务<br>
+固定优先级调度可能会出现任务被丢弃的情况，而EDF不会</li>
+</ol>
+<h4 id="最低松弛度优先即LLF-Least-Laxity-First-算法"><a class="header-anchor" href="#最低松弛度优先即LLF-Least-Laxity-First-算法"># </a>最低松弛度优先即LLF(Least Laxity First)算法</h4>
+<p><strong>松弛度</strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo></mrow><annotation encoding="application/x-tex">=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span></span></span>必须完成时间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo></mrow><annotation encoding="application/x-tex">-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span></span></span></span>本身的运行时间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo></mrow><annotation encoding="application/x-tex">-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span></span></span></span>当前时间<br>
+当松弛度一样的时候，选择继续运行的</p>
+<h2 id="产生死锁的原因和必要条件"><a class="header-anchor" href="#产生死锁的原因和必要条件"># </a>产生死锁的原因和必要条件</h2>
+<h3 id="产生死锁的原因"><a class="header-anchor" href="#产生死锁的原因"># </a>产生死锁的原因</h3>
+<h3 id="产生死锁的必要条件"><a class="header-anchor" href="#产生死锁的必要条件"># </a>产生死锁的必要条件</h3>
+<h3 id="处理死锁的基本方法"><a class="header-anchor" href="#处理死锁的基本方法"># </a>处理死锁的基本方法</h3>
+<h2 id="预防死锁的方法"><a class="header-anchor" href="#预防死锁的方法"># </a>预防死锁的方法</h2>
+<h3 id="预防死锁"><a class="header-anchor" href="#预防死锁"># </a>预防死锁</h3>
+<h3 id="系统安全状态"><a class="header-anchor" href="#系统安全状态"># </a>系统安全状态</h3>
+<h3 id="利用银行家算法避免死锁"><a class="header-anchor" href="#利用银行家算法避免死锁"># </a>利用银行家算法避免死锁</h3>
+<h2 id="死锁的检测与解除"><a class="header-anchor" href="#死锁的检测与解除"># </a>死锁的检测与解除</h2>
+<h3 id="死锁的检测"><a class="header-anchor" href="#死锁的检测"># </a>死锁的检测</h3>
+<h3 id="死锁的解除"><a class="header-anchor" href="#死锁的解除"># </a>死锁的解除</h3>
+
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
+            
+            <a class="write-prev-post" href="/2020/03/CompilerPrinciple/">
+                <i class="fa fa-angle-left"></i>&emsp;「学习笔记」编译原理
+            </a>
+            
+            
+            <a class="write-next-post" href="/2020/03/DigitalImageProcessing/">
+                「学习笔记」数字图像处理&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
+</div>
+    </div>
+</div>
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2020 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<!-- tocbot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
+
+<!-- highlight js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

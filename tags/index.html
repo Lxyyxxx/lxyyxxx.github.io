@@ -1,729 +1,172 @@
-
-
+<!-- 不变的布局 -->
 <!DOCTYPE html>
-<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html>
+<!-- head -->
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>標籤 - Lxyyxxx&#39;s Notebook</title>
-<meta charset="utf-8">
-<meta name="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="Lxyyxxx">
-<meta name="description" content="A Blog Powered By Hexo">
-<meta name="keywords" content>
-
-    <meta charset="utf-8">
-    <meta name="X-UA-Compatible" content="IE=edge">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta content="telephone=no" name="format-detection">
-    <meta name="renderer" content="webkit">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?16892776">
+    
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,900|Noto+Serif+SC:700,900|Noto+Sans+SC:400,700|Noto+Sans+TC:400,700|Fira+Code|Montserrat|Anonymous+Pro:400|Material+Icons">
+    <title>
+        
+        标签 - Lxyyxxx&#39;s Notebook
+        
+    </title>
 
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
 
-    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
-    <script>
-      if (window.mermaid) {
-        mermaid.initialize({theme: 'dark'});
-      }
-    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
-<div id="app">
-<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
-                首頁
-            </a>
-            <a class="a-block drawer-menu-item false" href="/archives">
-                歸檔
-            </a>
-
-            
-            
-            <a class="a-block drawer-menu-item false" href="/about/index.html">
-                關於我
-            </a>
-            
-            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
-                構建日記
-            </a>
-            
-
-            
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
         </div>
-    </div>
-</div>
-<transition name="fade">
-    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div ref="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
-            Lxyyxxx&#39;s Notebook
-        </a>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
-<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
-        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
-        <div class="single-column-header-subtitle"></div>
-    </a>
-</div>
-<div ref="sideContainer" class="side-container">
-    <a class="a-block nav-head false" href="/">
-        <div class="nav-title">
-            Lxyyxxx's<br>Notebook
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
         </div>
-        <div class="nav-subtitle">
-            
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
         </div>
-    </a>
-
-    <div class="nav-link-list">
-        <a class="a-block no-tint nav-link-item false" href="/archives">
-            歸檔
-        </a>
-
-        
-        
-        <a class="a-block nav-link-item false" href="/about/index.html">
-            關於我
-        </a>
-        
-        <a class="a-block nav-link-item false" href="/recorder/index.html">
-            構建日記
-        </a>
-        
-
-        
-    </div>
-
-    
-    <div class="nav-footer">
-        Proudly published with Hexo<br>
-        
-        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-        
-        &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
     </div>
 </div>
-<div ref="extraContainer" class="extra-container">
-    <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
-            <i class="material-icons pagination-action-icon">
-                keyboard_arrow_up
-            </i>
-        </a>
-
-        
-        
-
-        
-
-        
-        
+<br />
+        <!-- tag cloud -->
+<div class="container-fluid">
+    <div class="row justify-content-center mx-0">
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-6">
+            <div class="write-tag-item">
+                标签
+            </div>
+            <!-- <div class="card border-0">
+                <div class="card-body"> -->
+                    <div class="write-tagcloud">
+                        <a href="/tags/10分/" style="font-size: 20px; color: #e882a9">10分</a> <a href="/tags/15分/" style="font-size: 20px; color: #e882a9">15分</a> <a href="/tags/20分/" style="font-size: 26.67px; color: #e182be">20分</a> <a href="/tags/25分/" style="font-size: 26.67px; color: #e182be">25分</a> <a href="/tags/30分/" style="font-size: 26.67px; color: #e182be">30分</a> <a href="/tags/408真题/" style="font-size: 20px; color: #e882a9">408真题</a> <a href="/tags/5分/" style="font-size: 20px; color: #e882a9">5分</a> <a href="/tags/BFS/" style="font-size: 20px; color: #e882a9">BFS</a> <a href="/tags/CUDA-10-0/" style="font-size: 20px; color: #e882a9">CUDA 10.0</a> <a href="/tags/Hexo/" style="font-size: 20px; color: #e882a9">Hexo</a> <a href="/tags/KaTeX/" style="font-size: 20px; color: #e882a9">KaTeX</a> <a href="/tags/LeetCode/" style="font-size: 20px; color: #e882a9">LeetCode</a> <a href="/tags/Matlab/" style="font-size: 20px; color: #e882a9">Matlab</a> <a href="/tags/Menu/" style="font-size: 20px; color: #e882a9">Menu</a> <a href="/tags/MongoDB/" style="font-size: 20px; color: #e882a9">MongoDB</a> <a href="/tags/NLP/" style="font-size: 20px; color: #e882a9">NLP</a> <a href="/tags/OpenGL/" style="font-size: 26.67px; color: #e182be">OpenGL</a> <a href="/tags/PAT甲级/" style="font-size: 33.33px; color: #da82d3">PAT甲级</a> <a href="/tags/SQL/" style="font-size: 20px; color: #e882a9">SQL</a> <a href="/tags/Windows-10/" style="font-size: 20px; color: #e882a9">Windows 10</a> <a href="/tags/Windows-Terminal/" style="font-size: 20px; color: #e882a9">Windows Terminal</a> <a href="/tags/nVidia/" style="font-size: 20px; color: #e882a9">nVidia</a> <a href="/tags/几何/" style="font-size: 20px; color: #e882a9">几何</a> <a href="/tags/分数/" style="font-size: 20px; color: #e882a9">分数</a> <a href="/tags/因式分解/" style="font-size: 20px; color: #e882a9">因式分解</a> <a href="/tags/因数/" style="font-size: 20px; color: #e882a9">因数</a> <a href="/tags/团体设计天梯赛/" style="font-size: 20px; color: #e882a9">团体设计天梯赛</a> <a href="/tags/图论/" style="font-size: 26.67px; color: #e182be">图论</a> <a href="/tags/多线程/" style="font-size: 20px; color: #e882a9">多线程</a> <a href="/tags/大数/" style="font-size: 33.33px; color: #da82d3">大数</a> <a href="/tags/字符串/" style="font-size: 20px; color: #e882a9">字符串</a> <a href="/tags/学习笔记/" style="font-size: 40px; color: #d382e8">学习笔记</a> <a href="/tags/平面直角坐标系/" style="font-size: 20px; color: #e882a9">平面直角坐标系</a> <a href="/tags/并查集/" style="font-size: 20px; color: #e882a9">并查集</a> <a href="/tags/快速乘取模/" style="font-size: 20px; color: #e882a9">快速乘取模</a> <a href="/tags/快速幂取模/" style="font-size: 26.67px; color: #e182be">快速幂取模</a> <a href="/tags/扩展欧几里得/" style="font-size: 20px; color: #e882a9">扩展欧几里得</a> <a href="/tags/排序/" style="font-size: 20px; color: #e882a9">排序</a> <a href="/tags/搜索/" style="font-size: 26.67px; color: #e182be">搜索</a> <a href="/tags/操作系统/" style="font-size: 20px; color: #e882a9">操作系统</a> <a href="/tags/散列/" style="font-size: 20px; color: #e882a9">散列</a> <a href="/tags/数字图像处理/" style="font-size: 20px; color: #e882a9">数字图像处理</a> <a href="/tags/数学/" style="font-size: 40px; color: #d382e8">数学</a> <a href="/tags/数据库/" style="font-size: 20px; color: #e882a9">数据库</a> <a href="/tags/最短路/" style="font-size: 20px; color: #e882a9">最短路</a> <a href="/tags/有幫助的鏈接合集/" style="font-size: 20px; color: #e882a9">有幫助的鏈接合集</a> <a href="/tags/查找/" style="font-size: 20px; color: #e882a9">查找</a> <a href="/tags/树的直径/" style="font-size: 20px; color: #e882a9">树的直径</a> <a href="/tags/概率/" style="font-size: 20px; color: #e882a9">概率</a> <a href="/tags/模拟/" style="font-size: 20px; color: #e882a9">模拟</a> <a href="/tags/溢出/" style="font-size: 20px; color: #e882a9">溢出</a> <a href="/tags/矩阵快速幂取模/" style="font-size: 20px; color: #e882a9">矩阵快速幂取模</a> <a href="/tags/算法学习笔记/" style="font-size: 20px; color: #e882a9">算法学习笔记</a> <a href="/tags/编译原理/" style="font-size: 20px; color: #e882a9">编译原理</a> <a href="/tags/计算机图形学/" style="font-size: 20px; color: #e882a9">计算机图形学</a> <a href="/tags/计算机网络/" style="font-size: 26.67px; color: #e182be">计算机网络</a> <a href="/tags/质数/" style="font-size: 20px; color: #e882a9">质数</a> <a href="/tags/贪心/" style="font-size: 20px; color: #e882a9">贪心</a> <a href="/tags/费马小定理/" style="font-size: 26.67px; color: #e182be">费马小定理</a> <a href="/tags/进制/" style="font-size: 20px; color: #e882a9">进制</a> <a href="/tags/逆元/" style="font-size: 20px; color: #e882a9">逆元</a> <a href="/tags/配置/" style="font-size: 20px; color: #e882a9">配置</a> <a href="/tags/阿里云ECS/" style="font-size: 20px; color: #e882a9">阿里云ECS</a> <a href="/tags/高等数学/" style="font-size: 20px; color: #e882a9">高等数学</a>
+                    </div>
+                <!-- </div>
+            </div> -->
+        </div>
     </div>
 </div>
-
-<div ref="streamContainer" class="stream-container">
-    <div class="post-list-container post-list-container-shadow">
-        <a class="a-block">
-            <div class="post-item-wrapper post-item-wrapper-no-hover">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title post-item-title-small">
-                            標籤
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/数学/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            数学
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/大数/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            大数
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/因式分解/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            因式分解
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/快速幂取模/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            快速幂取模
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/费马小定理/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            费马小定理
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/Menu/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            Menu
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/几何/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            几何
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/平面直角坐标系/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            平面直角坐标系
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/图论/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            图论
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/最短路/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            最短路
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/矩阵快速幂取模/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            矩阵快速幂取模
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/树的直径/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            树的直径
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/学习笔记/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            学习笔记
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/高等数学/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            高等数学
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/Windows-Terminal/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            Windows Terminal
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/配置/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            配置
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/算法学习笔记/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            算法学习笔记
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/搜索/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            搜索
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/阿里云ECS/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            阿里云ECS
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/MongoDB/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            MongoDB
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/408真题/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            408真题
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/计算机网络/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            计算机网络
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/有幫助的鏈接合集/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            有幫助的鏈接合集
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/KaTeX/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            KaTeX
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/Hexo/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            Hexo
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/PAT甲级/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            PAT甲级
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/30分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            30分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/快速幂/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            快速幂
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/快速乘/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            快速乘
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/并查集/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            并查集
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/BFS/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            BFS
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/逆元/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            逆元
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/概率/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            概率
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/扩展欧几里得/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            扩展欧几里得
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/贪心/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            贪心
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/NLP/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            NLP
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/数据库/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            数据库
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/SQL/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            SQL
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/25分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            25分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/20分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            20分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/团体设计天梯赛/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            团体设计天梯赛
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/5分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            5分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/10分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            10分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/15分/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            15分
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/计算机图形学/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            计算机图形学
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-        <a href="/tags/OpenGL/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            OpenGL
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        
-
-        
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2020 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
     </div>
+    <!-- bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-    <div class="single-column-footer">
-    Proudly published with Hexo<br>
-    
-    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-    
-    &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
-</div>
-</div>
+<!-- tocbot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?4581581"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
 
+<!-- highlight js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

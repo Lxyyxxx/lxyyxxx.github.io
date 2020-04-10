@@ -1,230 +1,216 @@
-
-
+<!-- 不变的布局 -->
 <!DOCTYPE html>
-<html lang="zh-TW" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html>
+<!-- head -->
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>自然語言處理學習筆記 - Lxyyxxx&#39;s Notebook</title>
-<meta charset="utf-8">
-<meta name="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="Lxyyxxx">
-<meta name="description" content="Natural Language Processing">
-<meta name="keywords" content>
-
-    <meta charset="utf-8">
-    <meta name="X-UA-Compatible" content="IE=edge">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta content="telephone=no" name="format-detection">
-    <meta name="renderer" content="webkit">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?19807947">
+    
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,900|Noto+Serif+SC:700,900|Noto+Sans+SC:400,700|Noto+Sans+TC:400,700|Fira+Code|Montserrat|Anonymous+Pro:400|Material+Icons">
+    <title>
+        
+        自然語言處理學習筆記 - Lxyyxxx&#39;s Notebook
+        
+    </title>
 
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
 
-    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
-    <script>
-      if (window.mermaid) {
-        mermaid.initialize({theme: 'dark'});
-      }
-    </script><!-- hexo-inject:begin --><link rel='stylesheet' href='https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css'><!-- hexo-inject:end -->
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
-<div id="app">
-<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            <a class="a-block drawer-menu-item false" href="https://lxyyxxx.github.io">
-                首頁
-            </a>
-            <a class="a-block drawer-menu-item false" href="/archives">
-                歸檔
-            </a>
-
-            
-            
-            <a class="a-block drawer-menu-item false" href="/about/index.html">
-                關於我
-            </a>
-            
-            <a class="a-block drawer-menu-item false" href="/recorder/index.html">
-                構建日記
-            </a>
-            
-
-            
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
         </div>
-    </div>
-</div>
-<transition name="fade">
-    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div ref="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
-            Lxyyxxx&#39;s Notebook
-        </a>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
-<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
-        <div class="single-column-header-title">Lxyyxxx&#39;s Notebook</div>
-        <div class="single-column-header-subtitle"></div>
-    </a>
-</div>
-<div ref="sideContainer" class="side-container">
-    <a class="a-block nav-head false" href="/">
-        <div class="nav-title">
-            Lxyyxxx's<br>Notebook
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
         </div>
-        <div class="nav-subtitle">
-            
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
         </div>
-    </a>
-
-    <div class="nav-link-list">
-        <a class="a-block no-tint nav-link-item false" href="/archives">
-            歸檔
-        </a>
-
-        
-        
-        <a class="a-block nav-link-item false" href="/about/index.html">
-            關於我
-        </a>
-        
-        <a class="a-block nav-link-item false" href="/recorder/index.html">
-            構建日記
-        </a>
-        
-
-        
-    </div>
-
-    
-    <div class="nav-footer">
-        Proudly published with Hexo<br>
-        
-        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-        
-        &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
     </div>
 </div>
-<div ref="extraContainer" class="extra-container">
-    <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
-            <i class="material-icons pagination-action-icon">
-                keyboard_arrow_up
-            </i>
-        </a>
-
-        
-    </div>
-</div>
-
-<div ref="streamContainer" class="stream-container">
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            <div class="post-head-wrapper-text-only" style="background-image: url('')">
-                <div class="post-title">
-                    自然語言處理學習筆記
-                    <div class="post-meta">
-                        <time datetime="2019-08-07T06:38:06.000Z" itemprop="datePublished">
-                            2019-08-07 14:38
-                        </time>&nbsp;
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">自然語言處理學習筆記</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2020-04-10T01:47:58.615Z" itemprop="dateModified">
+                            2020-04-10 09:47
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
                         
                         
-                        <i class="material-icons" style>folder</i>
+                        <i class="fas fa-folder"></i>
                         
-                        <a href="/categories/一起學NLP吧/">一起學NLP吧</a>
-                        
-                        
-    
+                        <a
+                            href='/categories/一起學NLP吧/'>一起學NLP吧</a>
                         
                         
-                        <i class="material-icons" style>label</i>
+                        &emsp;
+                        <!-- tags -->
                         
-                        <a href="/tags/NLP/">NLP</a>
+                        
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/NLP/'>NLP</a>
                         
                         
                     </div>
-                </div>
-            </div>
-    
-            <div class="post-body-wrapper">
-                <div class="post-body">
-                    <p>《Python自然語言處理實戰：核心技術與算法》的學習筆記。</p>
-<h2><span id="ba-you-yong-de-dong-xi-fang-zai-qian-mian">把有用的東西放在前面</span><a href="#ba-you-yong-de-dong-xi-fang-zai-qian-mian" class="header-anchor"></a></h2><p><strong>停用詞表</strong></p>
+                    <article class="write-content">
+                        <p>《Python自然語言處理實戰：核心技術與算法》的學習筆記。</p>
+<h2 id="把有用的東西放在前面"><a class="header-anchor" href="#把有用的東西放在前面"># </a>把有用的東西放在前面</h2>
+<p><strong>停用詞表</strong></p>
 <ul>
-<li>哈工大的停用詞表</li>
-</ul>
-<p><strong>句法分析數據集（樹庫）</strong></p>
-<ul>
+<li>哈工大的停用詞表<br>
+<strong>句法分析數據集（樹庫）</strong></li>
 <li>PTB | Penn TreeBank | 美國賓夕法尼亞大學加工的英文賓州樹庫</li>
 <li>CTB | Chinese TreeBank | 中文賓州樹庫</li>
 <li>TCT | Tsinghua Chinese TreeBank | 清華樹庫</li>
-<li>Sinica TreeBank | 台灣中研院樹庫</li>
-</ul>
-<p><strong>繁體字轉簡體字工具</strong></p>
-<ul>
-<li>OpenCC</li>
-</ul>
-<p><strong>語料庫</strong></p>
-<ul>
+<li>Sinica TreeBank | 台灣中研院樹庫<br>
+<strong>繁體字轉簡體字工具</strong></li>
+<li>OpenCC<br>
+<strong>語料庫</strong></li>
 <li>維基百科中文語料</li>
-<li>搜狗SouGouT</li>
-</ul>
-<p><strong>分詞工具</strong></p>
-<ul>
+<li>搜狗SouGouT<br>
+<strong>分詞工具</strong></li>
 <li><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">Jieba (HMM)</a></li>
 <li><a href="http://thulac.thunlp.org/" target="_blank" rel="noopener">清華THULAC</a></li>
 <li><a href="https://github.com/lancopku/pkuseg-python" target="_blank" rel="noopener">北大pkuseg (CRF + ADF)</a></li>
 <li><a href="https://github.com/duanhongyi/genius" target="_blank" rel="noopener">Genius (CRF)</a></li>
 <li><a href="https://github.com/NLPchina/ansj_seg" target="_blank" rel="noopener">Ansj (Java CRF)</a></li>
 <li>中科院ICTCLAS</li>
-<li>復旦FudanNLP</li>
-</ul>
-<p><strong>深度學習平臺</strong></p>
-<ul>
+<li>復旦FudanNLP<br>
+<strong>深度學習平臺</strong></li>
 <li><a href="https://tensorflow.google.cn/tutorials" target="_blank" rel="noopener">Tensorflow (Google)</a></li>
 <li>Mxnet (Amazon)</li>
 <li>PyTorch</li>
 <li>Caffe</li>
-<li>Theato</li>
-</ul>
-<p><strong>圖像標注數據集</strong></p>
-<ul>
+<li>Theato<br>
+<strong>圖像標注數據集</strong></li>
 <li>MSCOCO</li>
 <li>Pascal VOC 2008</li>
 <li>Flickr8K</li>
 <li>Flickr30K</li>
-<li>SBU</li>
-</ul>
-<p><strong>自動評價標準</strong></p>
-<ul>
+<li>SBU<br>
+<strong>自動評價標準</strong></li>
 <li>BLEU-1</li>
 <li>BLEU-4</li>
 <li>METEOR</li>
 <li>CIDEr</li>
 </ul>
 <hr>
-<h2><span id="chapter-1-nlp-ji-chu">Chapter 1 NLP基礎</span><a href="#chapter-1-nlp-ji-chu" class="header-anchor"></a></h2><ol>
-<li>概念<br> <strong>NLP | Natural Language Processing | 自然語言處理</strong> 研究用計算機處理、理解、運用人類語言。<ul>
+<h2 id="Chapter-1-NLP基礎"><a class="header-anchor" href="#Chapter-1-NLP基礎"># </a>Chapter 1 NLP基礎</h2>
+<ol>
+<li>概念<br>
+<strong>NLP | Natural Language Processing | 自然語言處理</strong> 研究用計算機處理、理解、運用人類語言。
+<ul>
 <li>自然語言理解 | NLU | Natural Language Understanding</li>
 <li>自然語言生成 | NLG | Natural Language Generation</li>
 </ul>
 </li>
-<li>研究任務<ul>
+<li>研究任務
+<ul>
 <li>機器翻譯</li>
 <li>情感分析</li>
 <li>智能問答</li>
@@ -234,7 +220,8 @@
 <li>知識圖譜 | Knowledge Graph/Vault</li>
 </ul>
 </li>
-<li>基本術語<ul>
+<li>基本術語
+<ul>
 <li>分詞 | segment</li>
 <li>詞性標註 | part-of-speech tagging</li>
 <li>命名實體識別 | NER | Named Entity Recognition</li>
@@ -245,185 +232,275 @@
 <li>問答系統 | QA system</li>
 </ul>
 </li>
-<li>三個層面<ul>
-<li>詞法分析<br>  分詞 + 詞性標註</li>
+<li>三個層面
+<ul>
+<li>詞法分析<br>
+分詞 + 詞性標註</li>
 <li>句法分析</li>
-<li>語義分析<br>  語義角色標注 | semantic role labeling</li>
+<li>語義分析<br>
+語義角色標注 | semantic role labeling</li>
 </ul>
 </li>
 </ol>
-<h2><span id="chapter-2-nlp-qian-zhi-ji-shu-jie-xi">Chapter 2 NLP前置技術解析</span><a href="#chapter-2-nlp-qian-zhi-ji-shu-jie-xi" class="header-anchor"></a></h2><ol>
-<li><p>Anaconda</p>
-</li>
-<li><p>正則表達式<br> 用於模式匹配字符串、去噪。</p>
-<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">import</span> re
-
- <span class="token comment" spellcheck="true"># string 是否匹配 regex，返回 match對象/None</span>
- re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>regex<span class="token punctuation">,</span> string<span class="token punctuation">)</span> 
- <span class="token comment" spellcheck="true"># 返回匹配 regex 的字符列表</span>
- re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>regex<span class="token punctuation">,</span> string<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Chapter-2-NLP前置技術解析"><a class="header-anchor" href="#Chapter-2-NLP前置技術解析"># </a>Chapter 2 NLP前置技術解析</h2>
+<ol>
+<li>Anaconda</li>
+<li>正則表達式<br>
+用於模式匹配字符串、去噪。<pre><code class="language-python">import re
+ 
+# string 是否匹配 regex，返回 match對象/None
+re.search(regex, string) 
+# 返回匹配 regex 的字符列表
+re.findall(regex, string)
+</code></pre>
 <table>
 <thead>
 <tr>
-<th align="center">符號</th>
-<th align="left">含義</th>
+<th style="text-align:center">符號</th>
+<th style="text-align:left">含義</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">.</td>
-<td align="left">匹配任意一個字符</td>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:left">匹配任意一個字符</td>
 </tr>
 <tr>
-<td align="center">^</td>
-<td align="left">匹配開始的字符串</td>
+<td style="text-align:center">^</td>
+<td style="text-align:left">匹配開始的字符串</td>
 </tr>
 <tr>
-<td align="center">$</td>
-<td align="left">匹配結尾的字符串</td>
+<td style="text-align:center">$</td>
+<td style="text-align:left">匹配結尾的字符串</td>
 </tr>
 <tr>
-<td align="center">[]</td>
-<td align="left">匹配多個字符</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:left">匹配多個字符</td>
 </tr>
 <tr>
-<td align="center">\</td>
-<td align="left">轉義符</td>
+<td style="text-align:center">\</td>
+<td style="text-align:left">轉義符</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p><a href="https://numpy.org/devdocs/user/quickstart.html" target="_blank" rel="noopener">Numpy</a></p>
-<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
- <span class="token comment" spellcheck="true"># 導入向量</span>
- vector <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 導入矩陣</span>
- matrix <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 構建0~n矩陣</span>
- a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token operator">/</span>i<span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 輸出矩陣的維度</span>
- <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 讀取本地數據集</span>
- nfl <span class="token operator">=</span> np<span class="token punctuation">.</span>genfromtex<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> delimiter <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> dtype <span class="token operator">=</span> <span class="token string">"U75"</span><span class="token punctuation">,</span> skip_header <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># U75:75byte Unicode</span>
- <span class="token comment" spellcheck="true"># 索引</span>
- <span class="token keyword">print</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 切片</span>
- <span class="token keyword">print</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>a<span class="token punctuation">:</span>b<span class="token punctuation">,</span>c<span class="token punctuation">:</span>d<span class="token punctuation">]</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 數組比較</span>
- <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>matrix <span class="token operator">==</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 替代值</span>
- vector<span class="token punctuation">[</span><span class="token punctuation">(</span>vector <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span>vector <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">50</span>
- matrix<span class="token punctuation">[</span>matrix<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">25</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
- <span class="token comment" spellcheck="true"># 數據類型轉換</span>
- vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>type<span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 計算數組和</span>
- vector<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
- matrix<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 計算數組平均值</span>
- vector<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true"># 計算數組元素最大值</span>
- vector<span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><a href="https://numpy.org/devdocs/user/quickstart.html" target="_blank" rel="noopener">Numpy</a><pre><code class="language-python">import numpy as np
+ 
+# 導入向量
+vector = np.array([...])
+# 導入矩陣
+matrix = np.array([[...],[...]])
+# 構建0~n矩陣
+a = np.array(n).reshape(i,n/i)
+# 輸出矩陣的維度
+print(a.shape)
+# 讀取本地數據集
+nfl = np.genfromtex(filepath, delimiter = &quot;,&quot;, dtype = &quot;U75&quot;, skip_header = 1) # U75:75byte Unicode
+# 索引
+print(matrix[i,j])
+# 切片
+print(matrix[a:b,c:d])
+# 數組比較
+print((matrix == 25))
+# 替代值
+vector[(vector == 10)|(vector == 5)] = 50
+matrix[matrix[:,1] == 25,1] = 10
+# 數據類型轉換
+vector = vector.astype(type)
+# 計算數組和
+vector.sum()
+matrix.sum(axis == 1)
+# 計算數組平均值
+vector.mean()
+# 計算數組元素最大值
+vector.max()
+</code></pre>
 </li>
 </ol>
-<h2><span id="chapter-3-zhong-wen-fen-ci-ji-shu">Chapter 3 中文分詞技術</span><a href="#chapter-3-zhong-wen-fen-ci-ji-shu" class="header-anchor"></a></h2><ol>
-<li>規則分詞<br> 基於詞典<ul>
-<li><strong>正向最大匹配法 | MM | Maximum Match Method</strong><br>  從長到短從前到後匹配</li>
-<li><strong>逆向最大匹配法 | RMM | Reverse Maximum Match Method</strong><br>  從長到短從後到前匹配</li>
-<li><strong>雙向最大匹配法 | Bi-direction Matching Method</strong><br>  MM和RMM結果進行比較，選詞數切分最小的。</li>
-</ul>
-</li>
-<li>統計分詞<br> Step 1. 建立語言模型<br> Step 2. 然後用統計學習算法得到概率最大的分詞方式<ul>
-<li><strong>隱含馬爾可夫 | HMM</strong><br>  假設每個狀態只與它前面的狀態有關。<br>  Veterbi算法：動態規劃，求<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mi>P</mi><mo stretchy="false">(</mo><mi>λ</mi><mi mathvariant="normal">∣</mi><mi>ο</mi><mo stretchy="false">)</mo><mi>P</mi><mo stretchy="false">(</mo><mi>ο</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max P(\lambda|\omicron)P(\omicron)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">λ</span><span class="mord">∣</span><span class="mord mathdefault">ο</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">ο</span><span class="mclose">)</span></span></span></span></li>
-<li><strong>條件隨機場 | CRF</strong><br>  假設每個狀態不止與它前面的狀態有關，還與它後面的狀態有關。</li>
-</ul>
-</li>
-<li>神經網絡分詞算法<br> Step 1. 深度學習網絡發現特徵<br> Step 2. 分類算法預測</li>
-<li>混合分詞<br> 先基於詞典分詞，再用統計方法輔助。</li>
-</ol>
-<h2><span id="chapter-4-ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie">Chapter 4 詞性標注與命名實體識別</span><a href="#chapter-4-ci-xing-biao-zhu-yu-ming-ming-shi-ti-shi-bie" class="header-anchor"></a></h2><ol>
-<li>詞性標注</li>
-<li><strong>命名實體識別 | NER | Named Entity Recognition</strong><br> <em>參考分詞</em></li>
-</ol>
-<h2><span id="chapter-5-guan-jian-ci-ti-qu-suan-fa">Chapter 5 關鍵詞提取算法</span><a href="#chapter-5-guan-jian-ci-ti-qu-suan-fa" class="header-anchor"></a></h2><p>可用Python中的<strong>Gensim庫</strong>實現。</p>
+<h2 id="Chapter-3-中文分詞技術"><a class="header-anchor" href="#Chapter-3-中文分詞技術"># </a>Chapter 3 中文分詞技術</h2>
 <ol>
-<li><p>TF/IDF</p>
+<li>規則分詞<br>
+基於詞典
 <ul>
-<li><p><strong>TF | Term Frequency | 詞頻</strong><br>  統計一個詞<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>在一篇文章<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>中出現的頻次。</p>
-  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><msub><mi>f</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>n</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">tf_{ij} = \dfrac{n_{ij}}{\sum_k n_{kj}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09327em;vertical-align:-0.9857100000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1863979999999999em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9857100000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
-<li><p><strong>IDF | Inverse Document Frequency | 逆文檔</strong><br>  統計一個詞在文檔集的多少個文檔中出現。</p>
-  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>d</mi><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∣</mi><mi>D</mi><mi mathvariant="normal">∣</mi></mrow><mrow><mn>1</mn><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">idf_i = \log{(\dfrac{|D|}{1+|D_i|})}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span>
-<p>  <strong>拉普拉斯平滑</strong>：分母加一，解決分母為0的情況。</p>
+<li><strong>正向最大匹配法 | MM | Maximum Match Method</strong><br>
+從長到短從前到後匹配</li>
+<li><strong>逆向最大匹配法 | RMM | Reverse Maximum Match Method</strong><br>
+從長到短從後到前匹配</li>
+<li><strong>雙向最大匹配法 | Bi-direction Matching Method</strong><br>
+MM和RMM結果進行比較，選詞數切分最小的。</li>
+</ul>
 </li>
-<li><p><strong>TF-IDF | Term Frequency-Inverse Document Frequency | 詞頻-逆文檔</strong></p>
-  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>f</mi><mo>×</mo><mi>i</mi><mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>=</mo><mi>t</mi><msub><mi>f</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>×</mo><mi>i</mi><mi>d</mi><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>n</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub></mrow></mfrac></mstyle><mo>×</mo><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∣</mi><mi>D</mi><mi mathvariant="normal">∣</mi></mrow><mrow><mn>1</mn><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">tf \times idf(i,j) = tf_{ij} \times idf_i = \dfrac{n_{ij}}{\sum_k n_{kj}} \times \log{(\dfrac{|D|}{1+|D_i|})}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09327em;vertical-align:-0.9857100000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1863979999999999em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9857100000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span>
-<p>  可對<strong>名詞</strong>賦予更高的權重。</p>
+<li>統計分詞<br>
+Step 1. 建立語言模型<br>
+Step 2. 然後用統計學習算法得到概率最大的分詞方式
+<ul>
+<li><strong>隱含馬爾可夫 | HMM</strong><br>
+假設每個狀態只與它前面的狀態有關。<br>
+Veterbi算法：動態規劃，求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>max</mi><mo>⁡</mo><mi>P</mi><mo stretchy="false">(</mo><mi>λ</mi><mi mathvariant="normal">∣</mi><mi>ο</mi><mo stretchy="false">)</mo><mi>P</mi><mo stretchy="false">(</mo><mi>ο</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max P(\lambda|\omicron)P(\omicron)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">λ</span><span class="mord">∣</span><span class="mord mathdefault">ο</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">ο</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>條件隨機場 | CRF</strong><br>
+假設每個狀態不止與它前面的狀態有關，還與它後面的狀態有關。</li>
+</ul>
+</li>
+<li>神經網絡分詞算法<br>
+Step 1. 深度學習網絡發現特徵<br>
+Step 2. 分類算法預測</li>
+<li>混合分詞<br>
+先基於詞典分詞，再用統計方法輔助。</li>
+</ol>
+<h2 id="Chapter-4-詞性標注與命名實體識別"><a class="header-anchor" href="#Chapter-4-詞性標注與命名實體識別"># </a>Chapter 4 詞性標注與命名實體識別</h2>
+<ol>
+<li>詞性標注</li>
+<li><strong>命名實體識別 | NER | Named Entity Recognition</strong><br>
+<em>參考分詞</em></li>
+</ol>
+<h2 id="Chapter-5-關鍵詞提取算法"><a class="header-anchor" href="#Chapter-5-關鍵詞提取算法"># </a>Chapter 5 關鍵詞提取算法</h2>
+<p>可用Python中的<strong>Gensim庫</strong>實現。</p>
+<ol>
+<li>
+<p>TF/IDF</p>
+<ul>
+<li>
+<p><strong>TF | Term Frequency | 詞頻</strong><br>
+統計一個詞<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>在一篇文章<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>中出現的頻次。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><msub><mi>f</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>n</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">tf_{ij} = \dfrac{n_{ij}}{\sum_k n_{kj}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09327em;vertical-align:-0.9857100000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1863979999999999em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9857100000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+</li>
+<li>
+<p><strong>IDF | Inverse Document Frequency | 逆文檔</strong><br>
+統計一個詞在文檔集的多少個文檔中出現。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>d</mi><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∣</mi><mi>D</mi><mi mathvariant="normal">∣</mi></mrow><mrow><mn>1</mn><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">idf_i = \log{(\dfrac{|D|}{1+|D_i|})}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span><br>
+<strong>拉普拉斯平滑</strong>：分母加一，解決分母為0的情況。</p>
+</li>
+<li>
+<p><strong>TF-IDF | Term Frequency-Inverse Document Frequency | 詞頻-逆文檔</strong><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>f</mi><mo>×</mo><mi>i</mi><mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>=</mo><mi>t</mi><msub><mi>f</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>×</mo><mi>i</mi><mi>d</mi><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>n</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub></mrow></mfrac></mstyle><mo>×</mo><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∣</mi><mi>D</mi><mi mathvariant="normal">∣</mi></mrow><mrow><mn>1</mn><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">tf \times idf(i,j) = tf_{ij} \times idf_i = \dfrac{n_{ij}}{\sum_k n_{kj}} \times \log{(\dfrac{|D|}{1+|D_i|})}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09327em;vertical-align:-0.9857100000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1863979999999999em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9857100000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span><br>
+可對<strong>名詞</strong>賦予更高的權重。</p>
 </li>
 </ul>
 </li>
-<li><p><strong>TextRank</strong><br> 來源於Google的PageRank算法，該算法用於網頁排序。<br> 取決於鏈接數量和鏈接質量。</p>
+<li>
+<p><strong>TextRank</strong><br>
+來源於Google的PageRank算法，該算法用於網頁排序。<br>
+取決於鏈接數量和鏈接質量。</p>
 </li>
-<li><p>Topic Model | 主題模型<br> 解決關鍵詞不會顯式出現在文檔中的問題。</p>
+<li>
+<p>Topic Model | 主題模型<br>
+解決關鍵詞不會顯式出現在文檔中的問題。</p>
 <ul>
-<li><p>LSA/LSI<br>  <strong>LSA | 潛在語義分析 | Latent Semantic Analysis</strong><br>  <strong>LSI | 潛在語義索引 | Latent Semantic Index</strong> ：分析後建立索引<br>Step 1. <strong>BOW模型</strong>將文檔向量化<br>Step 2. 文檔詞向量拼起來構成詞-文檔矩陣<br>Step 3. <strong>奇異值分解 | SVD</strong><br>Step 4. 計算每個詞與文檔的相似度</p>
+<li>LSA/LSI<br>
+<strong>LSA | 潛在語義分析 | Latent Semantic Analysis</strong><br>
+<strong>LSI | 潛在語義索引 | Latent Semantic Index</strong> ：分析後建立索引<br>
+Step 1. <strong>BOW模型</strong>將文檔向量化<br>
+Step 2. 文檔詞向量拼起來構成詞-文檔矩陣<br>
+Step 3. <strong>奇異值分解 | SVD</strong><br>
+Step 4. 計算每個詞與文檔的相似度
 <ul>
 <li>餘弦相似度</li>
 <li>KL相似度</li>
 </ul>
+</li>
+</ul>
 <p>Step 5. 取最高相似度的詞作爲文檔關鍵詞</p>
-</li>
-<li><p><strong>LDA | 隱含狄利克雷分佈 | Latent Dirichlet Allocation</strong><br>Step 1. 對每個詞隨機初始化一個topic<br>Step 2. 對每個詞按<strong>吉布斯采樣公式</strong>重新采樣topic<br>Step 3. 重複重新采樣直至吉布斯采樣收斂<br>Step 4. 統計topic-word共軛頻率矩陣，得到LDA模型，用於預估新文檔的topic</p>
-</li>
+<ul>
+<li><strong>LDA | 隱含狄利克雷分佈 | Latent Dirichlet Allocation</strong><br>
+Step 1. 對每個詞隨機初始化一個topic<br>
+Step 2. 對每個詞按<strong>吉布斯采樣公式</strong>重新采樣topic<br>
+Step 3. 重複重新采樣直至吉布斯采樣收斂<br>
+Step 4. 統計topic-word共軛頻率矩陣，得到LDA模型，用於預估新文檔的topic</li>
 </ul>
 </li>
 </ol>
-<h2><span id="chapter-6-ju-fa-fen-xi">Chapter 6 句法分析</span><a href="#chapter-6-ju-fa-fen-xi" class="header-anchor"></a></h2><p>采用<strong>PARSEVAL評測體系</strong>，主要指標有<strong>準確率、召回率、交叉括號數</strong>。</p>
+<h2 id="Chapter-6-句法分析"><a class="header-anchor" href="#Chapter-6-句法分析"># </a>Chapter 6 句法分析</h2>
+<p>采用<strong>PARSEVAL評測體系</strong>，主要指標有<strong>準確率、召回率、交叉括號數</strong>。</p>
 <ol>
-<li><strong>PCFG | Probabilistic Context Free Grammar</strong><br> 基於概率的短語結構分析，上下文無關文法的拓展，表示為五元組（X，V，S，R，P）。</li>
-<li><strong>最大間隔馬爾可夫網絡 | Max-Margin Markov Networks</strong><br> SVM + Markov</li>
-<li><strong>CRF | 條件隨機場</strong><br> 使句法樹的條件概率值最大化，並對概率進行歸一化。</li>
-<li><strong>移進-規約方法 | Shift-Reduce Algorithm</strong><br> 自下而上，類似於下推自動機的LR分析法，堆棧，對詞性敏感。</li>
+<li><strong>PCFG | Probabilistic Context Free Grammar</strong><br>
+基於概率的短語結構分析，上下文無關文法的拓展，表示為五元組（X，V，S，R，P）。</li>
+<li><strong>最大間隔馬爾可夫網絡 | Max-Margin Markov Networks</strong><br>
+SVM + Markov</li>
+<li><strong>CRF | 條件隨機場</strong><br>
+使句法樹的條件概率值最大化，並對概率進行歸一化。</li>
+<li><strong>移進-規約方法 | Shift-Reduce Algorithm</strong><br>
+自下而上，類似於下推自動機的LR分析法，堆棧，對詞性敏感。</li>
 </ol>
-<h2><span id="chapter-7-wen-ben-xiang-liang-hua">Chapter 7 文本向量化</span><a href="#chapter-7-wen-ben-xiang-liang-hua" class="header-anchor"></a></h2><p>可用Python中的<strong>Gensim庫</strong>實現</p>
+<h2 id="Chapter-7-文本向量化"><a class="header-anchor" href="#Chapter-7-文本向量化"># </a>Chapter 7 文本向量化</h2>
+<p>可用Python中的<strong>Gensim庫</strong>實現</p>
 <ol>
-<li><p>word2vec</p>
+<li>
+<p>word2vec</p>
 <ul>
-<li><p><strong>NNLM | 神經網絡語言模型 | Neutral Network Language Model</strong><br>  輸入層 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span><br>  隱含層 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>H</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h = \tanh(b + Hx)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><br>  輸出層 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">y = b + Uh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault">h</span></span></span></span> </p>
-  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">Uh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault">h</span></span></span></span>計算量最大，輸出層要使用softmax函數進行歸一化。
-<p>  使用<strong>隨機梯度下降算法</strong>進行訓練。</p>
+<li>
+<p><strong>NNLM | 神經網絡語言模型 | Neutral Network Language Model</strong><br>
+輸入層 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span><br>
+隱含層 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>=</mo><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>H</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h = \tanh(b + Hx)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><br>
+輸出層 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">y = b + Uh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault">h</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">Uh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault">h</span></span></span></span>計算量最大，輸出層要使用softmax函數進行歸一化。<br>
+使用<strong>隨機梯度下降算法</strong>進行訓練。</p>
 </li>
-<li><p><strong>C&amp;W</strong><br>  對短語是否曾出現過進行打分，以生成詞向量為目標的模型。</p>
+<li>
+<p><strong>C&amp;W</strong><br>
+對短語是否曾出現過進行打分，以生成詞向量為目標的模型。</p>
 </li>
 </ul>
 <hr>
 <ul>
-<li><strong>CBOW | 連續詞袋模型 | Continuous Bag-of-Words</strong><br>  去掉隱藏層，用上下文各詞詞向量的平均值作爲輸入。<br>  根據上下文來預測當前詞語的概率。</li>
-<li><strong>Skip-gram</strong><br>  去掉隱藏層<br>  根據當前詞預測上下文概率。</li>
+<li><strong>CBOW | 連續詞袋模型 | Continuous Bag-of-Words</strong><br>
+去掉隱藏層，用上下文各詞詞向量的平均值作爲輸入。<br>
+根據上下文來預測當前詞語的概率。</li>
+<li><strong>Skip-gram</strong><br>
+去掉隱藏層<br>
+根據當前詞預測上下文概率。</li>
 </ul>
 </li>
-<li><p>doc2vec<br> 相對於word2vec，增加了一個與詞向量長度相等的段向量（paragraph ID -&gt; paragraph vector）。</p>
+<li>
+<p>doc2vec<br>
+相對於word2vec，增加了一個與詞向量長度相等的段向量（paragraph ID -&gt; paragraph vector）。</p>
 <ul>
-<li><strong>DM | Distributed Memory</strong><br>  對應CBOW<br>  上下文不僅包括上下文單詞，還包括相應段落。</li>
-<li><strong>DBOW | Distributed Bag of Words</strong><br>  對應Skip-gram<br>  僅給定段落向量的情況下預測段落中一組隨機單詞的概率。</li>
+<li><strong>DM | Distributed Memory</strong><br>
+對應CBOW<br>
+上下文不僅包括上下文單詞，還包括相應段落。</li>
+<li><strong>DBOW | Distributed Bag of Words</strong><br>
+對應Skip-gram<br>
+僅給定段落向量的情況下預測段落中一組隨機單詞的概率。</li>
 </ul>
 </li>
 </ol>
-<h2><span id="chapter-8-qing-gan-fen-xi-ji-shu">Chapter 8 情感分析技術</span><a href="#chapter-8-qing-gan-fen-xi-ji-shu" class="header-anchor"></a></h2><ol>
-<li>詞法分析<br> 用預標記詞匯組成的字典與新單詞匹配，積極匹配就加分數。</li>
-<li>機器學習方法分析<br> 主要使用監督學習的方式，分爲數據收集、預處理、訓練分類三個階段。<br> unigram、bigrams、trigrams可以被選爲特徵向量。<br> 分類模型有SVM、LR、NB、CNN、RNN。</li>
-<li>混合分析<br> 計算偽文件與未標記文件間的餘弦相似度，劃分文件為積極還是消極。<br> Polling多項式分類器 | PMC | 多項式樸素貝葉斯</li>
-</ol>
-<h2><span id="chapter-9-nlp-zhong-yong-dao-de-ji-qi-xue-xi-suan-fa">Chapter 9 NLP中用到的<strong>機器學習</strong>算法</span><a href="#chapter-9-nlp-zhong-yong-dao-de-ji-qi-xue-xi-suan-fa" class="header-anchor"></a></h2><p>可用Python中的<strong>sklearn庫</strong>實現</p>
+<h2 id="Chapter-8-情感分析技術"><a class="header-anchor" href="#Chapter-8-情感分析技術"># </a>Chapter 8 情感分析技術</h2>
 <ol>
-<li>分類 | Classification<br> 訓練 + 預測<ul>
-<li><strong>樸素貝葉斯 | NB | Naive Bayesian</strong><br>  假設特徵條件獨立。</li>
-<li><strong>邏輯回歸 | LR | Logistic Regression</strong><br>  邏輯斯蒂函數 + 極大似然估計法<br>  特徵數量很多</li>
-<li><strong>支持向量機 | SVM | Support Vector Machine</strong><br>  在特徵空間中找一個盡可能將兩個數據集合分開的超級平面（hyper-plane）。<br>  拉格朗日乘子法轉換爲對偶問題<br>  特徵數量較少 - 綫性<br>  特徵數量很多 - 高斯核</li>
+<li>詞法分析<br>
+用預標記詞匯組成的字典與新單詞匹配，積極匹配就加分數。</li>
+<li>機器學習方法分析<br>
+主要使用監督學習的方式，分爲數據收集、預處理、訓練分類三個階段。<br>
+unigram、bigrams、trigrams可以被選爲特徵向量。<br>
+分類模型有SVM、LR、NB、CNN、RNN。</li>
+<li>混合分析<br>
+計算偽文件與未標記文件間的餘弦相似度，劃分文件為積極還是消極。<br>
+Polling多項式分類器 | PMC | 多項式樸素貝葉斯</li>
+</ol>
+<h2 id="Chapter-9-NLP中用到的機器學習算法"><a class="header-anchor" href="#Chapter-9-NLP中用到的機器學習算法"># </a>Chapter 9 NLP中用到的<strong>機器學習</strong>算法</h2>
+<p>可用Python中的<strong>sklearn庫</strong>實現</p>
+<ol>
+<li>分類 | Classification<br>
+訓練 + 預測
+<ul>
+<li><strong>樸素貝葉斯 | NB | Naive Bayesian</strong><br>
+假設特徵條件獨立。</li>
+<li><strong>邏輯回歸 | LR | Logistic Regression</strong><br>
+邏輯斯蒂函數 + 極大似然估計法<br>
+特徵數量很多</li>
+<li><strong>支持向量機 | SVM | Support Vector Machine</strong><br>
+在特徵空間中找一個盡可能將兩個數據集合分開的超級平面（hyper-plane）。<br>
+拉格朗日乘子法轉換爲對偶問題<br>
+特徵數量較少 - 綫性<br>
+特徵數量很多 - 高斯核</li>
 <li>K近鄰居 | KNN | K-Nearest Neighbor</li>
-<li>決策樹 | DT | Decision Tree<br>  特徵數量非常大且綫性 - 隨機森林</li>
+<li>決策樹 | DT | Decision Tree<br>
+特徵數量非常大且綫性 - 隨機森林</li>
 <li>神經網絡 | NN | Natural Network</li>
 </ul>
 </li>
-<li>聚類 | Clustering<ul>
-<li><strong>K-means</strong><br>  以空間中k個點爲中心進行聚類，對最靠近他們的對象進行歸類，並迭代更新。</li>
+<li>聚類 | Clustering
+<ul>
+<li><strong>K-means</strong><br>
+以空間中k個點爲中心進行聚類，對最靠近他們的對象進行歸類，並迭代更新。</li>
 <li>DBScan</li>
 <li>BIRCH</li>
 <li>CURE</li>
@@ -432,105 +509,177 @@
 </ol>
 <hr>
 <ol start="3">
-<li><p>預測 | Prediction</p>
+<li>
+<p>預測 | Prediction</p>
 <ul>
-<li>回歸 | Regression </li>
+<li>回歸 | Regression</li>
 <li>Arima | 差分整合移动平均自回归模型 |Autoregressive Integrated Moving Average model</li>
 </ul>
 </li>
-<li><p>降維 | Dimensional Reduction</p>
+<li>
+<p>降維 | Dimensional Reduction</p>
 <ul>
 <li>主成分分析 | PCA | Principal Component Analysis | 純矩陣運算</li>
 </ul>
 </li>
 </ol>
-<h2><span id="chapter-10-ji-yu-shen-du-xue-xi-de-nlp-suan-fa">Chapter 10 基於<strong>深度學習</strong>的NLP算法</span><a href="#chapter-10-ji-yu-shen-du-xue-xi-de-nlp-suan-fa" class="header-anchor"></a></h2><ol>
-<li>神經元模型 -&gt; 神經網絡模型 -&gt; 多輸出層模型<br> 儅神經元處於激活狀態時，才能改變其他神經元的狀態。設定<strong>閾值（threshold value)、激活函數</strong>。<br> 引入<strong>權重（weight）</strong>表示輸入對輸出的重要程度。<br> 引入<strong>偏置節點（bias）</strong>。<br> 多層網絡：包含隱藏層。<br> <strong>多層感知機 | MLP | Multi-Layer Perception</strong><br> <strong>前餽神經網絡</strong>：網絡中沒有回路，都是前面一層作爲後面一層的輸入。</li>
-<li><strong>反向傳播算法 | BP | Backward Propagation</strong><br> 采用批量梯度下降法求解參數。<br> Step 1. 前餽計算每層節點的激活值<br> Step 2. 計算各節點殘差值<br> Step 3. 從最後一層向前推，得到中間層與第一層的殘差關係，然後更新參數</li>
-<li>最優化算法<ul>
-<li>梯度下降<br>  在全集上學習</li>
-<li><strong>隨機梯度下降</strong><br>  隨機選擇一個樣本學習</li>
-<li><strong>批量梯度下降 | Mini-Batch Gradient Descent</strong><br>  取一個mini-batch學習</li>
+<h2 id="Chapter-10-基於深度學習的NLP算法"><a class="header-anchor" href="#Chapter-10-基於深度學習的NLP算法"># </a>Chapter 10 基於<strong>深度學習</strong>的NLP算法</h2>
+<ol>
+<li>神經元模型 -&gt; 神經網絡模型 -&gt; 多輸出層模型<br>
+儅神經元處於激活狀態時，才能改變其他神經元的狀態。設定<strong>閾值（threshold value)、激活函數</strong>。<br>
+引入<strong>權重（weight）<strong>表示輸入對輸出的重要程度。<br>
+引入</strong>偏置節點（bias）</strong>。<br>
+多層網絡：包含隱藏層。<br>
+<strong>多層感知機 | MLP | Multi-Layer Perception</strong><br>
+<strong>前餽神經網絡</strong>：網絡中沒有回路，都是前面一層作爲後面一層的輸入。</li>
+<li><strong>反向傳播算法 | BP | Backward Propagation</strong><br>
+采用批量梯度下降法求解參數。<br>
+Step 1. 前餽計算每層節點的激活值<br>
+Step 2. 計算各節點殘差值<br>
+Step 3. 從最後一層向前推，得到中間層與第一層的殘差關係，然後更新參數</li>
+<li>最優化算法
+<ul>
+<li>梯度下降<br>
+在全集上學習</li>
+<li><strong>隨機梯度下降</strong><br>
+隨機選擇一個樣本學習</li>
+<li><strong>批量梯度下降 | Mini-Batch Gradient Descent</strong><br>
+取一個mini-batch學習</li>
 </ul>
 </li>
-<li>丟棄法 | Dropout<br> 模擬集成學習<br> 儅隱含節點Dropout率為0.5時效果最好，隨機生成的網絡結構最多。</li>
-<li>激活函數<ul>
-<li><strong>Sigmoid</strong><br>  輸出始終為正數，值域<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。  <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>S</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
+<li>丟棄法 | Dropout<br>
+模擬集成學習<br>
+儅隱含節點Dropout率為0.5時效果最好，隨機生成的網絡結構最多。</li>
+<li>激活函數
+<ul>
+<li><strong>Sigmoid</strong><br>
+輸出始終為正數，值域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>S</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
 S(x) = \dfrac{1}{1+e^{-x}}
-\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.39077em;vertical-align:-0.9453850000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4453849999999997em;"><span style="top:-3.445385em;"><span class="pstrut" style="height:3.32144em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9453850000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></li>
-<li><strong>tanh</strong><br>  收斂速度比Sigmoid快，輸出以0爲中心，值域<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>。  <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>x</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>x</mi></mrow></msup></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.39077em;vertical-align:-0.9453850000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4453849999999997em;"><span style="top:-3.445385em;"><span class="pstrut" style="height:3.32144em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9453850000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li><strong>tanh</strong><br>
+收斂速度比Sigmoid快，輸出以0爲中心，值域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>。<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>x</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>x</mi></mrow></msup></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
 \tanh (x) = \dfrac{1 - e^{-2x}}{1 + e^{-2x}} 
-\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.5604380000000004em;vertical-align:-1.030219em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5302190000000004em;"><span style="top:-3.5302189999999998em;"><span class="pstrut" style="height:3.491108em;"></span><span class="mord"><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.030219em;"><span></span></span></span></span></span></span></span></span></span></span></span></li>
-<li><strong>ReLU</strong><br>  解決梯度消失問題（Gradient Vanishing Problem），綫性非飽和。  <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">R(x) = \begin{cases}
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.5604380000000004em;vertical-align:-1.030219em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5302190000000004em;"><span style="top:-3.5302189999999998em;"><span class="pstrut" style="height:3.491108em;"></span><span class="mord"><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.030219em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li><strong>ReLU</strong><br>
+解決梯度消失問題（Gradient Vanishing Problem），綫性非飽和。<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">R(x) = \begin{cases}
 0 &amp;\text{if } x&lt;0 \\
 x &amp;\text{if } x&gt;0
-\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
-
+\end{cases}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
 <ol start="5">
-<li>詞嵌入算法 | word embedding<br> word2vec + PCA降維<br> 輸入層（Input Layer）、投影層（Projection Layer）、隱藏層（Hidden Layer）、輸出層（Output Layer）。 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>b</mi><mo>+</mo><mi>W</mi><mi>x</mi><mo>+</mo><mi>U</mi><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>d</mi><mo>+</mo><mi>H</mi><mi>x</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
+<li>詞嵌入算法 | word embedding<br>
+word2vec + PCA降維<br>
+輸入層（Input Layer）、投影層（Projection Layer）、隱藏層（Hidden Layer）、輸出層（Output Layer）。<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>b</mi><mo>+</mo><mi>W</mi><mi>x</mi><mo>+</mo><mi>U</mi><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>d</mi><mo>+</mo><mi>H</mi><mi>x</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
 f(x) = b + Wx + U \tanh (d + Hx)
-\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5000000000000002em;vertical-align:-0.5000000000000002em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em;"><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5000000000000002em;"><span></span></span></span></span></span></span></span></span></span></span></span></li>
-<li>樸素Vanilla-RNN<br> BPTT | Back Propagation Through Time ： 前向傳播（Forward Propagation）+ BP + 時間順序</li>
-<li><strong>LSTM網絡 | Long Short Term Memory | 長短時記憶網絡</strong><br> RNN的變體，可以學習長時間依賴。<br> 三種門：遺忘門、輸入層門、狀態門。<br> 一些變種<ul>
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5000000000000002em;vertical-align:-0.5000000000000002em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em;"><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5000000000000002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>樸素Vanilla-RNN<br>
+BPTT | Back Propagation Through Time ： 前向傳播（Forward Propagation）+ BP + 時間順序</li>
+<li><strong>LSTM網絡 | Long Short Term Memory | 長短時記憶網絡</strong><br>
+RNN的變體，可以學習長時間依賴。<br>
+三種門：遺忘門、輸入層門、狀態門。<br>
+一些變種
+<ul>
 <li>窺視孔連接 | peephole connection</li>
 <li>配對遺忘與輸入門</li>
 <li>GRU | Gated Recurrent Unit</li>
 </ul>
 </li>
-<li>Attention機制<br> 保留LSTM輸入序列的中間輸出結果，訓練模型對這些輸入進行選擇性學習，並關聯輸入輸出序列。<br> 目標性更强、性能更好。</li>
-<li>Seq2Seq模型<br> 一個RNN進行Encoder，另一個RNN進行Decoder。</li>
-<li>圖説模型 | Image Caption<br>看圖説話，自動生成一段描述圖片的文字。<br>NIC模型 | Neutral Image Caption</li>
+<li>Attention機制<br>
+保留LSTM輸入序列的中間輸出結果，訓練模型對這些輸入進行選擇性學習，並關聯輸入輸出序列。<br>
+目標性更强、性能更好。</li>
+<li>Seq2Seq模型<br>
+一個RNN進行Encoder，另一個RNN進行Decoder。</li>
+<li>圖説模型 | Image Caption<br>
+看圖説話，自動生成一段描述圖片的文字。<br>
+NIC模型 | Neutral Image Caption</li>
 </ol>
-<h2><span id="chapter-11-solr-sou-suo-yin-qing">Chapter 11 Solr搜索引擎</span><a href="#chapter-11-solr-sou-suo-yin-qing" class="header-anchor"></a></h2><ul>
-<li>全文檢索 | full-text search<br>  先建立索引，再對索引進行搜索。</li>
+<h2 id="Chapter-11-Solr搜索引擎"><a class="header-anchor" href="#Chapter-11-Solr搜索引擎"># </a>Chapter 11 Solr搜索引擎</h2>
+<ul>
+<li>全文檢索 | full-text search<br>
+先建立索引，再對索引進行搜索。</li>
 </ul>
 
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
+            
+            <a class="write-prev-post" href="/2019/08/HelpfulLinks/">
+                <i class="fa fa-angle-left"></i>&emsp;有幫助的鏈接合集
+            </a>
+            
+            
+            <a class="write-next-post" href="/2019/08/2019NowcoderSummer05B/">
+                「2019牛客暑期多校 - 第五场」B - generator 1&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
                 </div>
             </div>
-    
-            <nav class="post-pagination">
-    
-    <a class="newer-posts" href="/2019/08/HelpfulLinks/">
-        上一篇<br>有幫助的鏈接合集
-    </a>
-    
-    <span class="page-number"></span>
-    
-    <a class="older-posts" href="/2019/08/2019NowcoderSummer05B/">
-        下一篇<br>「2019牛客暑期多校 - 第五场」B - generator 1
-    </a>
-    
-</nav>
-
-    
-            
-
-
         </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
+</div>
     </div>
-    <div class="single-column-footer">
-    Proudly published with Hexo<br>
-    
-    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
-    
-    &copy; 2020 <a href="https://lxyyxxx.github.io">Lxyyxxx&#39;s Notebook</a>
 </div>
-</div>
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2020 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?66308397"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- tocbot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
 
+<!-- highlight js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
 
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>
