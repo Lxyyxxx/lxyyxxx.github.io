@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/write.css">
 
     <!-- tocbot -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.css">
 
     <!-- katex -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -28,13 +28,14 @@
 
     <!-- highlight -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
 
     <!-- font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700,900&display=swap" rel="stylesheet">
 
     <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
@@ -132,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-04-10T02:30:52.580Z" itemprop="dateModified">
-                            2020-04-10 10:30
+                            <time datetime="2020-05-20T06:55:55.191Z" itemprop="dateModified">
+                            2020-05-20 14:55
                             </time>
                             
                         </div>
@@ -1021,7 +1022,7 @@ int main(){
 <h1 id="1040-Longest-Symmetric-String"><a class="header-anchor" href="#1040-Longest-Symmetric-String"># </a>1040 Longest Symmetric String</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805446102073344" target="_blank" rel="noopener">传送门</a><br>
 <strong>一次过</strong><br>
-把每个字符作为字串的中心，左右计算一下，就可以得出答案</p>
+把每个字符作为子串的中心，左右计算一下，就可以得出答案</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main(){
@@ -1495,45 +1496,895 @@ int main() {
 }
 </code></pre>
 <h1 id="1066-Root-of-AVL-Tree"><a class="header-anchor" href="#1066-Root-of-AVL-Tree"># </a>1066 Root of AVL Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805404939173888" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805404939173888" target="_blank" rel="noopener">传送门</a><br>
+建立平衡二叉树，直接抄数据结构书上的代码有两个测试点没过…… 要实时更新高度</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,t;
+struct AVLTreeNode {
+    int val,height;
+    AVLTreeNode *left,*right;
+    AVLTreeNode(int x) : val(x), height(1), left(NULL), right(NULL) {}
+};
+class AVLTree {
+public:
+    int getHeight(AVLTreeNode *t){
+        if(t==NULL)return 0;
+        return t-&gt;height;
+    }
+    int getBF(AVLTreeNode *t){
+        return getHeight(t-&gt;left)-getHeight(t-&gt;right);
+    }
+    void updateHeight(AVLTreeNode *&amp;t){
+        t-&gt;height=max(getHeight(t-&gt;left),getHeight(t-&gt;right))+1;
+    }
+    void insert(AVLTreeNode *&amp;t,int val){
+        if(!t){
+            t=new AVLTreeNode(val);
+        }else if(val==t-&gt;val){
+            
+        }else if(val&lt;t-&gt;val){
+            insert(t-&gt;left,val);
+            updateHeight(t);
+            if(getBF(t)==2){
+                if(getBF(t-&gt;left)==1)
+                    rrotate(t);
+                else if(getBF(t-&gt;left)==-1){
+                    lrotate(t-&gt;left);
+                    rrotate(t);
+                }
+            }
+        }else{
+            insert(t-&gt;right,val);
+            updateHeight(t);
+            if(getBF(t)==-2){
+                if(getBF(t-&gt;right)==-1)
+                    lrotate(t);
+                else if(getBF(t-&gt;right)==1){
+                    rrotate(t-&gt;right);
+                    lrotate(t);
+                }
+            }
+        }
+    }
+    void rrotate(AVLTreeNode *&amp;t){
+        AVLTreeNode *lc=t-&gt;left;
+        t-&gt;left=lc-&gt;right;
+        lc-&gt;right=t;
+        updateHeight(t);
+        updateHeight(lc);
+        t=lc;
+    }
+    void lrotate(AVLTreeNode *&amp;t){
+        AVLTreeNode *rc=t-&gt;right;
+        t-&gt;right=rc-&gt;left;
+        rc-&gt;left=t;
+        updateHeight(t);
+        updateHeight(rc);
+        t=rc;
+    }
+}avl;
+int main(){
+    AVLTreeNode *root=NULL;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;t;
+        avl.insert(root,t);
+    }
+    cout&lt;&lt;root-&gt;val;
+    return 0;
+}
+</code></pre>
 <h1 id="1067-Sort-with-Swap-0-i"><a class="header-anchor" href="#1067-Sort-with-Swap-0-i"># </a>1067 Sort with Swap(0, i)</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805403651522560" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805403651522560" target="_blank" rel="noopener">传送门</a><br>
+将0和其他数字换位置，问最少几次可以使数组升序排列<br>
+只要模拟0和0所在的位置的数字换位置，就用1次可以让原数字归位</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+1;
+int n,v[N],ans=0,t;
+int main(){
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;t;
+        v[i]=t;
+    }
+    for(int i=0;i&lt;n;i++){
+        if(i!=v[i]){
+            while(v[0]!=0){
+                swap(v[0],v[v[0]]);
+                ans++;
+            }
+            if(i!=v[i]){
+                swap(v[0],v[i]);
+                ans++;
+            }
+        }
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
 <h1 id="1070-Mooncake"><a class="header-anchor" href="#1070-Mooncake"># </a>1070 Mooncake</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805399578853376" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805399578853376" target="_blank" rel="noopener">传送门</a><br>
+贪心，按每千吨的单价从大到小排序，注意吨可能是浮点型</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1010;
+struct mooncake{
+    double tons,price;
+}mc[N];
+bool cmp(const mooncake &amp;a,const mooncake &amp;b){
+    return a.price&gt;b.price;
+}
+int main(){
+    int n,d;
+    double ans=0;
+    cin&gt;&gt;n&gt;&gt;d;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;mc[i].tons;
+    }
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;mc[i].price;
+        mc[i].price/=mc[i].tons;
+    }
+    sort(mc,mc+n,cmp);
+    for(int i=0;i&lt;n;i++){
+        if(d==0)break;
+        if(d&gt;mc[i].tons){
+            ans+=mc[i].price*mc[i].tons;
+            d-=mc[i].tons;
+        }else{
+            ans+=mc[i].price*d;
+            d-=d;
+        }
+    }
+    printf(&quot;%.02lf\n&quot;,ans);
+    return 0;
+}
+</code></pre>
 <h1 id="1071-Speech-Patterns"><a class="header-anchor" href="#1071-Speech-Patterns"># </a>1071 Speech Patterns</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805398257647616" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805398257647616" target="_blank" rel="noopener">传送门</a><br>
+匹配一整个串而不是引号内的部分。可能会有多个空格在一起，只有非空的才能记录进map。最后一个字符不管是不是分隔符都要记录进map</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    string s,ts;
+    getline(cin,s);
+    const int N=s.size();
+    int cnt=0;
+    map&lt;string,int&gt;mp;
+    for(int i=0;i&lt;N;i++){
+        if(isalnum(s[i])){
+            ts+=tolower(s[i]);
+            if(i==N-1){
+                if(!ts.empty())mp[ts]++;
+                ts.clear();
+            }
+        }else{
+            if(!ts.empty())mp[ts]++;
+            ts.clear();
+        }
+    }
+    for(auto i:mp){
+        if(i.second&gt;cnt){
+            cnt=i.second;
+            ts=i.first;
+        }
+    }
+    cout&lt;&lt;ts&lt;&lt;&quot; &quot;&lt;&lt;cnt;
+    return 0;
+}
+</code></pre>
 <h1 id="1074-Reversing-Linked-List"><a class="header-anchor" href="#1074-Reversing-Linked-List"># </a>1074 Reversing Linked List</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805394512134144" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805394512134144" target="_blank" rel="noopener">传送门</a><br>
+每k个反转，如果不足k个不反转，有可能存在没用上的结点</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=100010;
+struct Node{
+    string addr;
+    int data;
+    string next;
+}node[N];
+string addr[N],l[N];
+int main(){
+    int n,k;
+    string s;
+    map&lt;string,int&gt;mp;
+    cin&gt;&gt;s&gt;&gt;n&gt;&gt;k;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;node[i].addr&gt;&gt;node[i].data&gt;&gt;node[i].next;
+        mp[node[i].addr]=i;
+    }
+    string now=s;
+    int id=0;
+    while(now!=&quot;-1&quot;){
+        l[id++]=node[mp[now]].addr;
+        now=node[mp[now]].next;
+    }
+    for(int i=0;i&lt;id;i+=k){
+        if(i+k&gt;id){
+            for(int j=i;j&lt;id;j++)
+                addr[j]=l[j];
+            break;
+        }
+        for(int j=i;j&lt;=i+k/2&amp;&amp;j&lt;id;j++){
+            int op=i+k-1-j%k;
+            addr[op]=l[j];
+            addr[j]=l[op];
+        }
+    }
+    for(int i=0;i&lt;id;i++){
+        cout&lt;&lt;addr[i]&lt;&lt;&quot; &quot;&lt;&lt;node[mp[addr[i]]].data&lt;&lt;&quot; &quot;;
+        if(i!=id-1)cout&lt;&lt;addr[i+1]&lt;&lt;'\n';
+        else cout&lt;&lt;&quot;-1\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1075-PAT-Judge"><a class="header-anchor" href="#1075-PAT-Judge"># </a>1075 PAT Judge</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805393241260032" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805393241260032" target="_blank" rel="noopener">传送门</a><br>
+可能存在之前有题目未通过编译器后面有题目通过了，则之前这题需要置0(最后一个测试点)</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10020;
+struct info{
+    vector&lt;int&gt;par_score;
+    int score,solve,uid;
+    bool isshown;
+}stu[N];
+bool cmp(info a,info b){
+    if(a.score!=b.score)
+        return a.score&gt;b.score;
+    else if(a.solve!=b.solve)
+        return a.solve&gt;b.solve;
+    else
+        return a.uid&lt;b.uid;  
+}
+int main(){
+    int n,k,m,p[5],uid,pid,sco,cur=0,pre_score=-1,rank=-1;
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;k,&amp;m);
+    for(int i=0;i&lt;k;i++)
+        scanf(&quot;%d&quot;,&amp;p[i]);
+    for(int i=1;i&lt;=n;i++){
+        stu[i].uid=i;
+        stu[i].par_score.resize(5,-2);
+        stu[i].isshown=false;
+        stu[i].score=stu[i].solve=0;
+    }
+    for(int i=0;i&lt;m;i++){
+        scanf(&quot;%d%d%d&quot;,&amp;uid,&amp;pid,&amp;sco);
+        if(sco!=-1){
+            stu[uid].isshown=true;
+            if(stu[uid].par_score[pid-1]&lt;sco){
+                if(stu[uid].par_score[pid-1]&gt;0)
+                    stu[uid].score-=stu[uid].par_score[pid-1];
+                if(sco==p[pid-1])
+                    stu[uid].solve++;
+                stu[uid].par_score[pid-1]=sco;
+                stu[uid].score+=sco;
+            }
+        }else{
+            if(stu[uid].par_score[pid-1]&lt;0)
+                stu[uid].par_score[pid-1]=sco;
+        }
+    }
+    sort(stu+1,stu+1+n,cmp);
+    for(int i=1;i&lt;=n;i++){
+        if(!stu[i].isshown)continue;
+        if(pre_score!=stu[i].score){
+            rank=cur+1;
+            pre_score=stu[i].score;
+        }
+        printf(&quot;%d %05d %d&quot;,rank,stu[i].uid,stu[i].score);
+        for(int j=0;j&lt;k;j++){
+            if(stu[i].par_score[j]==-2)
+                printf(&quot; -&quot;);
+            else if(stu[i].par_score[j]==-1)
+                printf(&quot; 0&quot;);
+            else
+                printf(&quot; %d&quot;,stu[i].par_score[j]);
+        }
+        printf(&quot;\n&quot;);
+        cur++;
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1078-Hashing"><a class="header-anchor" href="#1078-Hashing"># </a>1078 Hashing</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805389634158592" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805389634158592" target="_blank" rel="noopener">传送门</a><br>
+哈希函数按照公式，选择大于等于给定表长的第一个素数作为表长，冲突解决方案为<strong>正方向的二次探测再散列</strong>（<em>Quadratic probing (with positive increments only) is used to solve the collisions.</em>），素数需要判断1为<code>false</code></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+bool isprime(int x){
+    if(x==1)return false;
+    for(int i=2;i&lt;=sqrt(x);i++)
+        if(x%i==0)
+            return false;
+    return true;
+}
+int main(){
+    int m,n,a,hash;
+    bool f;
+    cin&gt;&gt;m&gt;&gt;n;
+    while(!isprime(m))
+        m++;
+    vector&lt;int&gt;vis(m,false);
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;a;
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        f=false;
+        for(int d=0;d&lt;m;d++){
+            hash=(a%m+d*d)%m;
+            if(!vis[hash]){
+                vis[hash]=true;
+                cout&lt;&lt;hash%m;
+                f=true;
+                break;
+            }
+        }
+        if(!f)cout&lt;&lt;&quot;-&quot;;
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1079-Total-Sales-of-Supply-Chain"><a class="header-anchor" href="#1079-Total-Sales-of-Supply-Chain"># </a>1079 Total Sales of Supply Chain</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805388447170560" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805388447170560" target="_blank" rel="noopener">传送门</a><br>
+dfs遍历图（多叉树），每卖出一次价格提升到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">(1+r%)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>倍，叶子结点是零售商，存的是购买数量，它在第几层就表现出与原始价格的倍数关系，再乘上根节点的价格，就可以得到最终答案</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+10;
+int n,k;
+double p,r,ans=0;
+struct Node{
+    int val;
+    vector&lt;int&gt;child;
+};
+vector&lt;Node&gt;v;
+void dfs(int start,int depth){
+    if(start&gt;=n)
+        return;
+    if(v[start].child.empty()){
+        ans+=v[start].val*pow(1+r,depth);
+        return ;
+    }
+    for(int i:v[start].child)
+        dfs(i,depth+1);
+}
+int main(){
+    cin&gt;&gt;n&gt;&gt;p&gt;&gt;r;
+    r/=100;
+    v.resize(n);
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;k;
+        v[i].child.resize(k);
+        if(k==0)
+            cin&gt;&gt;v[i].val;
+        else{
+            for(int j=0;j&lt;k;j++)
+                cin&gt;&gt;v[i].child[j];
+        }
+    }
+    dfs(0,0);
+    printf(&quot;%.01lf\n&quot;,ans*p);
+    return 0;
+}
+</code></pre>
 <h1 id="1082-Read-Number-in-Chinese"><a class="header-anchor" href="#1082-Read-Number-in-Chinese"># </a>1082 Read Number in Chinese</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805385053978624" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805385053978624" target="_blank" rel="noopener">传送门</a><br>
+四个四个为一组输出，中间添加万、亿分割<br>
+<em>第一次提交的代码，好像100000009这个输出有问题，但是竟然过了……</em></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string s;
+vector&lt;string&gt;zh;
+string ss1[10]={&quot;ling&quot;,&quot;yi&quot;,&quot;er&quot;,&quot;san&quot;,&quot;si&quot;,&quot;wu&quot;,&quot;liu&quot;,&quot;qi&quot;,&quot;ba&quot;,&quot;jiu&quot;};
+string ss2[4]={&quot;&quot;,&quot;Shi&quot;,&quot;Bai&quot;,&quot;Qian&quot;};
+string ss3[3]={&quot;&quot;,&quot;Wan&quot;,&quot;Yi&quot;};
+void print(string s){
+    bool f=false;
+    const int N=s.size();
+    for(int i=N-1;i&gt;=0;i--){
+        if(s[i]!='0')
+            f=true;
+        if(s[i]!='0')
+            zh.insert(zh.begin(),ss2[N-1-i]);
+        if(s[i]!='0'||i!=N-1&amp;&amp;s[i]=='0'&amp;&amp;s[i+1]!='0')
+            zh.insert(zh.begin(),ss1[s[i]-'0']);
+    }
+    if(!f)
+        zh.erase(zh.begin());
+}
+void solve(){
+    if(s==&quot;0&quot;){
+        cout&lt;&lt;&quot;ling&quot;;
+        return;
+    }
+    int start=s[0]=='-'?1:0,cnt=0;
+    const int N=s.size();
+    for(int i=N-1;i&gt;=start;i-=4){
+        if(cnt&gt;0)
+            zh.insert(zh.begin(),ss3[cnt]);
+        int len=min(i-start+1,4);
+        print(s.substr(i-len+1,len));
+        cnt++;
+    }
+    if(start!=0)
+        zh.insert(zh.begin(),&quot;Fu&quot;);
+}
+int main(){
+    cin&gt;&gt;s;  
+    solve();
+    for(int i=0;i&lt;zh.size();i++){
+        if(i!=0&amp;&amp;zh[i]!=&quot;&quot;)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;zh[i];
+    }
+    return 0;
+}
+
+</code></pre>
 <h1 id="1083-List-Grades"><a class="header-anchor" href="#1083-List-Grades"># </a>1083 List Grades</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805383929905152" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805383929905152" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+结构体排序+二分查找。给定学生的姓名、学号、成绩，从高分到低分输出成绩在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>g</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>e</mi><mn>1</mn><mo separator="true">,</mo><mi>g</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>e</mi><mn>2</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[grade1,grade2]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord">2</span><span class="mclose">]</span></span></span></span>的学生的姓名和学号，如果没有输出<code>NONE</code></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+10;
+struct student{
+    string name,id;
+    int grade;
+    student(){}
+    student(int g):grade(g),name(&quot;&quot;),id(&quot;&quot;){}
+    bool operator&gt;(const student a)const{
+        return grade&gt;a.grade;
+    }
+    bool operator&lt;(const student a)const{
+        return grade&lt;a.grade;
+    }
+};
+vector&lt;student&gt;stu;
+int main(){
+    int n,g1,g2;
+    cin&gt;&gt;n;
+    stu.resize(n);
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;stu[i].name&gt;&gt;stu[i].id&gt;&gt;stu[i].grade;
+    cin&gt;&gt;g1&gt;&gt;g2;
+    sort(stu.begin(),stu.end());
+    int l=lower_bound(stu.begin(),stu.end(),student(g1))-stu.begin();
+    int r=upper_bound(stu.begin(),stu.end(),student(g2))-stu.begin()-1;
+    if(l&gt;r)cout&lt;&lt;&quot;NONE\n&quot;;
+    else
+        for(int i=r;i&gt;=l;i--)
+            cout&lt;&lt;stu[i].name&lt;&lt;&quot; &quot;&lt;&lt;stu[i].id&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
 <h1 id="1085-Perfect-Sequence"><a class="header-anchor" href="#1085-Perfect-Sequence"># </a>1085 Perfect Sequence</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805381845336064" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805381845336064" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+找到数组中满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">最</mi><mi mathvariant="normal">大</mi><mi mathvariant="normal">值</mi><mo>⩽</mo><mi mathvariant="normal">最</mi><mi mathvariant="normal">小</mi><mi mathvariant="normal">值</mi><mo>×</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">最大值\leqslant 最小值 \times p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">值</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">小</span><span class="mord cjk_fallback">值</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span>的子序列的最大长度。排序+二分查找，按顺序，把每个设成最小，去找满足他的最大值，计算中间的个数，取最大的。注意数的范围</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+int main(){
+    int n,p,ans=0;
+    cin&gt;&gt;n&gt;&gt;p;
+    vector&lt;int&gt;a(n);
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;a[i];
+    sort(a.begin(),a.end());
+    for(int i=0;i&lt;n;i++)
+        ans=max(int(upper_bound(a.begin(),a.end(),1ll*a[i]*p)-a.begin()-i),ans);
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
 <h1 id="1086-Tree-Traversals-Again"><a class="header-anchor" href="#1086-Tree-Traversals-Again"># </a>1086 Tree Traversals Again</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805380754817024" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805380754817024" target="_blank" rel="noopener">传送门</a><br>
+push的顺序是先序遍历，pop的顺序是中序遍历，题目就可以转化为已知树的先序和中序遍历，求树的后序遍历</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt;pre,in,post;
+void binary(int l,int r,int root){
+    if(l&gt;r)return;
+    int mid=l;
+    while(mid&lt;=r&amp;&amp;in[mid]!=pre[root])
+        mid++;
+    if(mid&gt;r)return;
+    binary(l,mid-1,root+1);
+    binary(mid+1,r,root+1+mid-l);
+    post.push_back(pre[root]);
+}
+int main(){
+    int n,t;
+    cin&gt;&gt;n;
+    string s;
+    stack&lt;int&gt;stk;
+    for(int i=0;i&lt;2*n;i++){
+        cin&gt;&gt;s;
+        if(s==&quot;Push&quot;){
+            cin&gt;&gt;t;
+            stk.push(t);
+            pre.push_back(t);
+        }else{
+            t=stk.top();
+            stk.pop();
+            in.push_back(t);
+        }
+    }
+    binary(0,n-1,0);
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;post[i];
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1089-Insert-or-Merge"><a class="header-anchor" href="#1089-Insert-or-Merge"># </a>1089 Insert or Merge</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805377432928256" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805377432928256" target="_blank" rel="noopener">传送门</a><br>
+判断是插入排序还是归并排序，输出结果即下一步的变换结果<br>
+插入排序表现为前<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个有序，从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>开始后面的都与原来相同，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>&gt;</mo><mi>v</mi><mo stretchy="false">[</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">v[n]&gt;v[n+1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mopen">[</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mopen">[</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span><br>
+归并排序表现为每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>个有序，下一步<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mi>k</mi><mo>&lt;</mo><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=k&lt;&lt;1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span><br>
+注意<strong>段错误</strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int n,v1[110],v2[110],l,r,t=1;
+    bool f=false;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v1[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v2[i];
+    for(l=0;l&lt;n-1&amp;&amp;v2[l]&lt;=v2[l+1];l++);
+    for(r=l+1;r&lt;n&amp;&amp;v2[r]==v1[r];r++);
+    if(r==n){
+        cout&lt;&lt;&quot;Insertion Sort\n&quot;;
+        sort(v1,v1+l+2);
+    }else{
+        cout&lt;&lt;&quot;Merge Sort\n&quot;;
+        while(!f){
+            f=true;
+            for(int i=0;i&lt;n;i++)
+                if(v1[i]!=v2[i])
+                    f=false;
+            t&lt;&lt;=1;
+            for(int i=0;i&lt;n/t;i++)
+                sort(v1+i*t,v1+i*t+t);
+            sort(v1+n/t*t,v1+n);
+        }
+    }
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;v1[i];
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1090-Highest-Price-in-Supply-Chain"><a class="header-anchor" href="#1090-Highest-Price-in-Supply-Chain"># </a>1090 Highest Price in Supply Chain</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805376476626944" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805376476626944" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+求能卖出最高价格以及零售商个数，相当于森林的遍历，找出距离根节点最深处的节点的个数和深度，再算一下价格</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+10;
+unordered_map&lt;int,unordered_set&lt;int&gt;&gt;g;
+int n,l,cnt;
+void dfs(int begin,int level){
+    if(g[begin].empty()){
+        if(l&lt;level){
+            l=level;
+            cnt=1;
+        }else if(l==level)
+            cnt++;
+        return;
+    }
+    for(auto i:g[begin])
+        dfs(i,level+1);
+}
+int main(){
+    int t,root=-1;
+    double p,r;
+    cin&gt;&gt;n&gt;&gt;p&gt;&gt;r;
+    r/=100;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;t;
+        if(t==-1)
+            root=i;
+        else
+            g[t].insert(i);
+    }
+    l=cnt=0;
+    dfs(root,0);
+    printf(&quot;%.02lf %d&quot;,p*pow(1+r,l),cnt);
+    return 0;
+}
+</code></pre>
 <h1 id="1093-Count-PAT’s"><a class="header-anchor" href="#1093-Count-PAT’s"># </a>1093 Count PAT’s</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805373582557184" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805373582557184" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+dp，对于每一个T，只需要知道它前面有几个PA，就可以组成几个PAT；对于每一个A，只需要知道它前面有几个P，就可以组成多少个PA；P的数量直接计数就行<br>
+用三个状态分别表示P、PA、PAT，存相应的个数</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int mod=1e9+7;
+int main(){
+    string s;
+    cin&gt;&gt;s;
+    // P,PA,PAT
+    int dp[3]={0};
+    for(auto i:s){
+        if(i=='P')
+            dp[0]++;
+        else if(i=='A')
+            dp[1]=(dp[1]+dp[0])%mod;
+        else if(i=='T')
+            dp[2]=(dp[2]+dp[1])%mod;
+    }
+    cout&lt;&lt;dp[2];
+    return 0;
+}
+</code></pre>
 <h1 id="1094-The-Largest-Generation"><a class="header-anchor" href="#1094-The-Largest-Generation"># </a>1094 The Largest Generation</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805372601090048" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805372601090048" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+给定一颗家族树，问哪一层的人数最多，输出对应的层和人数。根节点的层数定义为1，根节点固定为1<br>
+直接建树（图）+层序遍历（bfs）</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+unordered_map&lt;int,unordered_set&lt;int&gt;&gt;tree;
+int main(){
+    int n,m,id,k,idi;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0;i&lt;m;i++){
+        cin&gt;&gt;id&gt;&gt;k;
+        for(int j=0;j&lt;k;j++){
+            cin&gt;&gt;idi;
+            tree[id].insert(idi);
+        }
+    }
+    int level=0,cnt=0,cur=0;
+    queue&lt;int&gt;q;
+    q.push(1);
+    while(!q.empty()){
+        cur++;
+        k=q.size();
+        if(k&gt;cnt){
+            cnt=k;
+            level=cur;
+        }
+        while(k--){
+            idi=q.front();
+            q.pop();
+            for(int i:tree[idi])
+                q.push(i);
+        }
+    }
+    cout&lt;&lt;cnt&lt;&lt;&quot; &quot;&lt;&lt;level;
+    return 0;
+}
+</code></pre>
 <h1 id="1097-Deduplication-on-a-Linked-List"><a class="header-anchor" href="#1097-Deduplication-on-a-Linked-List"># </a>1097 Deduplication on a Linked List</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805369774129152" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805369774129152" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+删除链表中绝对值相同的元素，并排到后面形成一个新链表</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+10;
+struct Link {
+    int addr,val,next;
+}l[N];
+int main() {
+    int head,n,cur=0,addr,res[N];
+    scanf(&quot;%d%d&quot;,&amp;head,&amp;n);
+    for(int i=0;i&lt;n;i++){
+        scanf(&quot;%d&quot;,&amp;addr);
+        scanf(&quot;%d%d&quot;,&amp;l[addr].val,&amp;l[addr].next);
+        l[addr].addr=addr;
+    }
+        
+    bool vis[N]={false},f=false;
+    while(head!=-1){
+        if(!vis[abs(l[head].val)]){
+            if(f)
+                printf(&quot; %05d\n&quot;,head);
+            vis[abs(l[head].val)]=true;
+            printf(&quot;%05d %d&quot;,head,l[head].val);
+                f=true;
+        }else{
+            res[cur++]=head;
+        }
+        head=l[head].next;
+    }
+    if(f)
+        printf(&quot; -1\n&quot;);
+    for(int i=0;i&lt;cur;i++){
+        if(i!=0)
+            printf(&quot; %05d\n&quot;,res[i]);
+        printf(&quot;%05d %d&quot;,res[i],l[res[i]].val);
+    }
+    if(cur!=0)
+        printf(&quot; -1\n&quot;);
+    return 0;
+}
+</code></pre>
 <h1 id="1098-Insertion-or-Heap-Sort"><a class="header-anchor" href="#1098-Insertion-or-Heap-Sort"># </a>1098 Insertion or Heap Sort</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805368847187968" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805368847187968" target="_blank" rel="noopener">传送门</a><br>
+判断是插入排序还是堆排序，判断插入排序和[1089](# 1089 Insert or Merge)类似，处理方式也一样，只不过这一次输出的是<code>v2</code>，不是插入排序的话就是堆排序<br>
+要得到从小到大的堆排序序列，先要构建一个大顶堆。从最后一个不是叶子节点的节点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>开始看他的左右孩子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2\times i +1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mi>i</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\times i+2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>是否会比它大，如果比他大则大的那个和它交换，再判断之前的非叶子节点直到根<br>
+到了根之后再从下到上看结构有没有被破坏，直到形成大顶堆<br>
+形成大顶堆后，将堆头和堆尾交换，把堆尾弹出，按堆尾弹出的顺序可以构造成一个从小到大的堆排序序列。但是交换操作会导致大顶堆被破坏，所以要从上到下调整，和左右孩子最大且大于自己的交换，直到叶子节点。题目要求的就是这交换后的一次调整</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,v1[110],v2[110],l,r,t=1;
+void dfs(int l,int r){
+    int s;
+    if(2*l+1&gt;=r)
+        return ;
+    else if(2*l+2&gt;=r&amp;&amp;2*l+1&lt;r)
+        s=2*l+1;
+    else 
+        s=v2[2*l+1]&gt;=v2[2*l+2]?2*l+1:2*l+2;
+    if(s&lt;r&amp;&amp;v2[l]&lt;=v2[s]){
+        swap(v2[l],v2[s]);
+        dfs(s,r);
+    }
+}
+int main(){
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v1[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v2[i];
+    for(l=0;l&lt;n-1&amp;&amp;v2[l]&lt;=v2[l+1];l++);
+    for(r=l+1;r&lt;n&amp;&amp;v2[r]==v1[r];r++);
+    if(r==n){
+        cout&lt;&lt;&quot;Insertion Sort\n&quot;;
+        sort(v2,v2+l+2);
+    }else{
+        cout&lt;&lt;&quot;Heap Sort\n&quot;;
+        for(r=n-1;v2[r]&gt;=v2[0]&amp;&amp;r&gt;=0;r--);
+        swap(v2[0],v2[r]);
+        dfs(0,r);
+    }
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;v2[i];
+    }
+    return 0;
+}
+</code></pre>
+<p>直接调用库函数<code>make_heap</code>调整堆也可以</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,v1[110],v2[110],l,r,t=1;
+int main(){
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v1[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v2[i];
+    for(l=0;l&lt;n-1&amp;&amp;v2[l]&lt;=v2[l+1];l++);
+    for(r=l+1;r&lt;n&amp;&amp;v2[r]==v1[r];r++);
+    if(r==n){
+        cout&lt;&lt;&quot;Insertion Sort\n&quot;;
+        sort(v2,v2+l+2);
+    }else{
+        cout&lt;&lt;&quot;Heap Sort\n&quot;;
+        for(r=n-1;v2[r]&gt;=v2[0]&amp;&amp;r&gt;=0;r--);
+        swap(v2[0],v2[r]);
+        make_heap(v2,v2+r);
+    }
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;v2[i];
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1101-Quick-Sort"><a class="header-anchor" href="#1101-Quick-Sort"># </a>1101 Quick Sort</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805366343188480" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805366343188480" target="_blank" rel="noopener">传送门</a><br>
+找出快速排序中可以作为pivot的元素，即满足左边元素都小于它，右边元素都大于它的元素，注意有一个测试点结果为0，最后要输出两个换行</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+10;
+int main(){
+    int n,a[N];
+    scanf(&quot;%d&quot;,&amp;n);
+    deque&lt;int&gt;r;
+    for(int i=0;i&lt;n;i++){
+        scanf(&quot;%d&quot;,&amp;a[i]);
+        while(!r.empty()&amp;&amp;r.back()&gt;a[i])
+            r.pop_back();
+        r.push_back(a[i]);
+    }
+    int mx=-1e9,cur=0,ans[N];
+    for(int i=0;i&lt;n;i++){
+        if(r.front()==a[i])
+            r.pop_front();
+        if((i==0||i&gt;0&amp;&amp;mx&lt;a[i])&amp;&amp;(r.empty()||!r.empty()&amp;&amp;r.front()&gt;a[i]))
+            ans[cur++]=a[i];
+        if(mx&lt;a[i])
+            mx=a[i];
+    }
+    if(cur){
+        printf(&quot;%d\n%d&quot;,cur,ans[0]);
+        for(int i=1;i&lt;cur;i++)
+            printf(&quot; %d&quot;,ans[i]);
+    }
+    else{
+        printf(&quot;%d\n\n&quot;,cur);
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1102-Invert-a-Binary-Tree"><a class="header-anchor" href="#1102-Invert-a-Binary-Tree"># </a>1102 Invert a Binary Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805365537882112" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805365537882112" target="_blank" rel="noopener">传送门</a><br>
+翻转二叉树，也就是左右孩子互换，输出层序和中序遍历<br>
+首先要确定根节点，在输入的孩子中，没出现的就是根节点，有出现的根节点有且只会出现一次<br>
+然后从根节点开始遍历就可以了</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=15;
+struct node{
+    int left,right;
+}t[N];
+int n;
+vector&lt;int&gt;level(n),in(n);
+void levelTra(int root){
+    queue&lt;int&gt;q;
+    q.push(root);
+    int tmp;
+    while(!q.empty()){
+        tmp=q.front();
+        q.pop();
+        level.push_back(tmp);
+        if(t[tmp].right!=-1)q.push(t[tmp].right);
+        if(t[tmp].left!=-1)q.push(t[tmp].left);
+    }
+}
+void inTra(int root){
+    if(t[root].right!=-1)inTra(t[root].right);
+    in.push_back(root);
+    if(t[root].left!=-1)inTra(t[root].left);
+}
+int main(){
+    cin&gt;&gt;n;
+    char l,r;
+    int root=0;
+    for(int i=1;i&lt;n;i++)
+        root^=i;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;l&gt;&gt;r;
+        if(l=='-')
+            t[i].left=-1;
+        else{
+            t[i].left=(l-'0');
+            root^=(l-'0');
+        }
+        if(r=='-')
+            t[i].right=-1;
+        else{
+            t[i].right=(r-'0');
+            root^=(r-'0');
+        }
+    }
+    levelTra(root);
+    inTra(root);
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;level[i];
+    }
+    cout&lt;&lt;'\n';
+    for(int i=0;i&lt;n;i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;in[i];
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1105-Spiral-Matrix"><a class="header-anchor" href="#1105-Spiral-Matrix"># </a>1105 Spiral Matrix</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805363117768704" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1106-Lowest-Price-in-Supply-Chain"><a class="header-anchor" href="#1106-Lowest-Price-in-Supply-Chain"># </a>1106 Lowest Price in Supply Chain</h1>
@@ -1641,19 +2492,19 @@ int main() {
     crossorigin="anonymous"></script>
 
 <!-- tocbot -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 
 <!-- mermaid -->
 <script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
 
 <!-- highlight js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/highlight.min.js">
 </script>
 <!-- uncommon highlight -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
 
 <!-- theme js -->
 <script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->

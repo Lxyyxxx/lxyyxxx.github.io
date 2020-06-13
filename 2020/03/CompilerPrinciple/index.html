@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/write.css">
 
     <!-- tocbot -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.css">
 
     <!-- katex -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -28,13 +28,14 @@
 
     <!-- highlight -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
 
     <!-- font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700,900&display=swap" rel="stylesheet">
 
     <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
@@ -132,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-04-10T03:09:00.881Z" itemprop="dateModified">
-                            2020-04-10 11:09
+                            <time datetime="2020-05-29T13:42:03.378Z" itemprop="dateModified">
+                            2020-05-29 21:42
                             </time>
                             
                         </div>
@@ -206,7 +207,7 @@
 翻译软件称为<strong>转换器</strong>、<strong>编译器</strong></p>
 <h2 id="编译器和解释器"><a class="header-anchor" href="#编译器和解释器"># </a>编译器和解释器</h2>
 <h3 id="编译器"><a class="header-anchor" href="#编译器"># </a>编译器</h3>
-<p>将源代码转换成可执行程序，然后再运行可执行程序</p>
+<p>将<strong>源代码</strong>转换成<strong>可执行程序</strong>，然后再运行可执行程序</p>
 <blockquote>
 <p>VC、delphi</p>
 </blockquote>
@@ -1148,6 +1149,144 @@ A^{\prime} \to \beta_1|\beta_2|\dots|\beta_n
 <li>构造预测分析表</li>
 <li>给定串进行预测</li>
 </ol>
+<p><strong>预测分析表</strong><br>
+行是非终结符，为文法产生式的左部<br>
+列是终结符，列中要再加一个终结符<code>#</code>表示记号流的开始和结束</p>
+<p><strong>First集</strong></p>
+<ol>
+<li>对于右部第一个符号是终结符的可直接确定</li>
+<li>不含的递推第一个符号就可以得到相应的终结符</li>
+<li>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span></span></span></span>暂时不管，但是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span></span></span></span>与First集无关，只与Follow集有关</li>
+</ol>
+<p><strong>Follow集</strong><br>
+将非终结符变为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span></span></span></span>，保证<code>#S#</code>可以转换为<code>##</code><br>
+求X的Follow集</p>
+<ol>
+<li>左部为X的文法产生式最右部均为X，则X的Follow集为自己，然后找文法产生式右部有X的产生式，X的Follow集就为这些产生式左部的Follow集的并集（递归）</li>
+<li>后面跟非终结符，X的Follow集为非终结符的First集。如果非终结符的First集有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span></span></span></span>，则非终结符的First集要合并进X的Follow集</li>
+<li>后面跟的是终结符，则X的Follow集就为终结符组成的集合</li>
+<li>对于开始符号，Follow集要加上<span class="katex-error" title="ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 1: #̲">#</span></li>
+</ol>
+<p>用<strong>当前字符</strong>和<strong>栈顶元素</strong>去查预测分析表，当匹配到了当前字符，就匹配下一个字符<br>
+最后栈内剩下<code>#</code>且当前输入仅剩<code>#</code>的时候表示语法正确，否则错误</p>
+<blockquote>
+<p>相当于树的<strong>后根遍历</strong>，所以压栈的时候要<strong>从右往左</strong>压</p>
+</blockquote>
+<h2 id="自下而上的语法分析"><a class="header-anchor" href="#自下而上的语法分析"># </a>自下而上的语法分析</h2>
+<p>句柄：一个句型的最左直接短语（最左边的高度为1的子树）</p>
+<h3 id="移进归约分析表-SLR"><a class="header-anchor" href="#移进归约分析表-SLR"># </a>移进归约分析表 SLR</h3>
+<p>行：状态，列：终结符 非终结符（goto表）<br>
+s id：移进，id号文法产生式<br>
+r id：规约，弹出id号文法产生式，压入非终结符+状态</p>
+<p>根据文法产生SLR：</p>
+<ol>
+<li>得到活前缀DFA</li>
+<li>如果 状态1，终结符 -&gt; 状态2，表[状态1，终结符]填 <strong>s状态2</strong></li>
+<li>如果 状态1，非终结符 -&gt; 状态2,表[状态1，非终结符]填 <strong>状态2</strong>（goto表）</li>
+<li>对于状态集中点在最右边的产生式，求左部的Follow集（不要忘了#），表[状态，Follow集]填 <strong>r点之前的产生式编号</strong></li>
+<li>如果某状态集中<strong>点之前的是拓广文法</strong>，在表[状态，#]交叉点填 <strong>acc</strong></li>
+</ol>
+<h3 id="LR文法-拓广文法-增广文法"><a class="header-anchor" href="#LR文法-拓广文法-增广文法"># </a>LR文法/拓广文法/增广文法</h3>
+<p>LR(0)项目右部的某个位置上，有一个点’.’（表示项目），对于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>→</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">A\to \epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>，它仅有一个项目<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>→</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">A \to .</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.10556em;vertical-align:0em;"></span><span class="mord">.</span></span></span></span></p>
+<blockquote>
+<p>一个产生式右部若有n个文法符号，则该产生式有n+1个LR(0)项目</p>
+</blockquote>
+<p>点后为空的为<strong>可规约项目</strong>，点后不为空的为<strong>可移进项目</strong></p>
+<h3 id="活前缀DFA"><a class="header-anchor" href="#活前缀DFA"># </a>活前缀DFA</h3>
+<p>项目集点在某个非终结符前，需要把这个非终结符展开，在每个产生式右部最左边打点<br>
+接受某非终结符/终结符后将点后移产生新的状态（移动+再展开）<br>
+过程相当于BFS</p>
+<blockquote>
+<p>左递归和左因子不影响</p>
+</blockquote>
+<h1 id="静态语义分析"><a class="header-anchor" href="#静态语义分析"># </a>静态语义分析</h1>
+<p>按<strong>产生式</strong>定义语义规则<br>
+基于<strong>属性</strong>的语义分析：<br>
+<strong>数据</strong>：存放在节点上<br>
+<strong>动作</strong>：一个文法产生式为一个动作</p>
+<p>词法分析得到的数据和属性存在<strong>符号表</strong>里<br>
+<strong>综合属性</strong>：通过孩子知道父亲的之和属性<br>
+<strong>继承属性</strong>：孩子的属性不知道，要从父亲或兄弟知道</p>
+<p>自上而下和自下而上的翻译可能不同</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>语义动作和属性相关（属性语法制导翻译），语义动作归结为机器代码，归结为节点的属性</li>
+<li>为每一个文法产生式构造对应的语义动作，继承属性和综合属性产生语义动作的先后顺序不同</li>
+</ol>
+<h2 id="中间代码"><a class="header-anchor" href="#中间代码"># </a>中间代码</h2>
+<ol>
+<li>便于语法制导翻译</li>
+<li>既与机器指令的结构相近，由于具体机器代码无关</li>
+</ol>
+<p><strong>主要形式</strong></p>
+<ol>
+<li><strong>树（语法树）</strong>   相当于sql语言转为dbms中的范式</li>
+<li><strong>后缀式</strong>   优点是没有括号，便于计算</li>
+<li><strong>三地址码</strong>   适用于<strong>编译器</strong>。三元式既代表本身，又代表存放的结果。三元式在三元式表中的位置一旦确定，就不允许被改变（因为在运算时会引用标号）。可以用<strong>四元式</strong>（增加了存放的结果，临时变量）</li>
+</ol>
+<h3 id="三元式的语法制导翻译"><a class="header-anchor" href="#三元式的语法制导翻译"># </a>三元式的语法制导翻译</h3>
+<p>属性和语义函数：<br>
+<strong>属性.code</strong>：表示三元式代码，指示标识符的存储单元或三元式表中的序号<br>
+<strong><a href="http://xn--7gty1g.name" target="_blank" rel="noopener">属性.name</a></strong>：给出标识符的名字<br>
+<strong>函数 trip(op，arg1，arg2)</strong>：生成一个三元式，返回三元式的序号（一元运算<code>arg2</code>可为空）<br>
+<strong>函数 entry(<a href="http://id.name" target="_blank" rel="noopener">id.name</a>)</strong>：根据标识符id.name查找符号表并返回它在符号表中的位置或存储位置，为了直观，三元式中仍以标识符自身的名字所表示</p>
+<h3 id="四元式的语法制导翻译"><a class="header-anchor" href="#四元式的语法制导翻译"># </a>四元式的语法制导翻译</h3>
+<p>id为泛指，如果有变量a和b存在不同的地方<br>
+<code>@</code>表示负号，避免会理解为减号</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>o</mi><mi>p</mi><mi mathvariant="normal">，</mi><mi>a</mi><mi>r</mi><mi>g</mi><mn>1</mn><mi mathvariant="normal">，</mi><mi>a</mi><mi>r</mi><mi>g</mi><mn>2</mn><mi mathvariant="normal">，</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>u</mi><mi>l</mi><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(op，arg1，arg2，result)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord cjk_fallback">，</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">1</span><span class="mord cjk_fallback">，</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mord cjk_fallback">，</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span></span></p>
+<p>表示的计算为</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>s</mi><mi>u</mi><mi>l</mi><mi>t</mi><mo>:</mo><mo>=</mo><mi>a</mi><mi>r</mi><mi>g</mi><mn>1</mn><mi>o</mi><mi>p</mi><mi>a</mi><mi>r</mi><mi>g</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">result := arg1 op arg2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">1</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span></span></span></span></span></p>
+<p>result的表示方法通常是给出一个临时名字，用它来存放运算的结果，被称为<strong>临时变量</strong><br>
+<strong>属性.code</strong>：表示存放运算结果的变量<br>
+<strong>函数 newtemp</strong>：返回一个新的临时变量，如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>T</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">T_1,T_2,\dots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span></span></span></span>等<br>
+<strong>过程 emit( op，arg1，arg2, result)</strong>：生成一个四元式。若运算是一元的，如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>→</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">E \to E_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，则<code>arg2</code>可以为空</p>
+<h3 id="树的语法制导翻译"><a class="header-anchor" href="#树的语法制导翻译"># </a>树的语法制导翻译</h3>
+<p>语法树真实反映句子的结构，对语法树稍加修改，即可以作为中间代码的一种形式<br>
+<strong>属性.nptr</strong>：是指向树节点的指针<br>
+<strong>函数mknode(op，nptr1，nptr2)</strong>：生成一个根或内部节点，节点的数据是op，左右孩子分别是nptr1和nptr2所指向的子树。若仅有一个孩子，则nptr2为空<br>
+<strong>函数mkleaf(node)</strong>：生成一个叶子节点</p>
+<p><strong>优化表示</strong><br>
+DAG(有向无环图)<br>
+仅需要在<strong>mknode</strong>和<strong>mkleaf</strong>中增加相应的<strong>查询功能</strong><br>
+首先查看所要构造的节点是否已经存在，若存在，则无需构造新的节点，直接返回指向已存在节点的指针即可</p>
+<p><strong>中缀转后缀</strong></p>
+<ol>
+<li>转成语法树（省略括号）</li>
+<li>后序遍历</li>
+</ol>
+<h2 id="符号表"><a class="header-anchor" href="#符号表"># </a>符号表</h2>
+<p>使用<strong>线性表</strong>/<strong>散列表</strong></p>
+<h3 id="符号表条目"><a class="header-anchor" href="#符号表条目"># </a>符号表条目</h3>
+<p>每个声明的名字在符号表中占据一栏，称为一个条目<br>
+指向这些信息的指针放在符号表条目的相应域(field，也被称为字段)中<br>
+符号表中的内容可以包括保留字、标识符、特殊符号(包括算符、分隔符等)等等<br>
+<strong>标识符是最大的一类符号</strong><br>
+基本内容可以分为<strong>名字和属性</strong><br>
+一个名字的组合关键字至少应该包括三项：<strong>名字＋作用域＋类型</strong></p>
+<h3 id="构成名字的字符串"><a class="header-anchor" href="#构成名字的字符串"># </a>构成名字的字符串</h3>
+<p>如果把名字的字符串信息本身直接存放在符号表中，则会造成很大浪费，同时也无法解决极端情况<br>
+直接将构成名字的字符串存放在符号表条目中的方式被称为<strong>直接存储方式</strong><br>
+<strong>间接存储</strong>，就是将构成名字的字符串统一存放在一个<strong>大的连续空间</strong>中，字符串与字符串之间<strong>用特殊的分隔符隔开</strong>，而在符号表的条目中，仅存放<strong>指向该字符串首字符的指针</strong>即可，访问时<strong>间接寻址</strong></p>
+<h3 id="名字的作用域"><a class="header-anchor" href="#名字的作用域"># </a>名字的作用域</h3>
+<p>一个名字在哪个范围内起作用，被称为<strong>名字的作用域</strong><br>
+分别在并列的两个范围内的名字作用域互不相干，但是分别在嵌套的两个范围内的名字，其作用域的问题就需要制定规则来限定，以使得任何一个名字在任何范围内涵义都是无二义的</p>
+<ol>
+<li>静态作用域原则(static-scope rule)：编译时就可以确定名字的作用域，也可以说，仅从静态读程序就可确定名字的作用域</li>
+<li>最近嵌套原则(most closely nested)（下边的作用域规则以程序块为例，但也适用于过程）:
+<ul>
+<li>程序块B中声明的作用域包括B；</li>
+<li>如果名字x不在B中声明，那么B中x的出现是在外围程序块B’的x声明的作用域中，使得B’有x的声明，并且B’比其它任何含x声明的程序块更接近被嵌套的B</li>
+</ul>
+</li>
+</ol>
+<p>名字的声明在离其最近的内层起作用，即在名字引用处从内向外看，它处在所遇到的第一个该名字声明的作用域</p>
+<p>引入<strong>栈</strong><br>
+对于任何一个名字，从<strong>栈顶开始向栈底查找</strong>，遇到的<strong>第一个符合条件的名字，即是所要查找的符号</strong>。当要插入一个名字的时候，也是首先在<strong>符号表中查找</strong>：若<strong>查到</strong>，则返回该名字在符号表中的<strong>位置(指针或下标)</strong>；否则<strong>加入到栈顶</strong><br>
+当从某个作用域退出时，<strong>从栈顶把该作用域的所有名字全部摘走</strong>，存放在一个<strong>不活动的临时表中</strong>，以备后用</p>
+<h2 id="声明语句的翻译"><a class="header-anchor" href="#声明语句的翻译"># </a>声明语句的翻译</h2>
+<p>变量名(name)、数据类型(type)、存储空间的起始地址(offset)和大小(width)</p>
 
                     </article>
                     <!-- ccmark -->
@@ -1203,19 +1342,19 @@ A^{\prime} \to \beta_1|\beta_2|\dots|\beta_n
     crossorigin="anonymous"></script>
 
 <!-- tocbot -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 
 <!-- mermaid -->
 <script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
 
 <!-- highlight js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/highlight.min.js">
 </script>
 <!-- uncommon highlight -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
 
 <!-- theme js -->
 <script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
