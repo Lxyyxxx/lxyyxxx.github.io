@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-04-10T01:51:23.673Z" itemprop="dateModified">
-                            2020-04-10 09:51
+                            <time datetime="2020-06-27T05:35:35.880Z" itemprop="dateModified">
+                            2020-06-27 13:35
                             </time>
                             
                         </div>
@@ -282,13 +282,315 @@ int main(){
 <h1 id="1103-Integer-Factorization"><a class="header-anchor" href="#1103-Integer-Factorization"># </a>1103 Integer Factorization</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805364711604224" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1107-Social-Clusters"><a class="header-anchor" href="#1107-Social-Clusters"># </a>1107 Social Clusters</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805361586847744" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805361586847744" target="_blank" rel="noopener">传送门</a><br>
+共同爱好的为一个群体，找出群体的个数及相应的人数，按降序排列<br>
+很明显可以用<strong>并查集</strong>，合并的是同一类的爱好，统计的时候，统计相应爱好的人数，加到父节点上，合并的时候，采用路径压缩，将爱好合并到父节点上，并删除本结点<br>
+这样，到最后，统计的<code>map</code>中一对映射就是一个群体，按人数排序后输出即可</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1010;
+int father[N];
+unordered_map&lt;int,int&gt;mp;
+int Find(int x){
+    if(x!=father[x])
+        father[x]=Find(father[x]);
+    return father[x];
+}
+void Union(int x,int y){
+    int fx=Find(x),fy=Find(y);
+    if(fx&lt;fy){
+        father[fy]=fx;
+        mp[fx]+=mp[fy];
+        mp.erase(fy);
+    }
+    else if(fx&gt;fy){
+        father[fx]=fy;
+        mp[fy]+=mp[fx];
+        mp.erase(fx);
+    }
+}
+int main(){
+    for(int i=1;i&lt;=1000;i++)
+        father[i]=i;
+    int n,k,hobby,pre;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        scanf(&quot;%d:&quot;,&amp;k);
+        pre=-1;
+        while(k--){
+            cin&gt;&gt;hobby;
+            if(pre!=-1)
+                Union(pre,hobby);
+            else
+                mp[Find(hobby)]++;
+            pre=hobby;
+        }
+    }
+    vector&lt;int&gt;ans;
+    for(auto i:mp){
+        if(i.second&gt;0)
+            ans.push_back(i.second);
+    }
+    sort(ans.begin(),ans.end());
+    cout&lt;&lt;ans.size()&lt;&lt;'\n';
+    for(int i=ans.size()-1;i&gt;=0;i--){
+        cout&lt;&lt;ans[i];
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1111-Online-Map"><a class="header-anchor" href="#1111-Online-Map"># </a>1111 Online Map</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805358663417856" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805358663417856" target="_blank" rel="noopener">传送门</a><br>
+给出两条路，一条是距离最短，一条是最快的<br>
+如果距离最短的不唯一，输出最快的；如果最快的不唯一，输出<strong>最少结点的</strong>（而不是最短路径的）<br>
+分别以距离和时间为权，用两次<strong>Dijkstra</strong>得到带权图的最短路，因为要求路径，所以中途有记录<code>pre</code>数组</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=520;
+int n,m;
+struct Street{
+    int next,length,time;
+};
+vector&lt;Street&gt;g[N];
+vector&lt;int&gt;shortest,fastest;
+int anslen,anstime;
+struct cmpLength{
+    bool operator()(const Street &amp;a,const Street &amp;b){
+        if(a.length==b.length)
+            return a.time&gt;b.time;
+        return a.length&gt;b.length;
+    }
+};
+struct cmpTime{
+    bool operator()(const Street &amp;a,const Street &amp;b){
+        if(a.time==b.time)
+            return a.length&gt;b.length;
+        return a.time&gt;b.time;
+    }
+};
+void DijkstraLength(int begin,int end){
+    priority_queue&lt;Street,vector&lt;Street&gt;,cmpLength&gt;que;
+    int d[N],pre[N],t[N];
+    fill(d,d+n,1e9);
+    fill(t,t+n,1e9);
+    d[begin]=t[begin]=0;
+    pre[begin]=-1;
+    que.push({begin,0,0});
+    while(!que.empty()){
+        Street cur=que.top();
+        que.pop();
+        if(cur.next==end){
+            anslen=cur.length;
+            break;
+        }
+        int v=cur.next;
+        if(d[v]&lt;cur.length)
+            continue;
+        for(auto i:g[v]){
+            if((d[i.next]&gt;d[v]+i.length)||(d[i.next]==d[v]+i.length&amp;&amp;t[i.next]&gt;t[v]+i.time)){
+                d[i.next]=d[v]+i.length;
+                t[i.next]=t[v]+i.time;
+                que.push({i.next,d[i.next],t[i.next]});
+                pre[i.next]=v;
+            }
+        }
+    }
+    int pos=end;
+    while(pos!=-1){
+        shortest.insert(shortest.begin(),pos);
+        pos=pre[pos];
+    }
+}
+void DijkstraTime(int begin,int end){
+    priority_queue&lt;Street,vector&lt;Street&gt;,cmpTime&gt;que;
+    int d[N],pre[N],t[N];
+    fill(t,t+n,1e9);
+    fill(d,d+n,1e9);
+    d[begin]=t[begin]=0;
+    pre[begin]=-1;
+    que.push({begin,0,0});
+    while(!que.empty()){
+        Street cur=que.top();
+        que.pop();
+        if(cur.next==end){
+            anstime=cur.time;
+            break;
+        }
+        int v=cur.next;
+        if(t[v]&lt;cur.time)
+            continue;
+        for(auto i:g[v]){
+            if(t[i.next]&gt;t[v]+i.time){
+                t[i.next]=t[v]+i.time;
+                d[i.next]=d[v]+1;
+                que.push({i.next,d[i.next],t[i.next]});
+                pre[i.next]=v;
+            }
+        }
+    }
+    int cur=end;
+    while(cur!=-1){
+        fastest.insert(fastest.begin(),cur);
+        cur=pre[cur];
+    }
+}
+void printVec(vector&lt;int&gt; v){
+    for(int i=0;i&lt;v.size();i++){
+        if(i!=0)cout&lt;&lt;&quot; -&gt; &quot;;
+        cout&lt;&lt;v[i];
+    }
+    cout&lt;&lt;endl;
+}
+int main(){
+    cin&gt;&gt;n&gt;&gt;m;
+    bool oneway;
+    int start,end,length,time;
+    for(int i=0;i&lt;m;i++){
+        cin&gt;&gt;start&gt;&gt;end&gt;&gt;oneway&gt;&gt;length&gt;&gt;time;
+        g[start].push_back({end,length,time});
+        if(!oneway)
+            g[end].push_back({start,length,time});
+    }
+    cin&gt;&gt;start&gt;&gt;end;
+    DijkstraLength(start,end);
+    DijkstraTime(start,end);
+    if(shortest==fastest){
+        printf(&quot;Distance = %d; Time = %d: &quot;,anslen,anstime);
+        printVec(shortest);
+    }else{
+        printf(&quot;Distance = %d: &quot;,anslen);
+        printVec(shortest);
+        printf(&quot;Time = %d: &quot;,anstime);
+        printVec(fastest);
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1115-Counting-Nodes-in-a-BST"><a class="header-anchor" href="#1115-Counting-Nodes-in-a-BST"># </a>1115 Counting Nodes in a BST</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805355987451904" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805355987451904" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+求二叉搜索树中最底下两层的结点个数及其总和，题中二叉搜索树的定义中，左子树包括<strong>小等于根节点</strong>的结点<br>
+建立二叉搜索树+层序遍历，时刻记录本层和上一层的结点个数</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+struct TreeNode{
+    int val;
+    TreeNode *left,*right;
+    TreeNode(int x):val(x),left(NULL),right(NULL){}
+};
+TreeNode *insert(TreeNode *root,int val){
+    if(!root)
+        return new TreeNode(val);
+    else if(val&lt;=root-&gt;val)
+        root-&gt;left=insert(root-&gt;left,val);
+    else 
+        root-&gt;right=insert(root-&gt;right,val);
+    return root;
+}
+int main(){
+    int n,node;
+    TreeNode *root=NULL;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;node;
+        root=insert(root,node);
+    }
+    vector&lt;int&gt;v(2,0);
+    queue&lt;TreeNode*&gt;q;
+    q.push(root);
+    int level;
+    TreeNode *cur;
+    while(!q.empty()){
+        level=q.size();
+        if(v.size()==2)
+            swap(v[0],v[1]);
+        v[1]=level;
+        while(level--){
+            cur=q.front();
+            q.pop();
+            if(cur-&gt;left)
+                q.push(cur-&gt;left);
+            if(cur-&gt;right)
+                q.push(cur-&gt;right);
+        }
+    }
+    printf(&quot;%d + %d = %d&quot;,v[1],v[0],v[0]+v[1]);
+    return 0;
+}
+</code></pre>
 <h1 id="1119-Pre-and-Post-order-Traversals"><a class="header-anchor" href="#1119-Pre-and-Post-order-Traversals"># </a>1119 Pre- and Post-order Traversals</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805353470869504" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805353470869504" target="_blank" rel="noopener">传送门</a><br>
+46m22s<br>
+给定一棵树的前序和后序遍历，输出中序遍历。前序和后序可能不能确定唯一的一棵树，所以需要输出是否能唯一确定一颗二叉树，如果不能唯一确定的话，随便输出一种即可<br>
+根据前序和后序遍历建树然后输出即可，问题在于如何建树以及如何判断是唯一的树</p>
+<ol>
+<li><strong>建树</strong><br>
+建树是一个递归过程，先建根节点，再建左子树，最后建右子树。所以我们要找到哪里是根，哪一部分是左子树，哪一部分是右子树<br>
+前序是<strong>根左右</strong>，后序是<strong>左右根</strong>，很明显我们可以找到根在前序的开头且在后序的结尾，利用这一性质，我们可以确定左右子树<br>
+先确定<strong>右子树</strong>，那么除去根和右子树的部分就是左子树。在后序中，右子树的根在当前根的前一个，在前序中找到这个结点，就相当于确定了右子树的开头且且后面都属于右子树部分，那么左右子树根据长度和开始位置就确定完了</li>
+<li><strong>判断唯一</strong><br>
+在一个两层的子树中，分三种情况：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>个结点、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>个结点<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点的很容易知道它是根，且没有左右孩子<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>个结点的同样也很容易判断出是根和左右孩子<br>
+所以以上两种情况是可以唯一确定一颗子树的，因此它可以唯一确定整棵树<br>
+问题在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>个结点上，会发现不管是只有左孩子还是只有右孩子，前序和后序的遍历都符合要求，所以是不能确定唯一一颗子树的，因此我们只要判断<strong>当前子树的结点数是不是</strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>就可以判断出该二叉树是否唯一</li>
+</ol>
+<p><strong>最后输出中序遍历后一定要多输出一个回车换行，不然会报格式错误</strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=36;
+int n,pre[N],post[N];
+vector&lt;int&gt;in;
+bool uni=true;
+struct TreeNode{
+    int val;
+    TreeNode *left,*right;
+    TreeNode(int x):val(x),left(NULL),right(NULL){}
+};
+TreeNode *build(int pre_left,int pre_right,int post_left,int post_right){
+    if(pre_left&gt;pre_right||post_left&gt;post_right)
+        return NULL;
+    if(post_right-post_left==1)
+        uni=false;
+    TreeNode *root=new TreeNode(pre[pre_left]);
+    if(post_right-1&lt;post_left)
+        return root;
+    // 在pre中找post_right-1，即右子树的根，分为左右子树
+    int mid=pre_left+1;
+    while(mid&lt;=pre_right&amp;&amp;pre[mid]!=post[post_right-1])
+        mid++;
+    root-&gt;left=build(pre_left+1,mid-1,post_left,post_left+mid-pre_left-2);
+    root-&gt;right=build(mid,pre_right,post_left+mid-pre_left-1,post_right-1);
+    return root;
+}
+void intra(TreeNode *root){
+    if(!root)
+        return;
+    intra(root-&gt;left);
+    in.push_back(root-&gt;val);
+    intra(root-&gt;right);
+}
+int main(){
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;pre[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;post[i];
+    TreeNode *root=build(0,n-1,0,n-1);
+    if(uni)
+        cout&lt;&lt;&quot;Yes\n&quot;;
+    else
+        cout&lt;&lt;&quot;No\n&quot;;
+    intra(root);
+    for(int i=0;i&lt;in.size();i++){
+        if(i!=0)cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;in[i];
+    }
+    cout&lt;&lt;'\n';
+    return 0;
+}
+</code></pre>
 <h1 id="1123-Is-It-a-Complete-AVL-Tree"><a class="header-anchor" href="#1123-Is-It-a-Complete-AVL-Tree"># </a>1123 Is It a Complete AVL Tree</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351302414336" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1127-ZigZagging-on-a-Tree"><a class="header-anchor" href="#1127-ZigZagging-on-a-Tree"># </a>1127 ZigZagging on a Tree</h1>
