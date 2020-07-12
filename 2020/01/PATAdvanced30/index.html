@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-06-27T05:35:35.880Z" itemprop="dateModified">
-                            2020-06-27 13:35
+                            <time datetime="2020-07-11T17:03:05.043Z" itemprop="dateModified">
+                            2020-07-12 01:03
                             </time>
                             
                         </div>
@@ -262,7 +262,68 @@ int main(){
 <h1 id="1057-Stack"><a class="header-anchor" href="#1057-Stack"># </a>1057 Stack</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1064-Complete-Binary-Search-Tree"><a class="header-anchor" href="#1064-Complete-Binary-Search-Tree"># </a>1064 Complete Binary Search Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805407749357568" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805407749357568" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+求给定序列的<strong>完全二叉查找树</strong>的层序遍历<br>
+二叉查找树的中序遍历一定是升序的，所以先排序即可得到二叉查找树的中序遍历序列，通过中序序列，找到根节点，建左右子树这样递归建树即可<br>
+<strong>如何确定根节点</strong>？这需要考虑完全二叉树<br>
+设总结点数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>，完全二叉树由一个高度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span></span></span></span>的满二叉树和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span>个剩余元素组成，那么满足式子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>H</mi></msup><mo>−</mo><mn>1</mn><mo>+</mo><mi>X</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2^H-1+X=N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.924661em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>，可以解得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H=\log_2(N+1-X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>⩽</mo><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H \leqslant \log_2(N+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8200000000000001em;vertical-align:-0.13667em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><br>
+对于剩下的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span>个元素，我们考虑其中属于左子树的元素个数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">res</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span>，这样左子树的总个数就能确定了，即根节点就能确定<br>
+剩下的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span>元素在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>层，若该层满，则有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>H</mi></msup></mrow><annotation encoding="application/x-tex">2^H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span></span></span></span></span></span></span>个元素，此时左边有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{H-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>个元素，因此<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>s</mi><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>X</mi><mo separator="true">,</mo><msup><mn>2</mn><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">res=min(X,2^{H-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。此时，左子树的元素个数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>层满二叉树元素个数加上剩余元素个数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">res</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span>，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>n</mi><mi>t</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo>+</mo><mi>r</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">lcnt=2^{H-1}-1+res</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.924661em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span>，这样整个区间就确定完毕，可以开始建树，建完树进行层序遍历输出即可</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1010;
+struct TreeNode{
+    int val;
+    TreeNode *left,*right;
+    TreeNode(int x):val(x),left(NULL),right(NULL){}
+};
+typedef TreeNode* Tree;
+Tree build(Tree T,int a[],int l,int r){
+    if(l&gt;r)
+        return NULL;
+    int cnt=r-l+1;
+    int h=log2(cnt+1);
+    int res=cnt-(1&lt;&lt;h)+1;
+    int mx=(1&lt;&lt;(h-1));
+    res=min(res,mx);
+    int lcnt=mx-1+res;
+    int mid=l+lcnt;
+    T=new TreeNode(a[mid]);
+    T-&gt;left=build(T-&gt;left,a,l,mid-1);
+    T-&gt;right=build(T-&gt;right,a,mid+1,r);
+    return T;
+}
+void levelTra(Tree T){
+    bool print=false;
+    Tree tmp;
+    queue&lt;Tree&gt;que;
+    que.push(T);
+    while(!que.empty()){
+        if(print)
+            cout&lt;&lt;&quot; &quot;;
+        tmp=que.front();
+        que.pop();
+        cout&lt;&lt;tmp-&gt;val;
+        print=true;
+        if(tmp-&gt;left)
+            que.push(tmp-&gt;left);
+        if(tmp-&gt;right)
+            que.push(tmp-&gt;right);
+    }
+}
+int main(){
+    int a[N],n;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;a[i];
+    sort(a,a+n);
+    Tree root=NULL;
+    root=build(root,a,0,n-1);
+    levelTra(root);
+    return 0;
+}
+</code></pre>
 <h1 id="1068-Find-More-Coins"><a class="header-anchor" href="#1068-Find-More-Coins"># </a>1068 Find More Coins</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805402305150976" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1072-Gas-Station"><a class="header-anchor" href="#1072-Gas-Station"># </a>1072 Gas Station</h1>
@@ -592,21 +653,518 @@ int main(){
 }
 </code></pre>
 <h1 id="1123-Is-It-a-Complete-AVL-Tree"><a class="header-anchor" href="#1123-Is-It-a-Complete-AVL-Tree"># </a>1123 Is It a Complete AVL Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351302414336" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805351302414336" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+是否是完全平衡二叉树，并输出层序遍历<br>
+建树，然后判断是否是完全二叉树<br>
+<strong>如何判断是完全二叉树</strong>？借用层序遍历，遇到空结点，判断是否经过全部的结点。如果全访问过了，则是完全二叉树，否则不是</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+struct TNode{
+    int val,height;
+    TNode *left,*right;
+    TNode(int x):val(x),height(1),left(NULL),right(NULL){}
+};
+typedef TNode* Tree;
+int getHeight(Tree T){
+    if(!T)
+        return 0;
+    return T-&gt;height;
+}
+int getBF(Tree T){
+    return getHeight(T-&gt;left)-getHeight(T-&gt;right);
+}
+void updateHeight(Tree &amp;T){
+    T-&gt;height=max(getHeight(T-&gt;left),getHeight(T-&gt;right))+1;
+}
+void r(Tree &amp;T){
+    Tree tmp=T-&gt;left;
+    T-&gt;left=tmp-&gt;right;
+    tmp-&gt;right=T;
+    updateHeight(T);
+    updateHeight(tmp);
+    T=tmp;
+}
+void l(Tree &amp;T){
+    Tree tmp=T-&gt;right;
+    T-&gt;right=tmp-&gt;left;
+    tmp-&gt;left=T;
+    updateHeight(T);
+    updateHeight(tmp);
+    T=tmp;
+}
+Tree insert(Tree T,int X){
+    if(!T)
+        return new TNode(X);
+    else if(X&lt;T-&gt;val){
+        T-&gt;left=insert(T-&gt;left,X);
+        if(getBF(T)==2){
+            if(getBF(T-&gt;left)==1)
+                r(T);
+            else if(getBF(T-&gt;left)==-1){
+                l(T-&gt;left);
+                r(T);
+            }
+        }
+    }
+    else if(X&gt;T-&gt;val){
+        T-&gt;right=insert(T-&gt;right,X);
+        if(getBF(T)==-2){
+            if(getBF(T-&gt;right)==-1)
+                l(T); 
+            else if(getBF(T-&gt;right)==1){
+                r(T-&gt;right);
+                l(T);
+            }
+        }
+    }
+    updateHeight(T);
+    return T;
+}
+bool levelTra(Tree T,int n){
+    queue&lt;Tree&gt;q;
+    bool iscom=true;
+    int cnt=0;
+    Tree tmp;
+    q.push(T);
+    while(!q.empty()){
+        tmp=q.front();
+        q.pop();
+        if(tmp){
+            if(cnt!=0)
+                cout&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;tmp-&gt;val;
+            cnt++;
+            q.push(tmp-&gt;left);
+            q.push(tmp-&gt;right);
+        }else if(cnt==n)
+            break;   
+        else
+            iscom=false;
+    }
+    cout&lt;&lt;'\n';
+    return iscom;
+}
+int main(){
+    Tree root=NULL;
+    int n,num;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;num;
+        root=insert(root,num);
+    }
+    if(levelTra(root,n))
+        cout&lt;&lt;&quot;YES\n&quot;;
+    else
+        cout&lt;&lt;&quot;NO\n&quot;;
+    return 0;
+}
+</code></pre>
 <h1 id="1127-ZigZagging-on-a-Tree"><a class="header-anchor" href="#1127-ZigZagging-on-a-Tree"># </a>1127 ZigZagging on a Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805349394006016" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805349394006016" target="_blank" rel="noopener">传送门</a><br>
+给定后序和中序遍历序列，输出这棵树’Z’字形的层序遍历序列，先从左往右再从右往左输出<br>
+在每一层判断是从左往右还是从右往左，按顺序加进数组，然后输出该数组即可</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+struct TreeNode{
+    int val;
+    TreeNode *left,*right;
+    TreeNode(int v):val(v),left(NULL),right(NULL){}
+};
+typedef TreeNode* Tree;
+const int N=36;
+int n,in[N],post[N];
+Tree build(Tree T,int root,int l,int r){
+    if(l&gt;r)
+        return NULL;
+    int mid=l;
+    while(mid&lt;=r&amp;&amp;in[mid]!=post[root])
+        mid++;
+    T=new TreeNode(post[root]);
+    T-&gt;left=build(T-&gt;left,root-r+mid-1,l,mid-1);
+    T-&gt;right=build(T-&gt;right,root-1,mid+1,r);
+    return T;
+}
+void levelTra(Tree T){
+    queue&lt;Tree&gt;q;
+    q.push(T);
+    bool f=false,print=false;
+    int size;
+    Tree tmp;
+    vector&lt;int&gt;v;
+    while(!q.empty()){
+        size=q.size();
+        while(size--){
+            tmp=q.front();
+            q.pop();
+            if(f)
+                v.push_back(tmp-&gt;val);
+            else
+                v.insert(v.begin(),tmp-&gt;val);
+            if(tmp-&gt;left)
+                q.push(tmp-&gt;left);
+            if(tmp-&gt;right)
+                q.push(tmp-&gt;right);
+        }
+        for(int i:v){
+            if(print)
+                cout&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;i;
+            print=true;
+        }
+        v.clear();
+        f=!f;
+    }
+}
+int main(){
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;in[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;post[i];
+    Tree T=NULL;
+    T=build(T,n-1,0,n-1);
+    levelTra(T);
+    return 0;
+}
+</code></pre>
 <h1 id="1131-Subway-Map"><a class="header-anchor" href="#1131-Subway-Map"># </a>1131 Subway Map</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805347523346432" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805347523346432" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+换乘地铁，求站最少且换乘最少的方案<br>
+无权最短路，因为要考虑换乘最少，所以<strong>DFS</strong>更合适</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+7;
+typedef pair&lt;int,int&gt; pii;
+vector&lt;pii&gt;g[N],path;
+bool vis[N];
+int min_transfer,min_path;
+void dfs(int u,int v,vector&lt;pii&gt; tmp){
+    if(u==v){
+        int tmp_transfer=0,tmp_path=tmp.size();
+        for(int i=1;i&lt;tmp.size();i++){
+            if(tmp[i-1].second!=tmp[i].second)
+                tmp_transfer++;
+        }
+        if((tmp_path&lt;min_path)||(tmp_transfer&lt;min_transfer&amp;&amp;tmp_path&lt;=min_path)){
+            min_transfer=tmp_transfer;
+            min_path=tmp_path;
+            path=tmp;
+        }
+        return;
+    }
+    for(auto i:g[u]){
+        if(!vis[i.first]){
+            vis[i.first]=true;
+            tmp.push_back(i);
+            dfs(i.first,v,tmp);
+            tmp.pop_back();
+            vis[i.first]=false;
+        }
+    }
+}
+int main(){
+    int n,m,u,v,k,line,begin;
+    vector&lt;pii&gt;tmp;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++){
+        cin&gt;&gt;m&gt;&gt;u;
+        for(int j=1;j&lt;m;j++){
+            cin&gt;&gt;v;
+            g[u].push_back({v,i});
+            g[v].push_back({u,i});
+            u=v;
+        }
+    }
+    cin&gt;&gt;k;
+    while(k--){
+        cin&gt;&gt;u&gt;&gt;v;
+        fill(vis,vis+N,false);
+        vis[u]=true;
+        min_transfer=min_path=1e9;
+        path.clear();
+        tmp.clear();
+        dfs(u,v,tmp);
+        cout&lt;&lt;min_path&lt;&lt;endl;
+        begin=u,line=path[0].second;
+        for(int i=0;i&lt;min_path;i++){
+            if(path[i].second!=line){
+                printf(&quot;Take Line#%d from %04d to %04d.\n&quot;,line,begin,path[i-1].first);
+                begin=path[i-1].first;
+                line=path[i].second;
+            }
+        }
+        printf(&quot;Take Line#%d from %04d to %04d.\n&quot;,path[min_path-1].second,begin,path[min_path-1].first);
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1135-Is-It-A-Red-Black-Tree"><a class="header-anchor" href="#1135-Is-It-A-Red-Black-Tree"># </a>1135 Is It A Red-Black Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346063728640" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805346063728640" target="_blank" rel="noopener">传送门</a><br>
+判断是否是红黑树</p>
+<ol>
+<li>根节点必须是黑</li>
+<li>红的孩子必须是黑</li>
+<li>任意节点到叶子所含的黑个数相同</li>
+</ol>
+<p>步骤是</p>
+<ol>
+<li>根据先序序列建树</li>
+<li>根据以上条件判断并输出</li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=36;
+struct TNode{
+    int val;
+    bool black;
+    TNode *left,*right;
+    TNode(int v,bool b):val(v),black(b),left(nullptr),right(nullptr){}
+};
+typedef TNode* BRTree;
+typedef pair&lt;BRTree,int&gt; pti;
+BRTree build(BRTree T,int X){
+    if(!T)
+        T=new TNode(abs(X),X&gt;0);
+    else if(abs(X)&lt;T-&gt;val)
+        T-&gt;left=build(T-&gt;left,X);
+    else if(abs(X)&gt;T-&gt;val)
+        T-&gt;right=build(T-&gt;right,X);
+    return T;
+}
+int getBlack(BRTree T){
+    if(!T)
+        return 1;
+    int left=getBlack(T-&gt;left);
+    int right=getBlack(T-&gt;right);
+    return T-&gt;black?max(left,right)+1:max(left,right);
+}
+bool isbrt(BRTree T){
+    if(!T-&gt;black)
+        return false;
+    queue&lt;BRTree&gt;q;
+    q.push(T);
+    while(!q.empty()){
+        BRTree cur=q.front();
+        q.pop();
+        if(cur-&gt;left){
+            if(!cur-&gt;black&amp;&amp;!cur-&gt;left-&gt;black)
+                return false;
+            q.push(cur-&gt;left);
+        }
+        if(cur-&gt;right){
+            if(!cur-&gt;black&amp;&amp;!cur-&gt;right-&gt;black)
+                return false;
+            q.push(cur-&gt;right);
+        }
+        if(getBlack(cur-&gt;left)!=getBlack(cur-&gt;right))
+            return false;
+    }
+    return true;
+}
+int main(){
+    int n,k,v;
+    cin&gt;&gt;k;
+    BRTree T;
+    while(k--){
+        cin&gt;&gt;n;
+        T=nullptr;
+        for(int i=0;i&lt;n;i++){
+            cin&gt;&gt;v;
+            T=build(T,v);
+        }
+        if(isbrt(T))
+            cout&lt;&lt;&quot;Yes\n&quot;;
+        else
+            cout&lt;&lt;&quot;No\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1139-First-Contact"><a class="header-anchor" href="#1139-First-Contact"># </a>1139 First Contact</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344776077312" target="_blank" rel="noopener">传送门</a></p>
 <h1 id="1143-Lowest-Common-Ancestor"><a class="header-anchor" href="#1143-Lowest-Common-Ancestor"># </a>1143 Lowest Common Ancestor</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343727501312" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343727501312" target="_blank" rel="noopener">传送门</a><br>
+二叉搜索树的最近公共祖先<br>
+用<code>set</code>判断是否在树中<br>
+因为是BST，所以可以用一个特殊的方法：遍历前序序列，第一个出现的在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[min(u,v),max(u,v)]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mclose">]</span></span></span></span>的点即为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>的LCA</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10010;
+int pre[N];
+unordered_set&lt;int&gt;pos;
+int main(){
+    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int m,n,u,v;
+    cin&gt;&gt;m&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;pre[i];
+        pos.insert(pre[i]);
+    }
+    bool f1,f2;
+    while(m--){
+        cin&gt;&gt;u&gt;&gt;v;
+        f1=pos.count(u)!=0;
+        f2=pos.count(v)!=0;
+        if(!f1&amp;&amp;!f2)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;u&lt;&lt;&quot; and &quot;&lt;&lt;v&lt;&lt;&quot; are not found.\n&quot;;
+        else if(!f1)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;u&lt;&lt;&quot; is not found.\n&quot;;
+        else if(!f2)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;v&lt;&lt;&quot; is not found.\n&quot;;
+        else{
+            int ancestor;
+            for(int i=0;i&lt;n;i++){
+                if(pre[i]&gt;=min(u,v)&amp;&amp;pre[i]&lt;=max(u,v)){
+                    ancestor=pre[i];
+                    break;
+                }
+            }
+            if(ancestor==u)
+                cout&lt;&lt;u&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;v&lt;&lt;&quot;.\n&quot;;
+            else if(ancestor==v)
+                cout&lt;&lt;v&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;u&lt;&lt;&quot;.\n&quot;;
+            else
+                cout&lt;&lt;&quot;LCA of &quot;&lt;&lt;u&lt;&lt;&quot; and &quot;&lt;&lt;v&lt;&lt;&quot; is &quot;&lt;&lt;ancestor&lt;&lt;&quot;.\n&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1147-Heaps"><a class="header-anchor" href="#1147-Heaps"># </a>1147 Heaps</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+判断一个完全二叉树是否是堆，是大顶堆还是小顶堆，输出后序遍历<br>
+STL中<code>is_heap</code>的结果是错的，递归判断每个二层子树是否是堆即可<br>
+由层序遍历输出后序遍历根据下标关系递归即可</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt;heap;
+bool print;
+void post(int root){
+    if(root&gt;=heap.size())
+        return;
+    post(2*root+1);
+    post(2*root+2);
+    if(print)
+        cout&lt;&lt;&quot; &quot;;
+    cout&lt;&lt;heap[root];
+    print=true;
+}
+bool is_max(int root){
+    if(root&gt;=heap.size())
+        return true;
+    if((2*root+1&lt;heap.size()&amp;&amp;heap[root]&lt;heap[2*root+1])||(2*root+2&lt;heap.size()&amp;&amp;heap[root]&lt;heap[2*root+2]))
+        return false;
+    return is_max(2*root+1)&amp;&amp;is_max(2*root+2);
+}
+bool is_min(int root){
+    if(root&gt;=heap.size())
+        return true;
+    if((2*root+1&lt;heap.size()&amp;&amp;heap[root]&gt;heap[2*root+1])||(2*root+2&lt;heap.size()&amp;&amp;heap[root]&gt;heap[2*root+2]))
+        return false;
+    return is_min(2*root+1)&amp;&amp;is_min(2*root+2);
+}
+int main(){
+    int m,n,num;
+    cin&gt;&gt;m&gt;&gt;n;
+    while(m--){
+        heap.clear();
+        for(int i=0;i&lt;n;i++){
+            cin&gt;&gt;num;
+            heap.push_back(num);
+        }
+        if(is_max(0))
+            cout&lt;&lt;&quot;Max Heap\n&quot;;
+        else if(is_min(0))
+            cout&lt;&lt;&quot;Min Heap\n&quot;;
+        else
+            cout&lt;&lt;&quot;Not Heap\n&quot;;
+        print=false;
+        post(0);
+        cout&lt;&lt;'\n';
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1151-LCA-in-a-Binary-Tree"><a class="header-anchor" href="#1151-LCA-in-a-Binary-Tree"># </a>1151 LCA in a Binary Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038430130011897856" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1038430130011897856" target="_blank" rel="noopener">传送门</a><br>
+最近公共祖先<br>
+与<a href="#1143-Lowest-Common-Ancestor">1143 Lowest Common Ancestor</a>类似，但是此题不是BST</p>
+<ol>
+<li>根据前序和中序建树</li>
+<li>递归找LCA：如果两个结点分别在左右孩子，则该节点为LCA；全在右孩子，则在右孩子找LCA；全在左孩子，则在左孩子找LCA</li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10010;
+int pre[N],in[N],ans;
+struct TNode{
+    int val;
+    TNode *left,*right;
+    TNode(int v):val(v),left(nullptr),right(nullptr){}
+};
+typedef TNode* Tree;
+Tree build(Tree T,int root,int l,int r){
+    if(l&gt;r)
+        return nullptr;
+    int mid=l;
+    while(mid&lt;=r&amp;&amp;in[mid]!=pre[root])
+        mid++;
+    T=new TNode(pre[root]);
+    T-&gt;left=build(T-&gt;left,root+1,l,mid-1);
+    T-&gt;right=build(T-&gt;right,root+mid-l+1,mid+1,r);
+    return T;
+}
+Tree lca(Tree T,int u,int v){
+    if(!T||T-&gt;val==u||T-&gt;val==v)
+        return T;
+    Tree l=lca(T-&gt;left,u,v);
+    Tree r=lca(T-&gt;right,u,v);
+    if(!l)
+        return r;
+    if(!r)
+        return l;
+    return T;
+}
+int main(){
+    int n,m,u,v;
+    unordered_set&lt;int&gt;st;
+    cin&gt;&gt;m&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;in[i];
+        st.insert(in[i]);
+    }
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;pre[i];
+    Tree T=nullptr;
+    T=build(T,0,0,n-1);
+    bool f1,f2;
+    while(m--){
+        cin&gt;&gt;u&gt;&gt;v;
+        f1=st.count(u)!=0;
+        f2=st.count(v)!=0;
+        if(!f1&amp;&amp;!f2)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;u&lt;&lt;&quot; and &quot;&lt;&lt;v&lt;&lt;&quot; are not found.\n&quot;;
+        else if(!f1)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;u&lt;&lt;&quot; is not found.\n&quot;;
+        else if(!f2)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;v&lt;&lt;&quot; is not found.\n&quot;;
+        else{
+            Tree tmp=lca(T,u,v);
+            ans=tmp-&gt;val;
+            if(ans==u)
+                cout&lt;&lt;u&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;v&lt;&lt;&quot;.\n&quot;;
+            else if(ans==v)
+                cout&lt;&lt;v&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;u&lt;&lt;&quot;.\n&quot;;
+            else
+                cout&lt;&lt;&quot;LCA of &quot;&lt;&lt;u&lt;&lt;&quot; and &quot;&lt;&lt;v&lt;&lt;&quot; is &quot;&lt;&lt;ans&lt;&lt;&quot;.\n&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1155-Heap-Paths"><a class="header-anchor" href="#1155-Heap-Paths"># </a>1155 Heap Paths</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/1071785408849047552" target="_blank" rel="noopener">传送门</a><br>
 要注意dfs中堆的遍历结束条件及输出</p>
@@ -696,9 +1254,7 @@ int main(){
 </footer>
     </div>
     <!-- bootstrap -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
