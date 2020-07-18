@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-07-11T17:03:05.043Z" itemprop="dateModified">
-                            2020-07-12 01:03
+                            <time datetime="2020-07-18T04:42:36.528Z" itemprop="dateModified">
+                            2020-07-18 12:42
                             </time>
                             
                         </div>
@@ -154,16 +154,33 @@
                         <i class="fas fa-tags"></i>
                         
                         <a
+                            href='/tags/数学/'>数学</a>, 
+                        
+                        <a
+                            href='/tags/DP/'>DP</a>, 
+                        
+                        <a
+                            href='/tags/模拟/'>模拟</a>, 
+                        
+                        <a
+                            href='/tags/堆/'>堆</a>, 
+                        
+                        <a
                             href='/tags/PAT甲级/'>PAT甲级</a>, 
                         
                         <a
-                            href='/tags/30分/'>30分</a>
+                            href='/tags/30分/'>30分</a>, 
+                        
+                        <a
+                            href='/tags/树/'>树</a>, 
+                        
+                        <a
+                            href='/tags/图/'>图</a>
                         
                         
                     </div>
                     <article class="write-content">
-                        <!-- toc -->
-<h1 id="1004-Counting-Leaves"><a class="header-anchor" href="#1004-Counting-Leaves"># </a>1004 Counting Leaves</h1>
+                        <h1 id="1004-Counting-Leaves"><a class="header-anchor" href="#1004-Counting-Leaves"># </a>1004 Counting Leaves</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805521431773184" target="_blank" rel="noopener">传送门</a><br>
 <strong>一次过</strong><br>
 遍历树，计算每一层的叶子结点个数</p>
@@ -242,25 +259,776 @@ int main(){
 }
 </code></pre>
 <h1 id="1018-Public-Bike-Management"><a class="header-anchor" href="#1018-Public-Bike-Management"># </a>1018 Public Bike Management</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024" target="_blank" rel="noopener">传送门</a><br>
+杭州公共自行车容量分配</p>
+<ol>
+<li>最短路</li>
+<li>从PBMC运出的车最少</li>
+<li>运回PBMC的车最少</li>
+</ol>
+<p>带第二标尺的最短路，但是运出运回的车含有负权，所以在Dijkstra时不能直接更新，需要<strong>Dijkstra+DFS</strong><br>
+<code>send</code>和<code>back</code>计算</p>
+<ol>
+<li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>−</mo><mi>b</mi><mi>i</mi><mi>k</mi><msub><mi>e</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c/2-bike_i&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，则表示车太多了要运回，<code>back+=c/2-bike[i]</code></li>
+<li>否则，根据<code>back</code>的数量判断是否需要<code>send</code>，若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>a</mi><mi>c</mi><mi>k</mi><mo>&gt;</mo><mi>b</mi><mi>i</mi><mi>k</mi><msub><mi>e</mi><mi>i</mi></msub><mo>−</mo><mi>c</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">back&gt;bike_i-c/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord">/</span><span class="mord">2</span></span></span></span>，则代表<code>back</code>足够可以填补<code>send</code>，不用从PBMC运车，此时<code>back-=bike[i]-c/2</code>，否则需要从PBMC运车，<code>send=bike[i]-c/2-back,back=0</code></li>
+</ol>
+<p><strong>注意：DFS是从终点往起点回溯，如果期间是<code>push_back</code>，则计算<code>bike</code>是从<code>size-2</code>到<code>0</code></strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=510;
+typedef pair&lt;int,int&gt; pii;
+int c,n,s,m,bike[N];
+vector&lt;int&gt;pre[N];
+vector&lt;pii&gt;g[N];
+void dijkstra() {
+    priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt;&gt;q;
+    vector&lt;bool&gt;vis(n+1,0);
+    vector&lt;int&gt;d(n+1,1e9);
+    q.push({0,0});
+    d[0]=0;
+    while(!q.empty()) {
+        pii cur=q.top();
+        q.pop();
+        if(vis[cur.second])
+            continue;
+        vis[cur.second]=1;
+        for(auto &amp;i:g[cur.second]) {
+            if(vis[i.first])
+                continue;
+            if(d[i.first]&gt;i.second+d[cur.second]) {
+                d[i.first]=i.second+d[cur.second];
+                pre[i.first].clear();
+                pre[i.first].push_back(cur.second);
+                q.push({d[i.first],i.first});
+            } else if(d[i.first]==i.second+d[cur.second]) {
+                pre[i.first].push_back(cur.second);
+                q.push({d[i.first],i.first});
+            }
+        }
+    }
+}
+vector&lt;int&gt;tmppath;
+struct node {
+    int send;
+    vector&lt;int&gt;path;
+    int back;
+} ans;
+void dfs(int now) {
+    if(now==0) {
+        tmppath.push_back(now);
+        int tmpsd=0,tmpbc=0;
+        for(int i=tmppath.size()-1; i&gt;=0; i--) {
+            int res=bike[tmppath[i]];
+            if(res&gt;0) {
+                tmpbc+=res;
+            } else {
+                res=-res;
+                if(tmpbc&gt;res)
+                    tmpbc-=res;
+                else
+                    tmpsd+=res-tmpbc,tmpbc=0;
+            }
+        }
+        if((ans.send&gt;tmpsd)||(ans.send==tmpsd&amp;&amp;ans.back&gt;tmpbc))
+            ans= {tmpsd,tmppath,tmpbc};
+        tmppath.pop_back();
+        return;
+    }
+    tmppath.push_back(now);
+    for(int i:pre[now])
+        dfs(i);
+    tmppath.pop_back();
+}
+int main() {
+    cin&gt;&gt;c&gt;&gt;n&gt;&gt;s&gt;&gt;m;
+    c/=2;
+    for(int i=1; i&lt;=n; i++) {
+        cin&gt;&gt;bike[i];
+        bike[i]-=c;
+    }
+    int s1,s2,t;
+    for(int i=0; i&lt;m; i++) {
+        cin&gt;&gt;s1&gt;&gt;s2&gt;&gt;t;
+        g[s1].push_back({s2,t});
+        g[s2].push_back({s1,t});
+    }
+    ans.send=ans.back=1e9;
+    dijkstra();
+    dfs(s);
+    cout&lt;&lt;ans.send&lt;&lt;&quot; &quot;;
+    for(int i=ans.path.size()-1; i&gt;=0; i--) {
+        cout&lt;&lt;ans.path[i];
+        if(i!=0)
+            cout&lt;&lt;&quot;-&gt;&quot;;
+        else
+            cout&lt;&lt;&quot; &quot;;
+    }
+    cout&lt;&lt;ans.back;
+    return 0;
+}
+</code></pre>
 <h1 id="1022-Digital-Library"><a class="header-anchor" href="#1022-Digital-Library"># </a>1022 Digital Library</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805480801550336" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805480801550336" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+模拟<code>map</code>查询，注意带空格的字符串输入，<code>cin+getchar</code>后才能<code>getline</code>否则输入的字符串都是错误的，别用io同步</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+// title,author,keyword,publisher,year
+unordered_map&lt;string,vector&lt;string&gt;&gt;mp1,mp2,mp3,mp4,mp5;
+int main(){ 
+    int n,m,op;
+    cin&gt;&gt;n;
+    getchar();
+    string id,title,author,keywords,publisher,year,key;
+    for(int i=0;i&lt;n;i++){
+        getline(cin,id);
+        getline(cin,title);
+        getline(cin,author);
+        getline(cin,keywords);
+        getline(cin,publisher);
+        getline(cin,year);
+        mp1[title].insert(lower_bound(mp1[title].begin(),mp1[title].end(),id),id);
+        mp2[author].insert(lower_bound(mp2[author].begin(),mp2[author].end(),id),id);
+        mp4[publisher].insert(lower_bound(mp4[publisher].begin(),mp4[publisher].end(),id),id);
+        mp5[year].insert(lower_bound(mp5[year].begin(),mp5[year].end(),id),id);
+        stringstream ss(keywords);
+        while(ss&gt;&gt;key)
+            mp3[key].insert(lower_bound(mp3[key].begin(),mp3[key].end(),id),id);
+    }
+    cin&gt;&gt;m;
+    char ch;
+    while(m--){
+        cin&gt;&gt;op&gt;&gt;ch;
+        getchar();
+        getline(cin,key);
+        cout&lt;&lt;op&lt;&lt;&quot;: &quot;&lt;&lt;key&lt;&lt;'\n';
+        if(op==1){
+            if(!mp1.count(key))
+                cout&lt;&lt;&quot;Not Found\n&quot;;
+            else
+                for(auto &amp;i:mp1[key])
+                    cout&lt;&lt;i&lt;&lt;'\n';
+        }else if(op==2){
+            if(!mp2.count(key))
+                cout&lt;&lt;&quot;Not Found\n&quot;;
+            else
+                for(auto &amp;i:mp2[key])
+                    cout&lt;&lt;i&lt;&lt;'\n';
+        }else if(op==3){
+            if(!mp3.count(key))
+                cout&lt;&lt;&quot;Not Found\n&quot;;
+            else
+                for(auto &amp;i:mp3[key])
+                    cout&lt;&lt;i&lt;&lt;'\n';
+        }else if(op==4){
+            if(!mp4.count(key))
+                cout&lt;&lt;&quot;Not Found\n&quot;;
+            else
+                for(auto &amp;i:mp4[key])
+                    cout&lt;&lt;i&lt;&lt;'\n';
+        }else if(op==5){
+            if(!mp5.count(key))
+                cout&lt;&lt;&quot;Not Found\n&quot;;
+            else
+                for(auto &amp;i:mp5[key])
+                    cout&lt;&lt;i&lt;&lt;'\n';
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1026-Table-Tennis"><a class="header-anchor" href="#1026-Table-Tennis"># </a>1026 Table Tennis</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805472333250560" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805472333250560" target="_blank" rel="noopener">传送门</a><br>
+这题好坑啊这题好坑啊这题好坑啊！！<br>
+写了一天终于过了！！！（但是在牛客上TLE了……<br>
+还好我是倒数第二道做的这题，不然心态真的会崩^ ^<br>
+<strong>按人枚举：</strong></p>
+<ol>
+<li>如果是vip
+<ol>
+<li>如果有vip桌，分配最小的</li>
+<li>如果有普通桌，分配最小的</li>
+<li>等待</li>
+</ol>
+</li>
+<li>如果不是vip
+<ol>
+<li>如果有桌子，分配最小的</li>
+<li>等待</li>
+</ol>
+</li>
+<li>等待时间
+<ol>
+<li>同一时间空出的桌子全部记录，然后分配这些桌子</li>
+<li>先将vip桌子分配给vip用户</li>
+<li>将剩余未分配的桌子分配给普通用户</li>
+</ol>
+</li>
+</ol>
+<p><strong>注意：</strong></p>
+<ol>
+<li>如果刚好21点的不能玩</li>
+<li>时间边界上，好像不存在到达时间等于上一桌离开时间的，小等和相等的都能过</li>
+<li>前k个人不一定是分配到k张桌子上，可能前面有人已经使用完了，那么这张桌子是参与分配的，且优先级比后面编号大的的桌子高</li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10010,K=110;
+const int SERVING=2*3600,END=21*3600;
+typedef pair&lt;int,int&gt; pii;
+struct Player {
+    int arr,ser;
+    bool vip,vis;
+} player[N];
+struct Table {
+    bool vip,vis;
+    int cnt;
+} table[K];
+bool cmp(const Player &amp;a,const Player &amp;b) {
+    return a.arr&lt;b.arr;
+}
+void print_time(int x) {
+    int h=x/3600;
+    int s=x%60;
+    int m=x%3600/60;
+    printf(&quot;%02d:%02d:%02d&quot;,h,m,s);
+}
+void output(int t1,int t2) {
+    print_time(t1);
+    printf(&quot; &quot;);
+    print_time(t2);
+    printf(&quot; %d\n&quot;,(t2-t1+30)/60);
+}
+int n,k,m;
+set&lt;int&gt;at,av;
+bool f;
+void solve() {
+    priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt;&gt;q;
+    int pos=0,curtable;
+    f=false;
+    for(; pos&lt;n; pos++) {
+        if(f)
+            break;
+        if(player[pos].vis)
+            continue;
+        pii cur;
+        // 在pos来之前已经被清空的桌子
+        while(!q.empty()) {
+            cur=q.top();
+            if(cur.first&gt;player[pos].arr)
+                break;
+            if(table[cur.second].vip)
+                av.insert(cur.second);
+            at.insert(cur.second);
+            table[cur.second].vis=false;
+            q.pop();
+        }
+        curtable=-1;
+        // 队首是vip
+        if(player[pos].vip) {
+            // 优先分配vip
+            if(!av.empty()) {
+                curtable=*av.begin();
+                av.erase(curtable);
+                at.erase(curtable);
+                // 没有vip分配普通桌子
+            } else if(!at.empty()) {
+                curtable=*at.begin();
+                at.erase(curtable);
+            }
+            // 都没有需要等待
+        } else {
+            // 分配编号最小的
+            if(!at.empty()) {
+                curtable=*at.begin();
+                at.erase(curtable);
+                if(table[curtable].vip)
+                    av.erase(curtable);
+            }
+        }
+        // 来的时候就有空桌子，已分配
+        if(curtable!=-1) {
+            output(player[pos].arr,player[pos].arr);
+            player[pos].vis=1;
+            table[curtable].vis=1;
+            table[curtable].cnt++;
+            q.push({player[pos].arr+player[pos].ser,curtable});
+        } else {
+            cur=q.top();
+            // 同一时间空出的桌子
+            int curtime=cur.first;
+            // 关门不让玩
+            if(curtime&gt;=END) {
+                f=true;
+                break;
+            }
+            do {
+                q.pop();
+                if(table[cur.second].vip)
+                    av.insert(cur.second);
+                at.insert(cur.second);
+                table[cur.second].vis=false;
+                cur=q.top();
+            } while(curtime==cur.first);
+            // 先分配vip桌子
+            int v;
+            for(v=pos; v&lt;n; v++) {
+                if(av.empty())
+                    break;
+                if(player[v].vip&amp;&amp;!player[v].vis) {
+                    curtable=*av.begin();
+                    output(player[v].arr,curtime);
+                    player[v].vis=1;
+                    table[curtable].vis=1;
+                    table[curtable].cnt++;
+                    q.push({curtime+player[v].ser,curtable});
+                    av.erase(curtable);
+                    at.erase(curtable);
+                }
+            }
+            // 当前是vip，上面被分配过，不必重复分配
+            if(player[pos].vis)
+                continue;
+            // 在桌子释放的时间内分配可分配的人
+            for(auto &amp;i:at) {
+                while(pos&lt;n&amp;&amp;player[pos].vis)
+                    pos++;
+                if(player[pos].arr&gt;curtime)
+                    break;
+                // 分配编号最小的
+                at.erase(i);
+                if(table[i].vip)
+                    av.erase(i);
+                output(player[pos].arr,curtime);
+                player[pos].vis=1;
+                table[i].vis=1;
+                table[i].cnt++;
+                q.push({curtime+player[pos].ser,i});
+            }
+        }
+        if(!player[pos].vis)
+            pos--;
+    }
+    for(int i=1; i&lt;=k; i++) {
+        if(i!=1)
+            cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;table[i].cnt;
+    }
+}
+int main() {
+    cin&gt;&gt;n;
+    int hh,mm,ss,p,tag,tt,vt;
+    for(int i=0; i&lt;n; i++) {
+        scanf(&quot;%d:%d:%d %d %d&quot;,&amp;hh,&amp;mm,&amp;ss,&amp;p,&amp;tag);
+        tt=hh*3600+mm*60+ss;
+        if(tt&lt;END)
+            player[i]= {tt,min(SERVING,p*60),tag==1,false};
+        else
+            player[i]= {tt,min(SERVING,p*60),tag==1,1};
+    }
+    sort(player,player+n,cmp);
+    cin&gt;&gt;k&gt;&gt;m;
+    for(int i=0; i&lt;m; i++) {
+        cin&gt;&gt;vt;
+        table[vt].vip=1;
+    }
+    for(int i=1; i&lt;=k; i++) {
+        if(table[i].vip)
+            av.insert(i);
+        at.insert(i);
+    }
+    solve();
+    return 0;
+}
+</code></pre>
+<p>提供一个牛客网上的样例</p>
+<pre><code>9
+11:54:13 112 1
+11:48:59 9 0
+14:59:18 64 1
+21:00:00 10 0
+14:51:47 20 0
+15:26:58 3 1
+13:11:14 75 0
+08:46:22 61 0
+16:49:20 115 0
+50 33
+6 17 32 20 27 50 31 9 30 48 29 8 38 38 1 8 17 38 4 26 1 18 13 38 13 16 9 45 45 49 30 19 18
+===
+08:46:22 08:46:22 0
+11:48:59 11:48:59 0
+11:54:13 11:54:13 0
+13:11:14 13:11:14 0
+14:51:47 14:51:47 0
+14:59:18 14:59:18 0
+15:26:58 15:26:58 0
+16:49:20 16:49:20 0
+6 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+</code></pre>
 <h1 id="1030-Travel-Plan"><a class="header-anchor" href="#1030-Travel-Plan"># </a>1030 Travel Plan</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805464397627392" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805464397627392" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+有第二标尺要求的最短路<br>
+<strong>Dijkstra+DFS</strong>，由<code>Dijkstra</code>求最短路并保存所有路径，再通过<code>DFS</code>根据代价得到最小的解</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=510;
+typedef pair&lt;int,int&gt; pii;
+int c[N][N];
+vector&lt;pii&gt;g[N];
+vector&lt;int&gt;ans;
+vector&lt;vector&lt;int&gt;&gt;path;
+int sdis=1e9,scost=1e9;
+void dijkstra(int s,int e) {
+    priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt;&gt;q;
+    vector&lt;int&gt;d(N,1e9),pre(N,-1);
+    q.push({0,s});
+    d[s]=0;
+    while(!q.empty()) {
+        pii cur=q.top();
+        q.pop();
+        if(cur.first&gt;d[cur.second])
+            continue;
+        for(auto i:g[cur.second]) {
+            if(cur.first+i.second&lt;d[i.first]) {
+                d[i.first]=cur.first+i.second;
+                pre[i.first]=cur.second;
+                if(i.first==e) {
+                    path.clear();
+                    vector&lt;int&gt;tmp;
+                    int pos=i.first;
+                    while(pos!=-1) {
+                        tmp.insert(tmp.begin(),pos);
+                        pos=pre[pos];
+                    }
+                    path.push_back(tmp);
+                    sdis=min(sdis,d[e]);
+                } else
+                    q.push({d[i.first],i.first});
+            } else if(cur.first+i.second==d[i.first]) {
+                pre[i.first]=cur.second;
+                if(i.first==e) {
+                    vector&lt;int&gt;tmp;
+                    int pos=i.first;
+                    while(pos!=-1) {
+                        tmp.insert(tmp.begin(),pos);
+                        pos=pre[pos];
+                    }
+                    path.push_back(tmp);
+                    sdis=min(sdis,d[e]);
+                } else
+                    q.push({d[i.first],i.first});
+            }
+        }
+    }
+}
+void dfs() {
+    int s,cnt;
+    for(auto p:path) {
+        s=p[0];
+        cnt=0;
+        for(int i=1; i&lt;p.size(); i++) {
+            cnt+=c[s][p[i]];
+            s=p[i];
+        }
+        if(cnt&lt;scost) {
+            scost=cnt;
+            ans=p;
+        }
+    }
+}
+int main() {
+    int n,m,s,d,c1,c2,dis,cost;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;d;
+    for(int i=0; i&lt;m; i++) {
+        cin&gt;&gt;c1&gt;&gt;c2&gt;&gt;dis&gt;&gt;cost;
+        g[c1].push_back({c2,dis});
+        g[c2].push_back({c1,dis});
+        c[c1][c2]=c[c2][c1]=cost;
+    }
+    dijkstra(s,d);
+    dfs();
+    for(int i:ans)
+        cout&lt;&lt;i&lt;&lt;&quot; &quot;;
+    cout&lt;&lt;sdis&lt;&lt;&quot; &quot;&lt;&lt;scost;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>也可以在执行Dijkstra的同时根据第二标尺更新答案，只需要添加一个数组存第二标尺并优化<code>d[i]</code>的更新，但第二标尺一定要满足<strong>最优子结构</strong>，这样得出的答案才是正确的，否则只能Dijkstra+DFS</p>
+</blockquote>
 <h1 id="1034-Head-of-a-Gang"><a class="header-anchor" href="#1034-Head-of-a-Gang"># </a>1034 Head of a Gang</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805456881434624" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805456881434624" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+求一个集合的头，满足</p>
+<ol>
+<li>该集合人数大于2人</li>
+<li>该集合的所有<code>weight</code>相加大于<code>k</code></li>
+<li><code>head</code>是<code>weight</code>最大的人</li>
+</ol>
+<p><strong>BFS</strong>遍历<strong>无向图的连通分量</strong>，每个连通分量即为一个集合，求每个集合的<code>head</code>，按<code>head</code>的字母序升序输出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef pair&lt;string,int&gt; psi;
+unordered_map&lt;string,vector&lt;psi&gt;&gt;g;
+unordered_set&lt;string&gt;st;
+unordered_map&lt;string,bool&gt;vis;
+set&lt;psi&gt;ans;
+int n,k;
+void bfs(string s){
+    queue&lt;string&gt;q;
+    q.push(s);
+    unordered_map&lt;string,int&gt;w;
+    int sum=0;
+    while(!q.empty()){
+        string cur=q.front();
+        q.pop();
+        if(vis[cur])
+            continue;
+        vis[cur]=true;
+        for(auto &amp;i:g[cur]){
+            w[cur]+=i.second;
+            if(!vis[i.first])
+                q.push(i.first);
+            sum+=i.second;
+        }
+    }
+    const int SZ=w.size();
+    if(sum&lt;=k*2||SZ&lt;=2)
+        return;
+    int mwt=0;
+    string head;
+    for(auto &amp;i:w){
+        if(i.second&gt;mwt){
+            mwt=i.second;
+            head=i.first;
+        }
+    }
+    ans.insert({head,SZ});
+}
+int main(){
+    cin&gt;&gt;n&gt;&gt;k;
+    string n1,n2;
+    int time;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;n1&gt;&gt;n2&gt;&gt;time;
+        g[n1].push_back({n2,time});
+        g[n2].push_back({n1,time});
+        st.insert(n1);
+        st.insert(n2);
+        vis[n1]=false;
+        vis[n2]=false;
+    }
+    for(auto &amp;i:st){
+        if(!vis[i])
+            bfs(i);
+    }
+    cout&lt;&lt;ans.size()&lt;&lt;'\n';
+    for(auto &amp;i:ans)
+        cout&lt;&lt;i.first&lt;&lt;&quot; &quot;&lt;&lt;i.second&lt;&lt;'\n';
+    return 0;
+}
+</code></pre>
 <h1 id="1038-Recover-the-Smallest-Number"><a class="header-anchor" href="#1038-Recover-the-Smallest-Number"># </a>1038 Recover the Smallest Number</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805449625288704" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805449625288704" target="_blank" rel="noopener">传送门</a><br>
+找拼接起来最小的数<br>
+<strong>贪心</strong></p>
+<ol>
+<li>把前导0最多的放在开头，这样位数最小，得到的数会比其他情况小</li>
+<li>考虑后面数的排序，如果单纯地采用字典序排序，那么会出现<code>&quot;31&quot;&lt;&quot;3120&quot;</code>的情况，此时合并成的数为<code>313120</code>，但明显<code>312031</code>更小，所以排序应该是<code>a+b&lt;b+a</code></li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+bool cmp(const string &amp;a,const string &amp;b){
+    return a+b&lt;b+a;
+}
+int main(){
+    int n;
+    cin&gt;&gt;n;
+    vector&lt;string&gt;v(n);
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;v[i];
+    sort(v.begin(),v.end(),cmp);
+    string ans;
+    for(auto &amp;i:v)
+        ans+=i;
+    int pos=0;
+    while(pos&lt;ans.size()&amp;&amp;ans[pos]=='0')
+        pos++;
+    ans=ans.substr(pos,ans.size());
+    if(ans.empty())
+        cout&lt;&lt;&quot;0&quot;;
+    else
+        cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
 <h1 id="1045-Favorite-Color-Stripe"><a class="header-anchor" href="#1045-Favorite-Color-Stripe"># </a>1045 Favorite Color Stripe</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456" target="_blank" rel="noopener">传送门</a><br>
+<strong>DP</strong>，求按Eva喜欢顺序的最长子序列长度<br>
+<code>dp[i][j]</code>表示<code>eva[i]</code>和<code>stripe[j]</code>之前产生的最长长度<br>
+转移：从上一个喜欢的颜色或上一个颜色转移，取最大，如果当前的<code>eva[i]</code>和<code>stripe[j]</code>匹配，则长度加一，即<code>dp[i][j]=max(dp[i-1][j],dp[i][j-1])+(stripe[j]==eva[i])</code></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=210,L=1e4+7;
+int eva[N],stripe[L],dp[N][L];
+int main(){
+    int n,m,l;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0;i&lt;m;i++)
+        cin&gt;&gt;eva[i];
+    cin&gt;&gt;l;
+    for(int i=0;i&lt;l;i++)
+        cin&gt;&gt;stripe[i];
+    for(int i=0;i&lt;m;i++){
+        for(int j=0;j&lt;l;j++)
+            dp[i+1][j+1]=max(dp[i][j+1],dp[i+1][j])+(stripe[j]==eva[i]);
+    }
+    cout&lt;&lt;dp[m][l];
+    return 0;
+}
+</code></pre>
+<p><em>看到一个算法，将Eva喜欢的颜色排序，然后求<strong>最长不下降子序列</strong></em></p>
 <h1 id="1049-Counting-Ones"><a class="header-anchor" href="#1049-Counting-Ones"># </a>1049 Counting Ones</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805430595731456" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805430595731456" target="_blank" rel="noopener">传送门</a><br>
+暴力有22分！！！<br>
+从个位到高位枚举每一位数<code>mid</code>，并得到左右两边的数字<code>left</code>和<code>right</code>，<code>i</code>表示当前位，如：个位时<code>i=1</code>，十位时<code>i=10</code>，以此类推<br>
+分三种情况：</p>
+<ol>
+<li><code>mid=0</code>，由于低位的数字已经累加进去了就不需要考虑，在当前位<code>left</code>无法产生<code>1</code>，所以高位可以产生<code>1</code>的数量为<code>left*i</code></li>
+<li><code>mid=1</code>，和<code>mid=0</code>相比，在低位可以多产生<code>right+1</code>个<code>1</code>，所以产生<code>1</code>的数量为<code>left*i+right+1</code></li>
+<li><code>mid&gt;1</code>，在当前位<code>left</code>可以产生<code>1</code>，且与<code>mid=1</code>不同，这种情况包含<code>mid=1</code>时所有可以产生的<code>1</code>，所以高位可以产生<code>1</code>的数量为<code>(left+1)*i</code></li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    long long ans=0;
+    int n,left,right,mid;
+    cin&gt;&gt;n;
+    for(int i=1; n/i; i*=10) {
+        left=n/(i*10);
+        mid=n/i%10;
+        right=n%i;
+        if(mid==0)
+            ans+=left*i;
+        else if(mid==1)
+            ans+=left*i+right+1;
+        else
+            ans+=(left+1)*i;
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
 <h1 id="1053-Path-of-Equal-Weight"><a class="header-anchor" href="#1053-Path-of-Equal-Weight"># </a>1053 Path of Equal Weight</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805424153280512" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805424153280512" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+找权值和为<code>s</code>的所有从根到叶子结点的路径，并按结点权值从大到小排序<br>
+对每个结点的孩子按权值从大到小排序，然后<strong>DFS</strong>遍历整棵树，得到所有路径，输入路径各节点的权值</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=110;
+struct node {
+    int w;
+    vector&lt;int&gt;c;
+} t[N];
+int n,m,s;
+vector&lt;vector&lt;int&gt;&gt;ans;
+vector&lt;int&gt;tmp;
+void dfs(int begin,int sum) {
+    tmp.push_back(t[begin].w);
+    if(sum==s&amp;&amp;t[begin].c.empty()) {
+        ans.push_back(tmp);
+        return;
+    }
+    for(int i:t[begin].c) {
+        dfs(i,sum+t[i].w);
+        tmp.pop_back();
+    }
+}
+bool cmp(int a,int b) {
+    return t[a].w&gt;t[b].w;
+}
+int main() {
+    int u,k,root;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s;
+    bool vis[N]= {false};
+    for(int i=0; i&lt;n; i++)
+        cin&gt;&gt;t[i].w;
+    for(int i=0; i&lt;m; i++) {
+        cin&gt;&gt;u&gt;&gt;k;
+        t[u].c.resize(k);
+        for(int j=0; j&lt;k; j++) {
+            cin&gt;&gt;t[u].c[j];
+            vis[t[u].c[j]]=true;
+        }
+        sort(t[u].c.begin(),t[u].c.end(),cmp);
+    }
+    for(root=0; root&lt;n; root++)
+        if(!vis[root])
+            break;
+    dfs(root,t[root].w);
+    for(auto &amp;i:ans) {
+        bool p=false;
+        for(int j:i) {
+            if(p)
+                cout&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;j;
+            p=true;
+        }
+        cout&lt;&lt;'\n';
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1057-Stack"><a class="header-anchor" href="#1057-Stack"># </a>1057 Stack</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592" target="_blank" rel="noopener">传送门</a><br>
+模拟栈操作，但<code>PeekMedian</code>的时候输出的是中位数而不是栈中中间的那个元素<br>
+<strong>卡IO</strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e5+7;
+int stk[N],top=0;
+vector&lt;int&gt;v;
+bool empty() {
+    return top==0;
+}
+void push(int x) {
+    stk[top++]=x;
+    v.insert(lower_bound(v.begin(),v.end(),x),x);
+}
+void pop() {
+    if(empty())
+        cout&lt;&lt;&quot;Invalid\n&quot;;
+    else {
+        v.erase(find(v.begin(),v.end(),stk[top-1]));
+        cout&lt;&lt;stk[--top]&lt;&lt;'\n';
+    }
+}
+void peek() {
+    if(empty())
+        cout&lt;&lt;&quot;Invalid\n&quot;;
+    else
+        cout&lt;&lt;v[(top-1)/2]&lt;&lt;'\n';
+}
+int main() {
+    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int n,num;
+    cin&gt;&gt;n;
+    string op;
+    while(n--) {
+        cin&gt;&gt;op;
+        if(op==&quot;Pop&quot;)
+            pop();
+        else if(op==&quot;Push&quot;) {
+            cin&gt;&gt;num;
+            push(num);
+        } else
+            peek();
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1064-Complete-Binary-Search-Tree"><a class="header-anchor" href="#1064-Complete-Binary-Search-Tree"># </a>1064 Complete Binary Search Tree</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805407749357568" target="_blank" rel="noopener">传送门</a><br>
 <strong>一次过</strong><br>
@@ -325,23 +1093,657 @@ int main(){
 }
 </code></pre>
 <h1 id="1068-Find-More-Coins"><a class="header-anchor" href="#1068-Find-More-Coins"># </a>1068 Find More Coins</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805402305150976" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805402305150976" target="_blank" rel="noopener">传送门</a><br>
+找出总和等于<code>m</code>的最小解法<br>
+<strong>DFS+剪枝</strong></p>
+<ol>
+<li>从小到大枚举硬币，若枚举到说明该解法是最小解法</li>
+<li>剪枝1：若所有硬币加起来都没有<code>m</code>，则不用dfs，直接返回<code>No Solution</code>即可，避免超时（最后一个测试点)</li>
+<li>剪枝2：找到答案后，后面的步骤就不用进行，<code>return</code>即可</li>
+<li>剪枝3：若加上当前的硬币后，总钱数<code>&gt;m</code>，说明后面的硬币加上一定会超，直接<code>break</code></li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1e4+10;
+int v[N],n,m;
+vector&lt;int&gt;ans,tmp;
+void dfs(int s,int sum){
+    if(!ans.empty())
+        return;
+    if(sum==m){
+        ans=tmp;
+        return ;
+    }
+    if(s&gt;=n)
+        return;
+    for(int i=s;i&lt;n;i++){
+        if(sum+v[i]&gt;m)
+            break;
+        tmp.push_back(v[i]);
+        dfs(i+1,sum+v[i]);
+        tmp.pop_back();
+    }
+}
+int main(){
+    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    cin&gt;&gt;n&gt;&gt;m;
+    int sum=0;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;v[i];
+        sum+=v[i];
+    }
+    if(sum&lt;m){
+        cout&lt;&lt;&quot;No Solution\n&quot;;
+        return 0;
+    }
+    sort(v,v+n);
+    dfs(0,0);
+    if(ans.empty())
+        cout&lt;&lt;&quot;No Solution\n&quot;;
+    else{
+        bool p=false;
+        for(int i:ans){
+            if(p)
+                cout&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;i;
+            p=true;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1072-Gas-Station"><a class="header-anchor" href="#1072-Gas-Station"># </a>1072 Gas Station</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805396953219072" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805396953219072" target="_blank" rel="noopener">传送门</a><br>
+找一个垃圾场，使得到所有居民楼的最短距离之和最大，且不能超过服务范围；若条件相同，选择平均距离小的；若还是相同，选择编号小的<br>
+对每个垃圾场执行<strong>Dijkstra</strong>，取最优解</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef pair&lt;string,int&gt; psi;
+typedef pair&lt;int,string&gt; pis;
+unordered_map&lt;string,vector&lt;psi&gt;&gt;house;
+map&lt;string,vector&lt;psi&gt;&gt;gas;
+int n,m,k,ds;
+double maxmindis=0,avgdis=1e9;
+string g;
+bool f=false;
+void dijkstra(string s) {
+    priority_queue&lt;pis,vector&lt;pis&gt;,greater&lt;pis&gt;&gt;q;
+    unordered_map&lt;string,int&gt;d;
+    for(auto &amp;i:gas)
+        d[i.first]=1e9;
+    for(auto &amp;i:house)
+        d[i.first]=1e9;
+    q.push({0,s});
+    d[s]=0;
+    while(!q.empty()) {
+        pis cur=q.top();
+        q.pop();
+        if(cur.first&gt;d[cur.second])
+            continue;
+        if(cur.second[0]=='G') {
+            for(auto &amp;i:gas[cur.second]) {
+                int tmp=d[cur.second]+i.second;
+                if(tmp&lt;=ds&amp;&amp;tmp&lt;d[i.first]) {
+                    d[i.first]=tmp;
+                    q.push({d[i.first],i.first});
+                }
+            }
+        } else {
+            for(auto &amp;i:house[cur.second]) {
+                int tmp=d[cur.second]+i.second;
+                if(tmp&lt;=ds&amp;&amp;tmp&lt;d[i.first]) {
+                    d[i.first]=tmp;
+                    q.push({d[i.first],i.first});
+                }
+            }
+        }
+    }
+    int mintmp=1e9;
+    double avgtmp=0;
+    bool ftmp=true;
+    for(int i=1; i&lt;=n; i++) {
+        string id=to_string(i);
+        if(d[id]==1e9) {
+            ftmp=false;
+            break;
+        }
+        avgtmp+=d[id];
+        mintmp=min(mintmp,d[id]);
+    }
+    avgtmp/=n;
+    if(ftmp) {
+        f=true;
+        if((maxmindis&lt;mintmp)||(maxmindis==mintmp&amp;&amp;avgtmp&lt;avgdis)) {
+            avgdis=avgtmp;
+            maxmindis=mintmp;
+            g=s;
+        }
+    }
+}
+int main() {
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k&gt;&gt;ds;
+    string u,v;
+    int dis;
+    for(int i=0; i&lt;k; i++) {
+        cin&gt;&gt;u&gt;&gt;v&gt;&gt;dis;
+        if(u[0]=='G')
+            gas[u].push_back({v,dis});
+        else
+            house[u].push_back({v,dis});
+        if(v[0]=='G')
+            gas[v].push_back({u,dis});
+        else
+            house[v].push_back({u,dis});
+    }
+    for(auto &amp;i:gas)
+        dijkstra(i.first);
+    if(!f)
+        cout&lt;&lt;&quot;No Solution\n&quot;;
+    else {
+        cout&lt;&lt;g&lt;&lt;'\n';
+        printf(&quot;%.01lf %.01lf\n&quot;,maxmindis,avgdis);
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1076-Forwards-on-Weibo"><a class="header-anchor" href="#1076-Forwards-on-Weibo"># </a>1076 Forwards on Weibo</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805392092020736" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805392092020736" target="_blank" rel="noopener">传送门</a><br>
+若<code>X</code>发了一条微博，关注<code>X</code>的人<code>Y</code>可以看到且可以转发，关注<code>Y</code>的<code>Z</code>可以看到<code>Y</code>的转发，相当于看到<code>X</code>的微博，问在<code>l</code>层内，能被几个人看到<br>
+图的遍历，<strong>BFS</strong>，按层遍历并避免重复计数</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=1010;
+vector&lt;int&gt;g[N];
+bool vis[N];
+int ans;
+void bfs(int s,int l){
+    queue&lt;int&gt;q;
+    q.push(s);
+    vis[s]=true;
+    int lev=0;
+    while (!q.empty()){
+        if(lev&gt;l)
+            break;
+        int sz=q.size();
+        while(sz--){
+            int cur=q.front();
+            q.pop();
+            if(cur!=s)
+                ans++;
+            for(int i:g[cur])
+                if(!vis[i]){
+                    q.push(i);
+                    vis[i]=true;
+                }
+        }
+        lev++;
+    }
+}
+int main(){
+    int n,l,m,usr;
+    cin&gt;&gt;n&gt;&gt;l;
+    for(int i=1;i&lt;=n;i++){
+        cin&gt;&gt;m;
+        while(m--){
+            cin&gt;&gt;usr;
+            g[usr].push_back(i);
+        }
+    }
+    cin&gt;&gt;m;
+    while(m--){
+        cin&gt;&gt;usr;
+        fill(vis,vis+N,false);
+        ans=0;
+        bfs(usr,l);
+        cout&lt;&lt;ans&lt;&lt;'\n';
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1080-Graduate-Admission"><a class="header-anchor" href="#1080-Graduate-Admission"># </a>1080 Graduate Admission</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805387268571136" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805387268571136" target="_blank" rel="noopener">传送门</a><br>
+研究生入学问题</p>
+<ol>
+<li>学生按<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mi>E</mi></msub><mo>+</mo><msub><mi>G</mi><mi>I</mi></msub></mrow><annotation encoding="application/x-tex">G_E+G_I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07847em;">I</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>排序，若相同按<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">G_E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>排序，若还是相同则认为排名相同</li>
+<li>学生按排名顺序录取，若一志愿未录取上，按二志愿录取，以此类推，排名高的录取完排名低的才能录取，同等排名全部录取</li>
+</ol>
+<p><strong>注意：<code>int a[K]</code>慎用<code>for(int i:a)</code>！</strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=40010,M=110,K=10;
+int quota[M];
+struct node {
+    int id,ge,gi;
+    double gf;
+    vector&lt;int&gt;choice;
+} app[N];
+bool cmp(const node &amp;a,const node &amp;b) {
+    if(a.gf==b.gf)
+        return a.ge&gt;b.ge;
+    return a.gf&gt;b.gf;
+}
+vector&lt;int&gt;g[M];
+int main() {
+    int n,m,k;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
+    for(int i=0; i&lt;m; i++) {
+        cin&gt;&gt;quota[i];
+    }
+    for(int i=0; i&lt;n; i++) {
+        app[i].id=i;
+        cin&gt;&gt;app[i].ge&gt;&gt;app[i].gi;
+        app[i].gf=(app[i].ge+app[i].gi)/2.0;
+        app[i].choice.resize(k);
+        for(int j=0; j&lt;k; j++)
+            cin&gt;&gt;app[i].choice[j];
+    }
+    sort(app,app+n,cmp);
+    unordered_set&lt;int&gt;st;
+    int pre_ge=-1,pre_gi=-1;
+    for(int i=0; i&lt;n; i++) {
+        if(app[i].ge==pre_ge&amp;&amp;app[i].gi==pre_gi) {
+            for(int j:app[i].choice) {
+                if(quota[j]&gt;0) {
+                    g[j].insert(lower_bound(g[j].begin(),g[j].end(),app[i].id),app[i].id);
+                    st.insert(j);
+                    quota[j]--;
+                    break;
+                } else if(quota[j]==0&amp;&amp;st.count(j)) {
+                    g[j].insert(lower_bound(g[j].begin(),g[j].end(),app[i].id),app[i].id);
+                    break;
+                }
+            }
+        } else {
+            pre_ge=app[i].ge;
+            pre_gi=app[i].gi;
+            st.clear();
+            for(int j:app[i].choice) {
+                if(quota[j]&gt;0) {
+                    g[j].insert(lower_bound(g[j].begin(),g[j].end(),app[i].id),app[i].id);
+                    st.insert(j);
+                    quota[j]--;
+                    break;
+                }
+            }
+        }
+    }
+    for(int i=0; i&lt;m; i++) {
+        if(g[i].empty()) {
+            cout&lt;&lt;'\n';
+            continue;
+        }
+        bool p=false;
+        for(int j:g[i]) {
+            if(p)
+                cout&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;j;
+            p=true;
+        }
+        cout&lt;&lt;'\n';
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1087-All-Roads-Lead-to-Rome"><a class="header-anchor" href="#1087-All-Roads-Lead-to-Rome"># </a>1087 All Roads Lead to Rome</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805379664297984" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805379664297984" target="_blank" rel="noopener">传送门</a><br>
+路径最短，快乐值最高，平均快乐值最高的路<br>
+<strong>Dijkstra</strong>，更新第二标尺：在更新最小代价时，同时更新快乐值、经过的城市数、路径数<br>
+<strong>需要用vis标记是否已访问，而不能只看距离的大小关系</strong></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef pair&lt;string,int&gt; psi;
+typedef pair&lt;int,string&gt; pis;
+struct node {
+    int val;
+    vector&lt;psi&gt;nxt;
+};
+unordered_map&lt;string,node&gt;mp;
+int n,k;
+string s;
+unordered_map&lt;string,int&gt;d,h,cnt,rts;
+unordered_map&lt;string,bool&gt;vis;
+unordered_map&lt;string,string&gt;pre;
+vector&lt;string&gt;route;
+void dijkstra() {
+    priority_queue&lt;pis,vector&lt;pis&gt;,greater&lt;pis&gt;&gt;q;
+    q.push({0,s});
+    d[s]=h[s]=cnt[s]=0;
+    rts[s]=1;
+    pre[s]=&quot;*&quot;;
+    while(!q.empty()) {
+        pis cur=q.top();
+        q.pop();
+        if(vis[cur.second])
+            continue;
+        vis[cur.second]=1;
+        for(auto &amp;i:mp[cur.second].nxt) {
+            if(vis[i.first])
+                continue;
+            if(!d.count(i.first))
+                d[i.first]=1e9;
+            if(d[cur.second]+i.second&lt;d[i.first]) {
+                d[i.first]=d[cur.second]+i.second;
+                h[i.first]=h[cur.second]+mp[i.first].val;
+                cnt[i.first]=cnt[cur.second]+1;
+                rts[i.first]=rts[cur.second];
+                pre[i.first]=cur.second;
+                q.push({d[i.first],i.first});
+            } else if(d[cur.second]+i.second==d[i.first]) {
+                rts[i.first]+=rts[cur.second];
+                if(h[cur.second]+mp[i.first].val&gt;h[i.first]) {
+                    h[i.first]=h[cur.second]+mp[i.first].val;
+                    cnt[i.first]=cnt[cur.second]+1;
+                    pre[i.first]=cur.second;
+                } else if(h[cur.second]+mp[i.first].val==h[i.first]&amp;&amp;cnt[cur.second]+1&lt;cnt[i.first]) {
+                    cnt[i.first]=cnt[cur.second]+1;
+                    pre[i.first]=cur.second;
+                }
+                q.push({d[i.first],i.first});
+            }
+        }
+    }
+    string pos=&quot;ROM&quot;;
+    while(pos!=&quot;*&quot;) {
+        route.insert(route.begin(),pos);
+        pos=pre[pos];
+    }
+}
+int main() {
+    int hp,ct;
+    string u,v;
+    cin&gt;&gt;n&gt;&gt;k&gt;&gt;s;
+    mp[s].val=0;
+    for(int i=0; i&lt;n-1; i++) {
+        cin&gt;&gt;u&gt;&gt;hp;
+        mp[u].val=hp;
+    }
+    for(int i=0; i&lt;k; i++) {
+        cin&gt;&gt;u&gt;&gt;v&gt;&gt;ct;
+        mp[u].nxt.push_back({v,ct});
+        mp[v].nxt.push_back({u,ct});
+    }
+    dijkstra();
+    cout&lt;&lt;rts[&quot;ROM&quot;]&lt;&lt;&quot; &quot;&lt;&lt;d[&quot;ROM&quot;]&lt;&lt;&quot; &quot;&lt;&lt;h[&quot;ROM&quot;]&lt;&lt;&quot; &quot;&lt;&lt;h[&quot;ROM&quot;]/cnt[&quot;ROM&quot;]&lt;&lt;'\n';
+    for(int i=0; i&lt;route.size(); i++) {
+        if(i!=0)
+            cout&lt;&lt;&quot;-&gt;&quot;;
+        cout&lt;&lt;route[i];
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1091-Acute-Stroke"><a class="header-anchor" href="#1091-Acute-Stroke"># </a>1091 Acute Stroke</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805375457411072" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805375457411072" target="_blank" rel="noopener">传送门</a><br>
+求符合大小的总体积<br>
+<strong>三维BFS</strong>，遍历每个连通分量并计算体积，将符合大小的加到答案中<br>
+<em>DFS会爆栈（25分），六个方向必须全遍历到，只遍历3个方向21分，遍历5个方向27分（此时DFS不会爆栈）</em><br>
+<em>PTA好像不支持扩栈</em></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int M=1300,N=130,L=66;
+bool a[L][M][N];
+int m,n,l,t;
+int d[6][3]= {{1,0,0},{0,1,0},{0,0,1},{-1,0,0},{0,-1,0},{0,0,-1}};
+struct point {
+    int x,y,z;
+};
+int bfs(int ll,int mm,int nn) {
+    queue&lt;point&gt;q;
+    q.push({ll,mm,nn});
+    a[ll][mm][nn]=0;
+    int sum=1;
+    while(!q.empty()) {
+        point cur=q.front();
+        q.pop();
+        for(int i=0; i&lt;6; i++) {
+            int xl=cur.x+d[i][0],xm=cur.y+d[i][1],xn=cur.z+d[i][2];
+            if(xl&gt;=0&amp;&amp;xl&lt;l&amp;&amp;xm&gt;=0&amp;&amp;xm&lt;m&amp;&amp;xn&gt;=0&amp;&amp;xn&lt;n&amp;&amp;a[xl][xm][xn]) {
+                a[xl][xm][xn]=0;
+                sum++;
+                q.push({xl,xm,xn});
+            }
+        }
+    }
+    if(sum&gt;=t)
+        return sum;
+    return 0;
+}
+int main() {
+    cin&gt;&gt;m&gt;&gt;n&gt;&gt;l&gt;&gt;t;
+    for(int i=0; i&lt;l; i++)
+        for(int j=0; j&lt;m; j++)
+            for(int k=0; k&lt;n; k++)
+                cin&gt;&gt;a[i][j][k];
+    int ans=0;
+    for(int i=0; i&lt;l; i++)
+        for(int j=0; j&lt;m; j++)
+            for(int k=0; k&lt;n; k++)
+                if(a[i][j][k])
+                    ans+=bfs(i,j,k);
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
 <h1 id="1095-Cars-on-Campus"><a class="header-anchor" href="#1095-Cars-on-Campus"># </a>1095 Cars on Campus</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805371602845696" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805371602845696" target="_blank" rel="noopener">传送门</a><br>
+查询每个时刻停车场内的汽车总数，在最后输出停车最长的车牌号及时间，按车牌递增字典序输出<br>
+<strong>模拟</strong>，然后结构体排序，注意别超时<br>
+<strong>避免TLE的方法：</strong></p>
+<ol>
+<li><code>unordered_map</code>代替<code>map</code></li>
+<li>少开多余的存储空间，少排序，避免重复运算、存取</li>
+<li><code>scanf</code>代替<code>cin</code>，<code>printf</code>代替<code>cout</code>，在<code>cout</code>和<code>printf</code>同时使用的情况下无法取消io同步，否则会输入输出混乱，<code>cin``getchar``getline</code>混用时也不行</li>
+<li><code>const T &amp;t</code>代替<code>T t</code>，即用引用会更快</li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+struct record{
+    string id;
+    int intime;
+    int outtime;
+    int alltime;
+};
+vector&lt;record&gt;v;
+vector&lt;pair&lt;string,int&gt;&gt;vv;
+unordered_map&lt;string,vector&lt;pair&lt;int,bool&gt;&gt;&gt;mp;
+map&lt;string,int&gt;at;
+bool cmp1(const pair&lt;int,bool&gt; &amp;a,const pair&lt;int,bool&gt; &amp;b){
+    return a.first&lt;b.first;
+}
+bool cmp2(const record &amp;a,const record &amp;b){
+    return a.intime&lt;b.intime;
+}
+int main(){
+    int n,k;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;k);
+    string id,op;
+    int hh,mm,ss,time;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;id;
+        scanf(&quot;%d:%d:%d&quot;,&amp;hh,&amp;mm,&amp;ss);
+        cin&gt;&gt;op;
+        time=hh*3600+mm*60+ss;
+        mp[id].push_back({time,op==&quot;in&quot;});
+    }
+    bool in;
+    int stime=0;
+    for(auto &amp;i:mp){
+        sort(i.second.begin(),i.second.end(),cmp1);
+        in=false;
+        for(auto &amp;j:i.second){
+            if(!in&amp;&amp;j.second){
+                v.push_back({i.first,j.first,-1,-1});
+                in=true;
+            }else if(in&amp;&amp;!j.second){
+                v.back().outtime=j.first;
+                v.back().alltime=j.first-v.back().intime;
+                at[i.first]+=v.back().alltime;
+                stime=max(stime,at[i.first]);
+                in=false;
+            }else if(in&amp;&amp;j.second)
+            	v.back().intime=j.first;
+        }
+        if(v.back().outtime==-1)
+            v.pop_back();
+    }
+    sort(v.begin(),v.end(),cmp2);
+    int cnt;
+    while(k--){
+        scanf(&quot;%d:%d:%d&quot;,&amp;hh,&amp;mm,&amp;ss);
+        time=hh*3600+mm*60+ss;
+        cnt=0;
+        for(record &amp;i:v){
+            if(i.intime&gt;time)
+                break;
+            if(i.intime&lt;=time&amp;&amp;i.outtime&gt;time)
+                cnt++;
+        }
+        printf(&quot;%d\n&quot;,cnt);
+    }
+    bool print=false;
+    for(auto &amp;i:at){
+    	if(i.second!=stime)
+    		continue;
+    	if(print)
+    		printf(&quot; &quot;);
+        printf(&quot;%s&quot;,i.first.c_str());
+        print=true;
+	}
+    hh=stime/3600;
+    stime-=hh*3600;
+    mm=stime/60;
+    ss=stime%60;
+    printf(&quot; %02d:%02d:%02d&quot;,hh,mm,ss);
+    return 0;
+}
+</code></pre>
 <h1 id="1099-Build-A-Binary-Search-Tree"><a class="header-anchor" href="#1099-Build-A-Binary-Search-Tree"># </a>1099 Build A Binary Search Tree</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805367987355648" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805367987355648" target="_blank" rel="noopener">传送门</a><br>
+<strong>一次过</strong><br>
+根据已有结构，将给定序列搭建成BST，并输出层序遍历</p>
+<ol>
+<li>BST的中序遍历是有序的，所以先<strong>排序</strong>即可得到中序序列</li>
+<li><strong>确定根节点</strong>：由给定的树结构可以确定左右孩子的数量，到中序序列中划定左右孩子的数量，中间的即为根</li>
+<li>左右孩子<strong>递归建树</strong></li>
+<li>根据建的树，输出<strong>层序遍历</strong></li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=110;
+int a[N];
+struct Node{
+    int val;
+    int left,right;
+    int lcnt,rcnt;
+}t[N];
+int cal(int root){
+    if(root==-1)
+        return -1;
+    t[root].lcnt=cal(t[root].left)+1;
+    t[root].rcnt=cal(t[root].right)+1;
+    return t[root].lcnt+t[root].rcnt;
+}
+void build(int root,int l,int r){
+    if(l&gt;r)
+        return;
+    int mid=l+t[root].lcnt;
+    t[root].val=a[mid];
+    build(t[root].left,l,mid-1);
+    build(t[root].right,mid+1,r);
+}
+void lev(int root){
+    queue&lt;int&gt;q;
+    q.push(root);
+    bool print=false;
+    while(!q.empty()){
+        int cur=q.front();
+        q.pop();
+        if(print)
+            cout&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;t[cur].val;
+        print=true;
+        if(t[cur].left!=-1)
+            q.push(t[cur].left);
+        if(t[cur].right!=-1)
+            q.push(t[cur].right);
+    }
+}
+int main(){
+    int n;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;t[i].left&gt;&gt;t[i].right;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;a[i];
+    cal(0);
+    sort(a,a+n);
+    build(0,0,n-1);
+    lev(0);
+    return 0;
+}
+</code></pre>
 <h1 id="1103-Integer-Factorization"><a class="header-anchor" href="#1103-Integer-Factorization"># </a>1103 Integer Factorization</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805364711604224" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805364711604224" target="_blank" rel="noopener">传送门</a><br>
+<strong>DFS+剪枝</strong>，与TLE斗智斗勇<br>
+枚举可能的因子，在符合条件时保留最优的解<br>
+剪枝为了避免重复计算，浪费不必要的时间<br>
+当解为空时，代表没有合法的因子</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt;v,fac,ans;
+int mxfac=0,n,k,p;
+void dfs(int id,int sum,int cnt,int facsum){
+    if(cnt&gt;k||cnt==k&amp;&amp;sum!=n)
+        return;
+    if(sum+k-cnt==n){
+        if(facsum+k-cnt&gt;mxfac){
+            mxfac=facsum+k-cnt;
+            ans=fac;
+            for(int i=0;i&lt;k-cnt;i++)
+                ans.push_back(1);
+        }
+        return;
+    }
+    if(sum==n&amp;&amp;cnt==k){
+        if(mxfac&lt;facsum){
+            mxfac=facsum;
+            ans=fac;
+        }
+        return;
+    }
+    for(int i=id;i&gt;=2;i--){
+        if(sum+v[i]&gt;n)
+            continue;
+        fac.push_back(i);
+        dfs(i,sum+v[i],cnt+1,facsum+i);
+        fac.pop_back();
+    }
+}
+int main(){
+    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    cin&gt;&gt;n&gt;&gt;k&gt;&gt;p;
+    for(int i=0;;i++){
+        v.push_back(pow(i,p));
+        if(v.back()&gt;=n-k+1)
+            break;
+    }
+    dfs(v.size()-1,0,0,0);
+    if(ans.empty())
+        cout&lt;&lt;&quot;Impossible\n&quot;;
+    else{
+        sort(ans.begin(),ans.end(),greater&lt;&gt;());
+        cout&lt;&lt;n&lt;&lt;&quot; = &quot;;
+        bool print=false;
+        for(int i:ans){
+            if(print)
+                cout&lt;&lt;&quot; + &quot;;
+            cout&lt;&lt;i&lt;&lt;&quot;^&quot;&lt;&lt;p;
+            print=true;
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1107-Social-Clusters"><a class="header-anchor" href="#1107-Social-Clusters"># </a>1107 Social Clusters</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805361586847744" target="_blank" rel="noopener">传送门</a><br>
 共同爱好的为一个群体，找出群体的个数及相应的人数，按降序排列<br>
@@ -983,7 +2385,73 @@ int main(){
 }
 </code></pre>
 <h1 id="1139-First-Contact"><a class="header-anchor" href="#1139-First-Contact"># </a>1139 First Contact</h1>
-<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344776077312" target="_blank" rel="noopener">传送门</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805344776077312" target="_blank" rel="noopener">传送门</a><br>
+模拟，题目大意：</p>
+<ol>
+<li>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>的同性好友中找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span></li>
+<li>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>的好友中找与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>同性的好友<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">{</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{C,D\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mclose">}</span></span></span></span>即为所求的一对解</li>
+</ol>
+<p>一些坑：</p>
+<ol>
+<li>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>同性，则可能存在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>或<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">D=A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>，因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>矛盾了，所以肯定不能直接发消息嘛，需要排除这种情况（最后三个测试点，6分）</li>
+<li>输入存在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0000</mn></mrow><annotation encoding="application/x-tex">0000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>0000</mn></mrow><annotation encoding="application/x-tex">-0000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>，若输入的是整型，则此时不能根据符号判断性别，所以输入的应该是字符串（测试点2，2分）</li>
+</ol>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+unordered_map&lt;int,vector&lt;vector&lt;int&gt;&gt;&gt;mp;
+vector&lt;pair&lt;int,int&gt;&gt;vv;
+void search(string x,string y){
+    bool fa=x[0]=='-',fb=y[0]=='-';
+    int a=abs(stoi(x));
+    int b=abs(stoi(y));
+    if(!mp.count(a)||!mp.count(b))
+        return;
+    for(auto i:mp[a][fa]){
+        if(i==b)
+            continue;
+        for(auto j:mp[i][fb]){
+            if(j==a)
+                continue;
+            if(find(mp[b][fb].begin(),mp[b][fb].end(),j)!=mp[b][fb].end())
+                vv.push_back({i,j});
+        }
+    }
+}
+bool cmp(pair&lt;int,int&gt; a,pair&lt;int,int&gt; b){
+    if(a.first==b.first)
+        return a.second&lt;b.second;
+    return a.first&lt;b.first;
+}
+int main(){
+    int n,m,u,v,k;
+    string x,y;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0;i&lt;m;i++){
+        cin&gt;&gt;x&gt;&gt;y;
+        bool fu=x[0]=='-',fv=y[0]=='-';
+        u=abs(stoi(x));
+        v=abs(stoi(y));
+        if(!mp.count(u))
+            mp[u].resize(2);
+        if(!mp.count(v))
+            mp[v].resize(2);
+        mp[u][fv].push_back(v);
+        mp[v][fu].push_back(u);
+    }
+    cin&gt;&gt;k;
+    while(k--){
+        cin&gt;&gt;x&gt;&gt;y;
+        vv.clear();
+        search(x,y);
+        sort(vv.begin(),vv.end(),cmp);
+        cout&lt;&lt;vv.size()&lt;&lt;'\n';
+        for(auto i:vv)
+            printf(&quot;%04d %04d\n&quot;,i.first,i.second);
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="1143-Lowest-Common-Ancestor"><a class="header-anchor" href="#1143-Lowest-Common-Ancestor"># </a>1143 Lowest Common Ancestor</h1>
 <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805343727501312" target="_blank" rel="noopener">传送门</a><br>
 二叉搜索树的最近公共祖先<br>
