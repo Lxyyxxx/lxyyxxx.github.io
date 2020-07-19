@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2020-07-18T10:23:15.256Z</updated>
+  <updated>2020-07-19T08:44:57.188Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「PAT 甲级」2019年秋季考试</title>
+    <link href="https://lxyyxxx.github.io/2020/07/2019AutumnAdvancedPAT/"/>
+    <id>https://lxyyxxx.github.io/2020/07/2019AutumnAdvancedPAT/</id>
+    <published>2020-07-19T07:54:35.000Z</published>
+    <updated>2020-07-19T08:44:57.188Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;em&gt;感觉比春季难QAQ&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;时光机，哦，没钱买&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&quot;/2020/07/2019AutumnAdvancedPAT/%E6%97%B6%E5%85%89%E6%9C%BA.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
+    
+      <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
+    
+      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>「PAT 甲级」2019年春季考试</title>
@@ -42,9 +76,9 @@
       <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
     
     
-      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
-    
       <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
     
       <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
     
@@ -122,9 +156,9 @@
     
       <category term="周赛" scheme="https://lxyyxxx.github.io/tags/%E5%91%A8%E8%B5%9B/"/>
     
-      <category term="模拟" scheme="https://lxyyxxx.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
       <category term="博弈" scheme="https://lxyyxxx.github.io/tags/%E5%8D%9A%E5%BC%88/"/>
+    
+      <category term="模拟" scheme="https://lxyyxxx.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
       <category term="枚举" scheme="https://lxyyxxx.github.io/tags/%E6%9E%9A%E4%B8%BE/"/>
     
@@ -271,11 +305,11 @@
       <category term="PAT" scheme="https://lxyyxxx.github.io/categories/PAT/"/>
     
     
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
+    
       <category term="模拟" scheme="https://lxyyxxx.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
       <category term="PAT" scheme="https://lxyyxxx.github.io/tags/PAT/"/>
-    
-      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
     
   </entry>
   
@@ -557,15 +591,15 @@ OJ：牛客网&lt;br&gt;
       <category term="武汉工程大学程序设计女生赛 - 第一届" scheme="https://lxyyxxx.github.io/categories/%E6%AD%A6%E6%B1%89%E5%B7%A5%E7%A8%8B%E5%A4%A7%E5%AD%A6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A5%B3%E7%94%9F%E8%B5%9B-%E7%AC%AC%E4%B8%80%E5%B1%8A/"/>
     
     
+      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
       <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="快速幂取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
     
-      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
     
       <category term="费马小定理" scheme="https://lxyyxxx.github.io/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/"/>
-    
-      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
     
       <category term="快速乘取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E4%B9%98%E5%8F%96%E6%A8%A1/"/>
     
@@ -681,47 +715,6 @@ OJ：牛客网&lt;br&gt;
       <category term="Windows Terminal" scheme="https://lxyyxxx.github.io/tags/Windows-Terminal/"/>
     
       <category term="配置" scheme="https://lxyyxxx.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「PAT 甲级」30分题汇总</title>
-    <link href="https://lxyyxxx.github.io/2020/01/PATAdvanced30/"/>
-    <id>https://lxyyxxx.github.io/2020/01/PATAdvanced30/</id>
-    <published>2020-01-14T14:20:02.000Z</published>
-    <updated>2020-07-18T04:42:36.528Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;1004-Counting-Leaves&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1004-Counting-Leaves&quot;&gt;# &lt;/a&gt;1004 Counting Leaves&lt;/h1&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
-    
-    
-      <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="DP" scheme="https://lxyyxxx.github.io/tags/DP/"/>
-    
-      <category term="模拟" scheme="https://lxyyxxx.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
-      <category term="堆" scheme="https://lxyyxxx.github.io/tags/%E5%A0%86/"/>
-    
-      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
-    
-      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
-    
-      <category term="树" scheme="https://lxyyxxx.github.io/tags/%E6%A0%91/"/>
-    
-      <category term="图" scheme="https://lxyyxxx.github.io/tags/%E5%9B%BE/"/>
     
   </entry>
   
