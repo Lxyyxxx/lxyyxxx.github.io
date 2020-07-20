@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2020-05-08T15:50:52.575Z" itemprop="dateModified">
-                            2020-05-08 23:50
+                            <time datetime="2020-07-20T14:08:36.403Z" itemprop="dateModified">
+                            2020-07-20 22:08
                             </time>
                             
                         </div>
@@ -180,17 +180,100 @@
                         
                     </div>
                     <article class="write-content">
-                        <h1 id="链表"><a class="header-anchor" href="#链表"># </a>链表</h1>
-<h2 id="单链表"><a class="header-anchor" href="#单链表"># </a>单链表</h2>
+                        <h1 id="概念"><a class="header-anchor" href="#概念"># </a>概念</h1>
+<h2 id="数据结构"><a class="header-anchor" href="#数据结构"># </a>数据结构</h2>
+<p>数据+操作（算法）</p>
+<p>解决问题方法的效率：</p>
+<ol>
+<li>跟数据的组织方式有关</li>
+<li>跟空间的利用效率有关</li>
+<li>跟算法的巧妙程度有关</li>
+</ol>
+<h2 id="算法"><a class="header-anchor" href="#算法"># </a>算法</h2>
+<ol>
+<li>一个有限指令集</li>
+<li>接受一些输入，或无需输入</li>
+<li>产生输出</li>
+<li>有限步后中止</li>
+<li>每条指令必须无歧义、在计算机的处理范围内、描述不依赖于任意一种计算机语言和具体操作手段</li>
+</ol>
+<p><strong>好的算法</strong></p>
+<ol>
+<li>空间复杂度</li>
+<li>时间复杂度</li>
+</ol>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mi>O</mi><mo stretchy="false">(</mo><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>O</mi><mo stretchy="false">(</mo><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_1(n)+T_2(n)=max(O(f_1(n)),O(f_2(n)))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>×</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>×</mo><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_1(n)\times T_2(n)=O(f_1(n)\times f_2(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></p>
+<h1 id="线性表"><a class="header-anchor" href="#线性表"># </a>线性表</h1>
+<p>由同类型数据元素构成的有序序列的线性结构</p>
+<ol>
+<li>长度：表中元素个数</li>
+<li>空表：没有元素</li>
+<li>表头、表尾</li>
+</ol>
+<h2 id="ADT"><a class="header-anchor" href="#ADT"># </a>ADT</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:center">顺序</th>
+<th style="text-align:center">链式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">初始化</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left">根据位序找元素</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left">根据元素找第一次出现的位序</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left">插入(不包含查找)</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left">删除(不包含查找)</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left">长度</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="顺序存储"><a class="header-anchor" href="#顺序存储"># </a>顺序存储</h2>
+<p>数组</p>
+<pre><code class="language-cpp">const int N=100;
+struct List{
+	int val[N];
+	int last; // 最后一个元素的下标
+}L;
+</code></pre>
+<p>长度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>L</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>a</mi><mi>s</mi><mi>t</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">=L.last+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">L</span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+<h2 id="链表"><a class="header-anchor" href="#链表"># </a>链表</h2>
+<p>不要求逻辑上相邻的两个元素物理上也相连</p>
+<h3 id="单链表"><a class="header-anchor" href="#单链表"># </a>单链表</h3>
 <pre><code class="language-cpp">struct SinglyListNode {
     int val;
     SinglyListNode *next;
     SinglyListNode(int x) : val(x), next(NULL) {}
 };
 </code></pre>
-<h2 id="循环链表"><a class="header-anchor" href="#循环链表"># </a>循环链表</h2>
+<h3 id="循环链表"><a class="header-anchor" href="#循环链表"># </a>循环链表</h3>
 <p>表中的最后一个结点指针指向头结点</p>
-<h2 id="双向链表"><a class="header-anchor" href="#双向链表"># </a>双向链表</h2>
+<h3 id="双向链表"><a class="header-anchor" href="#双向链表"># </a>双向链表</h3>
 <p>结点有两个指针域，一个指向直接后继，一个指向直接前趋</p>
 <pre><code class="language-cpp">struct DoublyListNode {
     int val;
@@ -198,28 +281,311 @@
     DoublyListNode(int x) : val(x), next(NULL), prev(NULL) {}
 };
 </code></pre>
-<h2 id="应用：一元多项式的相加"><a class="header-anchor" href="#应用：一元多项式的相加"># </a>应用：一元多项式的相加</h2>
+<h2 id="广义表"><a class="header-anchor" href="#广义表"># </a>广义表</h2>
+<p>线性表的推广，元素可以是单元素，也可以是另一个广义表</p>
+<pre><code class="language-cpp">typedef GNode* GList;
+struct GNode{
+	int tag; // 0-单元素，1-广义表
+	union{	// 共用存储空间
+		int val;
+		GList subList;
+	}URegion;
+	GList next;
+};
+</code></pre>
+<h2 id="多重链表"><a class="header-anchor" href="#多重链表"># </a>多重链表</h2>
+<p>链表中的结点可能同时隶属于多个链<br>
+链表结点包含多个指针域，如前面的广义表</p>
+<blockquote>
+<p>双向链表不是多重链表！</p>
+</blockquote>
+<h2 id="应用：一元多项式表示"><a class="header-anchor" href="#应用：一元多项式表示"># </a>应用：一元多项式表示</h2>
+<ol>
+<li>顺序：指数为下标，存系数</li>
+<li>顺序：只存非零项，按指数大小有序存储，结点域存系数和指数</li>
+<li>链式：只存不为零的项（系数不为零），结点域存系数和指数及下一节点的地址</li>
+</ol>
+<h2 id="应用：二元多项式表示"><a class="header-anchor" href="#应用：二元多项式表示"># </a>应用：二元多项式表示</h2>
+<p>广义表，保留<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>项指数，共用系数，存系数和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>指数</p>
+<h2 id="应用：矩阵表示"><a class="header-anchor" href="#应用：矩阵表示"># </a>应用：矩阵表示</h2>
+<ol>
+<li>二维数组</li>
+<li>十字链表<br>
+每个结点通过两个指针域，把同行、同列串起来
+<ul>
+<li>数据域：行坐标、列坐标、数值（头结点这里存的是下一个头结点，共用存储空间，用tag标记）</li>
+<li>行指针域（向右指针）</li>
+<li>列指针域（向下指针）</li>
+</ul>
+</li>
+</ol>
 <h1 id="栈"><a class="header-anchor" href="#栈"># </a>栈</h1>
+<p>后进先出，倒序<br>
+只在栈顶做插入删除</p>
+<h2 id="ADT-x2"><a class="header-anchor" href="#ADT-x2"># </a>ADT</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">顺序</th>
+<th style="text-align:center">链式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判定栈满</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>压入</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>弹出</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判定栈空</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="顺序"><a class="header-anchor" href="#顺序"># </a>顺序</h2>
+<pre><code class="language-cpp">const int N=100;
+typedef SNode* Stack;
+struct SNode{
+	int val[N];
+	int top;
+};
+</code></pre>
+<h2 id="双栈共用数组空间"><a class="header-anchor" href="#双栈共用数组空间"># </a>双栈共用数组空间</h2>
+<p>两头向中间生长</p>
+<pre><code class="language-cpp">const int N=100;
+struct DStack{
+	int val[N];
+	int top1,top2;
+}S;
+S.top1=0;
+S.top2=N-1;
+</code></pre>
+<h2 id="链式"><a class="header-anchor" href="#链式"># </a>链式</h2>
+<p>栈顶在头指针指向的那端（而不是尾部）</p>
+<pre><code class="language-cpp">typedef SNode* Stack;
+struct SNode{
+	int val;
+	SNode* next;
+};
+</code></pre>
+<h2 id="应用：中缀表达式求值"><a class="header-anchor" href="#应用：中缀表达式求值"># </a>应用：中缀表达式求值</h2>
+<p>负数应该不能解决吧？</p>
+<h3 id="Step1：中缀表达式转后缀表达式"><a class="header-anchor" href="#Step1：中缀表达式转后缀表达式"># </a>Step1：中缀表达式转后缀表达式</h3>
+<p>左根右 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 左右根，即中间的运算符需要等待右边的表达式</p>
+<ol>
+<li>遇到运算数直接输出</li>
+<li>遇到运算符比较与栈顶运算符的优先级
+<ul>
+<li>栈顶高：弹出并输出栈顶，再压入当前运算符</li>
+<li>栈顶低或空栈：直接压入当前运算符</li>
+</ul>
+</li>
+<li>括号（不输出）
+<ul>
+<li>左括号：压入</li>
+<li>右括号：不断将栈顶弹出并输出，直到将左括号弹出后停止</li>
+</ul>
+</li>
+<li>全部处理完毕后，将栈中的运算符全部弹出并输出</li>
+</ol>
+<h3 id="Step2：后缀表达式求值"><a class="header-anchor" href="#Step2：后缀表达式求值"># </a>Step2：后缀表达式求值</h3>
+<ol>
+<li>运算数：入栈</li>
+<li>运算符：从栈中弹出相对应数量的运算数，计算，并将结果入栈</li>
+<li>直到堆栈只剩一个元素，栈顶就是结果</li>
+</ol>
 <h1 id="队列"><a class="header-anchor" href="#队列"># </a>队列</h1>
+<p>先进先出/先来先服务<br>
+队尾插入，队头删除</p>
+<h2 id="ADT-x3"><a class="header-anchor" href="#ADT-x3"># </a>ADT</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">顺序</th>
+<th style="text-align:center">链式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判定队满</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>入队</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>出队</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判定队空</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="顺序-x2"><a class="header-anchor" href="#顺序-x2"># </a>顺序</h2>
+<pre><code class="language-cpp">const int N=100;
+typedef QNode* Queue;
+struct QNode{
+	int val[N];
+	int rear,front;
+};
+</code></pre>
+<ul>
+<li>队空：<code>front==rear</code></li>
+<li>队满：<code>rear==N-1</code></li>
+</ul>
+<h2 id="顺环队列"><a class="header-anchor" href="#顺环队列"># </a>顺环队列</h2>
+<p>队空时<code>rear==front</code>，但是顺环队列队满时刚好一圈都填满了，也满足<code>rear==front</code>导致无法区分空还是满<br>
+<strong>解决</strong>：加一取余<br>
+空出一个位置不放元素</p>
+<ul>
+<li>队空：<code>rear==front</code></li>
+<li>队满：<code>(rear+1)%N==front</code></li>
+<li>入队：<code>(rear+1)%N</code></li>
+<li>出队：<code>(front+1)%N</code></li>
+</ul>
+<h2 id="链式-x2"><a class="header-anchor" href="#链式-x2"># </a>链式</h2>
+<p>头结点指向队首，队尾为另一端</p>
+<pre><code class="language-cpp">struct Node{
+	int val;
+	Node* next;
+};
+struct QNode{
+	Node *rear,*front;
+};
+typedef QNode* Queue;
+</code></pre>
 <h1 id="树"><a class="header-anchor" href="#树"># </a>树</h1>
-<p><strong>节点的深度</strong>：从树的<strong>根节点到该节点</strong>的<strong>边数</strong><br>
-<strong>节点的高度</strong>：<strong>该节点和叶子</strong>之间<strong>最长路径上的边数</strong><br>
-<strong>树的高度</strong>：其<strong>根节点的高度</strong></p>
+<h2 id="特点"><a class="header-anchor" href="#特点"># </a>特点</h2>
+<ol>
+<li>无环</li>
+<li>只有一个入度为零的根节点</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个结点有且仅有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>条边</li>
+<li>树可为空，每个结点作为根还是树</li>
+</ol>
+<h2 id="术语"><a class="header-anchor" href="#术语"># </a>术语</h2>
+<ul>
+<li><strong>结点的度</strong>：结点的子树个数</li>
+<li><strong>树的度</strong>：树的所有结点中最大的度数</li>
+<li><strong>结点的深度</strong>：从树的<strong>根节点到该节点</strong>的<strong>边数</strong></li>
+<li><strong>结点的高度</strong>：<strong>该节点和叶子</strong>之间<strong>最长路径上的边数</strong></li>
+<li><strong>树的高度</strong>：其<strong>根节点的高度</strong></li>
+<li><strong>路径长度</strong>：边的个数</li>
+</ul>
+<h3 id="English"><a class="header-anchor" href="#English"># </a>English</h3>
+<ul>
+<li>度 Degree</li>
+<li>叶 Leaf</li>
+<li>父 Parent</li>
+<li>子 Child</li>
+<li>兄弟 Sibling</li>
+<li>祖先 Ancestor</li>
+<li>子孙 Descendant</li>
+<li>层 Level</li>
+<li>深度 Depth</li>
+</ul>
 <h2 id="二叉树"><a class="header-anchor" href="#二叉树"># </a>二叉树</h2>
-<p>定义树结构</p>
+<h3 id="特殊二叉树"><a class="header-anchor" href="#特殊二叉树"># </a>特殊二叉树</h3>
+<ol>
+<li><strong>斜二叉树 Skewed</strong>：除了叶子外的每个结点只有左孩子/只有右孩子</li>
+<li><strong>完全二叉树 Complete</strong>：层序遍历的序号与满二叉树时的序号一一对应</li>
+<li><strong>满二叉树 Full</strong>：左右孩子都存在/都不存在</li>
+<li><strong>完美二叉树 Perfect</strong>：第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>层（从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>开始）有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{i-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>个元素，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>层共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个元素</li>
+</ol>
+<h3 id="性质"><a class="header-anchor" href="#性质"># </a>性质</h3>
+<ol>
+<li>第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>层（从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>开始）最多有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{i-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>个元素</li>
+<li>深度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>（从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>开始）最多有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个元素</li>
+<li>非空二叉树，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">n_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>叶节点个数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">n_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>度为二的非叶节点个数，满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">n_2+1=n_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ol>
+<h3 id="ADT-x4"><a class="header-anchor" href="#ADT-x4"># </a>ADT</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>建树</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>先序遍历</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>中序遍历</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>后序遍历</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>层序遍历</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="顺序-x3"><a class="header-anchor" href="#顺序-x3"># </a>顺序</h3>
+<ul>
+<li>根节点下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li>父节点下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span></li>
+<li>左孩子下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∗</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">2*i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span></li>
+<li>右孩子下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∗</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2*i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ul>
+<h3 id="链式-x3"><a class="header-anchor" href="#链式-x3"># </a>链式</h3>
 <pre><code class="language-cpp">struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+typedef TreeNode* Tree;
 </code></pre>
 <h3 id="先序遍历"><a class="header-anchor" href="#先序遍历"># </a>先序遍历</h3>
-<p>递归</p>
+<p>根左右<br>
+递归</p>
 <pre><code class="language-cpp">class Solution {
 public:
     void pre(TreeNode* root,vector&lt;int&gt; &amp;ans){
-        if(!root)return;
+        if(!root)
+	        return;
         ans.push_back(root-&gt;val);
         pre(root-&gt;left,ans);
         pre(root-&gt;right,ans);
@@ -232,6 +598,10 @@ public:
 };
 </code></pre>
 <p>迭代，借用栈</p>
+<ol>
+<li>结点：输出，入栈，访问左子树</li>
+<li>左子树遍历结束，弹栈，访问右子树</li>
+</ol>
 <pre><code class="language-cpp">class Solution {
 public:
     vector&lt;int&gt; preorderTraversal(TreeNode* root) {
@@ -254,11 +624,13 @@ public:
 };
 </code></pre>
 <h3 id="中序遍历"><a class="header-anchor" href="#中序遍历"># </a>中序遍历</h3>
-<p>递归</p>
+<p>左根右<br>
+递归</p>
 <pre><code class="language-cpp">class Solution {
 public:
     void in(TreeNode* root, vector&lt;int&gt; &amp;ans){
-        if(!root)return;
+        if(!root)
+	        return;
         in(root-&gt;left,ans);
         ans.push_back(root-&gt;val);
         in(root-&gt;right,ans);
@@ -271,6 +643,10 @@ public:
 };
 </code></pre>
 <p>迭代，借用栈</p>
+<ol>
+<li>结点：压栈，遍历左子树</li>
+<li>左子树遍历结束，弹栈并访问，遍历右子树</li>
+</ol>
 <pre><code class="language-cpp">class Solution {
 public:
     vector&lt;int&gt; inorderTraversal(TreeNode* root) {
@@ -293,11 +669,13 @@ public:
 };
 </code></pre>
 <h3 id="后序遍历"><a class="header-anchor" href="#后序遍历"># </a>后序遍历</h3>
-<p>递归</p>
+<p>左右根<br>
+递归</p>
 <pre><code class="language-cpp">class Solution {
 public:
     void post(TreeNode* root, vector&lt;int&gt; &amp;ans){
-        if(!root)return;
+        if(!root)
+	        return;
         post(root-&gt;left,ans);
         post(root-&gt;right,ans);
         ans.push_back(root-&gt;val);
@@ -334,12 +712,15 @@ public:
 };
 </code></pre>
 <h3 id="层序遍历"><a class="header-anchor" href="#层序遍历"># </a>层序遍历</h3>
-<p>递归</p>
+<p>递归<br>
+将结点存入每一层对应的数组</p>
 <pre><code class="language-cpp">class Solution {
 public:
     void dfs(TreeNode* root,int level,vector&lt;vector&lt;int&gt;&gt; &amp;ans){
-        if(!root)return;
-        if(ans.size()==level)ans.resize(level+1);
+        if(!root)
+	        return;
+        if(ans.size()==level)
+	        ans.resize(level+1);
         ans[level].push_back(root-&gt;val);
         dfs(root-&gt;left,level+1,ans);
         dfs(root-&gt;right,level+1,ans);
@@ -352,7 +733,13 @@ public:
     }
 };
 </code></pre>
-<p>迭代，借用队列</p>
+<p>迭代，借用队列<br>
+按层顺序访问，可边访问边输出</p>
+<ol>
+<li>队列取一个元素</li>
+<li>访问</li>
+<li>左右孩子非空入队</li>
+</ol>
 <pre><code class="language-cpp">class Solution {
 public:
     vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) {
@@ -376,12 +763,28 @@ public:
     }
 };
 </code></pre>
-<h3 id="最大深度"><a class="header-anchor" href="#最大深度"># </a>最大深度</h3>
+<h3 id="应用：输出叶子结点"><a class="header-anchor" href="#应用：输出叶子结点"># </a>应用：输出叶子结点</h3>
+<pre><code class="language-cpp">void Leaf(TreeNode *root){
+	if(!root)
+		return;
+	// 输出时判断是否是叶子
+	if(!root-&gt;left&amp;&amp;!root-&gt;right)
+		cout&lt;&lt;root-&gt;val;
+	Leaf(root-&gt;left);
+	Leaf(root-&gt;right);
+}
+</code></pre>
+<h3 id="应用：最大深度-二叉树的高度"><a class="header-anchor" href="#应用：最大深度-二叉树的高度"># </a>应用：最大深度/二叉树的高度</h3>
+<ol>
+<li>空树：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+<li>非空：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mi>L</mi></msub><mo separator="true">,</mo><msub><mi>H</mi><mi>R</mi></msub><mo stretchy="false">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H=max(H_L,H_R)+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ol>
 <p>自底向上</p>
 <pre><code class="language-cpp">class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        if(!root)return 0;
+        if(!root)
+	        return 0;
         int left_depth=maxDepth(root-&gt;left);
         int right_depth=maxDepth(root-&gt;right);
         return max(left_depth,right_depth)+1;
@@ -392,8 +795,10 @@ public:
 <pre><code class="language-cpp">class Solution {
 public:
     void dfs(TreeNode* root,int level,int &amp;ans){
-        if(!root)return;
-        if(!root-&gt;left&amp;&amp;!root-&gt;right)ans=max(level,ans);
+        if(!root)
+	        return;
+        if(!root-&gt;left&amp;&amp;!root-&gt;right)
+	        ans=max(level,ans);
         dfs(root-&gt;left,level+1,ans);
         dfs(root-&gt;right,level+1,ans);
     }
@@ -404,7 +809,12 @@ public:
     }
 };
 </code></pre>
-<h3 id="从中序遍历和后序遍历构建二叉树"><a class="header-anchor" href="#从中序遍历和后序遍历构建二叉树"># </a>从中序遍历和后序遍历构建二叉树</h3>
+<h3 id="应用：从中序遍历和后序遍历构建二叉树"><a class="header-anchor" href="#应用：从中序遍历和后序遍历构建二叉树"># </a>应用：从中序遍历和后序遍历构建二叉树</h3>
+<ol>
+<li>在后序遍历确定根</li>
+<li>在中序遍历找根，确定左右子树</li>
+<li>递归建树</li>
+</ol>
 <p>树</p>
 <pre><code class="language-cpp">class Solution {
 public:
@@ -433,7 +843,12 @@ void go(int root,int start,int end,int index){
     go(root-1,i+1,end,2*index+2);
 }
 </code></pre>
-<h3 id="从先序遍历和后序遍历构建二叉树"><a class="header-anchor" href="#从先序遍历和后序遍历构建二叉树"># </a>从先序遍历和后序遍历构建二叉树</h3>
+<h3 id="应用：从先序遍历和中序遍历构建二叉树"><a class="header-anchor" href="#应用：从先序遍历和中序遍历构建二叉树"># </a>应用：从先序遍历和中序遍历构建二叉树</h3>
+<ol>
+<li>在先序遍历确定根</li>
+<li>在中序遍历找根，确定左右子树</li>
+<li>递归建树</li>
+</ol>
 <pre><code class="language-cpp">class Solution {
 public:
     TreeNode* build(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder,int begin,int end,int root_id){
@@ -461,20 +876,34 @@ void go(int root,int start,int end,int index){
     go(root+1,start,i-1,2*index+2);
 }
 </code></pre>
-<h3 id="二叉树的最近公共祖先"><a class="header-anchor" href="#二叉树的最近公共祖先"># </a>二叉树的最近公共祖先</h3>
+<h3 id="应用：根据先序遍历和后序遍历确定二叉树是否唯一"><a class="header-anchor" href="#应用：根据先序遍历和后序遍历确定二叉树是否唯一"># </a>应用：根据先序遍历和后序遍历确定二叉树是否唯一</h3>
+<p>不唯一的原因：无法确定是<strong>左孩子+根</strong>还是<strong>根+右孩子</strong>，即最后剩余两个元素，若按下述方式建树的话，默认为左子树+根</p>
+<ol>
+<li>根确定为先序的第一个或后序的最后一个</li>
+<li>先序的第二个为左子树的根，在后序中找，可确定左子树和右子树（因为根在最后，所以可确定左子树的结束地方，即可确定整个左子树区间，从而确定整个右子树区间）</li>
+<li>根据根、左右子树区间建树</li>
+</ol>
+<h3 id="应用：二叉树的最近公共祖先LCA"><a class="header-anchor" href="#应用：二叉树的最近公共祖先LCA"># </a>应用：二叉树的最近公共祖先LCA</h3>
 <pre><code class="language-cpp">class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(!root||root==p||root==q)return root;
+        if(!root||root==p||root==q)
+            return root;
+        // 判断两个结点在根的哪一边
         TreeNode *left=lowestCommonAncestor(root-&gt;left,p,q);
         TreeNode *right=lowestCommonAncestor(root-&gt;right,p,q);
-        if(!right)return left;
-        if(!left)return right;
+        // 右边为空，代表都在左边，那么LCA在左边
+        if(!right)
+            return left;
+        // 左边为空，代表都在右边，那么LCA都在右边
+        if(!left)
+            return right;
+        // 左右都不为空，代表该结点就是LCA
         return root;
     }
 };
 </code></pre>
-<h3 id="序列化与反序列化"><a class="header-anchor" href="#序列化与反序列化"># </a>序列化与反序列化</h3>
+<h3 id="应用：序列化与反序列化"><a class="header-anchor" href="#应用：序列化与反序列化"># </a>应用：序列化与反序列化</h3>
 <pre><code class="language-cpp">class Codec {
 public:
     vector&lt;string&gt; split(string data){
@@ -535,9 +964,44 @@ public:
 };
 </code></pre>
 <h2 id="二叉搜索树-BST"><a class="header-anchor" href="#二叉搜索树-BST"># </a>二叉搜索树 BST</h2>
-<p>每个节点中的值必须<strong>大于（或等于）<strong>存储在其</strong>左</strong>侧子树中的任何值，每个节点中的值必须<strong>小于（或等于）<strong>存储在其</strong>右</strong>子树中的任何值，对于每一颗子树都满足</p>
+<ul>
+<li>大（等）于左子树最大值</li>
+<li>小（等）于右子树最小值</li>
+<li>左右子树都是BST</li>
+</ul>
+<h3 id="ADT-x5"><a class="header-anchor" href="#ADT-x5"># </a>ADT</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查找元素，返回地址</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>查找最大元素，返回地址</td>
+<td></td>
+</tr>
+<tr>
+<td>查找最小元素，返回地址</td>
+<td></td>
+</tr>
+<tr>
+<td>插入</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>删除</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="验证二叉搜索树"><a class="header-anchor" href="#验证二叉搜索树"># </a>验证二叉搜索树</h3>
-<p><strong>中序</strong>遍历为**递增（非递减）**序列</p>
+<p><strong>中序</strong>遍历为<strong>递增/非递减</strong>序列</p>
 <pre><code class="language-cpp">class Solution {
 public: 
     bool isValidBST(TreeNode* root) {
@@ -598,6 +1062,7 @@ public:
 <li>如果目标值<strong>小于</strong>节点的值，则继续在<strong>左子树</strong>中搜索</li>
 <li>如果目标值<strong>大于</strong>节点的值，则继续在<strong>右子树</strong>中搜索</li>
 </ol>
+<p>尾递归</p>
 <pre><code class="language-cpp">class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
@@ -609,6 +1074,38 @@ public:
             return searchBST(root-&gt;right,val);
     }
 };
+</code></pre>
+<p>非递归</p>
+<pre><code class="language-cpp">TreeNode* searchBST(TreeNode* root, int val) {
+	while(root){
+		if(val&gt;root-&gt;data)
+			root=root-&gt;right;
+		else if(val&lt;root-&gt;data)
+			root=root-&gt;left;
+		else
+			break;
+	}
+	return root;
+}
+</code></pre>
+<h3 id="查找最小元素"><a class="header-anchor" href="#查找最小元素"># </a>查找最小元素</h3>
+<p>最左分支的端结点</p>
+<pre><code class="language-cpp">TreeNode* searchMin(TreeNode *root){
+    if(!root||!root-&gt;left)
+        return root;
+    return searchMin(root-&gt;left);
+}
+</code></pre>
+<h3 id="查找最大元素"><a class="header-anchor" href="#查找最大元素"># </a>查找最大元素</h3>
+<p>最右分支的端结点</p>
+<pre><code class="language-cpp">TreeNode* searchMin(TreeNode *root){
+    while(root){
+        if(!root-&gt;right)
+            break;
+        root=root-&gt;right;
+    }
+    return root;
+}
 </code></pre>
 <h3 id="插入"><a class="header-anchor" href="#插入"># </a>插入</h3>
 <p>对于每个节点：</p>
@@ -641,19 +1138,25 @@ public:
     TreeNode* deleteNode(TreeNode* &amp;root, int key) {
         if(!root)
             return NULL;
+           // 找到了要删除的结点
         else if(key==root-&gt;val){
             TreeNode *q=root;
+            // 2. 只有左孩子 or 1. 叶子
             if(!root-&gt;right){
                 root=root-&gt;left;
                 delete q;
+            // 2. 只有右孩子
             }else if(!root-&gt;left){
                 root=root-&gt;right;
                 delete q;
+            // 3. 左右都有，找中序遍历的直接前驱，即左子树的最右端，进行填充，然后删除这个前驱
             }else{
                 TreeNode *s=root-&gt;left;
                 while(s-&gt;right)
                     q=s,s=s-&gt;right;
+                // 填充
                 root-&gt;val=s-&gt;val;
+                // 删除该前驱节点
                 if(q!=root)
                     q-&gt;right=s-&gt;left;
                 else
@@ -661,6 +1164,7 @@ public:
                 delete s;
             }
         }
+        // 找要删除的结点
         else if(key&lt;root-&gt;val)
             deleteNode(root-&gt;left,key);
         else if(key&gt;root-&gt;val)
@@ -671,7 +1175,84 @@ public:
 </code></pre>
 <h2 id="平衡二叉树-AVL"><a class="header-anchor" href="#平衡二叉树-AVL"># </a>平衡二叉树 AVL</h2>
 <p>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>个节点的平衡二叉搜索树，它的高度是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>。并且，每个节点的两个子树的<strong>高度</strong>不会相差超过1<br>
-<strong>二分查找</strong>属性和<strong>高度平衡</strong>属性</p>
+<strong>二分查找</strong>属性和<strong>高度平衡</strong>属性<br>
+<strong>平衡因子</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>F</mi><mo>=</mo><msub><mi>H</mi><mi>L</mi></msub><mo>−</mo><msub><mi>H</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">BF=H_L-H_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>B</mi><mi>F</mi><mi mathvariant="normal">∣</mi><mo>⩽</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|BF|\leqslant 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span><br>
+设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">n_h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为高度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>的AVL树最少结点，则满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>h</mi></msub><mo>=</mo><msub><mi>n</mi><mrow><mi>h</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>n</mi><mrow><mi>h</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_h=n_{h-1}+n_{h-2}+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.791661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.791661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mbin mtight">−</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，根据斐波那契数列的通项公式，得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>h</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msqrt><mn>5</mn></msqrt></mfrac></mstyle><mo stretchy="false">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow><mn>2</mn></mfrac></mstyle><msup><mo stretchy="false">)</mo><mrow><mi>h</mi><mo>+</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_h=\dfrac{1}{\sqrt{5}}(\dfrac{1+\sqrt{5}}{2})^{h+2}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.5142200000000003em;vertical-align:-0.93em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.2027799999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.90722em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.86722em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.13278em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.93em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5842200000000002em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.90722em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.86722em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.13278em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mbin mtight">+</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h=O(log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></p>
+<h3 id="ADT-x6"><a class="header-anchor" href="#ADT-x6"># </a>ADT</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查找</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>插入</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>删除</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="插入-x2"><a class="header-anchor" href="#插入-x2"># </a>插入</h3>
+<ol>
+<li>往孩子插入</li>
+<li>更新高度</li>
+<li>获得平衡因子</li>
+<li>平衡调整</li>
+</ol>
+<h3 id="平衡调整"><a class="header-anchor" href="#平衡调整"># </a>平衡调整</h3>
+<p>会产生失去平衡的4种情况</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">插入的地方</th>
+<th style="text-align:left">BF</th>
+<th style="text-align:left">Rotate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左孩子的左子树LL</td>
+<td style="text-align:left"><code>root-&gt;bf=2     root-&gt;left-&gt;bf=1</code></td>
+<td style="text-align:left"><code>R(root)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">左孩子的右子树LR</td>
+<td style="text-align:left"><code>root-&gt;bf=2     root-&gt;left-&gt;bf=-1</code></td>
+<td style="text-align:left"><code>L(root-&gt;left),R(root)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">右孩子的左子树RL</td>
+<td style="text-align:left"><code>root-&gt;bf=-2    root-&gt;right-&gt;bf=1</code></td>
+<td style="text-align:left"><code>R(root-&gt;right),L(root)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">右孩子的右子树RR</td>
+<td style="text-align:left"><code>root-&gt;bf=-2    root-&gt;right-&gt;bf=-1</code></td>
+<td style="text-align:left"><code>L(root)</code></td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-cpp">struct AVLTreeNode {
     int val,height;
     AVLTreeNode *left,*right;
@@ -736,13 +1317,521 @@ public:
     }
 };
 </code></pre>
-<h2 id="B树"><a class="header-anchor" href="#B树"># </a>B树</h2>
-<h2 id="红黑树"><a class="header-anchor" href="#红黑树"># </a>红黑树</h2>
-<h2 id="森林"><a class="header-anchor" href="#森林"># </a>森林</h2>
+<h2 id="优先队列"><a class="header-anchor" href="#优先队列"># </a>优先队列</h2>
+<p>按照元素的优先级大小取出队列</p>
+<h3 id="实现方式"><a class="header-anchor" href="#实现方式"># </a>实现方式</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>插入（查找+移动）</th>
+<th>删除（查找+移动）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数组</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)+O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>链表</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)+O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>有序数组</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2{n})+O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>有序链表</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)+O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>完全二叉树</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="堆-Heap"><a class="header-anchor" href="#堆-Heap"># </a>堆 Heap</h2>
+<p>完全二叉树实现的priority queue</p>
+<ol>
+<li>结构性：用数组表示的完全二叉树</li>
+<li>有序性：
+<ul>
+<li>大顶堆：根为最大值</li>
+<li>小顶堆：根为最小值</li>
+</ul>
+</li>
+</ol>
+<h3 id="ADT-x7"><a class="header-anchor" href="#ADT-x7"># </a>ADT</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建+调整</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>×</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>×</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n\times 1)+O(n\times log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>插入</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)+O(log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判断堆满</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>判断堆空</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>返回堆顶</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>删除堆顶</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)+O(log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="调整（自顶向下）"><a class="header-anchor" href="#调整（自顶向下）"># </a>调整（自顶向下）</h3>
+<p>不断将根、左、右三个的最大值作为根，若根还是根，则说明已经达到了堆结构，否则还要往交换的方向进行调整</p>
+<pre><code class="language-cpp">void HeapAdjust(int root,int len){
+    // 和左右子树最大的进行交换并调整
+    int left=2*root+1,right=2*root+2;
+    if(left&gt;len)
+        return;
+    if(right&lt;=len){
+        if(a[left]&gt;a[right]&amp;&amp;a[root]&lt;a[left]){
+            swap(a[root],a[left]);
+            HeapAdjust(left,len);
+        }else if(a[right]&gt;a[left]&amp;&amp;a[root]&lt;a[right]){
+            swap(a[root],a[right]);
+            HeapAdjust(right,len);
+        }
+    }else{
+        if(a[left]&gt;a[root]){
+            swap(a[root],a[left]);
+            HeapAdjust(left,len);
+        }
+    }
+}
+</code></pre>
+<h3 id="插入-x3"><a class="header-anchor" href="#插入-x3"># </a>插入</h3>
+<ol>
+<li>插在数组的最后</li>
+<li>自底向上不断和父节点（下标/2）比较大小，调整堆结构</li>
+</ol>
+<h3 id="由已知数组初始化堆"><a class="header-anchor" href="#由已知数组初始化堆"># </a>由已知数组初始化堆</h3>
+<p>从最后一个非叶结点（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord">/</span><span class="mord">2</span></span></span></span>）开始自底向上对每个结点进行调整</p>
+<pre><code class="language-cpp">void BuildHeap(){
+    for(int i=N/2-1;i&gt;=0;i--)
+        HeapAdjust(i,N-1);
+}
+</code></pre>
+<h2 id="哈夫曼树-Huffman-Tree"><a class="header-anchor" href="#哈夫曼树-Huffman-Tree"># </a>哈夫曼树 Huffman Tree</h2>
+<p>根据结点的查找频率构造更有效的搜索树<br>
+<strong>带权路径长度WPL</strong>：二叉树有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个叶子结点，每个叶子结点带有权值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">w_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，从根结点到每个叶子结点的长度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">l_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，则每个叶子结点的带权路径长度之和就是</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>P</mi><mi>L</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>w</mi><mi>k</mi></msub><msub><mi>l</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">WPL=\sum_{k=1}^{n}w_kl_k
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9535100000000005em;vertical-align:-1.302113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.8478869999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.300005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.302113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><strong>最优二叉树</strong>或<strong>哈夫曼树</strong>：WPL最小的二叉树</p>
+<h3 id="构造"><a class="header-anchor" href="#构造"># </a>构造</h3>
+<p>每次把权值最小的两棵二叉树合并（可用优先队列选择最小权值）<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nlog_2n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
+<pre><code class="language-cpp">typedef struct TNode* Tree;
+struct TNode{
+	int val;
+	Tree left,right;
+	TNode(int v):val(v),left(nullptr),right(nullptr){}
+};
+// 使用 bool operator &lt; (const Tree &amp;a) const 重载出的答案是错的
+struct cmp{
+	bool operator()(const Tree &amp;a,const Tree &amp;b){
+		return a-&gt;val&gt;b-&gt;val;
+	}
+};
+priority_queue&lt;Tree,vector&lt;Tree&gt;,cmp&gt;q;
+Tree build(){
+	while(q.size()!=1){
+		Tree t1=q.top();
+		q.pop();
+		Tree t2=q.top();
+		q.pop();
+		Tree t3=new TNode(t1-&gt;val+t2-&gt;val);
+		t3-&gt;left=t1;
+		t3-&gt;right=t2;
+		q.push(t3);
+	}
+	return q.top();
+}
+</code></pre>
+<h3 id="特点-x2"><a class="header-anchor" href="#特点-x2"># </a>特点</h3>
+<ol>
+<li>没有度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>的结点</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个叶子结点的Huffuman树共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(n)+(n-1)=2n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点</li>
+<li>任意非叶结点左右子树交换后还是Huffuman树</li>
+<li>对同组权值，可能存在不同构的两棵Huffuman树（相等结点有多个）</li>
+</ol>
+<h3 id="Huffuman编码"><a class="header-anchor" href="#Huffuman编码"># </a>Huffuman编码</h3>
+<p>对字符进行编码，存储空间最少的编码<br>
+避免二义性：<strong>前缀码</strong>prefix code：任何字符的编码都不是另一个字符编码的前缀<br>
+Huffuman树左边编码为0，右边编码为1，每个字符的路径可组成该字符的编码</p>
+<h2 id="并查集"><a class="header-anchor" href="#并查集"># </a>并查集</h2>
+<p>使用<strong>并、查</strong>操作判定判定某元素属于什么集合，可以用<strong>树</strong>表示，child指向parent<br>
+可以用<strong>根结点</strong>代表一个集合</p>
+<pre><code class="language-cpp">const int N=100;
+int parent[N];
+// 初始化，初始为自己的下标
+// 可以改成-n，代表集合中有n个元素，代码需要对应修改
+void Init(){
+	for(int i=0;i&lt;N;i++)
+		parent[i]=i;
+}
+// 找父亲，即找自己是属于哪个集合的
+int Find(int x){
+	if(x!=parent[x])
+		// 路径压缩
+		parent[x]=Find(parent[x]);
+	return parent[x];
+}
+// 并，将两个集合合并成一个集合
+void Union(int x,int y){
+	int px=Find(x),py=Find(y);
+	// 小的当父亲，视具体情况而定
+	if(px&lt;py)
+		parent[py]=px;
+	else
+		parent[px]=py;
+}
+</code></pre>
 <h1 id="图"><a class="header-anchor" href="#图"># </a>图</h1>
-<h1 id="字符串"><a class="header-anchor" href="#字符串"># </a>字符串</h1>
+<p>包含顶点集、边集<br>
+不考虑重边和自回路<br>
+无向图：边是顶点对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(u,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span><br>
+有向图：边是单向的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&lt;u,v&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span></p>
+<h2 id="ADT-x8"><a class="header-anchor" href="#ADT-x8"># </a>ADT</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建图</td>
+<td></td>
+</tr>
+<tr>
+<td>插入顶点</td>
+<td></td>
+</tr>
+<tr>
+<td>插入边</td>
+<td></td>
+</tr>
+<tr>
+<td>DFS</td>
+<td></td>
+</tr>
+<tr>
+<td>BFS</td>
+<td></td>
+</tr>
+<tr>
+<td>最短路</td>
+<td></td>
+</tr>
+<tr>
+<td>最小生成树MST</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="表示方法"><a class="header-anchor" href="#表示方法"># </a>表示方法</h2>
+<ol>
+<li>邻接矩阵——稠密图<br>
+无向图可以用一个长度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{N(N+1)}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>的一维数组存储，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">{</mo><msub><mi>G</mi><mn>00</mn></msub><mo separator="true">,</mo><msub><mi>G</mi><mn>10</mn></msub><mo separator="true">,</mo><msub><mi>G</mi><mn>11</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>G</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{G_{00},G_{10},G_{11},\dots,G_{n-1,n-1}\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span>
+<ul>
+<li>方便检查是否存在边</li>
+<li>方便计算度</li>
+<li>方便找所有邻接点</li>
+</ul>
+</li>
+<li>邻接表——稀疏图
+<ul>
+<li>方便找所有邻接点</li>
+<li>方便计算无向图的度，对于有向图只能方便计算出度</li>
+<li>节约稀疏图的空间</li>
+</ul>
+</li>
+</ol>
+<h2 id="遍历"><a class="header-anchor" href="#遍历"># </a>遍历</h2>
+<h3 id="深度优先搜索-DFS"><a class="header-anchor" href="#深度优先搜索-DFS"># </a>深度优先搜索 DFS</h3>
+<p>类似于树的先序遍历<br>
+一次只能遍历一个连通分量</p>
+<pre><code class="language-cpp">void dfs(int v){
+	vis[v]=true;
+	for(auto i:g[v])
+		if(!vis[i])
+			dfs(i)
+}
+</code></pre>
+<ul>
+<li>邻接表 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N+E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span></li>
+<li>邻接矩阵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<p>枚举所有完整路径</p>
+<h2 id="广度优先搜索-BFS"><a class="header-anchor" href="#广度优先搜索-BFS"># </a>广度优先搜索 BFS</h2>
+<p>类似于树的层序遍历<br>
+一次只能遍历一个连通分量</p>
+<pre><code class="language-cpp">void bfs(int v){
+	vis[v]=true;
+	queue&lt;int&gt;q;
+	q.push(v);
+	while(!q.empty()){
+		v=q.front();
+		q.pop();
+		for(auto i:g[v])
+			if(!vis[i]){
+				vis[v]=true;
+				q.push(i);
+			}
+	}
+}
+</code></pre>
+<ul>
+<li>邻接表 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N+E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span></li>
+<li>邻接矩阵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<p>最少步数就是遍历的层数</p>
+<h3 id="连通相关术语"><a class="header-anchor" href="#连通相关术语"># </a>连通相关术语</h3>
+<ul>
+<li>连通：两个顶点间存在路径</li>
+<li>路径：一系列顶点的集合，相邻顶点都有边</li>
+<li>路径的长度：路径中的边数</li>
+<li>简单路径：路径上的顶点都不相同</li>
+<li>回路：起点等于终点</li>
+<li>连通图：任意两结点连通</li>
+<li>连通分量：<strong>无向图</strong>的极大连通子图
+<ul>
+<li>极大顶点数：再加一个顶点就不连通</li>
+<li>极大边数：包含子图中所有顶点相连的所有边</li>
+</ul>
+</li>
+<li>强连通：<strong>有向图</strong>中两个顶点存在双向路径</li>
+<li>强连通图：有向图中任意两顶点均强连通</li>
+<li>强连通分量：有向图的极大强连通子图</li>
+</ul>
+<h3 id="遍历不连通的图"><a class="header-anchor" href="#遍历不连通的图"># </a>遍历不连通的图</h3>
+<p>每遍历一次，就遍历了一个连通子图，把所有顶点枚举一遍，未访问过的结点开始遍历，就可以遍历所有的连通子图</p>
+<pre><code class="language-cpp">void components(G){
+	for(v in G)
+		if(!vis[v])
+			dfs(v); // or bfs(v)
+}
+</code></pre>
+<h2 id="最短路"><a class="header-anchor" href="#最短路"># </a>最短路</h2>
+<h2 id="最小生成树-MST"><a class="header-anchor" href="#最小生成树-MST"># </a>最小生成树 MST</h2>
+<h1 id="排序"><a class="header-anchor" href="#排序"># </a>排序</h1>
+<h2 id="冒泡排序"><a class="header-anchor" href="#冒泡排序"># </a>冒泡排序</h2>
+<pre><code class="language-cpp">void BubbleSort(){
+    bool change;
+    for(int i=0;i&lt;3;i++){
+        change=false;
+        for(int j=3-1;j&gt;i;j--)
+            if(a[j]&lt;a[j-1]){
+                swap(a[j-1],a[j]);
+                change=true;
+            }
+        // 如果没有交换，代表表已经有序
+        if(!change)
+            break;
+    }
+}
+</code></pre>
+<h2 id="选择排序"><a class="header-anchor" href="#选择排序"># </a>选择排序</h2>
+<pre><code class="language-cpp">void SelectSort(){
+    int mn;
+    // 进行n-1趟
+    for(int i=0;i&lt;3-1;i++){
+        // 选择后面最小的和现在交换
+        // 记录最小元素的下标
+        mn=i;
+        for(int j=i+1;j&lt;3;j++)
+            if(a[j]&lt;a[mn])
+                mn=j;
+        if(mn!=i)
+            swap(a[mn],a[i]);
+    }
+}
+</code></pre>
+<h2 id="插入排序"><a class="header-anchor" href="#插入排序"># </a>插入排序</h2>
+<pre><code class="language-cpp">void InsertSort(){
+    // 从第二个开始遍历数字
+    int guard,j;
+    for(int i=1;i&lt;3;i++){
+        guard=a[i];
+        // 在前面找插入的位置
+        for(j=i-1;j&gt;=0&amp;&amp;guard&lt;a[j];j--)
+            a[j+1]=a[j];
+        a[j+1]=guard;
+    }
+}
+</code></pre>
+<h2 id="折半插入排序"><a class="header-anchor" href="#折半插入排序"># </a>折半插入排序</h2>
+<pre><code class="language-cpp">void MidInsertSort(){
+    // 从第二个开始遍历数字
+    int guard,low,high,mid;
+    for(int i=1;i&lt;3;i++){
+        guard=a[i];
+        // 在前面折半查找插入的位置
+        low=0,high=i-1;
+        while(low&lt;=high){
+            mid=low+((high-low)&gt;&gt;1);
+            if(a[mid]&lt;guard)
+                low=mid+1;
+            else
+                high=mid-1;
+        }
+        // 移动元素
+        for(int j=i-1;j&gt;=high+1;j--)
+            a[j+1]=a[j];
+        a[high+1]=guard;
+    }
+}
+</code></pre>
+<h2 id="快速排序"><a class="header-anchor" href="#快速排序"># </a>快速排序</h2>
+<pre><code class="language-cpp">int Partition(int low,int high){
+    // 取队首为枢纽
+    int pivot=a[low];
+    while(low&lt;high){
+        // 从右边找小于pivot的和low（pivot）交换
+        while(low&lt;high&amp;&amp;a[high]&gt;=pivot)
+            high--;
+        a[low]=a[high];
+        // 从左边找大于pivot，和high（pivot）交换
+        while(low&lt;high&amp;&amp;a[low]&lt;=pivot)
+            low++;
+        a[high]=a[low];
+    }
+    a[low]=pivot;
+    return low;
+}
+void quick(int low,int high){
+    if(low&gt;=high)
+        return;
+    int pos=Partition(low,high);
+    // 枢纽左边排序
+    quick(low,pos-1);
+    // 枢纽右边排序
+    quick(pos+1,high);
+}
+void QuickSort(){
+    quick(0,2);
+}
+</code></pre>
+<h2 id="堆排序"><a class="header-anchor" href="#堆排序"># </a>堆排序</h2>
+<pre><code class="language-cpp">void HeapAdjust(int root,int len){
+    // 和左右子树最大的进行交换
+    int left=2*root+1,right=2*root+2;
+    if(left&gt;len)
+        return;
+    if(right&lt;=len){
+        if(a[left]&gt;a[right]&amp;&amp;a[root]&lt;a[left]){
+            swap(a[root],a[left]);
+            HeapAdjust(left,len);
+        }else if(a[right]&gt;a[left]&amp;&amp;a[root]&lt;a[right]){
+            swap(a[root],a[right]);
+            HeapAdjust(right,len);
+        }
+    }else{
+        if(a[left]&gt;a[root]){
+            swap(a[root],a[left]);
+            HeapAdjust(left,len);
+        }
+    }
+}
+void BuildHeap(){
+    for(int i=3/2-1;i&gt;=0;i--)
+        HeapAdjust(i,3-1);
+}
+void HeapSort(){
+    // 建大顶堆，不断将顶与最后的交换，这样出来的就是递增序列
+    BuildHeap();
+    for(int i=3-1;i&gt;0;i--){
+        swap(a[0],a[i]);
+        HeapAdjust(0,i-1);
+    }
+}
+</code></pre>
+<h2 id="归并排序"><a class="header-anchor" href="#归并排序"># </a>归并排序</h2>
+<pre><code class="language-cpp">void MergeVec(int low,int mid,int high){
+    // 辅助数组
+    int tmp[3];
+    // 将a[low,mid]和a[mid+1,high]合并成a[low,high]
+    // 将a复制到辅助数组中
+    for(int k=low;k&lt;=high;k++)
+        tmp[k]=a[k];
+    // 比较辅助数组两段中元素，并将较小的复制到a中
+    int i=low,j=mid+1,cur=i;
+    for(;i&lt;=mid&amp;&amp;j&lt;=high;cur++){
+        if(tmp[i]&lt;tmp[j])
+            a[cur]=tmp[i++];
+        else
+            a[cur]=tmp[j++];
+    }
+    // 若第一个表没有检测完
+    while(i&lt;=mid)
+        a[cur++]=tmp[i++];
+    // 第二个表没有检测完
+    while(j&lt;=high)
+        a[cur++]=tmp[j++];
+}
+void merge(int low,int high){
+    if(low&gt;=high)
+        return;
+    int mid=low+((high-low)&gt;&gt;1);
+    // 左排序
+    merge(low,mid);
+    // 右排序
+    merge(mid+1,high);
+    // 归并
+    MergeVec(low,mid,high);
+}
+void MergeSort(){
+    merge(0,3-1);
+}
+</code></pre>
+<h2 id="希尔排序"><a class="header-anchor" href="#希尔排序"># </a>希尔排序</h2>
+<pre><code class="language-cpp">void ShellSort(){
+    int guard,j;
+    // 步长变化，初始n/2，每次/2，直至=1
+    for(int d=3/2;d&gt;=1;d&gt;&gt;=1){
+        // 分组进行直接插入排序
+        // 从第二个下标开始进行
+        for(int i=d;i&lt;3;i++){
+            // 比前面的小，需要插入到前面
+            if(a[i]&lt;a[i-d]){
+                guard=a[i];
+                for(j=i-1;j&gt;=0&amp;&amp;guard&lt;a[j];j-=d)
+                    a[j+d]=a[j];
+                a[j+d]=guard;
+            }
+        }
+    }
+}
+</code></pre>
 <h1 id="哈希表"><a class="header-anchor" href="#哈希表"># </a>哈希表</h1>
-<h2 id="构造"><a class="header-anchor" href="#构造"># </a>构造</h2>
+<h2 id="构造-x2"><a class="header-anchor" href="#构造-x2"># </a>构造</h2>
 <h3 id="直接定址法"><a class="header-anchor" href="#直接定址法"># </a>直接定址法</h3>
 <p>取<strong>关键字</strong>或<strong>关键字的某个线性函数值</strong>为哈希地址</p>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>k</mi><mi>e</mi><mi>y</mi><mspace width="2em"></mspace><mi>o</mi><mi>r</mi><mspace width="2em"></mspace><mi>H</mi><mo stretchy="false">(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><mo>×</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">H(key)=key \qquad or \qquad H(key)=a\times key+b
@@ -762,6 +1851,7 @@ public:
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>m</mi><mo stretchy="false">(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(key)=random(key)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span></p>
 <h2 id="处理冲突"><a class="header-anchor" href="#处理冲突"># </a>处理冲突</h2>
+<p><em>探测m次</em></p>
 <h3 id="开放定址法"><a class="header-anchor" href="#开放定址法"># </a>开放定址法</h3>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mi>i</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>d</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mspace></mspace><mspace width="1em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mi>m</mi><mspace width="1em"></mspace><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">(</mo><mi>k</mi><mo>⩽</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H_i=(H(key)+d_i)\mod m \quad i=1,2,\dots,k(k\leqslant m-1)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:1em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:1em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span></p>
