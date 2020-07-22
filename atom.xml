@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2020-07-19T08:44:57.188Z</updated>
+  <updated>2020-07-22T10:02:04.029Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -17,11 +17,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>「PAT 甲级」春季模拟赛</title>
+    <link href="https://lxyyxxx.github.io/2020/07/PAT20200722/"/>
+    <id>https://lxyyxxx.github.io/2020/07/PAT20200722/</id>
+    <published>2020-07-22T08:55:11.000Z</published>
+    <updated>2020-07-22T10:02:04.029Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;7-1-Rational-Arithmetic&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#7-1-Rational-Arithmetic&quot;&gt;# &lt;/a&gt;7-1 Rational Arithmetic&lt;/h1&gt;
+&lt;p&gt;2014
+        
+      
+    
+    </summary>
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
+    
+      <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
+    
+      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
+    
+      <category term="DFS" scheme="https://lxyyxxx.github.io/tags/DFS/"/>
+    
+      <category term="最短路" scheme="https://lxyyxxx.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+      <category term="Dijkstra" scheme="https://lxyyxxx.github.io/tags/Dijkstra/"/>
+    
+      <category term="分数" scheme="https://lxyyxxx.github.io/tags/%E5%88%86%E6%95%B0/"/>
+    
+      <category term="排序" scheme="https://lxyyxxx.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="插入排序" scheme="https://lxyyxxx.github.io/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="归并排序" scheme="https://lxyyxxx.github.io/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="第二标尺" scheme="https://lxyyxxx.github.io/tags/%E7%AC%AC%E4%BA%8C%E6%A0%87%E5%B0%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「PAT 甲级」真题汇总</title>
+    <link href="https://lxyyxxx.github.io/2020/07/PATAdvancedAll/"/>
+    <id>https://lxyyxxx.github.io/2020/07/PATAdvancedAll/</id>
+    <published>2020-07-22T01:32:28.000Z</published>
+    <updated>2020-07-22T15:49:58.024Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2011&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#2011&quot;&gt;# &lt;/a&gt;2011&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;官网没给是题库里的哪几题&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;2012-春&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
+    
+      <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
+    
+      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>「PAT 甲级」2019年秋季考试</title>
     <link href="https://lxyyxxx.github.io/2020/07/2019AutumnAdvancedPAT/"/>
     <id>https://lxyyxxx.github.io/2020/07/2019AutumnAdvancedPAT/</id>
     <published>2020-07-19T07:54:35.000Z</published>
-    <updated>2020-07-19T08:44:57.188Z</updated>
+    <updated>2020-07-22T02:44:27.987Z</updated>
     
     <summary type="html">
     
@@ -590,15 +673,15 @@ OJ：牛客网&lt;br&gt;
       <category term="武汉工程大学程序设计女生赛 - 第一届" scheme="https://lxyyxxx.github.io/categories/%E6%AD%A6%E6%B1%89%E5%B7%A5%E7%A8%8B%E5%A4%A7%E5%AD%A6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A5%B3%E7%94%9F%E8%B5%9B-%E7%AC%AC%E4%B8%80%E5%B1%8A/"/>
     
     
-      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
-    
       <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="快速幂取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
     
+      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
+    
       <category term="费马小定理" scheme="https://lxyyxxx.github.io/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/"/>
     
-      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
+      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
     
       <category term="快速乘取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E4%B9%98%E5%8F%96%E6%A8%A1/"/>
     
@@ -644,76 +727,6 @@ OJ：牛客网&lt;br&gt;
       <category term="学习笔记" scheme="https://lxyyxxx.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="高等数学" scheme="https://lxyyxxx.github.io/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「团体设计天梯赛」2016-2019</title>
-    <link href="https://lxyyxxx.github.io/2020/02/ccccgplt/"/>
-    <id>https://lxyyxxx.github.io/2020/02/ccccgplt/</id>
-    <published>2020-02-27T14:31:07.000Z</published>
-    <updated>2020-04-10T02:19:42.883Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- toc --&gt;
-&lt;h1 id=&quot;2016-2018&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#2016-2018&quot;&gt;# &lt;/a&gt;2016-2018&lt;/h1&gt;
-&lt;h2 id=&quot;7-1-N个数求和-20分&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="团体设计天梯赛" scheme="https://lxyyxxx.github.io/categories/%E5%9B%A2%E4%BD%93%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/"/>
-    
-    
-      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
-    
-      <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
-    
-      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
-    
-      <category term="团体设计天梯赛" scheme="https://lxyyxxx.github.io/tags/%E5%9B%A2%E4%BD%93%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/"/>
-    
-      <category term="5分" scheme="https://lxyyxxx.github.io/tags/5%E5%88%86/"/>
-    
-      <category term="10分" scheme="https://lxyyxxx.github.io/tags/10%E5%88%86/"/>
-    
-      <category term="15分" scheme="https://lxyyxxx.github.io/tags/15%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一份 Windows Terminal 配置笔记</title>
-    <link href="https://lxyyxxx.github.io/2020/02/BeautifyWindowsTerminal/"/>
-    <id>https://lxyyxxx.github.io/2020/02/BeautifyWindowsTerminal/</id>
-    <published>2020-02-20T05:46:36.000Z</published>
-    <updated>2020-04-10T02:24:24.406Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- toc --&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/terminal&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Windows Terminal 的 github 传送门&lt;/a&gt;&lt;/p&gt;
-&lt;h1
-        
-      
-    
-    </summary>
-    
-      <category term="搞点什么东东吧" scheme="https://lxyyxxx.github.io/categories/%E6%90%9E%E7%82%B9%E4%BB%80%E4%B9%88%E4%B8%9C%E4%B8%9C%E5%90%A7/"/>
-    
-    
-      <category term="Windows Terminal" scheme="https://lxyyxxx.github.io/tags/Windows-Terminal/"/>
-    
-      <category term="配置" scheme="https://lxyyxxx.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
