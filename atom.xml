@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2020-07-22T10:02:04.029Z</updated>
+  <updated>2020-07-23T14:31:15.811Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「PAT 甲级」2019年冬季考试</title>
+    <link href="https://lxyyxxx.github.io/2020/07/2019WinterAdvancedPAT/"/>
+    <id>https://lxyyxxx.github.io/2020/07/2019WinterAdvancedPAT/</id>
+    <published>2020-07-23T14:03:36.000Z</published>
+    <updated>2020-07-23T14:31:15.811Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;em&gt;就是说2020春季也出这个难度吧！！！一小时AK的快乐！！！&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;时光机，哦，还是没钱买&lt;/strong&gt;&lt;br&gt;
+&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/categories/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+    
+      <category term="PAT甲级" scheme="https://lxyyxxx.github.io/tags/PAT%E7%94%B2%E7%BA%A7/"/>
+    
+      <category term="20分" scheme="https://lxyyxxx.github.io/tags/20%E5%88%86/"/>
+    
+      <category term="25分" scheme="https://lxyyxxx.github.io/tags/25%E5%88%86/"/>
+    
+      <category term="30分" scheme="https://lxyyxxx.github.io/tags/30%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「C++」常用STL</title>
+    <link href="https://lxyyxxx.github.io/2020/07/STL/"/>
+    <id>https://lxyyxxx.github.io/2020/07/STL/</id>
+    <published>2020-07-23T13:57:32.000Z</published>
+    <updated>2020-07-23T14:02:22.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;em&gt;在迭代的时候慎用删除&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;string&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#string&quot;&gt;# &lt;/a&gt;string&lt;/h1&gt;
+&lt;p&gt;字符串&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;string
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lxyyxxx.github.io/categories/C/"/>
+    
+    
+      <category term="STL" scheme="https://lxyyxxx.github.io/tags/STL/"/>
+    
+      <category term="C++" scheme="https://lxyyxxx.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>「PAT 甲级」春季模拟赛</title>
@@ -70,7 +136,7 @@
     <link href="https://lxyyxxx.github.io/2020/07/PATAdvancedAll/"/>
     <id>https://lxyyxxx.github.io/2020/07/PATAdvancedAll/</id>
     <published>2020-07-22T01:32:28.000Z</published>
-    <updated>2020-07-22T15:49:58.024Z</updated>
+    <updated>2020-07-23T14:32:40.778Z</updated>
     
     <summary type="html">
     
@@ -647,86 +713,6 @@ OJ：牛客网&lt;br&gt;
       <category term="数字图像处理" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
       <category term="Matlab" scheme="https://lxyyxxx.github.io/tags/Matlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「武汉工程大学第一届程序设计女生赛」解题报告</title>
-    <link href="https://lxyyxxx.github.io/2020/03/WITGirl1/"/>
-    <id>https://lxyyxxx.github.io/2020/03/WITGirl1/</id>
-    <published>2020-03-09T06:06:00.000Z</published>
-    <updated>2020-04-10T01:51:17.039Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- toc --&gt;
-&lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/4746&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="武汉工程大学程序设计女生赛 - 第一届" scheme="https://lxyyxxx.github.io/categories/%E6%AD%A6%E6%B1%89%E5%B7%A5%E7%A8%8B%E5%A4%A7%E5%AD%A6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A5%B3%E7%94%9F%E8%B5%9B-%E7%AC%AC%E4%B8%80%E5%B1%8A/"/>
-    
-    
-      <category term="搜索" scheme="https://lxyyxxx.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="快速幂取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
-    
-      <category term="大数" scheme="https://lxyyxxx.github.io/tags/%E5%A4%A7%E6%95%B0/"/>
-    
-      <category term="费马小定理" scheme="https://lxyyxxx.github.io/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/"/>
-    
-      <category term="快速乘取模" scheme="https://lxyyxxx.github.io/tags/%E5%BF%AB%E9%80%9F%E4%B9%98%E5%8F%96%E6%A8%A1/"/>
-    
-      <category term="并查集" scheme="https://lxyyxxx.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
-      <category term="BFS" scheme="https://lxyyxxx.github.io/tags/BFS/"/>
-    
-      <category term="逆元" scheme="https://lxyyxxx.github.io/tags/%E9%80%86%E5%85%83/"/>
-    
-      <category term="概率" scheme="https://lxyyxxx.github.io/tags/%E6%A6%82%E7%8E%87/"/>
-    
-      <category term="扩展欧几里得" scheme="https://lxyyxxx.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/"/>
-    
-      <category term="贪心" scheme="https://lxyyxxx.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「学习笔记」高等数学</title>
-    <link href="https://lxyyxxx.github.io/2020/03/AdvancedMathematics/"/>
-    <id>https://lxyyxxx.github.io/2020/03/AdvancedMathematics/</id>
-    <published>2020-03-01T09:44:50.000Z</published>
-    <updated>2020-05-16T16:59:26.728Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数集&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#数集&quot;&gt;# &lt;/a&gt;数集&lt;/h1&gt;
-&lt;p&gt;自然数集 &lt;span class=&quot;katex&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="一起学习吧" scheme="https://lxyyxxx.github.io/categories/%E4%B8%80%E8%B5%B7%E5%AD%A6%E4%B9%A0%E5%90%A7/"/>
-    
-    
-      <category term="数学" scheme="https://lxyyxxx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="学习笔记" scheme="https://lxyyxxx.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="高等数学" scheme="https://lxyyxxx.github.io/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   

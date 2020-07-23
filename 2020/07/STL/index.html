@@ -1,0 +1,823 @@
+<!-- 不变的布局 -->
+<!DOCTYPE html>
+<html>
+<!-- head -->
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+
+    <title>
+        
+        「C++」常用STL - Lxyyxxx&#39;s Notebook
+        
+    </title>
+
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
+
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700,900&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
+        </div>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">「C++」常用STL</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2020-07-23T14:02:22.914Z" itemprop="dateModified">
+                            2020-07-23 22:02
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
+                        
+                        
+                        <i class="fas fa-folder"></i>
+                        
+                        <a
+                            href='/categories/C/'>C++</a>
+                        
+                        
+                        &emsp;
+                        <!-- tags -->
+                        
+                        
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/STL/'>STL</a>, 
+                        
+                        <a
+                            href='/tags/C/'>C++</a>
+                        
+                        
+                    </div>
+                    <article class="write-content">
+                        <p><em>在迭代的时候慎用删除</em></p>
+<h1 id="string"><a class="header-anchor" href="#string"># </a>string</h1>
+<p>字符串</p>
+<ul>
+<li><code>string str=&quot;abcd&quot;;</code></li>
+<li><code>string(cnt,char)</code></li>
+<li><code>str[0]</code>等价于<code>*str.begin()</code>，<code>str.front()</code></li>
+<li>允许<code>str.begin()+i</code>，访问<code>str[i]</code></li>
+<li>可以使用比较运算符</li>
+<li>可通过<code>&gt;&gt;</code>，<code>&lt;&lt;</code>输入输出</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str+=&quot;lalala&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>str.size()</code>/<code>str.length()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.insert(pos,string)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.insert(str_it,insert_it_left,insert_it_right)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.erase(str.begin()+pos)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.erase(str.begin()+left,str.begin()+right)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.clear()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.substr(pos,len)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(len)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>string::npos = -1 = UINT_MAX</code></td>
+<td><code>find</code>失配的返回值</td>
+</tr>
+<tr>
+<td><code>str.find(str2)</code></td>
+<td>返回<code>str2</code>第一次在<code>str</code>中出现的下标，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(NM)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.find(str,pos)</code></td>
+<td>从<code>pos</code>开始找<code>str2</code></td>
+</tr>
+<tr>
+<td><code>str.replace(pos,len,str2)</code></td>
+<td>从<code>pos</code>开始将长度为<code>len</code>的子串替换为<code>str2</code>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>s</mi><mi>t</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(str.size())</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span><span class="mopen">(</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>str.replace(it1,it2,str2)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>i</mi><msub><mi>t</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>i</mi><msub><mi>t</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[it_1,it_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>替换为<code>str2</code></td>
+</tr>
+<tr>
+<td><code>str.c_str()</code></td>
+<td><code>string</code> to <code>char *</code></td>
+</tr>
+<tr>
+<td><code>str.back()</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="to-string"><a class="header-anchor" href="#to-string"># </a>to_string</h2>
+<p>C++ 11 起</p>
+<pre><code class="language-cpp">std::string to_string( int value );
+std::string to_string( long value );
+std::string to_string( long long value );
+std::string to_string( unsigned value );
+std::string to_string( unsigned long value );
+std::string to_string( unsigned long long value );
+std::string to_string( float value );
+std::string to_string( double value );
+std::string to_string( long double value );
+</code></pre>
+<h2 id="stoX"><a class="header-anchor" href="#stoX"># </a>stoX</h2>
+<p><code>X={i,l,ll,ul,ull,f,d,ld}</code></p>
+<pre><code class="language-cpp">int stoi( const std::string&amp; str, std::size_t* pos = 0, int base = 10 );
+long stol( const std::string&amp; str, std::size_t* pos = 0, int base = 10 );
+long long stoll( const std::string&amp; str, std::size_t* pos = 0, int base = 10 );  
+unsigned long stoul( const std::string&amp; str, std::size_t* pos = 0, int base = 10 );
+unsigned long long stoull( const std::string&amp; str, std::size_t* pos = 0, int base = 10 );  
+float stof( const std::string&amp; str, std::size_t* pos = 0 );  
+double stod( const std::string&amp; str, std::size_t* pos = 0 ); 
+long double stold( const std::string&amp; str, std::size_t* pos = 0 ); 
+</code></pre>
+<h1 id="vector"><a class="header-anchor" href="#vector"># </a>vector</h1>
+<p>变长数组</p>
+<ul>
+<li><code>vector&lt;int&gt;v(N,val);</code></li>
+<li><code>vector&lt;int&gt;v(v1.begin(),v1.end())</code>等价于<code>vector&lt;int&gt;(v1)</code></li>
+<li><code>vector&lt;int&gt;v{1,2,3};</code></li>
+<li><code>v[0]</code>等价于<code>*v.begin()</code>，<code>v.front()</code></li>
+<li>允许<code>v.begin()+i</code>，访问<code>v[i]</code></li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>v.push_back(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.pop_back()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.clear()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.insert(v.begin()+pos,X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.erase(v.begin()+pos)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.erase(v.begin()+left,v.begin()+right)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.emplace_back(X)</code></td>
+<td>没有<code>push_back</code>中的移动操作</td>
+</tr>
+<tr>
+<td><code>v.empty()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.resize(N,val)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>v.back()</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="set"><a class="header-anchor" href="#set"># </a>set</h1>
+<p>有序，不含重复元素，红黑树</p>
+<ul>
+<li><code>set&lt;int&gt; st;</code></li>
+<li><code>it!=st.end()</code></li>
+<li>只能通过iterator访问</li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>st.insert(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.find(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.erase(it)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.erase(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.erase(it1,it2)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>i</mi><msub><mi>t</mi><mn>2</mn></msub><mo>−</mo><mi>i</mi><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(it_2-it_1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.clear()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>st.count(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="unordered-set"><a class="header-anchor" href="#unordered-set"># </a>unordered_set</h1>
+<p>散列，无序，不含重复元素<br>
+用法同<code>set</code>，时间复杂度不同</p>
+<h1 id="map"><a class="header-anchor" href="#map"># </a>map</h1>
+<p>key映射到value，按key从小到大排序，红黑树</p>
+<ul>
+<li><code>map&lt;string,vector&lt;int&gt;&gt; mp;</code></li>
+<li><code>map&lt;set&lt;int&gt;,string&gt; mp;</code></li>
+<li>不能用<code>char *</code>或<code>char []</code>作为key</li>
+<li><code>mp[key]</code>等价于<code>it-&gt;second</code></li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mp.find(key)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.erase(it)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.erase(key)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.erase(it1,it2)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>i</mi><msub><mi>t</mi><mn>2</mn></msub><mo>−</mo><mi>i</mi><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(it_2-it_1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.clear()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>mp.count(key)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="unordered-map"><a class="header-anchor" href="#unordered-map"># </a>unordered_map</h1>
+<p>哈希，key无序<br>
+用法同<code>map</code>，时间复杂度不同</p>
+<h1 id="stack"><a class="header-anchor" href="#stack"># </a>stack</h1>
+<p>栈，先进后出</p>
+<ul>
+<li><code>stack&lt;int&gt; stk;</code></li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stk.push(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>stk.pop()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>stk.top()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>stk.empty()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>stk.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>stk.back()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>stk.emplace(X)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="queue"><a class="header-anchor" href="#queue"># </a>queue</h1>
+<p>队列，先进先出</p>
+<ul>
+<li><code>queue&lt;int&gt; q;</code></li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q.push(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.pop()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.front()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.empty()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.back()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>q.emplace(X)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="deque"><a class="header-anchor" href="#deque"># </a>deque</h1>
+<p>双端队列，首尾均可插入删除</p>
+<ul>
+<li><code>deque&lt;int&gt; dq;</code></li>
+<li>可以使用比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dq.push_back(X)</code>/<code>dq.push_front(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.emplace_back(X)</code>/<code>dq.emplace_front(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.pop_back()</code>/<code>dq.pop_front()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.front()</code>/<code>dq.back()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.empty()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.size()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.clear()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>dq.insert(it,X)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>dq.erase(it)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>dq.erase(it1,it2)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="priority-queue"><a class="header-anchor" href="#priority-queue"># </a>priority_queue</h1>
+<p>优先队列，堆</p>
+<ul>
+<li><code>priority_queue&lt;int&gt; q;</code></li>
+<li><code>priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt; q;</code></li>
+</ul>
+<pre><code class="language-cpp">struct node{
+	int val;
+	...
+};
+struct cmp{
+	bool operator () (const node &amp;a,const node &amp;b){
+		return a.val&gt;b.val;
+	}
+};
+priority_queue&lt;node,vector&lt;node&gt;,cmp&gt; q;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>时间复杂度及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q.top()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.push(X)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.pop()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>q.size()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>q.empty()</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="pair"><a class="header-anchor" href="#pair"># </a>pair</h1>
+<ul>
+<li><code>pair&lt;int,int&gt; x;</code></li>
+<li><code>pair&lt;string,int&gt;(&quot;haha&quot;,5);</code>等价于<code>make_pair(&quot;haha,5);</code>，<code>{&quot;haha&quot;,5}</code></li>
+<li>可使用比较运算符，先以first比较，first相等才比较second</li>
+</ul>
+<h1 id="algorithmn"><a class="header-anchor" href="#algorithmn"># </a>algorithmn</h1>
+<h2 id="不修改序列的操作"><a class="header-anchor" href="#不修改序列的操作"># </a>不修改序列的操作</h2>
+<ul>
+<li><code>all_of</code> 全部都在</li>
+<li><code>any_of</code>  没有全在</li>
+<li><code>none_of</code> 全都没在</li>
+<li><code>find</code></li>
+<li><code>count</code></li>
+</ul>
+<h2 id="修改序列的操作"><a class="header-anchor" href="#修改序列的操作"># </a>修改序列的操作</h2>
+<ul>
+<li><code>copy</code></li>
+<li><code>fill</code></li>
+<li><code>swap</code></li>
+<li><code>reverse</code></li>
+<li><code>rotate</code></li>
+</ul>
+<h2 id="划分操作"><a class="header-anchor" href="#划分操作"># </a>划分操作</h2>
+<ul>
+<li><code>is_partitioned</code></li>
+<li><code>partition</code></li>
+</ul>
+<h2 id="排序操作"><a class="header-anchor" href="#排序操作"># </a>排序操作</h2>
+<ul>
+<li><code>is_sorted</code></li>
+<li><code>sort</code></li>
+<li><code>partial_sort</code></li>
+<li><code>stable_sort</code></li>
+<li><code>nth_element</code></li>
+</ul>
+<h2 id="二分查找，基于已排序区间"><a class="header-anchor" href="#二分查找，基于已排序区间"># </a>二分查找，基于已排序区间</h2>
+<ul>
+<li><code>lower_bound</code></li>
+<li><code>upper_bound</code></li>
+<li><code>binary_search</code></li>
+</ul>
+<h2 id="集合操作，基于已排序区间"><a class="header-anchor" href="#集合操作，基于已排序区间"># </a>集合操作，基于已排序区间</h2>
+<ul>
+<li><code>merge</code></li>
+<li><code>inplace_merge</code></li>
+<li><code>set_difference</code></li>
+<li><code>set_intersection</code></li>
+<li><code>set_union</code></li>
+</ul>
+<h2 id="堆"><a class="header-anchor" href="#堆"># </a>堆</h2>
+<ul>
+<li><code>is_heap</code></li>
+<li><code>is_heap_until</code></li>
+<li><code>make_heap</code></li>
+<li><code>push_heap</code></li>
+<li><code>pop_heap</code></li>
+<li><code>sort_heap</code></li>
+</ul>
+<h2 id="最大最小"><a class="header-anchor" href="#最大最小"># </a>最大最小</h2>
+<ul>
+<li><code>min</code>/<code>max</code></li>
+<li><code>min_element</code>/<code>max_element</code></li>
+<li><code>minmax</code></li>
+<li><code>minmax_element</code></li>
+</ul>
+<h2 id="比较"><a class="header-anchor" href="#比较"># </a>比较</h2>
+<ul>
+<li><code>equal</code></li>
+<li><code>lexicographical_compare</code></li>
+</ul>
+<h2 id="排列"><a class="header-anchor" href="#排列"># </a>排列</h2>
+<ul>
+<li><code>is_permutation</code></li>
+<li><code>prev_permutation</code></li>
+<li><code>next_permutation</code></li>
+</ul>
+<h2 id="数值计算"><a class="header-anchor" href="#数值计算"># </a>数值计算</h2>
+<ul>
+<li><code>accumulate</code></li>
+<li><code>itoa</code></li>
+<li><code>inner_product</code></li>
+<li><code>adjacent_difference</code></li>
+</ul>
+<h1 id="io"><a class="header-anchor" href="#io"># </a>io</h1>
+<h2 id="stringstream"><a class="header-anchor" href="#stringstream"># </a>stringstream</h2>
+<pre><code class="language-cpp">string s,s1;
+getline(cin,s); // a b c
+stringstream ss(s);
+while(ss&gt;&gt;s1)
+    cout&lt;&lt;s1&lt;&lt;endl;
+=====
+a
+b
+c
+</code></pre>
+<h2 id="ios-sync-with-stdio"><a class="header-anchor" href="#ios-sync-with-stdio"># </a>ios::sync_with_stdio</h2>
+<p>设置标准 C++ 流是否与标准 C 流在每次输入/输出操作后同步<br>
+标准 C++ 流为下列者：<code>std::cin</code> 、<code>std::cout</code>、<code>std::cerr</code>、<code>std::clog</code>、<code>std::wcin</code>、<code>std::wcout</code>、<code>std::wcerr</code>和<code>std::wclog</code><br>
+标准 C 流为下列者：<code>stdin</code>、<code>stdout</code>和<code>stderr</code></p>
+<pre><code class="language-cpp">std::ios::sync_with_stdio(false);
+std::cout &lt;&lt; &quot;a\n&quot;;
+std::printf(&quot;b\n&quot;);
+std::cout &lt;&lt; &quot;c\n&quot;;
+=====
+可能的输出
+b
+a
+c
+</code></pre>
+<h1 id="iterator"><a class="header-anchor" href="#iterator"># </a>iterator</h1>
+<ul>
+<li><code>next(it,pos)</code></li>
+<li><code>prev(it,pos)</code></li>
+</ul>
+<h1 id="math"><a class="header-anchor" href="#math"># </a>math</h1>
+<ul>
+<li><code>abs</code>,<code>labs</code>,<code>llabs</code></li>
+<li><code>sin</code>,<code>cos</code>,<code>tan</code></li>
+<li><code>asin</code>,<code>acos(-1)=π</code>,<code>atan</code></li>
+<li><code>pow</code>,<code>sqrt</code></li>
+<li><code>log</code>,<code>log10</code>,<code>log2</code></li>
+<li><code>exp</code></li>
+<li><code>round</code></li>
+</ul>
+
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
+            
+            <a class="write-prev-post" href="/2020/07/2019WinterAdvancedPAT/">
+                <i class="fa fa-angle-left"></i>&emsp;「PAT 甲级」2019年冬季考试
+            </a>
+            
+            
+            <a class="write-next-post" href="/2020/07/PAT20200722/">
+                「PAT 甲级」春季模拟赛&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
+</div>
+    </div>
+</div>
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2020 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<!-- tocbot -->
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
+
+<!-- highlight js-->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>
