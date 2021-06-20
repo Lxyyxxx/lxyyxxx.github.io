@@ -1,0 +1,902 @@
+<!-- 不变的布局 -->
+<!DOCTYPE html>
+<html>
+<!-- head -->
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+
+    <title>
+        
+        「学习笔记」操作系统 - Lxyyxxx&#39;s Notebook
+        
+    </title>
+
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
+
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700,900&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lxyyxxx&#39;s Notebook</a>
+        </div>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">「学习笔记」操作系统</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2020-08-21T15:59:31.435Z" itemprop="dateModified">
+                            2020-08-21 23:59
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
+                        
+                        
+                        <i class="fas fa-folder"></i>
+                        
+                        <a
+                            href='/categories/一起学习吧/'>一起学习吧</a>
+                        
+                        
+                        &emsp;
+                        <!-- tags -->
+                        
+                        
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/操作系统/'>操作系统</a>, 
+                        
+                        <a
+                            href='/tags/学习笔记/'>学习笔记</a>
+                        
+                        
+                    </div>
+                    <article class="write-content">
+                        <h1 id="操作系统引论"><a class="header-anchor" href="#操作系统引论"># </a>操作系统引论</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="操作系统"><a class="header-anchor" href="#操作系统"># </a>操作系统</h2>
+<p>配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充，其主要作用是<strong>管理</strong>好这些<strong>设备</strong>，提高他们的利用率和系统的吞吐量，并<strong>为用户和应用程序提供</strong>一个简单的<strong>接口</strong>，便于用户使用</p>
+<h2 id="分时系统"><a class="header-anchor" href="#分时系统"># </a>分时系统</h2>
+<p>在<strong>一台主机</strong>上连接了多个配有显示器和键盘的终端并由此所组成的系统，该系统允许<strong>多个用户同时</strong>通过自己的<strong>终端</strong>，以交互方式使用计算机，共享主机中的资源</p>
+<h2 id="实时系统"><a class="header-anchor" href="#实时系统"># </a>实时系统</h2>
+<p>系统能<strong>及时响应</strong>外部事件的请求，在<strong>规定的时间内</strong>完成对该事件的<strong>处理</strong>，并控制所有实时任务<strong>协调</strong>一致地<strong>运行</strong></p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="分时系统和实时系统的区别与联系"><a class="header-anchor" href="#分时系统和实时系统的区别与联系"># </a>分时系统和实时系统的区别与联系</h2>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>分时系统</th>
+<th>实时系统</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>多路性</strong></td>
+<td>系统按分时原则为多个终端用户服务</td>
+<td>系统周期性地对多路现场信息进行采集，以及对多个对象或多个执行机构进行控制</td>
+</tr>
+<tr>
+<td><strong>独立性</strong></td>
+<td>每个终端用户在与系统交互时，彼此相互独立互不干扰</td>
+<td>对信息的采集和对对象的控制彼此互不干扰</td>
+</tr>
+<tr>
+<td><strong>及时性</strong></td>
+<td>依据人能接收的等待时间确定</td>
+<td>以控制对象所要求的截止时间确定</td>
+</tr>
+<tr>
+<td><strong>交互性</strong></td>
+<td>仅限于访问系统中某些特定的专用服务程序</td>
+<td>能向终端用户提供数据处理、资源共享等服务</td>
+</tr>
+<tr>
+<td><strong>可靠性</strong></td>
+<td>要求系统可靠</td>
+<td>要求系统高度可靠</td>
+</tr>
+</tbody>
+</table>
+<h2 id="操作系统的特性"><a class="header-anchor" href="#操作系统的特性"># </a>操作系统的特性</h2>
+<p><strong>并发</strong>和<strong>共享</strong>是两个最基本的特征，又是互为存在的条件</p>
+<h3 id="1-并发"><a class="header-anchor" href="#1-并发"># </a>1. 并发</h3>
+<p><strong>并行</strong>：两个或多个事件在<strong>同一时刻</strong>发生<br>
+<strong>并发</strong>：两个或多个事件在<strong>同一时间间隔</strong>发生，在一段时间内，宏观上有多个程序在同时运行，但微观上只能分时交替执行</p>
+<h3 id="2-共享"><a class="header-anchor" href="#2-共享"># </a>2. 共享</h3>
+<p>资源服用，系统中的资源可供内存中多个并发执行的进程共同使用</p>
+<h3 id="3-虚拟"><a class="header-anchor" href="#3-虚拟"># </a>3. 虚拟</h3>
+<p>将一个<strong>物理</strong>实体<strong>变为</strong>若干个<strong>逻辑</strong>上的对应物<br>
+通过<strong>时分复用</strong>、<strong>空分复用</strong>实现虚拟</p>
+<h3 id="4-异步"><a class="header-anchor" href="#4-异步"># </a>4. 异步</h3>
+<p>进程是以人们不可预知的速度向前推进的</p>
+<h2 id="操作系统的主要功能"><a class="header-anchor" href="#操作系统的主要功能"># </a>操作系统的主要功能</h2>
+<h3 id="1-处理机管理功能"><a class="header-anchor" href="#1-处理机管理功能"># </a>1. 处理机管理功能</h3>
+<p>作业、进程</p>
+<ol>
+<li><strong>进程控制</strong>：<strong>创建和撤销</strong>进程</li>
+<li><strong>进程同步</strong>：对诸进程的<strong>运行</strong>进行<strong>协调</strong></li>
+<li><strong>进程通信</strong>：实现进程之间的<strong>信息交换</strong></li>
+<li><strong>调度</strong>：按照一定算法把处理机<strong>分配</strong>给进程，包括<strong>作业调度</strong>和<strong>进程调度</strong>两步</li>
+</ol>
+<h3 id="2-存储器管理功能"><a class="header-anchor" href="#2-存储器管理功能"># </a>2. 存储器管理功能</h3>
+<p>内存</p>
+<ol>
+<li><strong>内存分配和回收</strong>：<strong>静态</strong>、<strong>动态</strong>分配，作业装入时确定内存空间，动态允许作业在运行过程中继续申请新的附加内存空间</li>
+<li><strong>内存保护</strong>：确保每道用户程序仅在<strong>自己的内存空间</strong>运行，彼此互不干扰；绝不允许用户访问操作系统中的程序和数据，也<strong>不允许</strong>用户程序<strong>转移到****非共享</strong>的其他用户程序中去执行</li>
+<li><strong>地址映射</strong>：将地址空间中的<strong>逻辑</strong>地址转为内存空间中的<strong>物理</strong>地址</li>
+<li><strong>内存扩充</strong>：使用<strong>虚拟存储技术</strong>，从<strong>逻辑</strong>上扩充，有<strong>请求调入</strong>和<strong>置换</strong>功能</li>
+</ol>
+<h3 id="3-设备管理功能"><a class="header-anchor" href="#3-设备管理功能"># </a>3. 设备管理功能</h3>
+<p>I/O</p>
+<ol>
+<li><strong>缓冲管理</strong>：缓和CPU和I/O设备速度不匹配的矛盾</li>
+<li><strong>设备分配</strong>：根据用户的I/O请求、系统现有资源情况，按照某种设备分配策略，为之分配设备</li>
+<li><strong>设备处理</strong>：驱动，实现CPU和设备管理器间的通信</li>
+</ol>
+<h3 id="4-文件管理功能"><a class="header-anchor" href="#4-文件管理功能"># </a>4. 文件管理功能</h3>
+<p>用户文件、系统文件、外存空间</p>
+<ol>
+<li><strong>文件存储空间的管理</strong>：分配、回收存储空间，提高外存利用率从而提高文件的存取速度</li>
+<li><strong>目录管理</strong>：为每个文件建立一个目录项，实现目录共享、快速检索</li>
+<li><strong>文件的读/写管理和保护</strong>：读/写指针；防止未授权用户存取文件、防止冒名顶替存储文件、防止以不正确的方式使用文件</li>
+</ol>
+<h3 id="5-提供用户与操作系统的接口"><a class="header-anchor" href="#5-提供用户与操作系统的接口"># </a>5. 提供用户与操作系统的接口</h3>
+<ol>
+<li><strong>用户接口</strong>：便于用户直接或间接地<strong>控制自己的作业</strong>，分为联机、脱机、图形</li>
+<li><strong>程序接口</strong>：为用户程序在执行中<strong>访问系统资源</strong>而设置的，是用户程序取得操作系统服务的唯一途径</li>
+</ol>
+<hr>
+<h1 id="进程描述与控制"><a class="header-anchor" href="#进程描述与控制"># </a>进程描述与控制</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="进程"><a class="header-anchor" href="#进程"># </a>进程</h2>
+<p>在系统中能<strong>独立运行</strong>并作为<strong>资源分配的基本单位</strong>，它是由一组机器指令、数据和堆栈等组成的，是一个能独立运行的活动实体</p>
+<h2 id="原语"><a class="header-anchor" href="#原语"># </a>原语</h2>
+<p>由若干条指令组成的，用于完成一定功能的一个过程<br>
+它们是<strong>原子操作</strong>，一个操作中的所有动作要么都做要么都不做</p>
+<h2 id="临界资源"><a class="header-anchor" href="#临界资源"># </a>临界资源</h2>
+<p>在一段时间内，仅允许一个进程访问的资源<br>
+诸进程间应采取互斥方式，实现对这种资源的共享</p>
+<h2 id="临界区"><a class="header-anchor" href="#临界区"># </a>临界区</h2>
+<p>每个进程中访问临界资源的那段代码</p>
+<h2 id="管程"><a class="header-anchor" href="#管程"># </a>管程</h2>
+<p>代表共享资源的<strong>数据结构</strong>以及由对该共享数据结构实施<strong>操作</strong>的一组过程所组成的资源管理程序共同构成了一个操作系统的<strong>资源管理模块</strong></p>
+<h2 id="管道"><a class="header-anchor" href="#管道"># </a>管道</h2>
+<p>用于连接一个<strong>读进程</strong>和一个<strong>写进程</strong>以实现它们之间通信的一个<strong>共享文件</strong>，又称为<strong>pipe文件</strong></p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="进程的特征"><a class="header-anchor" href="#进程的特征"># </a>进程的特征</h2>
+<h3 id="1-动态性"><a class="header-anchor" href="#1-动态性"># </a>1. 动态性</h3>
+<p>进程的<strong>最基本特征</strong><br>
+随创建而产生，由调度而执行，由撤销而消亡</p>
+<h3 id="2-并发性"><a class="header-anchor" href="#2-并发性"># </a>2. 并发性</h3>
+<p>多个进程实体同存于内存中，且能在一段时间内同时运行<br>
+引入进程的目的：为了使其进程实体能和其它进程实体并发执行</p>
+<h3 id="3-独立性"><a class="header-anchor" href="#3-独立性"># </a>3. 独立性</h3>
+<p>进程实体是一个能独立运行、独立分配资源和独立接受调度的基本单位</p>
+<h3 id="4-异步性"><a class="header-anchor" href="#4-异步性"># </a>4. 异步性</h3>
+<p>进程实体按异步方式运行，即进程按各自独立的、不可预知的速度向前推进</p>
+<h2 id="状态转换过程"><a class="header-anchor" href="#状态转换过程"># </a>状态转换过程</h2>
+<h2 id="进程同步原则"><a class="header-anchor" href="#进程同步原则"># </a>进程同步原则</h2>
+<h3 id="1-空闲让进"><a class="header-anchor" href="#1-空闲让进"># </a>1. 空闲让进</h3>
+<p>当无进程处于临界区时，表明临界资源处于空闲状态，应允许一个请求进入临界区的进程立即进入自己的临界区，以有效地利用临界资源</p>
+<h3 id="2-忙则等待"><a class="header-anchor" href="#2-忙则等待"># </a>2. 忙则等待</h3>
+<p>当已有进程进入临界区时，表明临界资源正在被访问，因而其它试图进入临界区的进程必须等待，以保证对临界资源的互斥访问</p>
+<h3 id="3-有限等待"><a class="header-anchor" href="#3-有限等待"># </a>3. 有限等待</h3>
+<p>对要求访问临界资源的进程，应保证在有限时间内能进入自己的临界区，以免陷入“死等”状态</p>
+<h3 id="4-让权等待"><a class="header-anchor" href="#4-让权等待"># </a>4. 让权等待</h3>
+<p>当进程不能进入自己的临界区时，应立即释放处理机，以免进程陷入“忙等”状态</p>
+<h2 id="进程同步算法"><a class="header-anchor" href="#进程同步算法"># </a>进程同步算法</h2>
+<h2 id="进程和管程的区别"><a class="header-anchor" href="#进程和管程的区别"># </a>进程和管程的区别</h2>
+<h2 id="进程和线程的区别"><a class="header-anchor" href="#进程和线程的区别"># </a>进程和线程的区别</h2>
+<h3 id="1-调度的基本单位"><a class="header-anchor" href="#1-调度的基本单位"># </a>1. 调度的基本单位</h3>
+<p>在引入线程的操作系统中，则把<strong>线程</strong>作为<strong>调度和分派的基本单位</strong>，而<strong>进程</strong>作为<strong>资源拥有的基本单位</strong></p>
+<h3 id="2-并发性-x2"><a class="header-anchor" href="#2-并发性-x2"># </a>2. 并发性</h3>
+<p>在引入线程的操作系统中，不仅进程之间可以并发执行，而且<strong>在一个进程中的多个线程之间亦可并发执行</strong></p>
+<h3 id="3-拥有资源"><a class="header-anchor" href="#3-拥有资源"># </a>3. 拥有资源</h3>
+<p>一般而言，<strong>线程自己不拥有系统资源</strong>(也有一点必不可少的资源)，但它可以访问其隶属进程的资源</p>
+<h3 id="4-独立性"><a class="header-anchor" href="#4-独立性"># </a>4. 独立性</h3>
+<p>在同一进程中不同线程之间的独立性要比不同进程中间的独立性低很多<br>
+不同进程有独立的存储地址空间和资源，不允许其他进程访问<br>
+同一进程的不同线程共享进程的存储地址空间和资源</p>
+<h3 id="5-系统开销"><a class="header-anchor" href="#5-系统开销"># </a>5. 系统开销</h3>
+<p><strong>进程</strong>切换时，涉及到当前进程<strong>CPU环境的保存</strong>及新被调度运行进程的<strong>CPU环境的设置</strong><br>
+<strong>线程</strong>的切换则仅需保存和设置少量<strong>寄存器内容</strong>，不涉及存储器管理方面的操作<br>
+由于<strong>一个进程中的多个线程具有相同的地址空间</strong>，在同步和通信的实现方面线程也比进程容易<br>
+在一些操作系统中，线程的切换、同步和通信都无须操作系统内核的干预</p>
+<h3 id="6-支持多处理系统"><a class="header-anchor" href="#6-支持多处理系统"># </a>6. 支持多处理系统</h3>
+<p>单线程进程只能在一个处理机上运行<br>
+多线程进程可以将不同线程分配到多个处理机上运行</p>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="前趋图、前趋关系集合"><a class="header-anchor" href="#前趋图、前趋关系集合"># </a>前趋图、前趋关系集合</h2>
+<h2 id="信号量实现前趋关系"><a class="header-anchor" href="#信号量实现前趋关系"># </a>信号量实现前趋关系</h2>
+<h2 id="进程同步"><a class="header-anchor" href="#进程同步"># </a>进程同步</h2>
+<h2 id="生产者消费者"><a class="header-anchor" href="#生产者消费者"># </a>生产者消费者</h2>
+<hr>
+<h1 id="处理机调度与死锁"><a class="header-anchor" href="#处理机调度与死锁"># </a>处理机调度与死锁</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="周转时间"><a class="header-anchor" href="#周转时间"># </a>周转时间</h2>
+<p>从作业被提交给系统开始，到作业完成为止的这段时间间隔<br>
+包括四部分时间：</p>
+<ol>
+<li>作业在<strong>外存后备队列</strong>上等待(作业)调度的时间</li>
+<li>进程在<strong>就绪队列</strong>上等待进程调度的时间</li>
+<li>进程在<strong>CPU</strong>上执行的时间</li>
+<li>进程<strong>等待I/O操作完成</strong>的时间</li>
+</ol>
+<h2 id="响应时间"><a class="header-anchor" href="#响应时间"># </a>响应时间</h2>
+<p>从用户通过键盘提交一个请求开始，直至系统首次产生响应为止的时间，或者说，直到屏幕上显示出结果为止的一段时间间隔</p>
+<h2 id="死锁"><a class="header-anchor" href="#死锁"># </a>死锁</h2>
+<p>一组进程中的每一个进程都在等待仅由该进程中的其他进程才能引发的事件，那么该组进程是死锁的<br>
+多个进程在运行过程中因争夺资源而造成的一种僵局，当进程出于这种僵持状态时，若无外力作用，它们将无法再向前推进</p>
+<h2 id="安全状态"><a class="header-anchor" href="#安全状态"># </a>安全状态</h2>
+<p>系统能按某种进程推进顺序<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>P</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>P</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P_1,P_2,\dots,P_n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>为每个进程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>分配其所需资源，直至满足每个进程对资源的最大需求，使每个进程都可以顺利地完成<br>
+安全序列：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>P</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>P</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P_1,P_2,\dots,P_n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="处理机低级、中级、高级调度算法的基本功能"><a class="header-anchor" href="#处理机低级、中级、高级调度算法的基本功能"># </a>处理机低级、中级、高级调度算法的基本功能</h2>
+<h3 id="高级调度-——-作业调度"><a class="header-anchor" href="#高级调度-——-作业调度"># </a>高级调度 —— 作业调度</h3>
+<p>后备队列</p>
+<h4 id="先来先服务-FCFS"><a class="header-anchor" href="#先来先服务-FCFS"># </a>先来先服务 FCFS</h4>
+<p>每次调度都是从后备作业队列中选择一个或多个最先进入该队列的作业，将它们调入内存，为它们分配资源、创建进程，然后放入就绪队列</p>
+<h4 id="短作业优先-SJP"><a class="header-anchor" href="#短作业优先-SJP"># </a>短作业优先 SJP</h4>
+<p>对短作业或短进程优先调度</p>
+<h4 id="高优先权优先-PJF"><a class="header-anchor" href="#高优先权优先-PJF"># </a>高优先权优先 PJF</h4>
+<p>从后备队列中选择若干个优先权最高的作业装入内存</p>
+<h4 id="高响应比优先"><a class="header-anchor" href="#高响应比优先"># </a>高响应比优先</h4>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">优</mi><mi mathvariant="normal">先</mi><mi mathvariant="normal">权</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">等</mi><mi mathvariant="normal">待</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><mo>+</mo><mi mathvariant="normal">要</mi><mi mathvariant="normal">求</mi><mi mathvariant="normal">服</mi><mi mathvariant="normal">务</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><mrow><mi mathvariant="normal">要</mi><mi mathvariant="normal">求</mi><mi mathvariant="normal">服</mi><mi mathvariant="normal">务</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">响</mi><mi mathvariant="normal">应</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><mrow><mi mathvariant="normal">要</mi><mi mathvariant="normal">求</mi><mi mathvariant="normal">服</mi><mi mathvariant="normal">务</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">优先权 = \dfrac{等待时间+要求服务时间}{要求服务时间} = \dfrac{响应时间}{要求服务时间}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mord cjk_fallback">优</span><span class="mord cjk_fallback">先</span><span class="mord cjk_fallback">权</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.9463300000000001em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2603300000000002em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">求</span><span class="mord cjk_fallback">服</span><span class="mord cjk_fallback">务</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">等</span><span class="mord cjk_fallback">待</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">求</span><span class="mord cjk_fallback">服</span><span class="mord cjk_fallback">务</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.363em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.677em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">求</span><span class="mord cjk_fallback">服</span><span class="mord cjk_fallback">务</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">响</span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h4 id="基于时间片的轮转调度算法-RR"><a class="header-anchor" href="#基于时间片的轮转调度算法-RR"># </a>基于时间片的轮转调度算法 RR</h4>
+<p>系统将所有的就绪进程按先来先服务的原则排成一个队列，每次调度时，把CPU分配给队首进程，并令其执行一个时间片。当执行的时间片用完时，由一个计时器发出时钟中断请求，调度程序便据此信号来停止该进程的执行，并将它送往就绪队列的末尾，然后，再把处理机分配给就绪队列中新的队首进程，同时也让它执行一个时间片</p>
+<h4 id="多级反馈队列调度算法"><a class="header-anchor" href="#多级反馈队列调度算法"># </a>多级反馈队列调度算法</h4>
+<p>设置多个就绪队列，并为各个队列赋予不同的优先级。第一个队列的优先级最高，第二个队列次之，其余<strong>各队列的优先权逐个降低</strong><br>
+该算法赋予各个队列中进程执行时间片的大小也各不相同，在<strong>优先权愈高</strong>的队列中，为每个进程所规定的<strong>执行时间片就愈小</strong></p>
+<h3 id="中级调度"><a class="header-anchor" href="#中级调度"># </a>中级调度</h3>
+<h3 id="低级调度-——-进程调度"><a class="header-anchor" href="#低级调度-——-进程调度"># </a>低级调度 —— 进程调度</h3>
+<p>就绪队列</p>
+<h4 id="先来先服务-FCFS-x2"><a class="header-anchor" href="#先来先服务-FCFS-x2"># </a>先来先服务 FCFS</h4>
+<p>每次调度是从就绪队列中选择一个最先进入该队列的进程，为之分配处理机，使之投入运行</p>
+<h4 id="短进程优先-SPF"><a class="header-anchor" href="#短进程优先-SPF"># </a>短进程优先 SPF</h4>
+<p>从就绪队列中选出一个估计运行时间最短的进程，将处理机分配给它，使它立即执行并一直执行到完成，或发生某事件而被阻塞放弃处理机时再重新调度</p>
+<h4 id="最高优先权优先-FPF"><a class="header-anchor" href="#最高优先权优先-FPF"># </a>最高优先权优先 FPF</h4>
+<p>把处理机分配给就绪队列中优先权最高的进程</p>
+<ol>
+<li><strong>非抢占式优先权算法</strong>：系统一旦把处理机分配给就绪队列中优先权最高的进程后，该进程便一直执行下去，直至完成；因发生某事件使该进程放弃处理机时，系统方可再将处理机重新分配给另一优先权最高的进程</li>
+<li><strong>抢占式优先权调度算法</strong>：只要又出现了另一个其优先权更高的进程，进程调度程序就立即停止当前进程的执行，重新将处理机分配给新到的优先权最高的进程</li>
+</ol>
+<h2 id="选择调度算法的准则"><a class="header-anchor" href="#选择调度算法的准则"># </a>选择调度算法的准则</h2>
+<h3 id="面向用户"><a class="header-anchor" href="#面向用户"># </a>面向用户</h3>
+<h4 id="1-周转时间短"><a class="header-anchor" href="#1-周转时间短"># </a>1. 周转时间短</h4>
+<h4 id="2-响应时间快"><a class="header-anchor" href="#2-响应时间快"># </a>2. 响应时间快</h4>
+<h4 id="3-截止时间的保证"><a class="header-anchor" href="#3-截止时间的保证"># </a>3. 截止时间的保证</h4>
+<h4 id="4-优先权准则"><a class="header-anchor" href="#4-优先权准则"># </a>4. 优先权准则</h4>
+<h3 id="面向系统"><a class="header-anchor" href="#面向系统"># </a>面向系统</h3>
+<h4 id="1-系统吞吐量高"><a class="header-anchor" href="#1-系统吞吐量高"># </a>1. 系统吞吐量高</h4>
+<h4 id="2-处理机利用率好"><a class="header-anchor" href="#2-处理机利用率好"># </a>2. 处理机利用率好</h4>
+<h4 id="3-各类资源的平衡利用"><a class="header-anchor" href="#3-各类资源的平衡利用"># </a>3. 各类资源的平衡利用</h4>
+<h2 id="实时调度的基本条件"><a class="header-anchor" href="#实时调度的基本条件"># </a>实时调度的基本条件</h2>
+<h3 id="1-提供必要的信息"><a class="header-anchor" href="#1-提供必要的信息"># </a>1. 提供必要的信息</h3>
+<ol>
+<li>就绪时间</li>
+<li>开始截止时间和完成截止时间</li>
+<li>处理时间</li>
+<li>资源要求</li>
+<li>优先级</li>
+</ol>
+<h3 id="2-系统处理能力强"><a class="header-anchor" href="#2-系统处理能力强"># </a>2. 系统处理能力强</h3>
+<h3 id="3-采用抢占式调度机制"><a class="header-anchor" href="#3-采用抢占式调度机制"># </a>3. 采用抢占式调度机制</h3>
+<h3 id="4-具有快速切换机制"><a class="header-anchor" href="#4-具有快速切换机制"># </a>4. 具有快速切换机制</h3>
+<ol>
+<li>对外部中断的快速响应能力</li>
+<li>快速的任务分派能力</li>
+</ol>
+<h2 id="产生死锁的必要条件"><a class="header-anchor" href="#产生死锁的必要条件"># </a>产生死锁的必要条件</h2>
+<p>必须同时具备下面四个必要条件，死锁才会发生</p>
+<ol>
+<li><strong>互斥条件</strong>：一段时间内，某资源只能被一个进程占用</li>
+<li><strong>请求和保持条件</strong>：进程保持了一个资源，请求新的资源，但该资源被其他资源占用，请求进程被阻塞，但对自已已获得的资源保持不放</li>
+<li><strong>不可抢占条件</strong>：进程已获得的资源在未使用完之前不能被抢占，只能在进程使用完时由自己释放</li>
+<li><strong>循环等待条件</strong>：在发生死锁时，必然存在一个进程——资源的环形链</li>
+</ol>
+<h2 id="处理死锁的基本方法"><a class="header-anchor" href="#处理死锁的基本方法"># </a>处理死锁的基本方法</h2>
+<h3 id="1-预防死锁"><a class="header-anchor" href="#1-预防死锁"># </a>1. 预防死锁</h3>
+<p>破坏四个必要条件中的一个或几个</p>
+<h4 id="破坏请求和保持条件"><a class="header-anchor" href="#破坏请求和保持条件"># </a>破坏请求和保持条件</h4>
+<ol>
+<li>第一种协议：一次性申请所有资源，不会再提出请求资源的要求，破坏了请求条件；分配资源时，如果有一种资源不满足进程的要求，全部资源都不分配，进程在等待时未占用任何资源，破坏了保持条件</li>
+<li>第二种协议：一个进程只获得运行初期所需资源后，便开始运行，运行过程中再逐步释放已分配给自己的且用完的全部资源，再请求新的资源</li>
+</ol>
+<h4 id="破坏不可抢占条件"><a class="header-anchor" href="#破坏不可抢占条件"># </a>破坏不可抢占条件</h4>
+<p>提出新的资源请求不能得到满足时，必须释放已保持的所有资源</p>
+<h4 id="破坏循环等待条件"><a class="header-anchor" href="#破坏循环等待条件"># </a>破坏循环等待条件</h4>
+<p>规定每个进程必须按资源序号递增的顺序请求资源，需要多个同类资源必须一起请求，请求低序号的资源必须释放已保持的高序号的资源</p>
+<h3 id="2-避免死锁"><a class="header-anchor" href="#2-避免死锁"># </a>2. 避免死锁</h3>
+<p>在资源的动态分配过程中，用某种方法去防止系统进入不安全状态<br>
+<strong>银行家算法</strong></p>
+<pre><code class="language-cpp">/* 数据结构 */
+int m;                // 资源数
+int n;                // 进程数
+int Available[M];     // 可利用资源向量
+int Max[N][M];        // 最大需求矩阵
+int Allocation[N][M]; // 分配矩阵
+int Need[N][M];       // 需求矩阵
+// Need + Allocation = Max
+
+/* 银行家算法 */
+bool safe();
+void print();
+void banker(int i) { // 进程i
+    int Request[M]; // 进程i的请求向量
+    cout &lt;&lt; &quot;Request：&quot;;
+    for (int j = 0; j &lt; m; j++) cin &gt;&gt; Request[j];
+    // 对每个资源进行检查
+    for(int j=0; j&lt;m; j++) {
+        // 1 边界判断
+        if(Request[j]&gt;Need[i][j]) {
+            printf(&quot;ERROR: 所需要的资源数已超过所宣布的最大值\n&quot;);
+            break;
+        }
+        // 2 边界判断
+        if(Request[j]&gt;Available[j]) {
+            printf(&quot;ERROR: 尚无足够资源\n&quot;);
+            break;
+        }
+        // 3 试探分配
+        Available[j]-=Request[j];
+        Allocation[i][j]+=Request[j];
+        Need[i][j]-=Request[j];
+        // 4 安全性算法
+        // 不安全，撤销分配
+        if(!safe()) {
+            Available[j]+=Request[j];
+            Allocation[i][j]-=Request[j];
+            Need[i][j]+=Request[j];
+            printf(&quot;ERROR: 系统不安全\n&quot;);
+            break;
+        }
+    }
+    // 安全，输出安全序列
+}
+
+/* 安全性检查 */
+int SafeOrder[N]; // 安全序列
+bool safe() {
+    int cur=0; // 安全序列下标
+    // 1 初始化工作向量Work和结束向量Finish
+    int Work[M];
+    int Finish[N];
+    for(int j=0; j&lt;m; j++)
+        Work[j]=Available[j];
+    for(int i=0; i&lt;n; i++)
+        Finish[i]=false;
+    while(1) {
+        // 2 从进程集合中找到满足下列条件的进程
+        // Finish[i]=false
+        // Need[i][j]&lt;=Work[j]
+        int i;
+        for(i=0; i&lt;n; i++) {
+            if(Finish[i])
+                continue;
+            bool f=true;
+            for(int j=0; j&lt;m; j++) {
+                if(Need[i][j]&gt;Work[j]) {
+                    f=false;
+                    break;
+                }
+            }
+            // 找到了
+            if(f)
+                break;
+        }
+        // 3 找到符合条件的进程了，代表该进程可以顺利完成，释放它的资源，继续循环
+        if(i&lt;n) {
+            for(int j=0; j&lt;m; j++) {
+                Work[j]+=Allocation[i][j];
+                Finish[i]=true;
+            }
+            SafeOrder[cur++]=i; // 存入安全序列
+        }
+        // 找不到符合条件的进程了
+        else
+            break;
+    }
+    // 4 找不到符合条件的进程了，判断是否所有Finish都为true
+    for(int i=0; i&lt;n; i++)
+        if(!Finish[i])
+            return false;
+    return true;
+}
+</code></pre>
+<h3 id="3-检测死锁"><a class="header-anchor" href="#3-检测死锁"># </a>3. 检测死锁</h3>
+<p>通过系统所设置的检测机构，及时地检测出死锁的发生，并精确地确定与死锁有关的进程和资源<br>
+<strong>资源分配图</strong><br>
+<strong>可完全简化</strong>：能消去资源分配图的所有边，使所有进程的结点都成为孤立结点<br>
+<strong>死锁定理</strong>：S为死锁状态的<strong>充分</strong>条件是当且仅当S状态的资源分配图是不可完全简化的</p>
+<pre><code class="language-cpp">1. 可利用资源向量Available[m]
+1. 不占用资源的进程记入表L
+1. 找Request&lt;=Work的进程，将其资源分配图简化并释放资源，增加工作向量Work+=Allocation，记入表L
+1. 若不能把所有进程记入表L，则S状态的资源分配图是不可完全简化的
+</code></pre>
+<h3 id="4-解除死锁"><a class="header-anchor" href="#4-解除死锁"># </a>4. 解除死锁</h3>
+<ol>
+<li><strong>抢占资源</strong></li>
+<li><strong>终止或撤销进程</strong>：终止所有进程或逐个终止进程。考虑因素：优先级大小、已经运行时间、剩余运行时间、已经使用资源、剩余使用资源、交互式/批处理。每一次选代价最小的进行终止</li>
+</ol>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="处理机调度算法"><a class="header-anchor" href="#处理机调度算法"># </a>处理机调度算法</h2>
+<p><img src="/2020/08/OperatingSystem/3.1.png" alt="3.1"></p>
+<h2 id="进程调度算法"><a class="header-anchor" href="#进程调度算法"># </a>进程调度算法</h2>
+<h2 id="避免死锁的银行家算法、安全序列"><a class="header-anchor" href="#避免死锁的银行家算法、安全序列"># </a>避免死锁的银行家算法、安全序列</h2>
+<hr>
+<h1 id="存储器管理"><a class="header-anchor" href="#存储器管理"># </a>存储器管理</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="内存拼接-紧凑"><a class="header-anchor" href="#内存拼接-紧凑"># </a>内存拼接/紧凑</h2>
+<p>通过移动内存中作业的位置，把原来多个分散的小分区拼接成一个大分区的方法</p>
+<h2 id="内存对换-置换"><a class="header-anchor" href="#内存对换-置换"># </a>内存对换/置换</h2>
+<p>把内存中暂时不能运行的进程或者暂时不用的程序或数据换出到外存上，以便腾出足够的内存空间，再把已具备运行条件的进程或进程所需要的程序和数据换入内存<br>
+分为整体对换和页面/分段对换</p>
+<h2 id="页表"><a class="header-anchor" href="#页表"># </a>页表</h2>
+<p>为每个进程建一张页面映像表，实现从页号到物理块号的地址映射</p>
+<h2 id="段表"><a class="header-anchor" href="#段表"># </a>段表</h2>
+<p>为每个进程建一张段映射表，实现从逻辑段到物理内存区的映射</p>
+<h2 id="快表-联想存储器-TLB"><a class="header-anchor" href="#快表-联想存储器-TLB"># </a>快表/联想存储器/TLB</h2>
+<p>一个具有并行查找能力的特殊高速缓冲寄存器</p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="程序的装入方式"><a class="header-anchor" href="#程序的装入方式"># </a>程序的装入方式</h2>
+<p>将单个目标模块/装入模块装入内存</p>
+<ol>
+<li><strong>绝对装入方式</strong>：装入到内存中事先指定的位置，不进行地址的转换，相对地址/逻辑地址和实际内存中的地址完全相同</li>
+<li><strong>可重定位装入方式</strong>：装入时转换地址，只能转换一次，以后不再改变</li>
+<li><strong>动态运行时装入方式</strong>：运行时转换地址，允许程序在运行时移动位置</li>
+</ol>
+<h2 id="程序的链接方式"><a class="header-anchor" href="#程序的链接方式"># </a>程序的链接方式</h2>
+<p>将一组目标模块以及它们所需要的库函数装配成一个完整的装入模块</p>
+<ol>
+<li><strong>静态链接</strong>：在程序运行前，将各目标模块和所需的库函数链接成一个完整的装配模块，即可执行文件，需要修改相对地址以及变换外部调用的符号</li>
+<li><strong>装入时动态链接</strong>：边装入边链接，发生外部模块调用事件时，引起装入程序去找相应的外部目标模块</li>
+<li><strong>运行时动态链接</strong>：程序执行时进行模块的链接</li>
+</ol>
+<h2 id="内存分区分配算法及原理"><a class="header-anchor" href="#内存分区分配算法及原理"># </a>内存分区分配算法及原理</h2>
+<h3 id="单一连续分配"><a class="header-anchor" href="#单一连续分配"># </a>单一连续分配</h3>
+<p><strong>单道</strong>程序环境下，内存分为</p>
+<ol>
+<li><strong>系统区</strong>：内存低址部分，仅提供给OS使用</li>
+<li><strong>用户区</strong>：仅装有一道用户程序</li>
+</ol>
+<h3 id="固定分区分配"><a class="header-anchor" href="#固定分区分配"># </a>固定分区分配</h3>
+<p><strong>多道</strong>程序环境下，将用户空间划分成多个固定大小的区域，每个分区中仅装入一道作业，即用户区可以装多道用户程序<br>
+固定大小可以相等也可以不等<br>
+按分区的大小排队，建立一张<strong>分区使用表</strong>，含分区号、大小、起址、状态（已/未分配）</p>
+<h3 id="动态分区分配"><a class="header-anchor" href="#动态分区分配"># </a>动态分区分配</h3>
+<p>数据结构：</p>
+<ol>
+<li><strong>空闲分区表</strong>：记录每个空闲分区的情况</li>
+<li><strong>空闲分区链</strong>：将所有空闲分区链接成一个双向链</li>
+</ol>
+<p>算法：<br>
+按照分配算法从空闲分区表/链中选择一个分区分配给该作业</p>
+<p>分配内存：<br>
+从空闲分区表/链中找到所需大小的分区，若多余部分太小，则不再切割，将整个分区分配给请求者；否则，将余下部分留在空闲分区表/链中</p>
+<p>回收内存：</p>
+<ol>
+<li>回收区和插入点的前一个空闲分区<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">F_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>相邻接，将回收区和插入点的前一分区合并，修改前一分区<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">F_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的大小</li>
+<li>回收区和插入点的后一个空闲分区<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">F_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>相邻接，将回收区和插入点的后一分区合并，修改回收区<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">F_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的大小，将回收区的首址作为新空闲区的首址</li>
+<li>回收区同时与插入点的前后两个分区邻接，将三个分区合并，修改前一分区<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">F_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的大小，取消<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">F_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的表项</li>
+</ol>
+<h4 id="基于顺序搜索的动态分区分配算法"><a class="header-anchor" href="#基于顺序搜索的动态分区分配算法"># </a>基于顺序搜索的动态分区分配算法</h4>
+<ol>
+<li><strong>首次适应FF</strong>：每次从链首开始找第一个大小能满足的空闲分区</li>
+<li><strong>循环首次适应NF</strong>：每次从下一个空闲分区开始查找第一个大小能满足的空闲分区</li>
+<li><strong>最佳适应BF</strong>：总是把能满足要求又是最小的空闲分区分配给作业</li>
+<li><strong>最坏适应WF</strong>：总是挑选最大的空闲分区分配给作业</li>
+</ol>
+<p>在选完空闲分区后，需要把相应大小的分区分配给作业，剩下的留在空闲分区链中</p>
+<h4 id="基于索引搜索的动态分区分配算法"><a class="header-anchor" href="#基于索引搜索的动态分区分配算法"># </a>基于索引搜索的动态分区分配算法</h4>
+<ol>
+<li><strong>快速适应QF</strong>：根据容量分类，对每一类具有相同容量的所有空闲分区单独设一个空闲分区链表</li>
+<li><strong>伙伴系统</strong>：每个分区大小为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo separator="true">,</mo><mi>k</mi><mo>∈</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">2^k,k\in[1,m]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.043548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">]</span></span></span></span>，要找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">2^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span></span></span></span>的空闲分区，需要对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>i</mi><mo>+</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{i+n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>的空闲分区进行<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>次分割得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">2^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span></span></span></span>的空闲分区</li>
+<li><strong>哈希算法</strong>：以空闲分区大小为关键字的哈希表，每个表项为对应空间分区链表的表头指针</li>
+</ol>
+<h3 id="动态可重定位分配"><a class="header-anchor" href="#动态可重定位分配"># </a>动态可重定位分配</h3>
+<p>内存<strong>紧凑</strong>后再重定位<br>
+引入<strong>重定位寄存器</strong>，来存放程序/数据在内存中的起始地址</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">内</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">地</mi><mi mathvariant="normal">址</mi><mo>=</mo><mi mathvariant="normal">相</mi><mi mathvariant="normal">对</mi><mi mathvariant="normal">地</mi><mi mathvariant="normal">址</mi><mo>+</mo><mi mathvariant="normal">重</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">位</mi><mi mathvariant="normal">寄</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">器</mi><mi mathvariant="normal">中</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">地</mi><mi mathvariant="normal">址</mi></mrow><annotation encoding="application/x-tex">内存地址=相对地址+重定位寄存器中的地址
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">相</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">重</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">寄</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">器</span><span class="mord cjk_fallback">中</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span></span></span></span></span></p>
+<p>和动态分区分配算法差不多，但加入了内存紧凑的功能，在找不到足够大的空闲分区时，可以通过内存紧凑得到足够大的空闲分区</p>
+<h2 id="分页式存储管理的地址变换过程"><a class="header-anchor" href="#分页式存储管理的地址变换过程"># </a>分页式存储管理的地址变换过程</h2>
+<h2 id="引入分段存储管理的原因"><a class="header-anchor" href="#引入分段存储管理的原因"># </a>引入分段存储管理的原因</h2>
+<ol>
+<li><strong>方便编程</strong>：用户将自己的作业按逻辑关系分成若干段，按段名和段内偏移量/段内地址</li>
+<li><strong>信息共享</strong>：对程序和数据的共享以信息的逻辑单位为基础</li>
+<li><strong>信息保护</strong>：信息保护以信息的逻辑单位为基础，以一个函数、过程或文件为基本单位进行保护</li>
+<li><strong>动态增长</strong>：数据段动态增长，增长到多大未知</li>
+<li><strong>动态链接</strong>：以目标程序（段）为链接的基本单位</li>
+</ol>
+<h2 id="分段式存储管理的地址变换过程"><a class="header-anchor" href="#分段式存储管理的地址变换过程"># </a>分段式存储管理的地址变换过程</h2>
+<h2 id="分段和分页的区别"><a class="header-anchor" href="#分段和分页的区别"># </a>分段和分页的区别</h2>
+<table>
+<thead>
+<tr>
+<th>分页</th>
+<th>分段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>页是信息的<strong>物理</strong>单位</td>
+<td>段是信息的<strong>逻辑</strong>单位</td>
+</tr>
+<tr>
+<td>大小<strong>固定</strong>，由<strong>系统/硬件</strong>决定</td>
+<td>大小<strong>不固定</strong>，取决于<strong>用户</strong>编写的程序</td>
+</tr>
+<tr>
+<td>分页是<strong>系统</strong>的行为，用户程序地址空间是<strong>一维</strong>的，包括页号</td>
+<td>分段是<strong>用户</strong>的行为，用户程序地址空间是<strong>二维</strong>的，包括段名和段内地址</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="动态分区算法"><a class="header-anchor" href="#动态分区算法"># </a>动态分区算法</h2>
+<h2 id="分页式存储管理的地址变换过程-x2"><a class="header-anchor" href="#分页式存储管理的地址变换过程-x2"># </a>分页式存储管理的地址变换过程</h2>
+<h1 id="虚拟存储器"><a class="header-anchor" href="#虚拟存储器"># </a>虚拟存储器</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="最小物理块数"><a class="header-anchor" href="#最小物理块数"># </a>最小物理块数</h2>
+<p>能保证进程正常运行所需的最小物理块数，当系统为进程分配的物理块数少于此值时，进程将无法运行</p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="程序的局部性原理"><a class="header-anchor" href="#程序的局部性原理"># </a>程序的局部性原理</h2>
+<p>在一较短时间内，程序的执行仅局限于某个部分，它所访问的存储空间也局限于某个区域</p>
+<ol>
+<li>程序执行时，除了少部分的转移和过程调用指令外，在大多数情况下仍是<strong>顺序执行</strong>的</li>
+<li>过程调用将会使程序的执行轨迹由一部分区域转至另一部分区域，但经研究看出，过程调用的深度在大多数情况下都不超过5，即程序将会在一段时间内都<strong>局限在这些过程的范围内运行</strong></li>
+<li>程序中存在许多<strong>循环</strong>结构，这些虽然只由少数指令构成，但是它们将<strong>多次执行</strong></li>
+<li>程序中还包括许多对数据结构的处理，如对数组进行操作，它们往往都<strong>局限于很小的范围内</strong></li>
+</ol>
+<p>局限性还表现在下述两个方面：</p>
+<ol>
+<li><strong>时间</strong>局限性：如果程序中的某条<strong>指令</strong>一旦执行，则不久以后<strong>该指令</strong>可能再次执行；如果某<strong>数据</strong>被访问过，则不久以后<strong>该数据</strong>可能再次被访问。产生时间局限性的典型原因是由于在<strong>程序中存在着大量的循环操作</strong></li>
+<li><strong>空间</strong>局限性：一旦程序访问了<strong>某个存储单元</strong>，在不久之后，<strong>其附近的存储单元</strong>也将被访问，即程序在一段时间内所访问的地址，可能集中在一定的范围之内，其典型情况便是<strong>程序的顺序执行</strong></li>
+</ol>
+<h2 id="物理块的分配策略"><a class="header-anchor" href="#物理块的分配策略"># </a>物理块的分配策略</h2>
+<p><strong>固定分配</strong>：为每个进程分配一组固定数目的物理块，在进程运行期间不再改变<br>
+<strong>可变分配</strong>：为每个进程分配一组固定数目的物理块，在进程运行期间可根据情况做适当的增加或减少<br>
+<strong>局部置换</strong>：如果进程在运行中发生缺页，则只能从分配给该进程的n个页面选出一页换出，然后再调入一页<br>
+<strong>全局置换</strong>：如果进程在运行中发生缺页，则将OS所保留的空闲物理块取出一块分给该进程，或者以所有进程的全部物理块为标的，选择一块换出，然后将所缺之页调入</p>
+<ol>
+<li><strong>固定分配局部置换</strong></li>
+<li><strong>可变分配全局置换</strong></li>
+<li><strong>可变分配局部置换</strong></li>
+</ol>
+<h2 id="物理块的分配算法"><a class="header-anchor" href="#物理块的分配算法"># </a>物理块的分配算法</h2>
+<p>固定分配策略时的物理块分配算法</p>
+<ol>
+<li><strong>平均分配算法</strong>：将系统所有可供分配的物理块平均分配给各个进程</li>
+<li><strong>按比例分配算法</strong>：根据进程的大小按比例分配物理块</li>
+<li><strong>考虑优先级的分配算法</strong>：将可供分配的物理块分成两个部分，一是按比例，二是按各进程的优先级，高优先级的适当地增加其相应份额</li>
+</ol>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="页面置换算法"><a class="header-anchor" href="#页面置换算法"># </a>页面置换算法</h2>
+<ol>
+<li><strong>最佳置换算法Optimal</strong>：被淘汰的页面是以后永不使用的或是最长（未来）时间内不再被访问的页面</li>
+<li><strong>先进先出页面置换算法FIFO</strong>：总是淘汰最先进入内存的页面，即选择在内存中驻留时间最久的页面予以淘汰</li>
+<li><strong>最近最久未使用置换算法LRU</strong>：选择最近最久未使用的页面予以淘汰</li>
+<li><strong>最少使用置换算法LFU</strong>：选择最近时期使用最少的页面作为淘汰页</li>
+<li><strong>Clock置换算法/最近未用算法NRU</strong>：选择第一个访问位为0（代表未使用过）的页面换出去</li>
+<li><strong>改进型Clock置换算法</strong>：考虑页面的使用情况（访问位A）和置换代价（修改位M），优先选择A=0,M=0、A=0,M=1、A=1,M=0、A=1 M=1进行替换</li>
+</ol>
+<h1 id="输入输出系统"><a class="header-anchor" href="#输入输出系统"># </a>输入输出系统</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="设备独立性"><a class="header-anchor" href="#设备独立性"># </a>设备独立性</h2>
+<p>设备无关性， 应用程序独立于具体使用的物理设备<br>
+在应用程序中，使用逻辑设备名称来请求使用某类设备；而系统在实际执行时，还必须使用物理设备名称。因此，系统须具有将<strong>逻辑设备名称</strong>转换为某<strong>物理设备名称</strong>的功能</p>
+<h2 id="设备分配方式"><a class="header-anchor" href="#设备分配方式"># </a>设备分配方式</h2>
+<ol>
+<li><strong>安全分配方式</strong>：每当进程发出I/O请求后，便进入堵塞状态，直到其I/O操作完成时才被唤醒。破坏了请求和保持条件，不会造成死锁</li>
+<li><strong>不安全分配方式</strong>：进程在发出I/O请求后仍继续运行，需要时又发出第二个I/O请求、第三个I/O请求等，仅当进程所请求的设备已被另一进程占用时，才进入堵塞状态。可能具备请求和保持条件，造成死锁</li>
+</ol>
+<h2 id="SPOOLing技术的概念及原理"><a class="header-anchor" href="#SPOOLing技术的概念及原理"># </a>SPOOLing技术的概念及原理</h2>
+<p>假脱机技术，在联机情况下实现的同时外围操作的技术</p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="设备与控制器间的信号线及作用"><a class="header-anchor" href="#设备与控制器间的信号线及作用"># </a>设备与控制器间的信号线及作用</h2>
+<ol>
+<li><strong>数据</strong>信号线：在设备和设备控制器间传送数据信号</li>
+<li><strong>控制</strong>信号线：由设备控制器向I/O设备发送控制信号时的通路</li>
+<li><strong>状态</strong>信号线：传送指示设备当前状态的信号</li>
+</ol>
+<h2 id="设备控制器的基本功能"><a class="header-anchor" href="#设备控制器的基本功能"># </a>设备控制器的基本功能</h2>
+<ol>
+<li>接收和识别命令</li>
+<li>数据交换</li>
+<li>标识和报告设备的状态</li>
+<li>地址识别</li>
+<li>数据缓冲区</li>
+<li>差错控制</li>
+</ol>
+<h2 id="中断程序的处理过程"><a class="header-anchor" href="#中断程序的处理过程"># </a>中断程序的处理过程</h2>
+<h2 id="SPOOLing的特点"><a class="header-anchor" href="#SPOOLing的特点"># </a>SPOOLing的特点</h2>
+<ol>
+<li>提高了I/O的速度</li>
+<li>将独占设备改造为共享设备</li>
+<li>实现了虚拟设备功能</li>
+</ol>
+<h2 id="引入缓冲区的原因"><a class="header-anchor" href="#引入缓冲区的原因"># </a>引入缓冲区的原因</h2>
+<ol>
+<li>缓和CPU和I/O设备间速度不匹配的矛盾</li>
+<li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
+<li>解决数据粒度不匹配的问题</li>
+<li>提高CPU和I/O设备之间的并行性</li>
+</ol>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="磁盘调度算法"><a class="header-anchor" href="#磁盘调度算法"># </a>磁盘调度算法</h2>
+<ol>
+<li><strong>先来先服务FCFS</strong>：根据进程请求访问磁盘的先后次序进行调度</li>
+<li><strong>最短寻道时间优先SSTF</strong>：访问的磁道和当前磁头所在的磁道距离最近</li>
+<li><strong>扫描SCAN</strong>：优先考虑磁头当前的移动方向，防止低优先级进程出现饥饿现象</li>
+<li><strong>循环扫描CSCAN</strong>：规定磁头单向移动</li>
+</ol>
+<h1 id="文件管理"><a class="header-anchor" href="#文件管理"># </a>文件管理</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="记录"><a class="header-anchor" href="#记录"># </a>记录</h2>
+<p>一组相关数据项的集合，用于描述一个对象在某方面的属性</p>
+<h2 id="文件"><a class="header-anchor" href="#文件"># </a>文件</h2>
+<p>由创建者所定义的、具有文件名的一组相关元素的集合，可分为有结构文件和无结构文件两种</p>
+<h2 id="索引结点"><a class="header-anchor" href="#索引结点"># </a>索引结点</h2>
+<p>使<strong>文件描述信息</strong>单独形成一个称为索引结点的数据结构，简称为i结点<br>
+每个目录项仅由文件名和指向该文件所对应的i结点的指针所构成<br>
+分为<strong>磁盘</strong>索引结点和<strong>内存</strong>索引结点</p>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="基本的目录操作"><a class="header-anchor" href="#基本的目录操作"># </a>基本的目录操作</h2>
+<ol>
+<li>创建目录</li>
+<li>删除目录</li>
+<li>改变目录</li>
+<li>移动目录</li>
+<li>链接操作</li>
+<li>查找</li>
+</ol>
+<h2 id="目录管理的要求"><a class="header-anchor" href="#目录管理的要求"># </a>目录管理的要求</h2>
+<ol>
+<li>实现按名存取</li>
+<li>提高对目录的检索速度</li>
+<li>文件共享</li>
+<li>允许文件重名</li>
+</ol>
+<h2 id="影响文件安全性的因素"><a class="header-anchor" href="#影响文件安全性的因素"># </a>影响文件安全性的因素</h2>
+<ol>
+<li>人为因素</li>
+<li>系统因素</li>
+<li>自然因素</li>
+</ol>
+<hr>
+<p><em><strong>计算</strong></em></p>
+<h2 id="文件管理-x2"><a class="header-anchor" href="#文件管理-x2"># </a>文件管理</h2>
+<h2 id="多级目录管理"><a class="header-anchor" href="#多级目录管理"># </a>多级目录管理</h2>
+<h1 id="磁盘存储器管理"><a class="header-anchor" href="#磁盘存储器管理"># </a>磁盘存储器管理</h1>
+<p><em><strong>名词解释</strong></em></p>
+<h2 id="磁盘高速缓存"><a class="header-anchor" href="#磁盘高速缓存"># </a>磁盘高速缓存</h2>
+<p>高速缓存：在内存和CPU之间所增设的一个小容量高速存储器<br>
+磁盘高速缓存：在内存中，为磁盘盘块设置的一个缓冲区，在缓冲区中保存了某些盘块的副本</p>
+<h2 id="位示图"><a class="header-anchor" href="#位示图"># </a>位示图</h2>
+<p>利用二进制的一位来表示磁盘中一个盘块的使用情况，0表示对应的盘块空闲，1表示已分配</p>
+<h2 id="事务"><a class="header-anchor" href="#事务"># </a>事务</h2>
+<p>用于访问和修改各种数据项的一个程序单位<br>
+可以被看作是一系列相关读和写操作<br>
+属性ACID：</p>
+<ol>
+<li>原子性Atomic</li>
+<li>一致性Consistent</li>
+<li>隔离性Isolated</li>
+<li>持久性Durable</li>
+</ol>
+<hr>
+<p><em><strong>简答</strong></em></p>
+<h2 id="容错技术"><a class="header-anchor" href="#容错技术"># </a>容错技术</h2>
+<h3 id="第一级容错技术-SFT-I"><a class="header-anchor" href="#第一级容错技术-SFT-I"># </a>第一级容错技术 SFT-I</h3>
+<ol>
+<li>双份目录和双份文件分配表</li>
+<li>热修复重定向和写后读校验</li>
+</ol>
+<h3 id="第二级容错技术-SFT-II"><a class="header-anchor" href="#第二级容错技术-SFT-II"># </a>第二级容错技术 SFT-II</h3>
+<ol>
+<li>磁盘镜像</li>
+<li>磁盘双工</li>
+</ol>
+<h3 id="基于集群技术的容错技术"><a class="header-anchor" href="#基于集群技术的容错技术"># </a>基于集群技术的容错技术</h3>
+<ol>
+<li>双机热备份模式</li>
+<li>双机互为备份模式</li>
+<li>公用磁盘模式</li>
+</ol>
+<hr>
+
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
+            
+            <a class="write-prev-post" href="/2020/09/2019CCPCOnline/">
+                <i class="fa fa-angle-left"></i>&emsp;「2019CCPC」网络赛
+            </a>
+            
+            
+            <a class="write-next-post" href="/2020/07/CCCCTrain/">
+                「团体设计天梯赛」2020暑期训练&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
+</div>
+    </div>
+</div>
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lxyyxxx</a>
+    <br>
+    &copy; 2021 <a href="https://lxyyxxx.github.io" class="write-blog-link">Lxyyxxx&#39;s Notebook</a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<!-- tocbot -->
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.6.0/dist/mermaid.min.js"></script>
+
+<!-- highlight js-->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>

@@ -44,7 +44,7 @@ body {
 .write-content p {
 	line-height: 2;
 	margin-top: 0.75em;
-	margin-bottom: 1.5em;
+	margin-bottom: 0.25em;
 }
 
 .write-content li {
@@ -121,6 +121,10 @@ code {
 
 .katex-block {
 	overflow-x: auto;
+}
+
+.katex {
+	font: normal 1.21em KaTeX_Main, Times New Roman, FangSong, serif !important;
 }
 
 .write-meta {
