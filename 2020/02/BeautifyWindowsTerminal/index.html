@@ -1,0 +1,337 @@
+<!-- 不变的布局 -->
+<!DOCTYPE html>
+<html>
+<!-- head -->
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+
+    <title>
+        
+        一份 Windows Terminal 配置笔记 - Lin Xinyu
+        
+    </title>
+
+    <!-- theme css -->
+    <link rel="stylesheet" href="/css/write.css">
+
+    <!-- tocbot -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- highlight -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css">
+
+    <!-- font awesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700,900&display=swap" rel="stylesheet">
+
+    <script src="/js/search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="write-wrapper">
+        <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="write-navbar-parent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="write-logo">Lin Xinyu</a>
+        </div>
+        <div class="write-collapse-button">
+            <a role="button" data-toggle="collapse" href="#write-collapse-navbar" data-parent="#write-navbar-parent">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse in" id="write-collapse-navbar">
+            <ul class="navbar-nav font-weight-bold">
+                <!-- 顶部导航栏 -->
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        首页
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/archives" class="nav-link">
+                        归档
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/categories" class="nav-link">
+                        分类
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags" class="nav-link">
+                        标签
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="write-search">
+                <a role="button" class="popup-trigger">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <div class="write-rss">
+                <a role="button" href="/atom.xml" target="_blank">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" placeholder="搜索中..."
+                    spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+        <!-- 文章 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-xl-block col-xl-2"></div>
+        <div class="col-md-9 col-xl-6 pl-md-5">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="write-title">
+                        <h2 class="write-post-title">一份 Windows Terminal 配置笔记</h2>
+                    </div>
+                    <div class="write-meta">
+                        <div class="write-post-time">
+                            <!-- 如果更新时间大于发布时间则显示更新时间 -->
+                            
+                            <!-- update time -->
+                            Updated at
+                            <time datetime="2022-10-09T13:59:04.507Z" itemprop="dateModified">
+                            2022-10-09 21:59
+                            </time>
+                            
+                        </div>
+                        <!-- categories -->
+                        
+                        
+                        <i class="fas fa-folder"></i>
+                        
+                        <a
+                            href='/categories/搞点什么东东吧/'>搞点什么东东吧</a>
+                        
+                        
+                        &emsp;
+                        <!-- tags -->
+                        
+                        
+                        <i class="fas fa-tags"></i>
+                        
+                        <a
+                            href='/tags/Windows-Terminal/'>Windows Terminal</a>, 
+                        
+                        <a
+                            href='/tags/配置/'>配置</a>
+                        
+                        
+                    </div>
+                    <article class="write-content">
+                        <!-- toc -->
+<p><a href="https://github.com/microsoft/terminal" target="_blank" rel="noopener">Windows Terminal 的 github 传送门</a></p>
+<h1 id="安装-Windows-Terminal"><a class="header-anchor" href="#安装-Windows-Terminal"># </a>安装 Windows Terminal</h1>
+<p>到 <a href="https://www.microsoft.com/zh-cn/p/windows-terminal-preview/9n0dx20hk701?ocid=AID681541_aff_7593_1243925" target="_blank" rel="noopener">Microsoft Store</a> 就能安装啦！</p>
+<h1 id="Profiles-json"><a class="header-anchor" href="#Profiles-json"># </a>Profiles.json</h1>
+<p>Windows Terminal 的配置都在这里面，通过修改这里面的参数就能自定义自己的 Windows Terminal 啦！<br>
+<a href="https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md" target="_blank" rel="noopener">Profiles.json 的参数说明</a><br>
+先放一份我自己的效果图😝</p>
+<p><img src="/2020/02/BeautifyWindowsTerminal/color.png" alt="color"></p>
+<p>接下来就开始讲配置啦！</p>
+<h2 id="背景"><a class="header-anchor" href="#背景"># </a>背景</h2>
+<p>背景可以设置背景图片，但是我没有。我只是使用了<code>useAcrylic</code>和<code>acrylicOpacity</code>开启了毛玻璃效果而已。背景颜色在接下来要讲的<code>Schemes</code>中的<code>background</code>中设置。</p>
+<h2 id="配色"><a class="header-anchor" href="#配色"># </a>配色</h2>
+<p>通过 <a href="https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md#Schemes" target="_blank" rel="noopener"><code>Schemes</code></a> 设置自己喜欢的配色，然后在<code>name</code>中取上一个名字，就可以通过<code>colorScheme</code>调用啦！<br>
+在<a href="https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/windowsterminal" target="_blank" rel="noopener">iTerm2</a>中已经有一些现成的配色方案了，直接使用就可以了。<br>
+我使用的是修改后的<code>OneHalfLight</code>，将白色修改成了灰色，避免看不清的情况。同时还修改了光标的颜色<code>cursorColor</code>。</p>
+<pre><code class="language-json">{
+  &quot;profiles&quot;: [
+    {
+      &quot;colorScheme&quot;: &quot;OneHalfLight&quot;,
+      &quot;cursorColor&quot;: &quot;#7A8181&quot;
+    }
+  ],
+  &quot;schemes&quot;: [
+    {
+      &quot;name&quot;: &quot;OneHalfLight&quot;,
+      &quot;black&quot;: &quot;#383a42&quot;,
+      &quot;red&quot;: &quot;#e45649&quot;,
+      &quot;green&quot;: &quot;#4876D6&quot;,
+      &quot;yellow&quot;: &quot;#c18401&quot;,
+      &quot;blue&quot;: &quot;#0184bc&quot;,
+      &quot;purple&quot;: &quot;#a626a4&quot;,
+      &quot;cyan&quot;: &quot;#0997b3&quot;,
+      &quot;white&quot;: &quot;#7A8181&quot;,
+      &quot;brightBlack&quot;: &quot;#4f525e&quot;,
+      &quot;brightRed&quot;: &quot;#e06c75&quot;,
+      &quot;brightGreen&quot;: &quot;#98c379&quot;,
+      &quot;brightYellow&quot;: &quot;#e5c07b&quot;,
+      &quot;brightBlue&quot;: &quot;#61afef&quot;,
+      &quot;brightPurple&quot;: &quot;#c678dd&quot;,
+      &quot;brightCyan&quot;: &quot;#56b6c2&quot;,
+      &quot;brightWhite&quot;: &quot;#989FB1&quot;,
+      &quot;background&quot;: &quot;#fafafa&quot;,
+      &quot;foreground&quot;: &quot;#383a42&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="字体"><a class="header-anchor" href="#字体"># </a>字体</h2>
+<p>字体可以通过<code>font-face</code>进行更改，但只能设置一个字体。如果想要同时拥有喜欢的英文等宽字体和中文等宽字体的话，可以使用<a href="https://github.com/nowar-fonts/Warcraft-Font-Merger" target="_blank" rel="noopener">WFM</a>进行合成。<br>
+我使用的是<code>Consolas</code>和<code>Source Han Sans SC</code>（思源宋体）的混合字体。</p>
+<h2 id="更多Tab"><a class="header-anchor" href="#更多Tab"># </a>更多Tab</h2>
+<p>在<code>profiles</code>中，一个字典代表着一个选项窗口，可以通过设置<code>commandline</code>设置不同的命令得到不同便捷的选项窗口。<br>
+我目前的选项窗口有这些👇</p>
+<p><img src="/2020/02/BeautifyWindowsTerminal/tab.png" alt="tab"></p>
+<p>以图中的iPython为例子，这是配置字典👇</p>
+<pre><code class="language-json">{
+      &quot;guid&quot;: &quot;{9434E8AE-D1E1-4F63-B8F7-F6F7DACD0C02}&quot;,
+      &quot;hidden&quot;: false,
+      &quot;name&quot;: &quot;IPython&quot;,
+      &quot;commandline&quot;: &quot;ipython&quot;,
+      &quot;acrylicOpacity&quot;: 0.75,
+      &quot;useAcrylic&quot;: true,
+      &quot;closeOnExit&quot;: true,
+      &quot;fontFace&quot;: &quot;Consolas + Source Han Sans SC&quot;,
+      &quot;colorScheme&quot;: &quot;OneHalfLight&quot;,
+      &quot;tabTitle&quot;: &quot;IPython&quot;,
+      &quot;icon&quot;: &quot;D:/Picture/Icon/python-144.png&quot;,
+      &quot;cursorColor&quot;: &quot;#7A8181&quot;,
+      &quot;cursorShape&quot;: &quot;bar&quot;,
+      &quot;startingDirectory&quot;: null
+}
+</code></pre>
+<p>能启动 iPython 的原因就是我在<code>commandline</code>中设置了<code>ipython</code>。如果你在<code>Powershell</code>中输入<code>ipython</code>可以启动 iPython 的话，那么这个窗口你就可以开启。<br>
+每个选项窗口会有一个<code>guid</code>，这个可以随机生成，或者是通过<code>Visual Studio</code>中的工具 → 创建GUID 进行生成，你可以在全局中更改<code>defaultProfile</code>的 GUID 进行默认启动窗口的设置。<br>
+我的 iPython 效果图👇</p>
+<p><img src="/2020/02/BeautifyWindowsTerminal/ipython.png" alt="ipython"></p>
+<h2 id="默认大小"><a class="header-anchor" href="#默认大小"># </a>默认大小</h2>
+<p>在全局中（也就是<code>profiles</code>之前）设置<code>initialCols</code>和<code>initialRows</code>可以设置默认大小，我的设置为<code>90</code>和<code>30</code>。</p>
+<h1 id="在当前文件夹中右键选择打开-Windows-Terminal"><a class="header-anchor" href="#在当前文件夹中右键选择打开-Windows-Terminal"># </a>在当前文件夹中右键选择打开 Windows Terminal</h1>
+<p><code>cd</code>很麻烦，有的时候我们希望可以像<code>Git Bash Here</code>那样，在文件夹内右键就可以打开终端使用，这个通过修改注册表就可以完成。<br>
+我们先将<code>Profiles.json</code>中的<code>startingDirectory</code>设置成<code>null</code>。<br>
+然后创建一个<code>.reg</code>的文件，填写以下代码</p>
+<pre><code class="language-powershell">Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]
+@=&quot;Windows Terminal Here&quot;
+&quot;Icon&quot;=&quot;[YOUR ICON PATH]&quot;
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
+@=&quot;C:\\Users\\[YOURNAME]\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe&quot;
+</code></pre>
+<blockquote>
+<p>Windows Terminal 的 Icon 可以在<a href="https://github.com/microsoft/terminal/blob/master/res/terminal.ico" target="_blank" rel="noopener">它的 github</a> 中找到</p>
+</blockquote>
+<p>然后运行。打开文件夹，按右键</p>
+<p><img src="/2020/02/BeautifyWindowsTerminal/here.png" alt="here"></p>
+<p>完成！</p>
+
+                    </article>
+                    <!-- ccmark -->
+                    <br />
+                    <div align="right" class="ccmark">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-sa"></i>
+                    </div>
+                    <hr />
+<div class="write-paginator">
+    <div class="contain-fluid">
+        
+        <div class="row justify-content-between mx-0">
+            
+            <a class="write-prev-post col-5 text-left" href="/2020/03/InstallCUDA10/">
+                <i class="fa fa-angle-left"></i>&emsp;在 Windows 10 上安装 CUDA 10.0
+            </a>
+            
+            
+            <a class="write-next-post col-5 text-right" href="/2019/12/ComputerGraphics3/">
+                「学习笔记」计算机图形学&emsp;<i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-4">
+    <!-- toc -->
+    <div class="write-toc"></div>
+</div>
+    </div>
+</div>
+        <footer class="write-footer w-100">
+    <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a
+        href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lin Xinyu</a>
+    <br>
+    &copy; 2022 <a href="https://lxyyxxx.github.io" class="write-blog-link">
+            Lin Xinyu
+        </a>
+</footer>
+    </div>
+    <!-- bootstrap -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<!-- tocbot -->
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+
+<!-- mermaid -->
+<script async src="https://unpkg.com/mermaid@8.6.0/dist/mermaid.min.js"></script>
+
+<!-- highlight js-->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/highlight.min.js">
+</script>
+<!-- uncommon highlight -->
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/matlab.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/cmake.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/x86asm.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/languages/powershell.min.js"></script>
+
+<!-- theme js -->
+<script src="/js/write.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>
