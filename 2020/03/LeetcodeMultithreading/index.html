@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2023-03-22T16:36:14.636Z" itemprop="dateModified">
-                            2023-03-23 00:36
+                            <time datetime="2023-03-22T16:44:26.566Z" itemprop="dateModified">
+                            2023-03-23 00:44
                             </time>
                             
                         </div>
@@ -222,6 +222,12 @@
 <td style="text-align:center">1516 ms</td>
 <td style="text-align:center">7.1 MB</td>
 <td style="text-align:center">2023/03/23 00:05</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>atomic_bool</code></td>
+<td style="text-align:center">1644 ms</td>
+<td style="text-align:center">7 MB</td>
+<td style="text-align:center">2023/03/23 00:41</td>
 </tr>
 </tbody>
 </table>
@@ -506,6 +512,36 @@ public:
 
     void third(function&lt;void()&gt; printThird) {
         while (f2.test_and_set(memory_order_acquire));
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+</code></pre>
+<h3 id="atomic-bool"><a class="header-anchor" href="#atomic-bool"># </a>atomic_bool</h3>
+<pre><code class="language-cpp">class Foo {
+    atomic_bool b1, b2;
+public:
+    Foo() {
+        b1 = false;
+        b2 = false;
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        b1 = true;
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        while (!b1);
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        b2 = true;
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        while (!b2);
         // printThird() outputs &quot;third&quot;. Do not change or remove this line.
         printThird();
     }
