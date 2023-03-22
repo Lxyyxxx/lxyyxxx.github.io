@@ -133,8 +133,8 @@
                             
                             <!-- update time -->
                             Updated at
-                            <time datetime="2022-10-09T13:59:04.735Z" itemprop="dateModified">
-                            2022-10-09 21:59
+                            <time datetime="2023-03-22T16:36:14.636Z" itemprop="dateModified">
+                            2023-03-23 00:36
                             </time>
                             
                         </div>
@@ -165,7 +165,171 @@
                         <p><em>不含经典会员才能做的题</em></p>
 <h1 id="1114-按序打印"><a class="header-anchor" href="#1114-按序打印"># </a>1114 按序打印</h1>
 <p><a href="https://leetcode-cn.com/problems/print-in-order/" target="_blank" rel="noopener">传送门</a></p>
-<h2 id="信号量-semaphore-h"><a class="header-anchor" href="#信号量-semaphore-h"># </a>信号量 semaphore.h</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">执行用时</th>
+<th style="text-align:center">内存消耗</th>
+<th style="text-align:center">提交时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>packaged_task</code></td>
+<td style="text-align:center">56 ms</td>
+<td style="text-align:center">7.2 MB</td>
+<td style="text-align:center">2022/03/22 22:49</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>future promise</code></td>
+<td style="text-align:center">76 ms</td>
+<td style="text-align:center">7.2 MB</td>
+<td style="text-align:center">2022/03/22 22:31</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>condition_variable</code></td>
+<td style="text-align:center">84 ms</td>
+<td style="text-align:center">6.9 MB</td>
+<td style="text-align:center">2022/03/22 22:14</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>semaphore.h (Linux)</code></td>
+<td style="text-align:center">144 ms</td>
+<td style="text-align:center">8.2 MB</td>
+<td style="text-align:center">2020/03/20 13:57</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>semaphore (C++20)</code></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>mutex</code></td>
+<td style="text-align:center">124 ms</td>
+<td style="text-align:center">8.3 MB</td>
+<td style="text-align:center">2020/03/20 23:24</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>lock_guard&lt;mutex&gt;</code></td>
+<td style="text-align:center">160 ms</td>
+<td style="text-align:center">8.2 MB</td>
+<td style="text-align:center">2020/03/20 23:32</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>atomic_flag</code></td>
+<td style="text-align:center">1516 ms</td>
+<td style="text-align:center">7.1 MB</td>
+<td style="text-align:center">2023/03/23 00:05</td>
+</tr>
+</tbody>
+</table>
+<h2 id="任务-C-11"><a class="header-anchor" href="#任务-C-11"># </a>任务 (C++ 11)</h2>
+<h3 id="packaged-task"><a class="header-anchor" href="#packaged-task"># </a>packaged_task</h3>
+<pre><code class="language-cpp">class Foo {
+    using TASK_TYPE = void();
+    function&lt;TASK_TYPE&gt; task = [](){};
+    packaged_task&lt;TASK_TYPE&gt; pt1{task}, pt2{task};
+public:
+    Foo() {
+        
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        pt1();
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        future&lt;void&gt; f{pt1.get_future()};
+        f.get();
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        pt2();
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        future&lt;void&gt; f{pt2.get_future()};
+        f.get();
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+</code></pre>
+<h3 id="future-和-promise"><a class="header-anchor" href="#future-和-promise"># </a>future 和 promise</h3>
+<pre><code class="language-cpp">class Foo {
+    promise&lt;bool&gt; p1, p2;
+public:
+    Foo() {
+        
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        p1.set_value(true);
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        future&lt;bool&gt; f{p1.get_future()};
+        f.wait();
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        p2.set_value(true);
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        future&lt;bool&gt; f{p2.get_future()};
+        f.wait();
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+</code></pre>
+<h2 id="条件变量-C-11"><a class="header-anchor" href="#条件变量-C-11"># </a>条件变量 (C++ 11)</h2>
+<pre><code class="language-cpp">class Foo {
+    mutex m1, m2;
+    condition_variable cv1, cv2;
+    int cur;
+public:
+    Foo() {
+        cur = 0;
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        cur = 1;
+        cv1.notify_one();
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        unique_lock&lt;mutex&gt; lock{m1};
+        cv1.wait(lock, [this](){return cur == 1;});
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        lock.unlock();
+        cur = 2;
+        cv2.notify_one();
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        unique_lock&lt;mutex&gt; lock{m2};
+        cv2.wait(lock, [this](){return cur == 2;});
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+        lock.unlock();
+        cur = 3;
+    }
+};
+</code></pre>
+<h2 id="信号量"><a class="header-anchor" href="#信号量"># </a>信号量</h2>
+<h3 id="semaphore-h-Linux"><a class="header-anchor" href="#semaphore-h-Linux"># </a>semaphore.h (Linux)</h3>
 <pre><code class="language-cpp">#include &lt;semaphore.h&gt;
 class Foo {
 private:
@@ -197,11 +361,63 @@ public:
     }
 };
 </code></pre>
-<blockquote>
-<p>执行用时：144 ms<br>
-内存消耗：8.4 MB</p>
-</blockquote>
-<h2 id="互斥信号量-mutex-C-11"><a class="header-anchor" href="#互斥信号量-mutex-C-11"># </a>互斥信号量 mutex (C++ 11)</h2>
+<h3 id="semaphore-C-20-LeetCode-不支持"><a class="header-anchor" href="#semaphore-C-20-LeetCode-不支持"># </a>semaphore (C++ 20) LeetCode 不支持</h3>
+<pre><code class="language-cpp">#include &lt;functional&gt;
+#include &lt;iostream&gt;
+#include &lt;semaphore&gt;
+#include &lt;thread&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+class Foo {
+    binary_semaphore s1{0}, s2{0};
+
+   public:
+    Foo() {}
+
+    void first(function&lt;void()&gt; printFirst) {
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        s1.release();
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        s1.acquire();
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        s2.release();
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        s2.acquire();
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+
+int main() {
+    vector&lt;int&gt; order{3, 2, 1};
+    vector&lt;thread&gt; pool;
+    Foo foo = Foo();
+    for (int i : order) {
+        if (i == 1)
+            pool.emplace_back(&amp;Foo::first, &amp;foo, []() {
+                cout &lt;&lt; &quot;first&quot;;
+            });  // 与成员函数绑定需要用
+                 // &amp;类名::成员函数名，再传递对象，再传递参数
+        else if (i == 2)
+            pool.emplace_back(&amp;Foo::second, &amp;foo, []() { cout &lt;&lt; &quot;second&quot;; });
+        else if (i == 3)
+            pool.emplace_back(&amp;Foo::third, &amp;foo, []() { cout &lt;&lt; &quot;third&quot;; });
+    }
+    for (thread &amp;t : pool) {
+        t.join();
+    }
+}
+</code></pre>
+<h2 id="互斥信号量-C-11"><a class="header-anchor" href="#互斥信号量-C-11"># </a>互斥信号量 (C++ 11)</h2>
+<h3 id="mutex"><a class="header-anchor" href="#mutex"># </a>mutex</h3>
 <pre><code class="language-cpp">class Foo {
 private:
     mutex m1, m2;
@@ -232,10 +448,69 @@ public:
     }
 };
 </code></pre>
-<blockquote>
-<p>执行用时：124 ms<br>
-内存消耗：8.5 MB</p>
-</blockquote>
+<h3 id="lock-guard-mutex"><a class="header-anchor" href="#lock-guard-mutex"># </a>lock_guard&lt;mutex&gt;</h3>
+<pre><code class="language-cpp">#include &lt;mutex&gt;
+class Foo {
+private:
+    mutex m1, m2;
+
+public:
+    Foo() {
+        m1.lock();
+        m2.lock();
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        m1.unlock();
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        lock_guard&lt;mutex&gt; lk(m1);
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        m2.unlock();
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        lock_guard&lt;mutex&gt; lk(m2);
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+</code></pre>
+<h2 id="原子-C-11"><a class="header-anchor" href="#原子-C-11"># </a>原子 (C++ 11)</h2>
+<h3 id="atomic-flag"><a class="header-anchor" href="#atomic-flag"># </a>atomic_flag</h3>
+<pre><code class="language-cpp">class Foo {
+    atomic_flag f1, f2;
+public:
+    Foo() {
+        f1.test_and_set(memory_order_acquire);
+        f2.test_and_set(memory_order_acquire);
+    }
+
+    void first(function&lt;void()&gt; printFirst) {
+        
+        // printFirst() outputs &quot;first&quot;. Do not change or remove this line.
+        printFirst();
+        f1.clear(memory_order_release);
+    }
+
+    void second(function&lt;void()&gt; printSecond) {
+        while (f1.test_and_set(memory_order_acquire));
+        // printSecond() outputs &quot;second&quot;. Do not change or remove this line.
+        printSecond();
+        f2.clear(memory_order_release);
+    }
+
+    void third(function&lt;void()&gt; printThird) {
+        while (f2.test_and_set(memory_order_acquire));
+        // printThird() outputs &quot;third&quot;. Do not change or remove this line.
+        printThird();
+    }
+};
+</code></pre>
 <h1 id="1115-Bar"><a class="header-anchor" href="#1115-Bar"># </a>1115 Bar</h1>
 <p><a href="https://leetcode-cn.com/problems/print-foobar-alternately/" target="_blank" rel="noopener">传送门</a></p>
 <pre><code class="language-cpp">class FooBar {
@@ -613,7 +888,7 @@ public:
     <a href="https://hexo.io/" class="write-blog-link" target="_blank">Hexo</a> Theme Write by <a
         href="https://lxyyxxx.github.io/" class="write-blog-link" target="_blank">Lin Xinyu</a>
     <br>
-    &copy; 2022 <a href="https://lxyyxxx.github.io" class="write-blog-link">
+    &copy; 2023 <a href="https://lxyyxxx.github.io" class="write-blog-link">
             Lin Xinyu
         </a>
 </footer>

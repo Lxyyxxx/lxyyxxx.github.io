@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxyyxxx.github.io/"/>
-  <updated>2022-10-14T14:16:07.810Z</updated>
+  <updated>2022-10-14T14:16:06.000Z</updated>
   <id>https://lxyyxxx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lxyyxxx.github.io/2022/10/RSA/"/>
     <id>https://lxyyxxx.github.io/2022/10/RSA/</id>
     <published>2022-10-13T12:33:40.000Z</published>
-    <updated>2022-10-14T14:16:07.810Z</updated>
+    <updated>2022-10-14T14:16:06.000Z</updated>
     
     <summary type="html">
     
@@ -52,7 +52,7 @@
     <link href="https://lxyyxxx.github.io/2020/09/VSCO/"/>
     <id>https://lxyyxxx.github.io/2020/09/VSCO/</id>
     <published>2020-09-27T13:59:53.000Z</published>
-    <updated>2022-10-09T13:59:04.737Z</updated>
+    <updated>2022-10-09T13:59:04.000Z</updated>
     
     <summary type="html">
     
@@ -82,7 +82,7 @@
     <link href="https://lxyyxxx.github.io/2020/03/LeetcodeMultithreading/"/>
     <id>https://lxyyxxx.github.io/2020/03/LeetcodeMultithreading/</id>
     <published>2020-03-21T06:17:56.000Z</published>
-    <updated>2022-10-09T13:59:04.735Z</updated>
+    <updated>2023-03-22T16:36:14.636Z</updated>
     
     <summary type="html">
     
@@ -112,7 +112,7 @@
     <link href="https://lxyyxxx.github.io/2020/03/InstallCUDA10/"/>
     <id>https://lxyyxxx.github.io/2020/03/InstallCUDA10/</id>
     <published>2020-03-14T17:43:15.000Z</published>
-    <updated>2022-10-09T13:59:04.731Z</updated>
+    <updated>2022-10-09T13:59:04.000Z</updated>
     
     <summary type="html">
     
@@ -129,13 +129,13 @@
       <category term="没有官方文档重要的教程" scheme="https://lxyyxxx.github.io/categories/%E6%B2%A1%E6%9C%89%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%87%8D%E8%A6%81%E7%9A%84%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="OpenGL" scheme="https://lxyyxxx.github.io/tags/OpenGL/"/>
-    
       <category term="CUDA 10.0" scheme="https://lxyyxxx.github.io/tags/CUDA-10-0/"/>
     
       <category term="nVidia" scheme="https://lxyyxxx.github.io/tags/nVidia/"/>
     
       <category term="Windows 10" scheme="https://lxyyxxx.github.io/tags/Windows-10/"/>
+    
+      <category term="OpenGL" scheme="https://lxyyxxx.github.io/tags/OpenGL/"/>
     
   </entry>
   
@@ -144,7 +144,7 @@
     <link href="https://lxyyxxx.github.io/2020/02/BeautifyWindowsTerminal/"/>
     <id>https://lxyyxxx.github.io/2020/02/BeautifyWindowsTerminal/</id>
     <published>2020-02-20T05:46:36.000Z</published>
-    <updated>2022-10-09T13:59:04.507Z</updated>
+    <updated>2022-10-09T13:59:04.000Z</updated>
     
     <summary type="html">
     
@@ -170,43 +170,11 @@
   </entry>
   
   <entry>
-    <title>「学习笔记」计算机图形学</title>
-    <link href="https://lxyyxxx.github.io/2019/12/ComputerGraphics3/"/>
-    <id>https://lxyyxxx.github.io/2019/12/ComputerGraphics3/</id>
-    <published>2019-12-22T11:08:12.000Z</published>
-    <updated>2022-10-09T13:59:04.513Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- toc --&gt;
-&lt;h1 id=&quot;基本图形生成算法&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基本图形生成算法&quot;&gt;# &lt;/a&gt;_基本图形生成算法&lt;/h1&gt;
-&lt;h2 id=&quot;数值微分法DDA画直线&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="一起学习吧" scheme="https://lxyyxxx.github.io/categories/%E4%B8%80%E8%B5%B7%E5%AD%A6%E4%B9%A0%E5%90%A7/"/>
-    
-    
-      <category term="学习笔记" scheme="https://lxyyxxx.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="计算机图形学" scheme="https://lxyyxxx.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-      <category term="OpenGL" scheme="https://lxyyxxx.github.io/tags/OpenGL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>使用阿里云ECS配置MongoDB集群</title>
     <link href="https://lxyyxxx.github.io/2019/09/Aliyun-MongoDBCluster/"/>
     <id>https://lxyyxxx.github.io/2019/09/Aliyun-MongoDBCluster/</id>
     <published>2019-09-28T06:57:49.000Z</published>
-    <updated>2022-10-13T13:44:50.237Z</updated>
+    <updated>2022-10-13T13:44:50.000Z</updated>
     
     <summary type="html">
     
@@ -235,7 +203,7 @@
     <link href="https://lxyyxxx.github.io/2019/07/HexoKatex/"/>
     <id>https://lxyyxxx.github.io/2019/07/HexoKatex/</id>
     <published>2019-07-24T09:56:51.000Z</published>
-    <updated>2022-10-09T13:59:04.731Z</updated>
+    <updated>2022-10-09T13:59:04.000Z</updated>
     
     <summary type="html">
     
